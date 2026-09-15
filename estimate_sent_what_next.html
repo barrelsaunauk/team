@@ -1,463 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add("js");</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Barrel Sauna UK estimate</title>
+<title>Your Build | Barrel Sauna UK</title>
+<meta name="description" content="What happens next with your build, and when you will hear from us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+  :root{
+    --ground:#16261C; --forest-deep:#1F3D28; --forest:#2B5336; --mid:#417C51;
+    --sage:#50795F; --sage-pale:#8fae86;
+    --honey:#C08B41; --honey-l:#D6A868; --honey-d:#b07d38;
+    --body-dark:#dfe9df;
+    --ink:#3A4240; --ink-l:#5C6663; --tint:#dbe7dd; --tint-l:#eef4ef;
+    --hairline:rgba(65,124,81,0.30); --rule-soft:rgba(65,124,81,0.12);
+    --wa:#31D24F; --wa-d:#28b843;
+    --face:'Raleway', Arial, Helvetica, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{background:#ffffff;}
+  body{font-family:var(--face);color:var(--ink);font-weight:400;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px;}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--honey);margin-bottom:14px;}
 
-:root{
-  --forest:#2B5336;
-  --mid:#417C51;
-  --sage:#50795F;
-  --sagefill:#E9F0EA;
-  --terracotta:#C08B41;
-  --honeylight:#D6A868;
-  --ink:#333333;
-  --palegreen:#dfe9df;
-  --veil:22,38,28;
-}
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative; min-height:92vh; overflow:hidden;
+    background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9cb028e29b3baf97db9dbc.png') center 45%/cover no-repeat;
+    display:flex; align-items:flex-end;
+  }
+  .hero .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(22,38,28,0.50) 0%, rgba(22,38,28,0.30) 40%, rgba(22,38,28,0.84) 100%);}
+  .hero-inner{position:relative;z-index:2;width:100%;max-width:960px;margin:0 auto;padding:0 24px 88px;}
+  .hero .kicker{color:var(--honey-l);}
+  .hero h1{font-size:clamp(44px,7vw,72px);font-weight:700;line-height:1.04;letter-spacing:-1px;color:#ffffff;max-width:760px;margin-bottom:20px;}
+  .hero h1 span{color:var(--honey-l);}
+  .hero p.sub{font-size:18px;color:var(--body-dark);max-width:600px;margin-bottom:26px;}
+  .hero .scrollhint{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sage-pale);}
 
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;background:#ffffff;}
-body{font-family:'Raleway',Arial,sans-serif;color:var(--ink);font-size:16px;line-height:1.7;}
+  /* ---------- SECTIONS ---------- */
+  section{padding:80px 0;}
+  h2{font-size:clamp(30px,4.5vw,40px);font-weight:700;line-height:1.12;letter-spacing:-0.5px;color:var(--ink);margin-bottom:18px;}
+  h2 span{color:var(--honey);}
+  p{margin-bottom:15px;max-width:640px;}
+  p.lede{font-size:18px;color:var(--ink-l);}
+  .dark{background:var(--ground);color:var(--body-dark);}
+  .dark h2{color:#ffffff;}
+  .dark h2 span{color:var(--honey-l);}
+  .dark .kicker{color:var(--honey-l);}
+  .dark p.lede{color:var(--body-dark);}
+  .forest{background:var(--forest);color:var(--body-dark);}
+  .forest h2{color:#ffffff;}
+  .forest h2 span{color:var(--honey-l);}
+  .forest .kicker{color:var(--honey-l);}
+  .forest p.lede{color:var(--body-dark);}
+  .tinted{background:var(--tint-l);}
 
-img{display:block;max-width:100%;height:auto;border:0;}
-a{color:inherit;}
+  /* buttons */
+  .btn{display:inline-block;background:var(--honey);color:#ffffff;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:17px 40px;border-radius:30px;text-decoration:none;}
+  .btn:hover{background:var(--honey-d);}
+  .btn.wa{background:var(--wa);}
+  .btn.wa:hover{background:var(--wa-d);}
 
-.page{max-width:820px;margin:0 auto;padding:0 24px;}
+  /* tick lists */
+  ul.ticks{list-style:none;margin:6px 0 18px;max-width:640px;}
+  ul.ticks li{position:relative;padding-left:28px;margin-bottom:6px;font-size:15px;line-height:1.6;}
+  ul.ticks li::before{content:"\2713";position:absolute;left:0;top:0;color:var(--honey);font-weight:700;}
+  .dark ul.ticks li,.forest ul.ticks li{color:var(--body-dark);}
+  .dark ul.ticks li::before,.forest ul.ticks li::before{color:var(--honey-l);}
 
-section{margin:64px 0;}
+  /* point of contact */
+  .contact-card{background:#ffffff;border:1px solid var(--hairline);border-radius:12px;padding:30px 28px;box-shadow:0 10px 26px rgba(43,83,54,0.10);margin-top:34px;max-width:760px;}
+  .contact-card p{max-width:none;}
+  .contact-row{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-end;border-top:1px solid var(--rule-soft);margin-top:24px;padding-top:24px;}
+  .contact-row .lab{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-bottom:12px;}
+  .contact-row .num{font-size:22px;font-weight:700;color:var(--forest-deep);text-decoration:none;letter-spacing:0.5px;}
 
-h1{font-size:clamp(38px,5vw,66px);font-weight:700;line-height:1.05;color:#ffffff;margin:0;}
-h2{font-size:30px;font-weight:700;line-height:1.25;color:var(--forest);margin:0 0 18px 0;}
-h3{font-size:22px;font-weight:700;line-height:1.3;color:var(--forest);margin:0 0 14px 0;}
-.accent{color:var(--terracotta);}
-p{margin:0 0 16px 0;}
-p:last-child{margin-bottom:0;}
+  /* journey */
+  .journey{display:grid;gap:16px;margin-top:38px;}
+  .jstep{background:#ffffff;border:1px solid var(--hairline);border-radius:12px;padding:26px 26px 22px;box-shadow:0 10px 26px rgba(43,83,54,0.10);display:grid;grid-template-columns:132px 1fr;gap:22px;align-items:start;color:var(--ink);}
+  .jstep .side{text-align:center;}
+  .jstep .disc{width:56px;height:56px;border-radius:50%;background:var(--honey);display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 12px;}
+  .jstep .sl{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);}
+  .jstep .t{display:block;font-weight:700;color:var(--forest-deep);font-size:19px;margin-bottom:8px;}
+  .jstep p{font-size:15px;color:var(--ink-l);line-height:1.65;margin-bottom:10px;max-width:none;}
+  .jstep ul.ticks{margin-bottom:8px;}
+  .jstep ul.ticks li{color:var(--ink-l);}
+  .jstep ul.ticks li::before{color:var(--honey);}
 
-.kicker{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--sage);margin:0 0 26px 0;}
-.center{text-align:center;}
+  /* on site badge */
+  .icon-lead{display:flex;align-items:center;gap:16px;margin:8px 0 22px;}
+  .icon-lead .disc{width:52px;height:52px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-size:22px;flex:0 0 52px;}
+  .dark .icon-lead .disc,.forest .icon-lead .disc{background:#3F6A4C;}
 
-.circle{display:flex;align-items:center;justify-content:center;border-radius:50%;flex:0 0 auto;}
+  /* faq */
+  .faq{max-width:760px;margin-top:30px;border-top:1px solid var(--rule-soft);}
+  .faq .qa{padding:24px 0;border-bottom:1px solid var(--rule-soft);}
+  .faq .q{display:block;font-weight:700;font-size:18px;color:var(--forest-deep);margin-bottom:8px;}
+  .faq p{max-width:none;margin-bottom:0;color:var(--ink-l);font-size:15px;line-height:1.65;}
 
-/* Logo band */
-.logoband{background:var(--forest);padding:18px 24px;}
-.logoband img{width:120px;margin:0 auto;}
+  /* video */
+  .video-band .frame{position:relative;border-radius:14px;overflow:hidden;box-shadow:0 18px 44px rgba(22,38,28,0.35);margin-top:36px;}
+  .video-band video{display:block;width:100%;height:auto;}
 
-/* Full bleed image bands with live type */
-.band{position:relative;width:100%;overflow:hidden;background:var(--forest);}
-.band img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
-.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(var(--veil),0.74) 0%,rgba(var(--veil),0.42) 50%,rgba(var(--veil),0.12) 100%);}
-.bandtext{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;justify-content:center;height:100%;}
-.band.hero{height:clamp(440px,64vh,680px);}
-.band.hero img{object-position:center 45%;}
-.band.visit{height:clamp(400px,56vh,600px);}
-.band.visit img{object-position:center 46%;}
-.rule{width:48px;height:2px;background:var(--terracotta);margin-bottom:18px;}
-.bandkicker{font-size:13px;font-weight:700;letter-spacing:5px;color:var(--honeylight);margin:0 0 20px 0;}
-.bandsub{font-size:17px;line-height:1.6;color:#ffffff;margin:22px 0 0 0;max-width:520px;}
+  /* range tiles */
+  .xgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px;}
+  .xtile{border-radius:12px;overflow:hidden;border:1px solid var(--hairline);background:#ffffff;color:var(--ink);}
+  .xtile img{display:block;width:100%;height:200px;object-fit:cover;}
+  .xtile .xlab{padding:16px 18px 18px;}
+  .xtile .xlab .t{display:block;font-weight:700;color:var(--forest-deep);font-size:16px;margin-bottom:4px;}
+  .xtile .xlab span{font-size:14px;color:var(--ink-l);line-height:1.55;}
+  @media (max-width:900px){.xgrid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.xgrid{grid-template-columns:1fr;}}
 
-/* Includes strip */
-.includes{background:var(--sagefill);border-radius:16px;padding:42px 44px;}
-.includes .row{display:flex;align-items:flex-start;gap:20px;margin-bottom:30px;}
-.includes .row:last-child{margin-bottom:0;}
-.includes .circle{width:50px;height:50px;background:var(--mid);font-size:22px;}
-.includes .row p{margin:0;font-size:15px;}
-.lead{font-weight:700;color:var(--forest);}
+  /* sign off */
+  .signoff{text-align:center;}
+  .signoff p{max-width:none;margin-bottom:4px;font-size:18px;}
 
-/* White on white card */
-.liftcard{background:#ffffff;border:1px solid rgba(65,124,81,0.16);border-radius:16px;box-shadow:0 12px 32px rgba(22,38,28,0.12);padding:40px 44px;}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;}
-.pair .liftcard{padding:34px 34px;}
-.pair h3{font-size:20px;}
-.pair p{font-size:15px;}
+  /* reveal on scroll */
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s ease;}
+  .js .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}}
 
-/* Dark panels */
-.panel{background:var(--forest);border-radius:14px;padding:42px 40px;color:var(--palegreen);}
-.panel h3{color:#ffffff;margin-bottom:22px;}
-.panel .accent{color:var(--honeylight);}
-.panel .kicker{color:var(--honeylight);}
-.caption{text-align:center;font-size:15px;line-height:1.6;color:var(--palegreen);margin:0 0 30px 0;}
-.watch{display:block;text-align:center;font-size:12px;font-weight:700;letter-spacing:3px;color:var(--honeylight);text-decoration:none;margin-top:18px;}
-.watch-terra{color:var(--terracotta);}
-.videoposter{border-radius:12px;overflow:hidden;}
-.videoposter img{width:100%;}
+  /* footer */
+  footer{background:var(--ground);color:var(--body-dark);text-align:center;padding:56px 0 48px;}
+  footer .rule{width:44px;border-top:1px solid rgba(143,174,134,0.25);margin:0 auto 26px;}
+  footer p{max-width:none;margin-bottom:6px;font-size:15px;}
+  footer .site{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);margin-top:20px;}
+  footer .site a{color:#ffffff;text-decoration:none;}
 
-/* Reels */
-.reels{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-
-/* Badges */
-.badges{display:grid;grid-template-columns:1fr 1fr 1fr;padding:34px 20px;}
-.badge{text-align:center;}
-.badge .circle{width:58px;height:58px;background:var(--mid);font-size:26px;margin:0 auto 12px auto;}
-.badge p{font-size:13px;font-weight:700;letter-spacing:1px;color:var(--forest);margin:0;}
-
-/* Visit cards */
-.visitcard{display:flex;align-items:center;gap:20px;background:#ffffff;border:1px solid rgba(65,124,81,0.18);border-radius:16px;box-shadow:0 10px 24px rgba(22,38,28,0.12);padding:26px 30px;margin-bottom:24px;}
-.visitcard .circle{width:54px;height:54px;background:var(--forest);font-size:24px;}
-.visitcard h4{margin:0 0 4px 0;font-size:17px;font-weight:700;color:var(--forest);}
-.visitcard p{margin:0;font-size:14px;}
-
-/* Pills */
-.pillrow{text-align:center;margin:56px 0;}
-.pill{display:inline-block;background:var(--terracotta);color:#ffffff;font-size:16px;font-weight:700;text-decoration:none;border-radius:32px;padding:16px 44px;}
-.pill-lg{font-size:18px;padding:18px 50px;}
-.pill-wa{background:#31D24F;font-size:15px;padding:12px 28px;}
-
-/* Delivery panel : two column */
-.delivery{display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:start;margin-top:30px;}
-.dlist .row{display:flex;align-items:flex-start;gap:18px;margin-bottom:26px;}
-.dlist .row:last-child{margin-bottom:0;}
-.dlist .circle{width:48px;height:48px;background:#3F6A4C;font-size:21px;}
-.dlist .circle.gold{background:var(--terracotta);}
-.dlist h4{margin:0 0 2px 0;font-size:15px;font-weight:700;color:#ffffff;}
-.dlist p{margin:0;font-size:14px;}
-
-/* Range pill */
-.rangepill{background:#ffffff;border:1px solid rgba(65,124,81,0.20);border-radius:70px;box-shadow:0 12px 32px rgba(22,38,28,0.12);padding:24px 32px;}
-.rangepill img{max-width:560px;margin:0 auto;}
-
-/* Product grid */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
-.tile{border:1px solid rgba(65,124,81,0.14);border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(22,38,28,0.08);}
-.tile img{width:100%;height:260px;object-fit:cover;}
-.tile img.natural{height:auto;object-fit:unset;}
-.tilelabel{background:var(--forest);border-top:3px solid var(--terracotta);padding:12px 16px;}
-.tilelabel p{margin:0;font-size:12px;font-weight:700;letter-spacing:2px;color:#ffffff;}
-
-/* Closing panel : journey plus action */
-.closing{text-align:center;}
-.journeysteps{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:start;gap:12px;margin-top:26px;}
-.step{display:flex;flex-direction:column;align-items:center;gap:12px;}
-.step .circle{width:50px;height:50px;background:#3F6A4C;font-size:22px;}
-.step.active .circle{width:58px;height:58px;background:var(--terracotta);font-size:25px;}
-.step p{margin:0;font-size:11px;letter-spacing:1px;color:#8fae86;}
-.step.active p{font-weight:700;color:#ffffff;}
-.closing .divider{height:1px;background:rgba(255,255,255,0.14);margin:38px 0 34px 0;}
-.closing h3{color:#ffffff;font-size:26px;margin-bottom:26px;}
-.closing .vatnote{font-size:13px;color:var(--palegreen);margin:24px 0 0 0;}
-
-/* Questions and sign-off */
-.questions{text-align:center;}
-.signoff{text-align:center;}
-.signature img{width:100%;}
-
-@media only screen and (max-width:720px){
-  body{font-size:15px;}
-  section{margin:48px 0;}
-  h2{font-size:25px;}
-  .bandtext{padding:0 24px;}
-  .band.hero{height:clamp(380px,60vh,520px);}
-  .band.visit{height:clamp(360px,54vh,480px);}
-  .includes,.liftcard,.panel{padding:24px 20px;}
-  .pair{grid-template-columns:1fr;}
-  .reels{gap:12px;}
-  .badges{grid-template-columns:1fr;gap:26px;}
-  .delivery{grid-template-columns:1fr;}
-  .delivery .videoposter{max-width:280px;margin:0 auto;}
-  .grid{grid-template-columns:1fr;}
-  .rangepill{border-radius:36px;padding:18px;}
-  .journeysteps{gap:6px;}
-  .step p{font-size:10px;}
-}
+  @media (max-width:720px){
+    .hero-inner{padding-bottom:64px;}
+    section{padding:60px 0;}
+    .jstep{grid-template-columns:1fr;gap:12px;}
+    .jstep .side{text-align:left;display:flex;align-items:center;gap:14px;}
+    .jstep .disc{margin:0;}
+  }
 </style>
 </head>
 <body>
 
-<!-- Logo band -->
-<div class="logoband">
-  <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
-</div>
-
-<!-- Hero : full bleed, live type -->
-<div class="band hero">
-  <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e0f66b2a8a6f150033b24.png" alt="A barrel sauna on a patio overlooking the Welsh countryside">
-  <div class="bandtext">
-    <div class="rule"></div>
-    <p class="bandkicker">BUILT BY HAND IN WALES</p>
-    <h1>This could be<br>your <span class="accent">garden</span></h1>
+<!-- HERO : plain garden build photo, dark veil, live heading -->
+<div class="hero">
+  <div class="veil"></div>
+  <div class="hero-inner">
+    <div class="kicker">Order confirmed</div>
+    <h1>Deposit <span>received</span></h1>
+    <p class="sub">Your deposit has been received. That secures your place in the order queue, and your project is now officially underway.</p>
+    <div class="scrollhint">Scroll to explore</div>
   </div>
 </div>
 
-<div class="page">
-
-  <!-- What comes with your build -->
-  <section>
-    <h2>What comes with your <span class="accent">build</span></h2>
-    <p>Now that you have your estimate, here is everything that is included.</p>
-    <div class="includes" style="margin-top:32px;">
-      <p class="kicker">WHAT YOUR ESTIMATE INCLUDES</p>
-      <div class="row">
-        <div class="circle">&#127794;</div>
-        <p><span class="lead">47mm treated thermowood walls.</span> Heat dried at 200&deg;C with up to 96&#37; of the moisture removed, or pinewood if you prefer.</p>
-      </div>
-      <div class="row">
-        <div class="circle">&#128297;</div>
-        <p><span class="lead">Stainless steel tightening bands and fixings</span> throughout, with double glazed windows and sandglass door options.</p>
-      </div>
-      <div class="row">
-        <div class="circle">&#129520;</div>
-        <p><span class="lead">Everything needed included:</span> benches with backrests, structural floor panels, lockable solid timber door, heater surround with fire protection, drainage, ventilation and volcanic stones.</p>
-      </div>
-    </div>
-
-    <div class="pair" style="margin-top:24px;">
-      <div class="liftcard">
-        <h3>Made to last a <span class="accent">lifetime</span></h3>
-        <p>We are a family run business. We hand build in our workshop down in Wales, and our products are built to last a lifetime.</p>
-      </div>
-      <div class="liftcard">
-        <h3>Not a kit. <span class="accent">Handmade</span> from the ground up</h3>
-        <p>We are not a kit sauna company that imports standard units. Every build leaves our workshop made to order, right down to our purpose built trailers, and everything needed to use it from day one is in your estimate.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Installs and happy clients -->
-  <section>
-    <h2 class="center">Check out some previous installs and <span class="accent">happy clients</span></h2>
-
-    <div class="panel" style="margin-top:30px;">
-      <div class="videoposter">
-        <a href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ccf19ff1a50b7322b5ef7.mp4" target="_blank"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa04d4f9ce7949849da216e.jpg" alt="James on one of our on-site installations. Click to watch."></a>
-      </div>
-      <a class="watch" href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ccf19ff1a50b7322b5ef7.mp4" target="_blank">CLICK TO WATCH</a>
-    </div>
-
-    <div class="reels" style="margin-top:24px;">
-      <div>
-        <div class="videoposter">
-          <a href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9f64d8730969fc0fc199a6.mp4" target="_blank"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9f6b74bcef8b5f2c339ba7.jpg" alt="A mobile sauna handover. Click to watch."></a>
-        </div>
-        <a class="watch watch-terra" href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9f64d8730969fc0fc199a6.mp4" target="_blank">CLICK TO WATCH</a>
-      </div>
-      <div>
-        <div class="videoposter">
-          <a href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9f64d84793a2d512baa8e1.mp4" target="_blank"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9f6cb7968770b81c56a8be.jpg" alt="A happy local client with her sauna. Click to watch."></a>
-        </div>
-        <a class="watch watch-terra" href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9f64d84793a2d512baa8e1.mp4" target="_blank">CLICK TO WATCH</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Meet the people -->
-  <section>
-    <div class="panel center">
-      <h3>Meet the <span class="accent">people</span> who you are buying from</h3>
-      <p class="caption">Here is Tim on who we are and how we build.</p>
-      <div class="videoposter">
-        <a href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a90bc82747464c6b3a2e03c.mp4" target="_blank"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9f7ad3968770b81c585767.jpg" alt="Tim on who we are and how we build. Click to watch."></a>
-      </div>
-      <a class="watch" href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a90bc82747464c6b3a2e03c.mp4" target="_blank">CLICK TO WATCH</a>
-    </div>
-  </section>
-
-  <!-- Badges -->
-  <section>
-    <div class="liftcard badges">
-      <div class="badge">
-        <div class="circle">&#128009;</div>
-        <p>Welsh family business</p>
-      </div>
-      <div class="badge">
-        <div class="circle">&#128296;</div>
-        <p>Handmade to order</p>
-      </div>
-      <div class="badge">
-        <div class="circle">&#127794;</div>
-        <p>Built to last</p>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- Come see us : full bleed, live type -->
-<div class="band visit">
-  <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9b307bac5d03a1095ebcb5.png" alt="Mobile saunas on trailers at golden hour in the Welsh valleys">
-  <div class="bandtext">
-    <p class="bandkicker">VISIT US</p>
-    <h1 style="font-size:clamp(30px,3.6vw,48px);">Come <span class="accent">see</span> us,<br>Make a <span class="accent">weekend</span> of it</h1>
-    <p class="bandsub">We are based in the Welsh valleys, near Brecon, with local walking routes all around.</p>
-  </div>
-</div>
-
-<div class="page">
-
-  <!-- Visit cards -->
-  <section>
-    <div class="visitcard">
-      <div class="circle">&#9978;</div>
-      <div>
-        <h4>Stay the night</h4>
-        <p>A local glamping site has one of <span class="lead" style="color:#C08B41;">our saunas</span> and one of <span class="lead" style="color:#C08B41;">our hot tubs</span>. Stay over and use them in a real setting.</p>
-      </div>
-    </div>
-    <div class="visitcard">
-      <div class="circle">&#128296;</div>
-      <div>
-        <h4>Tour the workshop</h4>
-        <p>Walk our workshop in Caerphilly and see your sauna being made by the people who build it.</p>
-      </div>
-    </div>
-    <div class="visitcard">
-      <div class="circle">&#129494;</div>
-      <div>
-        <h4>Try before you decide</h4>
-        <p>Use our saunas in commercial settings nearby and get a feel for the finished thing.</p>
-      </div>
-    </div>
-
-    <div class="pillrow">
-      <a class="pill" href="https://www.barrelsaunauk.com/showroom-bookings" target="_blank">Book a visit</a>
-    </div>
-  </section>
-
-  <!-- How your build arrives : two column -->
-  <section>
-    <div class="panel">
-      <p class="kicker">HOW YOUR BUILD ARRIVES</p>
-      <h3>Delivered and installed, <span class="accent">your way</span></h3>
-      <p>We deliver and install across the UK and Ireland, whichever route suits your space.</p>
-      <div class="delivery">
+<!-- YOUR POINT OF CONTACT -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Your point of contact</div>
+    <h2>Looking after you from <span>here</span></h2>
+    <div class="contact-card">
+      <p>Now that your order is in process, your design consultant hands you over to the team who will be looking after your build.</p>
+      <p>You will have a point of contact on WhatsApp, and our office number is always there if you would rather talk to someone.</p>
+      <p>You are in good hands, and there is nothing you need to do. We will be in touch at each stage as your build progresses.</p>
+      <div class="contact-row">
         <div>
-          <div class="videoposter">
-            <a href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a90250060935b340b64720a.mp4" target="_blank"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa04d4f16ed327815ad526f.jpg" alt="James explains how delivery works. Click to watch."></a>
-          </div>
-          <a class="watch" href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a90250060935b340b64720a.mp4" target="_blank">CLICK TO WATCH</a>
+          <div class="lab">WhatsApp</div>
+          <a class="btn wa" href="https://wa.me/447360274142">WhatsApp Us</a>
         </div>
-        <div class="dlist">
-          <div class="row">
-            <div class="circle">&#128666;</div>
-            <div>
-              <h4>Fully built, lifted into place</h4>
-              <p>Your sauna arrives pre built on a trailer, ready to lift into position by crane or forklift.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="circle">&#128296;</div>
-            <div>
-              <h4>Built on site</h4>
-              <p>For tricky access or premium designs, our team builds it right there in your space.</p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="circle gold">&#128656;</div>
-            <div>
-              <h4>Mobile saunas, business ready</h4>
-              <p>Mounted on our in house manufactured trailers and arriving ready to use, with internal feed wood burners and panoramic globe windows made in the UK. Take it to beaches, events and retreats, and test locations before committing to a fixed site.</p>
-            </div>
-          </div>
+        <div>
+          <div class="lab">Office</div>
+          <a class="num" href="tel:+447928998392">+44 7928 998392</a>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Our range -->
-  <section>
-    <p class="kicker center">OUR RANGE</p>
-    <div class="rangepill">
-      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e53d3b2a8a6f15009063b.png" alt="Barrel saunas, hot tubs, cold plunges, mobile saunas, the Double Dipper, glamping pods, shepherd's huts and showers">
-    </div>
-  </section>
-
-  <!-- Expo video -->
-  <section>
-    <div class="panel">
-      <p class="caption">Here's James at a recent expo walking through all our different products.</p>
-      <div class="videoposter">
-        <a href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e0fbeb81a3502a8901f0f.mp4" target="_blank"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa05f79dd867dc12dde0e34.jpg" alt="Our builds on show at the expo. Click to watch."></a>
-      </div>
-      <a class="watch" href="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e0fbeb81a3502a8901f0f.mp4" target="_blank">CLICK TO WATCH</a>
-    </div>
-  </section>
-
-  <!-- What we build -->
-  <section>
-    <h2>What we <span class="accent">build</span></h2>
-    <p>Everything below is handcrafted to order in the same workshop, by the same team.</p>
-    <div class="grid" style="margin-top:28px;">
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9b2fe280583b8e7062b397.png" alt="Barrel Saunas">
-        <div class="tilelabel"><p>BARREL SAUNAS</p></div>
-      </div>
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a99526f4f0181579a37499c.png" class="natural" alt="Hot Tubs">
-        <div class="tilelabel"><p>HOT TUBS</p></div>
-      </div>
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9948dc0ba3728cefed8a58.png" alt="Cold Plunges">
-        <div class="tilelabel"><p>COLD PLUNGES</p></div>
-      </div>
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a774d899994d35aa05de03f.jpg" alt="Mobile Saunas">
-        <div class="tilelabel"><p>MOBILE SAUNAS</p></div>
-      </div>
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa154a69416bfd5312819bc.jpg" alt="The Double Dipper">
-        <div class="tilelabel"><p>THE DOUBLE DIPPER</p></div>
-      </div>
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa1597bd953a0128b482fe8.jpg" class="natural" alt="Glamping Pods">
-        <div class="tilelabel"><p>GLAMPING PODS</p></div>
-      </div>
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9c80a3ff1a50b732255b1c.png" alt="Shepherd's Huts">
-        <div class="tilelabel"><p>SHEPHERD'S HUTS</p></div>
-      </div>
-      <div class="tile">
-        <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa1585dbfc1456f8c80e600.jpg" class="natural" alt="Showers">
-        <div class="tilelabel"><p>SHOWERS</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Closing panel : where you are, then the action -->
-  <section>
-    <div class="panel closing">
-      <p class="kicker" style="margin-bottom:0;">WHERE YOU ARE RIGHT NOW</p>
-      <div class="journeysteps">
-        <div class="step active">
-          <div class="circle">&#128196;</div>
-          <p>ESTIMATE RECEIVED</p>
-        </div>
-        <div class="step">
-          <div class="circle">&#128183;</div>
-          <p>PAY DEPOSIT</p>
-        </div>
-        <div class="step">
-          <div class="circle">&#128296;</div>
-          <p>ENTER BUILD QUEUE</p>
-        </div>
-      </div>
-      <div class="divider"></div>
-      <h3>Secure your <span class="accent">place</span> in the order queue</h3>
-      <a class="pill pill-lg" href="https://www.barrelsaunauk.com/secure-your-build" target="_blank">Pay your &pound;500 deposit</a>
-      <p class="vatnote">Your estimate price excludes VAT, stated separately on your itemised estimate.</p>
-    </div>
-  </section>
-
-  <!-- Questions -->
-  <section class="questions">
-    <div class="liftcard">
-      <p>Questions first? Reply to the email your estimate arrived with or</p>
-      <a class="pill pill-wa" style="margin-top:22px;" href="https://wa.me/447360274142" target="_blank">WhatsApp Us</a>
-    </div>
-  </section>
-
-  <!-- Sign-off -->
-  <section class="signoff">
-    <p>Speak soon,<br><span style="font-weight:700;color:#2B5336;">The Barrel Sauna UK Team</span></p>
-  </section>
-
-  <!-- Signature -->
-  <div class="signature">
-    <a href="https://www.barrelsaunauk.com"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Barrel Sauna UK, bespoke, made to order. info@barrelsaunauk.com, +44 2920 676731, WhatsApp +44 7360 274142, www.barrelsaunauk.com"></a>
   </div>
+</section>
 
-</div>
+<!-- BUILT TO ORDER + YOUR JOURNEY : forest band, five white cards -->
+<section class="forest">
+  <div class="wrap reveal">
+    <div class="kicker">Built to order</div>
+    <p class="lede">Our admin team will now begin ordering the materials and components required specifically for your build before it moves into production.</p>
+    <p class="lede">Every product we manufacture is built to order. Nothing is taken from stock, meaning every project follows its own commissioning process.</p>
 
+    <h2 style="margin-top:48px;">Your <span>journey</span></h2>
+    <div class="journey">
+
+      <div class="jstep">
+        <div class="side"><div class="disc">🤝</div><div class="sl">Step 1</div></div>
+        <div>
+          <span class="t">Order Confirmed</span>
+          <p>Your order has been received and entered into our production system.</p>
+          <p>Your dedicated customer profile is now created and our team begins coordinating everything required for your build.</p>
+        </div>
+      </div>
+
+      <div class="jstep">
+        <div class="side"><div class="disc">🌲</div><div class="sl">Step 2</div></div>
+        <div>
+          <span class="t">Materials Ordered</span>
+          <p>Unlike mass-produced products, every order requires its own materials to be commissioned.</p>
+          <p>This may include:</p>
+          <ul class="ticks">
+            <li>Thermowood or Nordic Spruce</li>
+            <li>Bespoke windows</li>
+            <li>Custom timber rings</li>
+            <li>Harvia heater</li>
+            <li>Lighting</li>
+            <li>Roofing</li>
+            <li>Glass</li>
+            <li>Electrical components</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="jstep">
+        <div class="side"><div class="disc">🔨</div><div class="sl">Step 3</div></div>
+        <div>
+          <span class="t">Production Queue</span>
+          <p>Once all required materials are available, your order progresses through our production schedule.</p>
+          <p>Because every project is bespoke, no two builds are ever identical. Build times naturally vary depending on specification and complexity.</p>
+        </div>
+      </div>
+
+      <div class="jstep">
+        <div class="side"><div class="disc">📞</div><div class="sl">Step 4</div></div>
+        <div>
+          <span class="t">Production Update</span>
+          <p>Around 6 weeks after ordering, one of our admin team will usually contact you with an update on your project.</p>
+          <p>By this stage we generally have a much clearer picture of:</p>
+          <ul class="ticks">
+            <li>Progress</li>
+            <li>Production status</li>
+            <li>Estimated completion window</li>
+            <li>Installation planning</li>
+          </ul>
+          <p>If there is important information before then, we'll of course get in touch sooner.</p>
+        </div>
+      </div>
+
+      <div class="jstep">
+        <div class="side"><div class="disc">📅</div><div class="sl">Step 5</div></div>
+        <div>
+          <span class="t">Installation Scheduling</span>
+          <p>Once production is nearing completion, our scheduling team will contact you to arrange delivery or installation.</p>
+          <p>This is normally 2 to 3 weeks after your production update, although this can vary depending on location, installation type and current workload.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- IF WE'RE BUILDING ON SITE -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">If we're building on site</div>
+    <h2>Most builds are done in <span>one visit</span></h2>
+    <div class="icon-lead"><div class="disc">🏠</div><p class="lede" style="margin:0;">The majority of the time our team arrives with everything needed and completes the build in one go.</p></div>
+    <p>Before then, we will be in touch to check that everything is workable at your property, including access for the team and materials.</p>
+    <p>Occasionally, depending on your location within our installation route, it works better to do things a little differently. The team may:</p>
+    <ul class="ticks">
+      <li>Arrive with all materials ready to begin immediately</li>
+      <li>Have materials delivered beforehand</li>
+      <li>Begin groundwork or decking before the main structure is assembled</li>
+    </ul>
+    <p>Where materials do arrive a day or two ahead, it allows our carpentry team to maximise their time on site rather than travelling back and forth to Wales.</p>
+  </div>
+</section>
+
+<!-- INSTALLATION WINDOWS : dark band -->
+<section class="dark">
+  <div class="wrap reveal">
+    <div class="kicker">Installation windows</div>
+    <h2>Why we give windows rather than <span>exact dates</span></h2>
+    <p class="lede">Many customers ask why we provide installation windows rather than exact dates, and it is a fair question.</p>
+    <p>It comes down to the fact that every installation is a little different.</p>
+    <p>For example, if the project immediately before yours requires additional groundwork, decking or unexpected site work, our team cannot simply leave that customer halfway through to arrive on another job.</p>
+    <p>The same courtesy would be extended to you should your installation require additional time.</p>
+    <p>Giving you a realistic window means we can finish every project to the standard it deserves, including yours.</p>
+  </div>
+</section>
+
+<!-- MOBILE SAUNA CUSTOMERS : tinted -->
+<section class="tinted">
+  <div class="wrap reveal">
+    <div class="kicker">Mobile sauna customers</div>
+    <h2>DVSA testing before <span>handover</span></h2>
+    <div class="icon-lead"><div class="disc">🚐</div><p class="lede" style="margin:0;">Your trailer must successfully complete DVSA testing before handover.</p></div>
+    <p>Testing dates are booked in advance and often give us the first reliable indication of your estimated completion date.</p>
+    <p>Once your test date is confirmed, we'll be able to provide a much more accurate delivery window.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap reveal">
+    <div class="kicker">Frequently asked questions</div>
+    <h2>Answers to what <span>most people ask</span></h2>
+    <div class="faq">
+      <div class="qa">
+        <span class="q">Can I make changes to my order?</span>
+        <p>Minor changes may be possible before production begins. Once materials have been ordered or manufacturing has started, changes may not be possible or may incur additional costs.</p>
+      </div>
+      <div class="qa">
+        <span class="q">When will I hear from you?</span>
+        <p>Typically around the 6 week mark, unless we need to contact you sooner.</p>
+      </div>
+      <div class="qa">
+        <span class="q">Can I get weekly updates?</span>
+        <p>As every project is bespoke, we generally contact customers at key milestones rather than sending routine updates.</p>
+      </div>
+      <div class="qa">
+        <span class="q">Can my installation date change?</span>
+        <p>Occasionally, yes. Factors such as weather, previous installations or supplier lead times can affect scheduling. We'll always keep you informed of any significant changes.</p>
+      </div>
+      <div class="qa">
+        <span class="q">Can I add additional items to my order?</span>
+        <p>Yes. We build everything that complements saunas, in a similar style and using the same materials so it all matches aesthetically. If you are considering anything further, it is worth doing so as early as possible. That way we can aim to bring everything at once and save you on delivery costs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHILE YOU WAIT : dark band, expo video, range tiles -->
+<section class="dark video-band">
+  <div class="wrap reveal">
+    <div class="kicker">While you wait</div>
+    <h2>What else can we <span>build?</span></h2>
+    <p class="lede">Everything we make is built in the same style and from the same materials, so anything you add sits alongside your sauna as though it was always meant to be there.</p>
+    <div class="frame">
+      <video controls preload="metadata" poster="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa05f79dd867dc12dde0e34.jpg">
+        <source src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e0fbeb81a3502a8901f0f.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="xgrid">
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9b2fe280583b8e7062b397.png" alt="Barrel sauna"><div class="xlab"><span class="t">Barrel saunas</span><span>Bespoke barrel saunas, made to order.</span></div></div>
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a994bc9174710d6163e3c4b.png" alt="Hot tub"><div class="xlab"><span class="t">Hot tubs</span><span>Wood-fired and electric hot tubs, built to order.</span></div></div>
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9948dc0ba3728cefed8a58.png" alt="Cold plunge"><div class="xlab"><span class="t">Cold plunges</span><span>Pictured: the single cold plunge, a great companion to a compact sauna.</span></div></div>
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a774d899994d35aa05de03f.jpg" alt="Mobile sauna trailer"><div class="xlab"><span class="t">Mobile saunas</span><span>A complete mobile sauna, built as one unit on its own custom trailer.</span></div></div>
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa154a69416bfd5312819bc.jpg" alt="The Double Dipper"><div class="xlab"><span class="t">The Double Dipper</span><span>Hot tub and cold plunge in one build.</span></div></div>
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa1597bd953a0128b482fe8.jpg" alt="Glamping pod"><div class="xlab"><span class="t">Glamping pods</span><span>Pods for gardens and glamping sites.</span></div></div>
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9c80a3e29b3baf97d7ca43.png" alt="Shepherd's hut"><div class="xlab"><span class="t">Shepherd's huts</span><span>Traditional huts, built to order.</span></div></div>
+      <div class="xtile"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa526c7df2d0155532ed538.jpg" alt="Outdoor shower"><div class="xlab"><span class="t">Showers</span><span>A perfect match with a sauna or hot tub, especially for commercial builds.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN OFF -->
+<section class="signoff">
+  <div class="wrap reveal">
+    <p>Speak soon,</p>
+    <p>The Barrel Sauna UK Team</p>
+  </div>
+</section>
+
+<footer>
+  <div class="rule"></div>
+  <div style="display:inline-block;background:#ffffff;border-radius:14px;padding:16px;max-width:560px;width:92%;box-shadow:0 14px 36px rgba(0,0,0,0.35);margin-bottom:10px;">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="The Barrel Sauna UK Team" style="display:block;width:100%;height:auto;border-radius:8px;">
+  </div>
+  <div class="site">Barrel Sauna UK · <a href="https://barrelsaunauk.com">barrelsaunauk.com</a></div>
+</footer>
+
+<script>
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold: 0.15});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+</script>
 </body>
 </html>
