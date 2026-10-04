@@ -4,7 +4,7 @@
 <script>document.documentElement.classList.add("js");</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Build Estimate | Barrel Sauna UK</title>
+<title>Your Build Estimate | Fernhollow Garden Centre and Barrel Sauna UK</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative; min-height:92vh; overflow:hidden;
-    background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e0f664ea183e872a18be6.png') center 45%/cover no-repeat;
+    background:url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac12ab722bc27f58f3570e5.jpg') center 50%/cover no-repeat;
     display:flex; align-items:flex-end;
   }
   .hero .veil{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg, rgba(22,38,28,0.55) 0%, rgba(22,38,28,0.35) 40%, rgba(22,38,28,0.82) 100%);}
@@ -235,49 +235,102 @@
     .visitcard{padding:20px 18px;}
   }
 
-  /* ===== white label: in partnership with ===== */
-  .cobrand{position:absolute;top:0;left:0;right:0;z-index:3;}
-  .cobrand-in{max-width:960px;margin:0 auto;padding:22px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
-  .cobrand .bsuk img{height:46px;width:auto;display:block;}
-  .cobrand .x{width:1px;height:40px;background:rgba(214,168,104,0.55);}
-  .cobrand .with{font-size:11px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--honey-l);}
-  .cobrand .plogo{background:#ffffff;border-radius:14px;padding:8px 14px;display:flex;align-items:center;min-height:46px;box-shadow:0 8px 24px rgba(0,0,0,0.25);}
-  .cobrand .plogo img{height:34px;width:auto;max-width:180px;display:block;}
-  .cobrand .pname{font-size:15px;font-weight:700;color:var(--forest-deep);}
-  .cobrand .plogo img[hidden], .cobrand .pname[hidden]{display:none;}
-  .partnerline{margin-top:18px;font-size:13px;letter-spacing:0.5px;color:var(--sage-pale);}
-  .partnerline span{color:#ffffff;font-weight:700;}
-  @media (max-width:640px){
-    .cobrand-in{padding:16px 18px;gap:10px;}
-    .cobrand .bsuk img{height:34px;}
-    .cobrand .x{height:30px;}
-    .cobrand .with{font-size:9px;letter-spacing:0.2em;width:100%;order:3;}
-    .cobrand .plogo{min-height:38px;padding:6px 10px;}
-    .cobrand .plogo img{height:26px;}
+  /* ===== partnership strip (EDIT PARTNER logo block only) ===== */
+  .pship{background:var(--ground);border-bottom:1px solid rgba(214,168,104,0.25);}
+  .pship-in{max-width:960px;margin:0 auto;padding:26px 24px 20px;}
+  .pship .halves{display:grid;grid-template-columns:1fr 1px 1fr;align-items:center;}
+  .pship .half{display:flex;align-items:center;justify-content:center;min-height:86px;padding:0 18px;}
+  .pship .rule{width:1px;height:76px;background:rgba(214,168,104,0.55);}
+  .pship .bsuk img{height:72px;width:auto;display:block;}
+  .pship .tag{text-align:center;margin-top:14px;font-size:11px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--honey-l);}
+  /* demo partner mark, drawn as text. Real partners: swap for an img */
+  .gmark{display:flex;align-items:center;gap:12px;color:#ffffff;}
+  .gmark svg{width:46px;height:46px;display:block;flex:0 0 auto;}
+  .gmark .n{display:block;font-size:30px;font-weight:700;letter-spacing:-0.3px;line-height:1;}
+  .gmark .s{display:block;font-size:10px;font-weight:700;letter-spacing:0.36em;text-transform:uppercase;color:var(--sage-pale);margin-top:6px;}
+  .hero{min-height:84vh;}
+
+  /* placeholder chips: anything still to be set */
+  .tbc{display:inline-block;background:#ffffff;border:1.5px dashed var(--honey);color:var(--honey);border-radius:30px;padding:3px 12px;font-size:13px;font-weight:700;letter-spacing:0.3px;white-space:nowrap;}
+  .dark .tbc,.deposit .tbc{background:transparent;border-color:var(--honey-l);color:var(--honey-l);}
+
+  /* your contact */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px;text-align:left;}
+  .contact .liftcard{padding:30px 32px;}
+  .contact .lab{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin:0 0 10px 0;}
+  .contact .who{font-size:20px;font-weight:700;color:var(--forest-deep);margin:0 0 14px 0;}
+  .contact .crow{display:flex;align-items:center;gap:12px;margin-bottom:10px;font-size:15px;}
+  .contact .crow:last-child{margin-bottom:0;}
+  .contact .circle{width:38px;height:38px;background:var(--forest);font-size:17px;}
+  .contact .warow{justify-content:flex-start;margin-top:4px;}
+  .discount{margin:22px auto 0;max-width:480px;border:1px solid rgba(214,168,104,0.45);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--body-dark);}
+  .discount .dl{display:block;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--honey-l);margin-bottom:6px;}
+  .pfoot{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);margin-top:8px;}
+  @media (max-width:720px){
+    .pship-in{padding:18px 14px 14px;}
+    .pship .half{min-height:60px;padding:0 10px;}
+    .pship .rule{height:54px;}
+    .pship .bsuk img{height:48px;}
+    .gmark{gap:8px;}
+    .gmark svg{width:30px;height:30px;}
+    .gmark .n{font-size:19px;}
+    .gmark .s{font-size:7px;letter-spacing:0.24em;}
+    .pship .tag{font-size:9px;letter-spacing:0.26em;}
+    .contact{grid-template-columns:1fr;}
+    .contact .liftcard{padding:24px 20px;}
   }
 </style>
 </head>
 <body>
 
+<!-- PARTNERSHIP STRIP : EDIT PARTNER logo in the left half -->
+<header class="pship">
+  <div class="pship-in">
+    <div class="halves">
+      <div class="half partner">
+        <!-- EDIT PARTNER: demo logo drawn as text. For a real partner replace with <img src="PARTNER-LOGO-URL" alt="PARTNER NAME" style="height:72px;width:auto;display:block;"> -->
+        <div class="gmark" aria-label="Fernhollow Garden Centre">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 36V14" stroke="#8fae86" stroke-width="2" stroke-linecap="round"/><path d="M20 22c-7 0-12-5-12-12 7 0 12 5 12 12Z" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/><path d="M20 18c6 0 11-4 11-11-6 0-11 4-11 11Z" stroke="#ffffff" stroke-width="2" stroke-linejoin="round"/></svg>
+          <div><span class="n">Fernhollow</span><span class="s">Garden Centre</span></div>
+        </div>
+      </div>
+      <div class="rule"></div>
+      <div class="half bsuk"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK"></div>
+    </div>
+    <div class="tag">In partnership</div>
+  </div>
+</header>
+
 <!-- HERO -->
 <div class="hero">
   <div class="veil"></div>
-  <div class="cobrand">
-    <div class="cobrand-in">
-      <div class="bsuk"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK"></div>
-      <div class="x"></div>
-      <div class="with">In partnership with</div>
-      <div class="plogo"><img id="pLogo" src="" alt="" hidden><span class="pname" id="pName">Your partner</span></div>
-    </div>
-  </div>
   <div class="hero-inner">
     <div class="kicker">Your Build Estimate</div>
     <h1>This could be <span>your</span> garden</h1>
-    <p class="sub">Thank you for talking your build through with us. Your estimate is in your email, and this page walks you through everything that comes with it.</p>
+    <!-- EDIT PARTNER: name in the lede -->
+    <p class="sub">Thank you for planning your build with Fernhollow Garden Centre. We build it, and once your deposit is in, we take care of you from there.</p>
     <a class="btn" href="#deposit">Secure your build</a>
     <div class="scrollhint">Scroll to explore</div>
   </div>
 </div>
+
+<!-- WHO DOES WHAT : EDIT PARTNER name -->
+<section class="tight-bottom">
+  <div class="wrap reveal">
+    <div class="pair">
+      <div class="liftcard">
+        <p class="lab" style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin:0 0 10px 0;">Before your deposit</p>
+        <h3>Fernhollow Garden Centre</h3>
+        <p>Your consultation, your estimate, and any questions before your deposit.</p>
+      </div>
+      <div class="liftcard">
+        <p class="lab" style="font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin:0 0 10px 0;">After your deposit</p>
+        <h3>Barrel Sauna UK</h3>
+        <p>Your invoice, your build, installation and aftercare.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- WHAT COMES WITH YOUR BUILD -->
 <section>
@@ -322,7 +375,7 @@
     <p class="lede">Here is how it works from here.</p>
     <div class="steps">
       <div class="step"><div class="num">1</div><span class="t">Your estimate arrives</span><span>An itemised estimate lands in your inbox with everything we agreed, priced line by line.</span></div>
-      <div class="step"><div class="num">2</div><span class="t">A £500 deposit secures your place</span><span>Your deposit holds your spot in the order queue. Once it is paid, we send your invoice for the full build.</span></div>
+      <div class="step"><div class="num">2</div><span class="t">A £500 deposit through Fernhollow secures your place</span><span>Your deposit holds your spot in the order queue. Once it is paid, we send your invoice for the full build.</span></div>
       <div class="step"><div class="num">3</div><span class="t">The £500 comes off your total</span><span>That invoice is live: your deposit comes straight off the total. Nothing is paid twice.</span></div>
     </div>
     <p style="margin-top:34px;">If anything in the estimate is not clear, or you want to change something before you pay the deposit, just reply to your email. We are ready to help.</p>
@@ -566,21 +619,35 @@
     </div>
     <div class="kicker">Ready To Move Forward?</div>
     <h2>Secure your place in the <span>order queue</span></h2>
+    <!-- EDIT PARTNER: their own £500 deposit link -->
     <a class="btn" id="depBtn" href="https://www.barrelsaunauk.com/secure-your-build">Pay your £500 deposit</a>
     <p class="price-note">Your estimate price excludes VAT, stated separately on your itemised estimate.</p>
+    <!-- EDIT PARTNER: client discount line -->
+    <div class="discount"><span class="dl">Fernhollow Garden Centre client discount</span><span class="tbc">Set by James</span></div>
   </div>
 </section>
 
-<!-- QUESTIONS FIRST -->
+<!-- QUESTIONS FIRST + YOUR CONTACT -->
 <section>
   <div class="wrap reveal questions">
-<div class="liftcard qcard">
-      <div class="qdisc">&#128172;</div>
-      <h3>Questions <span class="accent">first?</span></h3>
-      <p>Reply to the email your estimate arrived with, or message us on WhatsApp.</p>
-      <div class="warow">
-        <a href="https://wa.me/447360274142" target="_blank"><img class="waicon" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaa9f6ba84eda365a948cac.png" alt="WhatsApp"></a>
-        <a class="btn wa" href="https://wa.me/447360274142" target="_blank">WhatsApp us</a>
+    <div class="qdisc">&#128172;</div>
+    <h3 style="font-size:28px;margin-bottom:8px;">Questions <span class="accent">first?</span></h3>
+    <p style="max-width:520px;margin:0 auto;">Before your deposit, ask your contact at Fernhollow. After it, message us on WhatsApp.</p>
+    <div class="contact">
+      <div class="liftcard">
+        <p class="lab">Your contact at Fernhollow Garden Centre</p>
+        <!-- EDIT PARTNER: contact name, phone, email -->
+        <p class="who"><span class="tbc">Contact name</span></p>
+        <div class="crow"><div class="circle">&#128222;</div><span class="tbc">Phone</span></div>
+        <div class="crow"><div class="circle">&#9993;&#65039;</div><span class="tbc">Email</span></div>
+      </div>
+      <div class="liftcard">
+        <p class="lab">Barrel Sauna UK</p>
+        <p class="who">The build team</p>
+        <div class="warow">
+          <a href="https://wa.me/447360274142" target="_blank"><img class="waicon" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aaa9f6ba84eda365a948cac.png" alt="WhatsApp"></a>
+          <a class="btn wa" href="https://wa.me/447360274142" target="_blank">WhatsApp us</a>
+        </div>
       </div>
     </div>
   </div>
@@ -593,6 +660,7 @@
     <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="The Barrel Sauna UK Team" style="display:block;width:100%;height:auto;border-radius:8px;">
   </div>
   <div class="site">Barrel Sauna UK · <a href="https://barrelsaunauk.com">barrelsaunauk.com</a></div>
+  <div class="pfoot">In partnership with Fernhollow Garden Centre, demo partner &nbsp;&middot;&nbsp; v3</div>
 </footer>
 
 <script>
@@ -602,22 +670,5 @@
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 </script>
 
-<script>
-  (function(){
-    var q = new URLSearchParams(window.location.search);
-    function clean(v){ return (v || '').replace(/[<>"]/g, '').trim(); }
-    var name = clean(q.get('partner'));
-    var logo = clean(q.get('logo'));
-    var dep = clean(q.get('deposit'));
-    var nm = document.getElementById('pName');
-    var lg = document.getElementById('pLogo');
-    if(name){ nm.textContent = name; document.title = 'Your Build Estimate | Barrel Sauna UK with ' + name; }
-    if(logo && /^https:\/\//.test(logo)){
-      lg.src = logo; lg.alt = name || 'Partner logo'; lg.hidden = false; nm.hidden = true;
-      lg.onerror = function(){ lg.hidden = true; nm.hidden = false; };
-    }
-    if(dep && /^https:\/\//.test(dep)){ document.getElementById('depBtn').href = dep; }
-  })();
-</script>
 </body>
 </html>
