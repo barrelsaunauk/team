@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Earnings | Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ground: #16261C;
+  --forest-deep: #1F3D28;
+  --forest: #2B5336;
+  --mid: #417C51;
+  --sage: #50795F;
+  --sage-pale: #8fae86;
+  --honey: #C08B41;
+  --honey-d: #b07d38;
+  --honey-l: #D6A868;
+  --tint: #dbe7dd;
+  --tint-l: #eef4ef;
+  --ink: #3A4240;
+  --ink-l: #5C6663;
+  --body-dark: #dfe9df;
+  --dead: #8a938f;
+  --dead-border: #c9cfcb;
+  --red: #B7332F;
+  --hairline: rgba(65,124,81,0.30);
+  --rule-soft: rgba(65,124,81,0.12);
+  --shadow: 0 10px 30px rgba(22,38,28,0.12);
+  --face: 'Raleway', Arial, Helvetica, sans-serif;
+  --pad: 28px;
+}
+
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+html, body { max-width: 100%; overflow-x: clip; }
+body {
+  margin: 0;
+  background: #ffffff;
+  font-family: var(--face);
+  color: var(--ink);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.bleed { width: 100%; }
+.w7, .b { font-weight: 700; }
+.b { color: var(--forest-deep); }
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  min-height: 56vh;
+  display: flex;
+  align-items: flex-end;
+  background:
+    linear-gradient(180deg, rgba(22,38,28,0.42) 0%, rgba(22,38,28,0.18) 45%, rgba(22,38,28,0.88) 100%),
+    url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a59b9f8b31b6abd27b54.jpg') 62% 48% / cover no-repeat,
+    var(--forest-deep);
+}
+.hero__logo {
+  position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 760px; padding: 0 16px;
+}
+.hero__logo img { width: 92px; height: auto; display: block; }
+.hero__inner {
+  width: 100%; max-width: 760px; margin: 0 auto; padding: 120px 16px 44px 16px;
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+}
+.hero__text { flex: 1 1 auto; min-width: 0; }
+.hero__dash { width: 44px; height: 2px; background: var(--honey-l); margin: 0 0 14px 0; }
+.hero__kicker {
+  font-size: 12px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--honey-l); margin: 0 0 10px 0;
+}
+.hero h1 {
+  font-size: 46px; font-weight: 700; line-height: 1.06; letter-spacing: -0.5px;
+  color: #fff; margin: 0 0 12px 0;
+}
+.hero h1 span { color: var(--honey-l); }
+.hero__lede { font-size: 16px; color: #e9eee4; line-height: 1.6; margin: 0; max-width: 460px; }
+.hero__draw { flex: 0 0 170px; display: flex; justify-content: flex-end; }
+.hero__draw img { width: 170px; height: auto; display: block; }
+
+/* ================= STICKY BAR ================= */
+.bar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,0.96);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.bar .wrap { padding-top: 12px; padding-bottom: 12px; }
+.modes {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;
+  background: var(--tint-l); border-radius: 30px; padding: 5px; margin: 0;
+}
+.modes button {
+  font-family: var(--face); font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; border: 0; border-radius: 30px; padding: 11px 8px;
+  background: transparent; color: var(--ink-l); cursor: pointer;
+}
+.modes button.on { background: var(--forest-deep); color: #fff; }
+.facts-only { display: none; margin-top: 12px; }
+body.t-facts .facts-only { display: block; }
+
+.steps { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.steps::-webkit-scrollbar { display: none; }
+.steps button {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 6px;
+  background: transparent; border: 0; cursor: pointer; padding: 2px 6px; font-family: var(--face);
+  position: relative;
+}
+.steps button:not(:last-child)::after {
+  content: ''; position: absolute; top: 14px; left: calc(50% + 18px); right: calc(-50% + 18px);
+  height: 2px; background: var(--tint);
+}
+.steps button.done:not(:last-child)::after { background: var(--mid); }
+.steps .sd {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--tint);
+  color: var(--forest-deep); font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;
+}
+.steps .sl {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--dead); white-space: nowrap;
+}
+.steps button.done .sd { background: var(--mid); color: #fff; }
+.steps button.now .sd { background: var(--honey); color: #fff; }
+.steps button.now .sl, .steps button.done .sl { color: var(--forest-deep); }
+.readcount { margin: 8px 0 0 0; text-align: center; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--sage); }
+
+/* ================= RESTORE ================= */
+.restore {
+  display: none; align-items: center; justify-content: space-between; gap: 14px;
+  background: #fff; border: 1px solid var(--hairline); border-radius: 16px;
+  padding: 14px 18px; margin: 22px 0 0 0;
+}
+.restore.show { display: flex; }
+.restore p { margin: 0; font-size: 14px; color: var(--ink); line-height: 1.6; }
+.restore__btns { display: flex; gap: 8px; flex-shrink: 0; }
+
+/* ================= TABS ================= */
+.tab { display: none; }
+.tab.on { display: block; }
+
+/* ================= SECTIONS ================= */
+.sec { padding: 34px 0 0 0; scroll-margin-top: 150px; }
+.sec__head { display: flex; align-items: flex-start; gap: 14px; margin: 0 0 18px 0; }
+.sec__num {
+  flex: 0 0 34px; height: 34px; border-radius: 50%; background: var(--forest-deep);
+  color: #fff; font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; margin-top: 2px;
+}
+.kicker {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--honey); margin: 0 0 6px 0;
+}
+.sec h2 { font-size: 26px; font-weight: 700; line-height: 1.2; color: var(--forest-deep); margin: 0; }
+.sec h2 span { color: var(--honey); }
+.got {
+  margin-left: auto; flex-shrink: 0; font-family: var(--face); font-size: 12px; font-weight: 700; letter-spacing: 0.5px;
+  padding: 8px 14px; border: 1px solid var(--hairline); border-radius: 30px; background: #fff; color: var(--ink-l); cursor: pointer; white-space: nowrap;
+}
+.got.on { background: var(--mid); border-color: var(--mid); color: #fff; }
+
+.label {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sage); margin: 0 0 8px 0;
+}
+.prose { font-size: 15px; color: var(--ink); line-height: 1.75; margin: 0 0 18px 0; }
+
+/* cards: spec cards and Q&A cards share the handover card */
+.card, .spec {
+  background: #fff; border: 1px solid var(--rule-soft); border-radius: 22px;
+  box-shadow: var(--shadow); padding: var(--pad);
+}
+.card + .card, .spec + .spec, .spec-note + .spec, .card + .spec { margin-top: 14px; }
+.sec > .spec-note { margin: 0 0 14px 0; }
+
+/* spec content */
+.spec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; margin: 0 0 6px 0; flex-wrap: wrap; }
+.spec-head h3 { font-size: 18px; font-weight: 700; color: var(--forest-deep); line-height: 1.3; margin: 0; }
+.spec-head .mark { height: 64px; width: auto; display: block; margin-left: auto; }
+.spec-price { font-size: 14px; font-weight: 700; color: var(--honey); white-space: nowrap; }
+.spec-price.inc { color: var(--ink-l); }
+.spec-sub { font-size: 14px; color: var(--ink-l); line-height: 1.7; margin: 0 0 14px 0; }
+.say { font-size: 15px; color: var(--ink); line-height: 1.75; margin: 0 0 14px 0; }
+.say p { margin: 0 0 10px 0; }
+.say p:last-child { margin-bottom: 0; }
+.spec-grid { margin: 0 0 4px 0; display: grid; grid-template-columns: auto 1fr; gap: 0 18px; font-size: 14px; }
+.spec-grid dt { color: var(--sage); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 0; border-bottom: 1px solid var(--rule-soft); white-space: nowrap; margin: 0; }
+.spec-grid dd { color: var(--ink); line-height: 1.6; padding: 12px 0; border-bottom: 1px solid var(--rule-soft); margin: 0; }
+.spec-grid dd.spec-price { white-space: normal; }
+.spec-note { font-size: 14px; line-height: 1.7; color: var(--ink); margin: 14px 0 0 0; padding: 16px 18px; background: var(--tint-l); border-radius: 14px; }
+.spec-note .n-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); display: block; margin-bottom: 4px; }
+.circles-unused { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 16px; }
+.circ { display: flex; align-items: center; gap: 14px; flex: 1 1 240px; }
+.cimg { flex: 0 0 84px; width: 84px; height: 84px; border-radius: 50%; background-size: cover; background-position: center; border: 1px solid var(--hairline); }
+.cap { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); line-height: 1.6; }
+
+/* photos */
+.photo { margin: 0 0 18px 0; border: 1px solid var(--hairline); border-radius: 16px; overflow: hidden; background: #fff; }
+.photo img { display: block; width: 100%; height: auto; max-height: 380px; object-fit: contain; background: #fff; }
+.shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 4px 0 18px 0; align-items: start; }
+.shots.c2 { grid-template-columns: repeat(2, 1fr); }
+.shot { display: flex; flex-direction: column; min-width: 0; }
+.shot__frame { border: 1.5px solid var(--mid); border-radius: 16px; overflow: hidden; background: #fff; }
+.shot__frame img { display: block; width: 100%; height: auto; }
+.shot__lab { font-size: 13px; font-weight: 700; color: var(--forest-deep); line-height: 1.4; margin: 10px 0 2px 0; }
+.shot__st { font-size: 12px; color: var(--sage); line-height: 1.5; margin: 0; }
+
+/* tables */
+.matrix-wrap { overflow-x: auto; margin: 0 0 6px 0; border-radius: 14px; border: 1px solid var(--rule-soft); }
+.matrix { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+.matrix th, .matrix td { padding: 9px 10px; text-align: center; border-bottom: 1px solid var(--rule-soft); }
+.matrix thead th { background: var(--forest-deep); color: #fff; font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; }
+.matrix tbody th { background: var(--tint-l); color: var(--forest-deep); text-align: left; font-weight: 700; }
+.matrix .yes { color: var(--mid); font-weight: 700; }
+.matrix .no { color: var(--red); font-weight: 700; }
+.qtable { width: 100%; border-collapse: collapse; margin: 4px 0 16px 0; font-size: 14px; }
+.qtable th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); padding: 0 12px 8px 0; border-bottom: 2px solid var(--tint); }
+.qtable td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--rule-soft); color: var(--ink); }
+.qtable td:last-child { font-weight: 700; color: var(--forest-deep); white-space: nowrap; }
+.qtable tr:last-child td { border-bottom: none; }
+
+/* Q&A lift cards */
+.qa { display: grid; gap: 14px; }
+.qa .card + .card { margin-top: 0; }
+.qhead { display: flex; align-items: center; gap: 16px; margin: 0 0 16px 0; }
+.disc {
+  flex: 0 0 46px; width: 46px; height: 46px; border-radius: 50%; background: var(--forest);
+  display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1;
+}
+.disc.honey { background: var(--honey-d); }
+.num { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--honey); margin: 0 0 4px 0; }
+.card h2 { font-size: 18px; font-weight: 700; color: var(--forest-deep); line-height: 1.35; margin: 0; }
+
+/* panel + cover (deposit) */
+.panel { background: var(--tint); border-left: 3px solid var(--forest-deep); border-radius: 14px; padding: 20px 22px; margin: 0 0 14px 0; }
+.panel .focal { font-size: 17px; font-weight: 700; color: var(--forest-deep); margin: 0; line-height: 1.4; }
+.cover { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 14px 0; }
+.cover__cell { background: var(--tint-l); border-radius: 16px; padding: 18px 20px; }
+.cover__cell .v { font-size: 17px; font-weight: 700; color: var(--forest-deep); margin: 0; line-height: 1.35; }
+
+/* terms */
+.terms { list-style: none; counter-reset: c; margin: 0; padding: 0; }
+.terms li { counter-increment: c; display: grid; grid-template-columns: 34px 1fr; gap: 0 14px; padding: 14px 0; border-bottom: 1px solid var(--rule-soft); font-size: 14px; line-height: 1.7; color: var(--ink); }
+.terms li:first-child { padding-top: 0; }
+.terms li:last-child { border-bottom: none; padding-bottom: 0; }
+.terms li::before { content: counter(c); width: 28px; height: 28px; border-radius: 50%; background: var(--tint); color: var(--forest-deep); font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+.terms .t { font-weight: 700; color: var(--forest-deep); display: block; margin-bottom: 2px; }
+
+/* ================= BUTTONS ================= */
+.btn, .pill {
+  display: inline-block; background: var(--honey); color: #fff; border: 0; border-radius: 30px;
+  padding: 15px 34px; font-family: var(--face); font-size: 15px; font-weight: 700; letter-spacing: 0.5px;
+  text-decoration: none; cursor: pointer; text-align: center; max-width: 100%;
+}
+.btn:hover, .pill:hover { background: var(--honey-d); }
+.btn--ghost { background: #fff; color: var(--forest-deep); border: 1px solid var(--hairline); }
+.btn--ghost:hover { background: var(--tint-l); }
+.btn--sm, .pill { padding: 9px 18px; font-size: 12px; }
+.pill { margin-top: 10px; }
+
+/* ================= DARK BANDS ================= */
+.dark { background: var(--ground); color: var(--body-dark); }
+.dark .inner { max-width: 760px; margin: 0 auto; padding: 46px 16px; }
+.dark .kicker { color: var(--honey-l); }
+.dark h3 { font-size: 30px; font-weight: 700; color: #fff; line-height: 1.15; margin: 0 0 10px 0; }
+.dark h3 span { color: var(--honey-l); }
+.dark p { font-size: 15px; line-height: 1.7; margin: 0; color: var(--body-dark); }
+.details {
+  margin-top: 46px;
+  background:
+    linear-gradient(90deg, rgba(22,38,28,0.88) 0%, rgba(22,38,28,0.58) 48%, rgba(22,38,28,0.80) 100%),
+    url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png') center / cover no-repeat,
+    var(--ground);
+}
+.details .inner { padding: 60px 16px; }
+.ddisc { width: 40px; height: 40px; border-radius: 50%; background-size: 190%; background-position: 53% 47%; margin: 0 0 14px 0; border: 2px solid rgba(255,255,255,0.6); }
+.who { margin-top: 46px; }
+
+/* journey */
+.journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 26px; position: relative; }
+.journey.three { grid-template-columns: repeat(3, 1fr); }
+.journey__cell { text-align: center; position: relative; }
+.journey__cell:not(:last-child)::after {
+  content: ''; position: absolute; top: 26px; left: calc(50% + 30px); right: calc(-50% + 30px);
+  height: 2px; background: rgba(143,174,134,0.45);
+}
+.journey__disc {
+  width: 52px; height: 52px; border-radius: 50%; background: var(--mid); margin: 0 auto 10px auto;
+  display: flex; align-items: center; justify-content: center; font-size: 22px; position: relative; z-index: 1;
+}
+.journey__cell.on .journey__disc { background: var(--honey-d); box-shadow: 0 0 0 6px rgba(214,168,104,0.18); }
+.journey__lab { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--honey-l); }
+.journey__cell.on .journey__lab { color: #fff; }
+.journey__em { font-size: 12px; color: var(--body-dark); line-height: 1.5; margin-top: 4px; padding: 0 4px; }
+.handoff { border-radius: 22px; text-align: center; margin-top: 14px; }
+.handoff .inner { padding: 30px 20px; }
+
+/* ================= FOOTER ================= */
+.foot { margin-top: 56px; text-align: center; border-radius: 22px 22px 0 0; max-width: 1100px; margin-left: auto; margin-right: auto; }
+.foot .inner { padding: 40px 16px 34px 16px; }
+.foot__icons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin: 0 0 20px 0; }
+.foot__icons img { height: 38px; width: auto; display: block; }
+.foot__logo { width: 84px; height: auto; display: block; margin: 0 auto 14px auto; }
+.foot__signoff { font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 4px 0; }
+.foot__dom { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-pale); margin: 0 0 24px 0; }
+.foot__sig { max-width: 560px; margin: 0 auto; border: 1px solid rgba(143,174,134,0.45); border-radius: 14px; padding: 4px; background: #fff; }
+.foot__sig img { width: 100%; height: auto; display: block; border-radius: 10px; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ================= MOBILE ================= */
+@media (max-width: 640px) {
+  :root { --pad: 20px; }
+  .hero { min-height: 62vh; }
+  .hero__inner { flex-direction: column-reverse; align-items: flex-start; padding: 100px 16px 34px 16px; gap: 14px; }
+  .hero__draw { flex: none; justify-content: flex-start; }
+  .hero__draw img { width: 110px; }
+  .hero h1 { font-size: 32px; }
+  .hero__lede { font-size: 15px; }
+  .sec h2 { font-size: 22px; }
+  .sec__head { flex-wrap: wrap; }
+  .sec__head > div:nth-child(2) { flex: 1 1 0; min-width: 0; }
+  .got { margin-left: 48px; }
+  .shots { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .shots.c2 { grid-template-columns: 1fr 1fr; }
+  .cover { grid-template-columns: 1fr; }
+  .spec-grid { grid-template-columns: 1fr; }
+  .spec-grid dt { padding: 12px 0 0 0; border-bottom: none; white-space: normal; }
+  .spec-grid dd { padding: 2px 0 12px 0; }
+  .restore { display: none; flex-direction: column; align-items: flex-start; }
+  .restore.show { display: flex; }
+  .dark h3 { font-size: 24px; }
+  .journey { grid-template-columns: repeat(2, 1fr); row-gap: 22px; }
+  .journey .journey__cell::after { display: none; }
+  .journey.three { grid-template-columns: 1fr; }
+  .journey__disc { width: 44px; height: 44px; font-size: 19px; }
+  .journey__lab { font-size: 10px; letter-spacing: 1px; }
+  .steps .sl { font-size: 9px; letter-spacing: 0.8px; }
+  .modes button { font-size: 11px; letter-spacing: 0.5px; padding: 11px 4px; }
+  .foot__dom { font-size: 9px; letter-spacing: 1px; }
+  .foot__icons img { height: 30px; }
+  .terms li { grid-template-columns: 28px 1fr; gap: 0 10px; }
+  .sec { scroll-margin-top: 140px; }
+}
+@media (max-width: 380px) {
+  .hero h1 { font-size: 28px; }
+  .shots { grid-template-columns: 1fr; }
+}
+
+/* v7: 3D renders on white on white lift cards */
+.shots.lift .shot__frame { border: 0; border-radius: 22px; box-shadow: var(--shadow); padding: 14px; }
+.shots.lift { gap: 18px; }
+
+/* earnings page */
+.tbc { display: inline-block; background: #fff; border: 1.5px dashed var(--honey); color: var(--honey); border-radius: 30px; padding: 4px 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; white-space: nowrap; }
+.earn { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.earn .card { display: flex; flex-direction: column; gap: 10px; }
+.earn .card + .card { margin-top: 0; }
+.earn h3 { font-size: 18px; font-weight: 700; color: var(--forest-deep); margin: 0; line-height: 1.3; }
+.earn p { font-size: 14px; color: var(--ink-l); line-height: 1.7; margin: 0; }
+.calc { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.field label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin: 0 0 8px 0; }
+.input { width: 100%; font-family: var(--face); font-size: 16px; color: var(--ink); background: #fff; border: 1px solid var(--hairline); border-radius: 12px; padding: 13px 14px; -webkit-appearance: none; appearance: none; }
+.input:focus { outline: 0; border-color: var(--mid); box-shadow: 0 0 0 3px rgba(65,124,81,0.12); }
+select.input { background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%2350795F' d='M1 1l5 5 5-5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 38px; }
+.result { margin-top: 18px; }
+.result .focal { font-size: 26px; }
+.fine { font-size: 12px; color: var(--dead); line-height: 1.7; margin: 12px 0 0 0; }
+@media (max-width: 640px) {
+  .earn, .calc { grid-template-columns: 1fr; }
+}
+
+.hero { min-height: 46vh; background:
+    linear-gradient(180deg, rgba(22,38,28,0.42) 0%, rgba(22,38,28,0.18) 45%, rgba(22,38,28,0.88) 100%),
+    url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9b307bac5d03a1095ebcb5.png') center 45% / cover no-repeat,
+    var(--forest-deep); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero__logo"><a href="https://www.barrelsaunauk.com" target="_blank" rel="noopener"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK"></a></div>
+  <div class="hero__inner">
+    <div class="hero__text">
+      <div class="hero__dash"></div>
+      <p class="hero__kicker">Partner earnings &middot; BSUK</p>
+      <h1>What you earn, and <span>when</span></h1>
+      <p class="hero__lede">How a partner is paid for the builds they bring to Barrel Sauna UK.</p>
+    </div>
+    <div class="hero__draw"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14bdaa5e26a969097d.png" alt="Mobile sauna line drawing"></div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <section class="sec">
+    <div class="sec__head"><div class="sec__num">1</div><div><p class="kicker">How you earn</p><h2>Three parts to <span>every deal</span></h2></div></div>
+    <div class="earn">
+      <div class="card">
+        <div class="disc">🤝</div>
+        <h3>Consultation fee</h3>
+        <p>Paid for the consultation work you do with the client.</p>
+        <div><span class="tbc">Set by James</span></div>
+      </div>
+      <div class="card">
+        <div class="disc">💷</div>
+        <h3>Commission</h3>
+        <p>A share of each order placed through your deposit link.</p>
+        <div><span class="tbc">Set by James</span></div>
+      </div>
+      <div class="card">
+        <div class="disc honey">🎁</div>
+        <h3>Client discount</h3>
+        <p>A discount your clients receive for coming through you.</p>
+        <div><span class="tbc">Set by James</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><div class="sec__num">2</div><div><p class="kicker">Your deposit link</p><h2>Every deposit is <span>recorded against you</span></h2></div></div>
+    <div class="card">
+      <div class="panel"><p class="label">The deposit</p><p class="focal">£500, comes off the total</p></div>
+      <div class="cover">
+        <div class="cover__cell"><p class="label">Your link</p><p class="v">Each partner receives their own deposit link</p></div>
+        <div class="cover__cell"><p class="label">Refunds</p><p class="v">Non-refundable</p></div>
+      </div>
+      <dl class="spec-grid">
+        <dt>What it does</dt><dd>Holds the customer's place in the build queue.</dd>
+        <dt>When it is sent</dt><dd>After the call, with the itemised estimate. Never as the opening move and never as a cold link.</dd>
+        <dt>After it lands</dt><dd>Once the deposit is paid, BSUK takes over: client contact, invoicing and the build through to installation.</dd>
+        <dt>Your share of it</dt><dd><span class="tbc">Set by James</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><div class="sec__num">3</div><div><p class="kicker">When you are paid</p><h2>From deposit to <span>payout</span></h2></div></div>
+    <div class="dark handoff">
+      <div class="inner">
+        <p class="kicker">The order of things</p>
+        <div class="journey">
+          <div class="journey__cell on"><div class="journey__disc">🔗</div><div class="journey__lab">Deposit paid</div><div class="journey__em">Through your link</div></div>
+          <div class="journey__cell"><div class="journey__disc">🧾</div><div class="journey__lab">Invoice raised</div><div class="journey__em">BSUK takes over</div></div>
+          <div class="journey__cell"><div class="journey__disc">🛠️</div><div class="journey__lab">Build scheduled</div><div class="journey__em">Through to installation</div></div>
+          <div class="journey__cell"><div class="journey__disc">💷</div><div class="journey__lab">You are paid</div><div class="journey__em">Timing set by James</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:14px;">
+      <dl class="spec-grid">
+        <dt>Paid on</dt><dd><span class="tbc">Set by James</span></dd>
+        <dt>Paid how often</dt><dd><span class="tbc">Set by James</span></dd>
+        <dt>Paid how</dt><dd><span class="tbc">Set by James</span></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><div class="sec__num">4</div><div><p class="kicker">Worked example</p><h2>Run the <span>numbers</span></h2></div></div>
+    <div class="card">
+      <div class="calc">
+        <div class="field">
+          <label for="base">Base build</label>
+          <select class="input" id="base"><option value="5250">1.8m barrel sauna, from £5,250</option><option value="7995">2.5m barrel sauna, from £7,995</option><option value="8795">3.2m barrel sauna, from £8,795</option><option value="10250">3.6m barrel sauna, from £10,250</option><option value="10995">4.1m barrel sauna, from £10,995</option><option value="11795">4.6m barrel sauna, from £11,795</option><option value="12745">5m barrel sauna, from £12,745</option><option value="13495">6m barrel sauna, from £13,495</option></select>
+        </div>
+        <div class="field">
+          <label for="ups">Upgrades on the estimate (£)</label>
+          <input class="input" id="ups" type="number" min="0" step="25" value="0" inputmode="numeric">
+        </div>
+        <div class="field">
+          <label for="rate">Commission rate (%)</label>
+          <input class="input" id="rate" type="number" min="0" max="100" step="0.5" placeholder="Set by James" inputmode="decimal">
+        </div>
+        <div class="field">
+          <label for="fee">Consultation fee (£)</label>
+          <input class="input" id="fee" type="number" min="0" step="25" placeholder="Set by James" inputmode="numeric">
+        </div>
+      </div>
+      <div class="panel result">
+        <p class="label">You would earn</p>
+        <p class="focal" id="out">Add the rates to see your earnings</p>
+      </div>
+      <p class="fine" id="outline">Order value before VAT: <span id="ov">£5,250</span>. Prices from the base sauna price list, before upgrades. All prices are plus VAT.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="card">
+      <p class="label">Payment terms</p>
+      <p class="prose" style="margin:0;">Payment terms are set out in the Seller Agreement and the earnings schedule issued with it.</p>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="dark foot">
+  <div class="inner">
+    <div class="foot__icons"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db7528f5.png" alt="Glamping pod"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14de8ed1c29f9e137f.png" alt="Shepherd's hut"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11bdaa5e26a9690935.png" alt="Hot tub"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14bdaa5e26a969097d.png" alt="Mobile sauna"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cde8ed1c29f9e1305.png" alt="Barrel sauna"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908f0.png" alt="Double Dipper"></div>
+    <img class="foot__logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
+    <p class="foot__signoff">The Barrel Sauna UK Team</p>
+    <p class="foot__dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales &nbsp;&middot;&nbsp; v1</p>
+    <div class="foot__sig"><a href="https://www.barrelsaunauk.com" target="_blank" rel="noopener"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Barrel Sauna UK signature"></a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  function gbp(n){ return '\u00a3' + Math.round(n).toLocaleString('en-GB'); }
+  function num(id){ var v = parseFloat(document.getElementById(id).value); return isNaN(v) ? null : v; }
+  function run(){
+    var base = num('base') || 0, ups = num('ups') || 0, rate = num('rate'), fee = num('fee');
+    var order = base + ups;
+    document.getElementById('ov').textContent = gbp(order);
+    var out = document.getElementById('out');
+    if(rate === null && fee === null){ out.textContent = 'Add the rates to see your earnings'; return; }
+    var com = rate === null ? 0 : order * rate / 100;
+    var total = com + (fee || 0);
+    var parts = [];
+    if(rate !== null){ parts.push(gbp(com) + ' commission'); }
+    if(fee !== null){ parts.push(gbp(fee) + ' fee'); }
+    out.textContent = gbp(total) + ' (' + parts.join(' + ') + ')';
+  }
+  ['base','ups','rate','fee'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener('input', run); el.addEventListener('change', run);
+  });
+  run();
+})();
+</script>
+</body>
+</html>
