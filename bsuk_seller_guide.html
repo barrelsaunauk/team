@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSUK: The Seller Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#16261C; --forest-deep:#1F3D28; --forest:#2B5336; --mid:#417C51; --sage:#50795F; --sage-pale:#8fae86;
+    --honey:#C08B41; --honey-light:#D6A868; --tint:#dbe7dd; --tint-pale:#eef4ef;
+    --ink:#1F2A22; --muted:#5f6b62; --line-s:#ebf0ec; --red:#B7332F;
+    --shadow:0 10px 30px rgba(22,38,28,0.12);
+    --veil-body:#e9eee4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:#fff;color:var(--ink);font-family:"Raleway",Helvetica,Arial,sans-serif;font-weight:400;font-size:14.5px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .b{font-weight:700;color:var(--forest);}
+  .acc{color:var(--honey-light);}
+  .bot{display:block;}
+
+  /* ============ HERO ============ */
+  .hero{position:relative;min-height:420px;display:flex;align-items:flex-end;color:#fff;
+    background:linear-gradient(180deg,rgba(22,38,28,0.62) 0%,rgba(22,38,28,0.38) 40%,rgba(22,38,28,0.90) 100%),url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a59b9f8b31b6abd27b54.jpg') 62% 48% / cover no-repeat,var(--forest-deep);}
+  .hero-in{position:relative;max-width:880px;margin:0 auto;width:100%;padding:110px 24px 34px;}
+  .logo{position:absolute;top:22px;left:24px;display:block;}
+  .logo img{height:34px;width:auto;display:block;}
+  .dash{width:44px;height:2px;background:var(--honey-light);margin-bottom:12px;}
+  .kicker{font-size:11px;font-weight:700;letter-spacing:0.32em;text-transform:uppercase;color:var(--honey-light);margin-bottom:10px;}
+  .hero h1{font-weight:700;font-size:40px;line-height:1.05;letter-spacing:-0.8px;margin-bottom:10px;max-width:560px;}
+  .hero p{font-size:14.5px;line-height:1.6;max-width:520px;color:var(--veil-body);}
+  .bot-hero{position:absolute;right:28px;bottom:18px;width:100px;height:auto;filter:drop-shadow(0 8px 16px rgba(0,0,0,0.35));}
+  .hero-rule{height:3px;background:var(--honey);}
+
+  /* ============ TABS ============ */
+  .tab-wrap{background:var(--ground);position:sticky;top:0;z-index:40;box-shadow:0 2px 12px rgba(0,0,0,0.18);}
+  .tab-bar{display:flex;justify-content:center;gap:2px;flex-wrap:wrap;max-width:880px;margin:0 auto;padding:0 12px;}
+  .tab-btn{background:transparent;color:rgba(255,255,255,0.72);border:none;padding:14px 18px 12px;font-family:inherit;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;position:relative;transition:color 0.2s ease;-webkit-tap-highlight-color:transparent;}
+  .tab-btn::after{content:"";position:absolute;left:50%;right:50%;bottom:0;height:3px;background:var(--honey);transition:left 0.2s ease,right 0.2s ease;}
+  .tab-btn:hover,.tab-btn.active{color:#fff;}
+  .tab-btn.active::after{left:12px;right:12px;}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:block;}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px;}
+
+  /* ============ DARK BANDS ============ */
+  .band{position:relative;background:var(--forest-deep);color:#fff;padding:30px 24px 28px;overflow:hidden;}
+  .band-in{max-width:880px;margin:0 auto;padding:0 0 0 0;}
+  .band h2{font-size:24px;font-weight:700;line-height:1.2;margin-bottom:6px;max-width:600px;}
+  .band p{font-size:14px;color:var(--veil-body);max-width:600px;}
+  .band .kicker{margin-bottom:8px;}
+  .band .dash{margin-bottom:10px;}
+  .bot-band{position:absolute;right:40px;bottom:-6px;width:96px;height:auto;}
+  .details{position:relative;background-size:cover;background-position:center;color:#fff;padding:34px 24px 36px;}
+  .details-in{max-width:880px;margin:0 auto;}
+  .ddisc{width:34px;height:34px;border-radius:50%;background:var(--mid);display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:10px;}
+  .details h3{font-size:24px;font-weight:700;line-height:1.1;margin-bottom:6px;}
+  .details p{color:var(--veil-body);font-size:13.5px;max-width:460px;}
+  .pad{padding-top:20px;}
+  .ff-layout{display:grid;grid-template-columns:210px 1fr;gap:24px;align-items:start;padding-bottom:26px;}
+  .toc{position:sticky;top:60px;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:14px 14px 12px;}
+  .toc-g{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin:10px 0 4px;padding-left:10px;}
+  .toc-g:first-child{margin-top:0;}
+  .toc .subtab{display:block;width:100%;text-align:left;background:transparent;border:none;box-shadow:none;border-radius:8px;padding:7px 10px;font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;line-height:1.3;}
+  .toc .subtab:hover{background:var(--tint-pale);color:var(--forest);}
+  .toc .subtab.active{background:var(--forest);color:#fff;}
+  .toc-mobile{display:none;}
+  .toc-select{width:100%;font-family:inherit;font-size:14px;font-weight:700;color:var(--forest);background:#fff;border:1px solid var(--tint);border-radius:999px;padding:10px 40px 10px 16px;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%232B5336' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;box-shadow:var(--shadow);}
+  .ff-main{min-width:0;}
+  .tab-btn.home{padding:12px 12px 10px;display:flex;align-items:center;}
+  .tab-btn.home::after{display:none;}
+  #tab-facts .details{margin-top:6px;}
+
+  /* ============ LIFT CARDS ============ */
+  .card,.spec{position:relative;background:#fff;border-radius:18px;padding:24px 28px 26px;margin-bottom:16px;box-shadow:var(--shadow);}
+  .spec.hasbot{padding-right:150px;}
+  .bot-card{position:absolute;right:22px;top:18px;width:104px;height:auto;}
+  .num{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--honey);margin-bottom:4px;}
+  .card h2{font-weight:700;font-size:19px;color:var(--forest);margin-bottom:0;line-height:1.3;}
+  .qhead{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+  .disc{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--mid);display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;}
+  .disc.honey{background:#b07d38;}
+  .label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage);display:block;margin:0 0 8px;}
+  .say{font-size:14.5px;margin-bottom:10px;}
+  .say p{margin-bottom:8px;}
+  .say p:last-child{margin-bottom:0;}
+
+  /* ============ SUB TABS ============ */
+  .subtab{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line-s);color:var(--muted);border-radius:999px;padding:6px 13px 6px 9px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;transition:all 0.15s ease;-webkit-tap-highlight-color:transparent;box-shadow:0 2px 8px rgba(22,38,28,0.06);}
+  .subtab:hover{border-color:var(--forest);color:var(--forest);}
+  .subtab.active{background:var(--forest);color:#fff;border-color:var(--forest);}
+  .ff-section{display:none;}
+  .ff-section.active{display:block;}
+
+  /* ============ SPEC ============ */
+  .spec-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:4px;flex-wrap:wrap;}
+  .spec-head h3{font-size:17px;font-weight:700;color:var(--forest);line-height:1.3;}
+  .spec-head .mark{height:64px;width:auto;display:block;margin-left:auto;}
+  .spec-price{font-size:14px;font-weight:700;color:var(--honey);white-space:nowrap;}
+  .spec-price.inc{color:var(--muted);}
+  .spec-sub{font-size:13px;color:var(--muted);margin-bottom:12px;}
+  .spec-grid{list-style:none;margin:0 0 4px;display:grid;grid-template-columns:auto 1fr;gap:0 16px;font-size:13.5px;}
+  .spec-grid dt{color:var(--sage);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 0;border-bottom:1px solid var(--line-s);white-space:nowrap;}
+  .spec-grid dd{color:var(--ink);padding:6px 0;border-bottom:1px solid var(--line-s);}
+  .spec-grid dd.spec-price{white-space:normal;}
+  .spec-note{font-size:13.5px;line-height:1.6;color:var(--ink);margin-top:10px;padding:11px 14px;background:var(--tint-pale);border-radius:8px;}
+  .spec-note .n-tag{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:3px;}
+  .circles-unused{display:flex;gap:22px;flex-wrap:wrap;margin-top:16px;}
+  .circ{display:flex;align-items:center;gap:14px;flex:1 1 240px;}
+  .cimg{flex:0 0 84px;width:84px;height:84px;border-radius:50%;background-size:cover;background-position:center;box-shadow:var(--shadow);}
+  .cap{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);line-height:1.6;}
+
+  /* ============ TABLES ============ */
+  .matrix-wrap{overflow-x:auto;margin-bottom:6px;}
+  .matrix{width:100%;border-collapse:collapse;font-size:12.5px;min-width:560px;}
+  .matrix th,.matrix td{padding:6px 8px;text-align:center;border:1px solid var(--line-s);}
+  .matrix thead th{background:var(--forest);color:#fff;font-size:10.5px;letter-spacing:0.5px;text-transform:uppercase;font-weight:700;}
+  .matrix tbody th{background:var(--tint-pale);color:var(--ink);text-align:left;font-weight:700;font-size:12.5px;}
+  .matrix .yes{color:var(--sage);font-weight:800;}
+  .matrix .no{color:var(--red);font-weight:800;}
+  .qtable{width:100%;border-collapse:collapse;margin:4px 0 12px;font-size:13.5px;}
+  .qtable th{text-align:left;font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--honey);padding:0 12px 6px 0;border-bottom:2px solid var(--tint);}
+  .qtable td{padding:7px 12px 7px 0;border-bottom:1px solid var(--line-s);color:var(--ink);}
+  .qtable td:last-child{font-weight:700;color:var(--forest);white-space:nowrap;}
+  .qtable tr:last-child td{border-bottom:none;}
+
+  /* ============ STAGE STRIP ============ */
+  .stage-wrap{margin-top:14px;background:var(--tint-pale);border-radius:12px;padding:14px 12px 12px;}
+  .stage-title{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--sage);text-align:center;margin-bottom:10px;}
+  .stage{display:flex;gap:6px;}
+  .stage .sd{flex:1;text-align:center;}
+  .stage .c{width:56px;height:56px;border-radius:50%;margin:0 auto 8px;font-size:22px;background:var(--forest);display:flex;align-items:center;justify-content:center;line-height:1;}
+  .stage .t2{display:block;font-size:12px;font-weight:700;color:var(--ink);line-height:1.3;}
+  .stage em{display:block;font-style:normal;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;color:var(--sage);margin-top:3px;line-height:1.4;}
+
+  /* ============ TERMS ============ */
+  .terms{list-style:none;counter-reset:c;}
+  .terms li{counter-increment:c;display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:13px 0;border-bottom:1px solid var(--line-s);font-size:14px;line-height:1.6;}
+  .terms li:last-child{border-bottom:none;}
+  .terms li::before{content:counter(c);font-weight:800;color:var(--honey);font-size:15px;line-height:1.4;}
+  .terms .t{font-weight:700;color:var(--forest);display:block;margin-bottom:2px;}
+  .closing{position:relative;margin-top:14px;padding:20px 24px 20px 130px;background:var(--forest-deep);color:#fff;border-radius:14px;overflow:hidden;min-height:120px;display:flex;align-items:center;}
+  .who{width:100%;}
+  .who-k{font-size:10px;font-weight:700;letter-spacing:0.28em;text-transform:uppercase;color:var(--honey-light);margin-bottom:10px;}
+  .who-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .who-item{flex:1 1 180px;display:flex;align-items:center;gap:10px;}
+  .who-item .disc{flex:0 0 40px;width:40px;height:40px;font-size:18px;background:var(--mid);}
+  .who-t{display:block;font-size:12.5px;font-weight:700;color:#fff;line-height:1.3;}
+  .who-n{display:block;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--honey-light);margin-top:2px;}
+  .bot-close{position:absolute;left:20px;bottom:-4px;width:90px;height:auto;}
+  .pill{display:inline-block;background:var(--honey);color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:10px 20px;border-radius:999px;margin-top:6px;}
+  .pill:hover{background:#a9772f;}
+
+  /* ============ FOOTER ============ */
+  footer{margin-top:30px;}
+  .pfoot{max-width:880px;margin:0 auto;background:var(--ground);border-radius:22px 22px 0 0;padding:30px 20px 26px;text-align:center;}
+  .pfoot .icons{display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px;}
+  .pfoot .icons img{height:40px;width:auto;display:block;}
+  .pfoot .signoff{color:#fff;font-size:15px;font-weight:700;margin-bottom:4px;}
+  .pfoot .dom{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-pale);}
+
+  /* ============ PICTURE CARDS (v5) ============ */
+  .pic{margin:-24px -28px 16px;border-radius:18px 18px 0 0;overflow:hidden;background:#fff;}
+  .pic img{display:block;width:100%;height:auto;max-height:380px;object-fit:contain;background:#fff;}
+  .pic-tab{background:var(--forest-deep);border-top:3px solid var(--honey);color:#fff;font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;padding:9px 16px;}
+  .pic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:4px 0 14px;}
+  .pic-grid.two{grid-template-columns:repeat(2,1fr);}
+  .pic-card{background:#fff;border:1px solid rgba(65,124,81,0.30);border-radius:14px;overflow:hidden;}
+  .pic-card img{display:block;width:100%;height:auto;}
+  @media (max-width:820px){
+    .pic{margin:-18px -16px 14px;border-radius:14px 14px 0 0;}
+    .pic img{max-height:300px;}
+  }
+  @media (max-width:560px){
+    .pic-grid,.pic-grid.two{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none !important;}}
+  @media (max-width:820px){
+    .hero{min-height:300px;}
+    .hero-in{padding:84px 18px 26px;}
+    .hero h1{font-size:30px;}
+    .bot-hero{width:72px;right:14px;bottom:auto;top:64px;}
+    .logo{left:18px;top:16px;} .logo img{height:26px;}
+    .tab-btn{padding:12px 11px 10px;font-size:11px;letter-spacing:0.5px;}
+    .wrap{padding:0 12px;}
+    .band{padding:24px 18px 22px;}
+    .band h2{font-size:20px;}
+    .bot-band{display:none;}
+    .details{padding:26px 18px;}
+    .details h3{font-size:20px;}
+    .ff-layout{display:block;}
+    .toc{display:none;}
+    .toc-mobile{display:block;position:sticky;top:46px;z-index:30;padding:8px 0 12px;background:#fff;}
+    .card,.spec{padding:18px 16px 20px;border-radius:14px;}
+    .spec.hasbot{padding-right:16px;}
+    .bot-card{display:none;}
+    .card h2{font-size:17px;}
+    .spec-grid{grid-template-columns:1fr;}
+    .spec-grid dt{padding:6px 0 0;border-bottom:none;white-space:normal;}
+    .spec-grid dd{padding:0 0 6px;}
+    .spec-head .mark{height:48px;}
+    .stage{flex-wrap:wrap;}
+    .stage .sd{flex:1 1 45%;margin-bottom:8px;}
+    .terms li{grid-template-columns:26px 1fr;gap:0 10px;}
+    .closing{padding:18px 18px;display:block;} .who-row{flex-direction:column;gap:10px;}
+    .bot-close{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <a class="logo" href="https://www.barrelsaunauk.com" target="_blank" rel="noopener"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK"></a>
+  <div class="hero-in">
+    <div class="dash"></div>
+    <div class="kicker">The Seller Guide &middot; BSUK</div>
+    <h1>The facts behind every <span class="acc">build</span></h1>
+    <p>The specs, prices, how we build and the general questions buyers ask.</p>
+  </div>
+  <svg class="bot bot-hero" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="100" cy="206" rx="46" ry="8" fill="rgba(0,0,0,0.22)"/>
+<path d="M148 118 Q170 100 166 74" stroke="#417C51" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="166" cy="70" r="11" fill="#D6A868"/>
+<path d="M58 108 Q58 86 100 86 Q142 86 142 108 L142 168 Q142 190 100 190 Q58 190 58 168 Z" fill="#8fae86"/>
+<path d="M58 108 Q58 86 100 86 Q142 86 142 108 L142 116 Q142 94 100 94 Q58 94 58 116 Z" fill="#2B5336" opacity="0.30"/>
+<line x1="79" y1="90" x2="79" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<line x1="100" y1="87" x2="100" y2="190" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<line x1="121" y1="90" x2="121" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<path d="M58 122 Q100 134 142 122" stroke="#D6A868" stroke-width="6" fill="none"/>
+<path d="M58 156 Q100 168 142 156" stroke="#D6A868" stroke-width="6" fill="none"/>
+<ellipse cx="82" cy="196" rx="15" ry="9" fill="#417C51"/>
+<ellipse cx="118" cy="196" rx="15" ry="9" fill="#417C51"/>
+<path d="M56 124 Q38 136 40 156" stroke="#417C51" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="40" cy="160" r="11" fill="#D6A868"/>
+<rect x="60" y="18" width="80" height="62" rx="26" fill="#417C51"/>
+<rect x="70" y="32" width="60" height="34" rx="17" fill="#16261C"/>
+<circle cx="88" cy="49" r="7.5" fill="#D6A868"/><circle cx="112" cy="49" r="7.5" fill="#D6A868"/><path d="M92 58 Q100 63 108 58" stroke="#D6A868" stroke-width="3" fill="none" stroke-linecap="round"/>
+<line x1="100" y1="18" x2="100" y2="8" stroke="#417C51" stroke-width="4"/>
+<circle cx="100" cy="6" r="5.5" fill="#D6A868"/>
+<rect x="92" y="78" width="16" height="10" fill="#16261C"/></svg>
+</div>
+<div class="hero-rule"></div>
+
+<div class="tab-wrap">
+  <div class="tab-bar">
+    <button class="tab-btn home" id="homeBtn" aria-label="Home"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></button>
+    <button class="tab-btn active" data-tab="tab-facts">Fast Facts</button>
+    <button class="tab-btn" data-tab="tab-qa">Q&amp;A</button>
+    <button class="tab-btn" data-tab="tab-terms">Working Terms</button>
+  </div>
+</div>
+
+<div class="tab-panel active" id="tab-facts">
+
+
+  <div class="wrap pad ff-layout">
+  <nav class="toc" aria-label="Fast Facts topics">
+    <div class="toc-g">The build</div>
+    <button class="subtab active" data-ff="ff-included">Included in base</button>
+    <button class="subtab" data-ff="ff-length">Length and layout rules</button>
+    <button class="subtab" data-ff="ff-timber">Timber</button>
+    <button class="subtab" data-ff="ff-foundations">Foundations</button>
+    <div class="toc-g">Windows and doors</div>
+    <button class="subtab" data-ff="ff-rear">Rear windows</button>
+    <button class="subtab" data-ff="ff-entrance-win">Entrance windows</button>
+    <button class="subtab" data-ff="ff-doors">Front doors</button>
+    <button class="subtab" data-ff="ff-entrance">Entrance layout</button>
+    <button class="subtab" data-ff="ff-internal">Internal layout</button>
+    <div class="toc-g">Inside</div>
+    <button class="subtab" data-ff="ff-heater">Heater compatibility</button>
+    <button class="subtab" data-ff="ff-bench">Bench layouts</button>
+    <button class="subtab" data-ff="ff-roof">Roof and finish</button>
+    <div class="toc-g">Other products</div>
+    <button class="subtab" data-ff="ff-mobile">Mobile trailer</button>
+    <button class="subtab" data-ff="ff-water">Ice baths and hot tubs</button>
+    <div class="toc-g">Money</div>
+    <button class="subtab" data-ff="ff-deposit">The £500 deposit</button>
+  </nav>
+  <div class="toc-mobile">
+    <select class="toc-select" id="tocSelect" aria-label="Choose a topic">
+      <optgroup label="The build">
+        <option value="ff-included">Included in base</option>
+        <option value="ff-length">Length and layout rules</option>
+        <option value="ff-timber">Timber</option>
+        <option value="ff-foundations">Foundations</option>
+      </optgroup>
+      <optgroup label="Windows and doors">
+        <option value="ff-rear">Rear windows</option>
+        <option value="ff-entrance-win">Entrance windows</option>
+        <option value="ff-doors">Front doors</option>
+        <option value="ff-entrance">Entrance layout</option>
+        <option value="ff-internal">Internal layout</option>
+      </optgroup>
+      <optgroup label="Inside">
+        <option value="ff-heater">Heater compatibility</option>
+        <option value="ff-bench">Bench layouts</option>
+        <option value="ff-roof">Roof and finish</option>
+      </optgroup>
+      <optgroup label="Other products">
+        <option value="ff-mobile">Mobile trailer</option>
+        <option value="ff-water">Ice baths and hot tubs</option>
+      </optgroup>
+      <optgroup label="Money">
+        <option value="ff-deposit">The £500 deposit</option>
+      </optgroup>
+    </select>
+  </div>
+  <div class="ff-main">
+
+  <!-- ============ INCLUDED IN BASE ============ -->
+  <div class="ff-section active" id="ff-included">
+    <div class="spec">
+      <div class="spec-head">
+        <h3>What's included with every barrel sauna</h3>
+        <span class="spec-price inc">Included &middot; from £5,250</span>
+      </div>
+      <p class="say" style="margin-bottom:14px;">Included in the base price:</p>
+      <dl class="spec-grid">
+        <dt>Structure</dt><dd>Handcrafted barrel sauna, benches with backrests, moisture-managed internal construction, structural fixed floor panels, wooden base feet</dd>
+        <dt>Door</dt><dd>Solid timber front door, framed opening, vertical tinted window, lock, handle &amp; spare keys</dd>
+        <dt>Heater</dt><dd>Wood-burning or electric heater, with heater surround, fire protection plates, safety guarding &amp; rail</dd>
+        <dt>Stones</dt><dd>High-density volcanic sauna stones (5 to 10cm)</dd>
+        <dt>Roof</dt><dd>Black hexagon bitumen shingles (UV-resistant), roof edge lip panels</dd>
+        <dt>Fixings</dt><dd>Stainless steel tightening bands, exterior fixings, door hinges, lockable latch</dd>
+        <dt>Systems</dt><dd>Floor drainage, rodent guard plates, integrated ventilation fixtures</dd>
+        <dt>Warranty</dt><dd>24 months on structural components. Heaters carry the manufacturer's warranty.</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Note</span>
+        On a budget, the customer can stop here and have a fully functional barrel sauna with all essentials included; the only extra cost would be delivery and installation. Otherwise, keep building with upgrades.
+      </div>
+      <div class="spec-note">
+        <span class="n-tag">Not included</span>
+        Any electrics installation. The team supplies and fits the unit with all safety elements, but wiring must be done by a qualified local electrician after the build. An optional £1,200/year maintenance plan is available after ordering (2 visits/year, deep clean, chimney sweep, oil/stain re-application, heater inspection, timber adjustment). Never included in the estimate.
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ============ THE £500 DEPOSIT ============ -->
+  <div class="ff-section" id="ff-deposit">
+    <div class="spec hasbot">
+      <svg class="bot bot-card" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="96" cy="206" rx="46" ry="8" fill="rgba(22,38,28,0.10)"/>
+<path d="M140 118 Q158 96 152 72" stroke="#2B5336" stroke-width="13" fill="none" stroke-linecap="round"/>
+<g transform="rotate(-12 152 52)"><path d="M122 38 L166 38 L180 52 L166 66 L122 66 Z" fill="#C08B41"/><circle cx="168" cy="52" r="4" fill="#ffffff"/><rect x="130" y="48" width="28" height="8" rx="4" fill="#ffffff" opacity="0.85"/></g>
+<circle cx="151" cy="68" r="11" fill="#C08B41"/>
+<path d="M54 108 Q54 86 96 86 Q138 86 138 108 L138 168 Q138 190 96 190 Q54 190 54 168 Z" fill="#417C51"/>
+<path d="M54 108 Q54 86 96 86 Q138 86 138 108 L138 116 Q138 94 96 94 Q54 94 54 116 Z" fill="#2B5336" opacity="0.35"/>
+<line x1="75" y1="90" x2="75" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.5"/>
+<line x1="96" y1="87" x2="96" y2="190" stroke="#2B5336" stroke-width="2.5" opacity="0.5"/>
+<line x1="117" y1="90" x2="117" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.5"/>
+<path d="M54 122 Q96 134 138 122" stroke="#D6A868" stroke-width="6" fill="none"/>
+<path d="M54 156 Q96 168 138 156" stroke="#D6A868" stroke-width="6" fill="none"/>
+<ellipse cx="78" cy="196" rx="15" ry="9" fill="#2B5336"/>
+<ellipse cx="114" cy="196" rx="15" ry="9" fill="#2B5336"/>
+<path d="M52 124 Q34 136 36 156" stroke="#2B5336" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="36" cy="160" r="11" fill="#C08B41"/>
+<rect x="56" y="18" width="80" height="62" rx="26" fill="#2B5336"/>
+<rect x="66" y="29" width="60" height="34" rx="17" fill="#1F3D28"/>
+<circle cx="84" cy="46" r="7.5" fill="#D6A868"/><circle cx="108" cy="46" r="7.5" fill="#D6A868"/><path d="M88 55 Q96 60 104 55" stroke="#D6A868" stroke-width="3" fill="none" stroke-linecap="round"/>
+<line x1="96" y1="18" x2="96" y2="8" stroke="#2B5336" stroke-width="4"/>
+<circle cx="96" cy="6" r="5.5" fill="#C08B41"/>
+<rect x="88" y="78" width="16" height="10" fill="#1F3D28"/></svg>
+      <div class="spec-head"><h3>The £500 deposit: the facts</h3><span class="spec-price">£500 &middot; comes off the total</span></div>
+      <p class="spec-sub">Every BSUK build enters the order queue on a £500 deposit. This is what it is and what it does.</p>
+      <dl class="spec-grid">
+        <dt>What it does</dt><dd>Holds the customer's place in the build queue. Builds go in order of deposit; a big commercial order landing next week genuinely pushes an undeposited build back.</dd>
+        <dt>What it costs</dt><dd>Nothing extra. It is the first £500 of a sauna they are buying regardless, and it comes straight off the total.</dd>
+        <dt>Refunds</dt><dd>Non-refundable: it reserves the build slot and the materials against it.</dd>
+        <dt>Optional?</dt><dd>Yes. The customer can order on delivery like anything else. The only thing the deposit changes is their place in the queue.</dd>
+        <dt>When it is sent</dt><dd>After the call, with the itemised estimate. Never as the opening move and never as a cold link.</dd>
+        <dt>Your link</dt><dd>Each partner receives their own deposit link, so every deposit you bring in is recorded against you.</dd>
+      </dl>
+      <div class="stage-wrap">
+        <div class="stage-title">What happens the moment the £500 lands</div>
+        <div class="stage">
+          <div class="sd"><div class="c">📍</div><span class="t2">Place secured</span><em>Dated from the deposit</em></div>
+          <div class="sd"><div class="c">⏱️</div><span class="t2">72-hour window</span><em>Finer details, colour up to 7 days</em></div>
+          <div class="sd"><div class="c">🧾</div><span class="t2">Invoice raised</span><em>The estimate was an estimate</em></div>
+          <div class="sd"><div class="c">🛠️</div><span class="t2">Build scheduled</span><em>Then handover to aftercare</em></div>
+        </div>
+      </div>
+      <div class="spec-note">
+        <span class="n-tag">From here, BSUK takes over</span>
+        Once the deposit is paid, BSUK takes over: client contact, invoicing and the build through to installation.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LENGTH & LAYOUT RULES ============ -->
+  <div class="ff-section" id="ff-length">
+    <div class="spec">
+      <div class="spec-head"><h3>Layout rules: what fits at each length</h3></div>
+      <p class="spec-sub">The changing room comes out of the total length, never on top. A 3m sauna with a 1m changing room is a 2m hot room.</p>
+      <div class="matrix-wrap">
+        <table class="matrix">
+          <thead>
+            <tr><th>Length</th><th>Sits (adults)</th><th>Changing room</th><th>Porch</th><th>Front door</th><th>Side door</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>1.8m</th><td>2 to 3</td><td class="no">✕</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+            <tr><th>2.5m</th><td>3 to 4</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
+            <tr><th>3.2m</th><td>4 to 5</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
+            <tr><th>3.7m</th><td>5 to 6</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
+            <tr><th>4.2m</th><td>6 to 7</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
+            <tr><th>4.7m</th><td>7 to 8</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
+            <tr><th>5m</th><td>8 to 10</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th>6.1m</th><td>10+</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><h3>Diameter: 2m vs 2.3m</h3></div>
+      <div class="spec-note"><span class="n-tag">Note</span>Standard diameter is 2m x 2m, included with selected windows. Going to 2.3m x 2.3m gains surprising space, wider seats, thicker backrests, more room between benches. Widening is much cheaper than lengthening, so it's the better-value route to more room.</div>
+      <dl class="spec-grid">
+        <dt>2m x 2m</dt><dd>Included (with selected windows)</dd>
+        <dt>2.3m x 2.3m + wider seats</dt><dd class="spec-price">+£725</dd>
+        <dt>Large 2.3m + wider seats</dt><dd class="spec-price">+£995</dd>
+        <dt>Large 2.3m + wider bench design</dt><dd class="spec-price">+£1,100</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ TIMBER ============ -->
+  <div class="ff-section" id="ff-timber">
+    <div class="spec">
+      <div class="spec-head">
+        <h3>Thermowood: the standard</h3>
+        <span class="spec-price inc">Standard build</span>
+      </div>
+      <dl class="spec-grid">
+        <dt>Thickness</dt><dd>48mm Thermowood: ideal for outdoor sauna structures</dd>
+        <dt>Treatment</dt><dd>Heat-treated at 200°C, removes up to 96% of moisture</dd>
+        <dt>Stability</dt><dd>Won't warp, swell or crack over time</dd>
+        <dt>Resistance</dt><dd>Naturally mould-resistant, fully weatherproof, antibacterial surface</dd>
+        <dt>Chemicals</dt><dd>None: just heat and steam</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Note</span>
+        Pinewood is the alternative, but Thermowood is what we stand by, highest quality for sauna environments, and the standard on nearly every build.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ REAR WINDOWS ============ -->
+  <div class="ff-section" id="ff-rear">
+    <div class="spec-note" style="margin-bottom:22px;">
+      <span class="n-tag">Spec rule: check before you price</span>
+      Heater placement depends on the rear window. See the Heater Compatibility tab: it's the single source of truth. Globe windows are side-placement only, always.
+    </div>
+
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4756c13d4373c2dc9120.png" alt="Barrel sauna rear wall in full wood" loading="lazy"><div class="pic-tab">Full wood</div></div>
+      <div class="spec-head"><h3>Full Wood Wall</h3><span class="spec-price inc">Included</span></div>
+      <p class="spec-sub">Full-privacy solid timber rear wall: no glass.</p>
+      <dl class="spec-grid">
+        <dt>Material</dt><dd>Solid wood</dd>
+        <dt>Heater</dt><dd>Any type &amp; placement</dd>
+        <dt>Benches</dt><dd>Any layout</dd>
+        <dt>Size</dt><dd>2m x 2m included &middot; upgrade to 2.3m +£475</dd>
+      </dl>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><h3>2 x Vertical Sleek Glass</h3><span class="spec-price">+£275</span></div>
+      <p class="spec-sub">Slim side windows: adds light while keeping the rear functional.</p>
+      <dl class="spec-grid">
+        <dt>Material</dt><dd>Solid wood frame, tempered sandglass, medium reflective tint</dd>
+        <dt>Heater</dt><dd>Any type &amp; placement</dd>
+        <dt>Benches</dt><dd>Any layout</dd>
+        <dt>Size</dt><dd>2m x 2m included &middot; upgrade to 2.3m +£475</dd>
+      </dl>
+      <div class="spec-note"><span class="n-tag">Good for</span>Natural light without compromising heater placement.</div>
+    </div>
+
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7852109994d35aa0e208d3.jpg" alt="Half glass rear wall" loading="lazy"><div class="pic-tab">Half glass</div></div>
+      <div class="spec-head"><h3>Half Glass Rear Wall</h3><span class="spec-price">+£500</span></div>
+      <p class="spec-sub">Split wood-and-glass rear wall: tinted tempered glass top, timber bottom.</p>
+      <dl class="spec-grid">
+        <dt>Heater</dt><dd>Centre or side: supports external-feed burners (chute through solid lower wall)</dd>
+        <dt>Benches</dt><dd>Any layout</dd>
+        <dt>Size</dt><dd>2m x 2m included &middot; upgrade to 2.3m +£475</dd>
+      </dl>
+      <div class="spec-note"><span class="n-tag">Good for</span>External wood-feed heaters: solid lower wall for mounting, glass for light. Popular in mobile saunas: secure, bright, balanced.</div>
+    </div>
+
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a774d8f5a64f2b567b78ab6.jpg" alt="Full flat glass rear wall" loading="lazy"><div class="pic-tab">Flat glass</div></div>
+      <div class="spec-head"><h3>Full Flat Glass</h3><span class="spec-price">+£850</span></div>
+      <p class="spec-sub">Modern fully-glazed rear wall: full-height tempered glass with Thermowood border.</p>
+      <dl class="spec-grid">
+        <dt>Heater</dt><dd>Side or centre: NOT suitable for external-feed wood burners</dd>
+        <dt>Benches</dt><dd>Any layout (floating bench built for it)</dd>
+        <dt>Size</dt><dd>Included at 2.3m x 2.3m</dd>
+      </dl>
+      <div class="spec-note"><span class="n-tag">Good for</span>When the sauna faces a view: ultra-modern, light-filled, immersive from inside.</div>
+    </div>
+
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850b003343f290f69b50f.jpg" alt="Blackout globe window" loading="lazy"><div class="pic-tab">Blackout</div></div>
+      <div class="spec-head"><h3>Blackout Globe</h3><span class="spec-price">+£2,200</span></div>
+      <p class="spec-sub">Dark-tinted curved dome window with a bold privacy finish: moulded in the UK.</p>
+      <dl class="spec-grid">
+        <dt>Material</dt><dd>Acrylic, heatproof, UK-moulded</dd>
+        <dt>Heater</dt><dd>Side placement only: NOT compatible with external-feed burners</dd>
+        <dt>Benches</dt><dd>3-way U-shape only: rear bench sits flush to window, adds 0.5m internal space</dd>
+        <dt>Size</dt><dd>Fixed 2m x 2m</dd>
+      </dl>
+      <div class="spec-note"><span class="n-tag">Good for</span>Full privacy with modern style in compact spaces: appears blacked-out from outside. Rear bench flush gives 0.5m extra internal room.</div>
+    </div>
+
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850cb9a9c7792ea50e3e6.jpg" alt="Tint globe window" loading="lazy"><div class="pic-tab">Tint globe</div></div>
+      <div class="spec-head"><h3>Tint Globe</h3><span class="spec-price inc">Price on request</span></div>
+      <p class="spec-sub">Tinted curved dome window: the panoramic favourite, custom-moulded and tinted to match.</p>
+      <dl class="spec-grid">
+        <dt>Heater</dt><dd>Side placement only (see matrix)</dd>
+        <dt>Benches</dt><dd>3-way U-shape</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ ENTRANCE WINDOWS ============ -->
+  <div class="ff-section" id="ff-entrance-win">
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ffe8ed63e08439cc2f9ad.jpeg" alt="Full glass facade entrance" loading="lazy"><div class="pic-tab">Facade</div></div>
+      <div class="spec-head"><h3>Entrance window options</h3></div>
+      <p class="spec-sub">The glass is slightly tinted and reflective, so it gives built-in privacy.</p>
+      <dl class="spec-grid">
+        <dt>Standard</dt><dd>One vertical tinted window in the front door</dd>
+        <dt>More light</dt><dd>An extra window either side of the door, or both: three slim windows across the front</dd>
+        <dt>Full glass facade</dt><dd>Full glass door in the centre with two tall side panels</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Design rule</span>
+        All entrance windows are heatproof glass, safe for repeated steam exposure, and fully compatible with every internal layout and heater type.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FRONT DOORS ============ -->
+  <div class="ff-section" id="ff-doors">
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4883b5e520ac1734dd9e.png" alt="Classic sauna door" loading="lazy"><div class="pic-tab">Classic</div></div>
+      <div class="spec-head"><h3>Classic Sauna Door</h3><span class="spec-price inc">Included</span></div>
+      <p class="spec-sub">The most private and weather-ready option: included as standard.</p>
+      <dl class="spec-grid">
+        <dt>Window</dt><dd>Vertical tinted sauna glass</dd>
+        <dt>Frame</dt><dd>Solid timber, thick profile</dd>
+        <dt>Locking</dt><dd>Stainless steel lock &amp; key set</dd>
+      </dl>
+    </div>
+
+    <div class="spec">
+      <div class="pic"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4a05be703c7b303ebe40.jpeg" alt="Full glass front door" loading="lazy"><div class="pic-tab">Full glass</div></div>
+      <div class="spec-head"><h3>ZenView</h3><span class="spec-price">+£150</span></div>
+      <p class="spec-sub">Full-glass front door with slim-line spa look.</p>
+      <dl class="spec-grid">
+        <dt>Glass</dt><dd>Full bronze-tinted sandglass</dd>
+        <dt>Frame</dt><dd>Slim timber trim</dd>
+        <dt>Locking</dt><dd>Lower-position integrated lock &amp; key</dd>
+      </dl>
+      <div class="spec-note"><span class="n-tag">Note</span>Light security. Suits sheltered positions and changing rooms.</div>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><h3>ZenView Secure</h3><span class="spec-price">+£175</span></div>
+      <p class="spec-sub">Full-glass door with a thicker frame and proper key lock.</p>
+      <dl class="spec-grid">
+        <dt>Glass</dt><dd>Full bronze-tinted sandglass</dd>
+        <dt>Frame</dt><dd>Thick timber frame</dd>
+        <dt>Locking</dt><dd>Stainless steel lock &amp; key set</dd>
+      </dl>
+      <div class="spec-note"><span class="n-tag">Note</span>Same look with a proper lock and a stronger frame, for exposed positions.</div>
+    </div>
+  </div>
+
+  <!-- ============ ENTRANCE LAYOUT ============ -->
+  <div class="ff-section" id="ff-entrance">
+    <div class="spec">
+      <div class="spec-head"><h3>Flush vs Porch entrance</h3></div>
+      <div class="pic-grid two"><div class="pic-card"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850679a9c7792ea507671.jpg" alt="Flush entrance" loading="lazy"><div class="pic-tab">Flush</div></div><div class="pic-card"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9e5427b81a3502a8958dbf.jpg" alt="Porch entrance" loading="lazy"><div class="pic-tab">Porch</div></div></div>
+      <dl class="spec-grid">
+        <dt>Flush</dt><dd>Included: keeps all space inside, best for compact builds</dd>
+        <dt>Porch</dt><dd class="spec-price">+£350: takes 0.6m off internal sauna length</dd>
+        <dt>Porch + armrests</dt><dd class="spec-price">+£400 (armrests are a +£50 add-on: towel spot + drinks hole)</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Design rule</span>
+        Porch needs 2.5m or longer. It uses 0.6m of the total length.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ INTERNAL LAYOUT ============ -->
+  <div class="ff-section" id="ff-internal">
+    <div class="spec">
+      <div class="spec-head"><h3>Internal sauna layout</h3></div>
+      <p class="spec-sub">The changing room comes out of the total length, never on top.</p>
+      <dl class="spec-grid">
+        <dt>All sauna space</dt><dd>Included</dd>
+        <dt>1m changing / cooling room + sandglass door</dt><dd class="spec-price">+£725</dd>
+        <dt>1.5m changing / cooling room + sandglass door</dt><dd class="spec-price">+£725</dd>
+        <dt>Under-seat storage in changing room</dt><dd class="spec-price">+£150</dd>
+        <dt>Bespoke layout</dt><dd>Priced on request</dd>
+        <dt>Towel hanger (4 hooks)</dt><dd class="spec-price">+£20</dd>
+        <dt>Towel hanger (8 hooks)</dt><dd class="spec-price">+£35</dd>
+        <dt>Fold-up table</dt><dd class="spec-price">+£195</dd>
+      </dl>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><h3>ZenView Spa Sandglass Door</h3><span class="spec-price inc">Included with any changing room</span></div>
+      <p class="spec-sub">The internal door between changing room and sauna: is included with any changing-room layout.</p>
+      <dl class="spec-grid">
+        <dt>Glass</dt><dd>Bronze-tinted tempered sandglass</dd>
+        <dt>Handle</dt><dd>Vertical wooden grip</dd>
+        <dt>Placement</dt><dd>Between changing room and sauna interior</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Note</span>
+        Included with any changing-room layout. The tinted glass helps hold heat in the sauna. Not the same as the ZenView front doors.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEATER COMPATIBILITY ============ -->
+  <div class="ff-section" id="ff-heater">
+    <div class="spec">
+      <div class="spec-head"><h3>Heater vs Rear Window: placement compatibility</h3></div>
+      <p class="spec-sub">When a window card and this table disagree, this table wins. Globe is side placement only for every heater.</p>
+      <div class="matrix-wrap">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th rowspan="2" style="vertical-align:bottom;text-align:left;">Heater</th>
+              <th colspan="2">Half Glass</th>
+              <th colspan="2">Vertical Sleek</th>
+              <th colspan="2">Globe</th>
+              <th colspan="2">Full Glass Wall</th>
+            </tr>
+            <tr>
+              <th>Side</th><th>Centre</th><th>Side</th><th>Centre</th><th>Side</th><th>Centre</th><th>Side</th><th>Centre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>Harvia M3 (Internal Feed)</th>
+              <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+            <tr><th>Harvia M3 SL (External Feed)</th>
+              <td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+            <tr><th>Harvia KIP90 (Electric: Switch)</th>
+              <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+            <tr><th>Harvia Cilindro (Electric: Freestanding)</th>
+              <td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="spec-note">
+        <span class="n-tag">The two hard rules</span>
+        <span class="b">External-feed burner (M3 SL)</span> only works Centre on Half Glass or Vertical Sleek: never on Globe or Full Glass Wall, never Side. <span class="b">Globe</span> is side-only for every heater.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BENCH LAYOUTS ============ -->
+  <div class="ff-section" id="ff-bench">
+    <div class="spec">
+      <div class="spec-head"><h3>Bench layout options</h3></div>
+      <p class="spec-sub">Three layouts, each with its own flow and function. Bench layout dictates heater placement, which dictates window choice, so settle it bench, then heater, then window.</p>
+      <div class="pic-grid"><div class="pic-card"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c32022bc27f58f4459c2.jpg" alt="Straight bench layout" loading="lazy"><div class="pic-tab">Straight</div></div><div class="pic-card"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac0bc217d735ea2a1f1aa0a.jpg" alt="U-shape bench layout with globe window" loading="lazy"><div class="pic-tab">U-shape</div></div><div class="pic-card"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c5f6bbad531ac8993eac.jpg" alt="L-shape bench layout, compact" loading="lazy"><div class="pic-tab">L-shape</div></div></div>
+      <dl class="spec-grid">
+        <dt>3-Way Straight</dt><dd>Most popular: benches along both side walls and the back wall. Comfortable for groups and lying down.</dd>
+        <dt>U-Shape</dt><dd>Heater on the side, view unobstructed. Interchangeable middle section option (aspen) for stretching, yoga, sprawling.</dd>
+        <dt>L-Shape</dt><dd>For compact builds: heater on the left as you walk in. Electric heater only; a wood burner needs the middle-end position with benches either side.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ============ ROOF & FINISH ============ -->
+  <div class="ff-section" id="ff-roof">
+    <div class="spec">
+      <div class="spec-head"><h3>Hexagon Bitumen Shingles</h3><span class="spec-price inc">Included</span></div>
+      <p class="spec-sub">Charcoal-black hexagon shingles: modern style, rugged outdoor protection.</p>
+      <dl class="spec-grid">
+        <dt>Material</dt><dd>Bitumen with mineral granules</dd>
+        <dt>Protection</dt><dd>UV-resistant, waterproof, wind-tolerant</dd>
+        <dt>Fits</dt><dd>All standard barrel roofs</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Note</span>
+        Shields the sauna from harsh elements, extends the roof timbers' lifespan, adds a polished geometric finish. Black pairs well with Thermowood.
+      </div>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><h3>Roof Edge Lips</h3><span class="spec-price inc">Included</span></div>
+      <p class="spec-sub">Timber roof-edge trim: seals the edge, controls water runoff.</p>
+      <dl class="spec-grid">
+        <dt>Material</dt><dd>Solid glued timber, natural finish</dd>
+        <dt>Function</dt><dd>Seals edge, controls runoff</dd>
+        <dt>Fits</dt><dd>All barrel roof shapes</dd>
+      </dl>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><h3>Exterior Stain Palette</h3><span class="spec-price">Wood stain +£395</span></div>
+      <p class="spec-sub">Optional stained finish: enhances appearance and protects timber from weather and UV.</p>
+      <dl class="spec-grid">
+        <dt>Type</dt><dd>Water-based UV-stable stain, satin matte</dd>
+        <dt>Protection</dt><dd>Enhanced water, mould &amp; UV resistance</dd>
+        <dt>Popular tones</dt><dd>Charcoal grey, soft pine, driftwood brown</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">The 7-day rule</span>
+        Colour is chosen up to 7 days after the deposit. If their colour isn't on the chart, they can supply and apply their own on-site. (Colours vary on screen vs real timber.)
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOUNDATIONS ============ -->
+  <div class="ff-section" id="ff-foundations">
+    <div class="spec">
+      <div class="spec-head"><h3>Barrel sauna foundations</h3><img class="mark" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908e5.png" alt="Barrel sauna line drawing"></div>
+      <p class="spec-sub">The siting rules. Base pricing (decking / concrete) is priced separately, on request, not in the estimate.</p>
+      <dl class="spec-grid">
+        <dt>Needs</dt><dd>Solid, level base: level ground, concrete slab, or bore-hole decking base</dd>
+        <dt>Avoid</dt><dd>Flood-prone or soggy areas</dd>
+        <dt>Height</dt><dd>Base must sit above ground to prevent rot</dd>
+        <dt>Best</dt><dd>Concrete for long-term support; railway sleepers are the cheapest leveller</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Feet rest unfixed</span>
+        The sauna sits on horizontal wooden feet: it rests on them, not bolted down. The weight packs it right onto the base. Sleepers dug in where the feet sit is the cheapest solid option.
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MOBILE TRAILER ============ -->
+  <div class="ff-section" id="ff-mobile">
+    <div class="spec">
+      <div class="spec-head"><h3>Mobile barrel sauna: trailer specs</h3><img class="mark" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee114091fa65e6a8fa27.png" alt="Mobile sauna line drawing"></div>
+      <p class="spec-sub">Preset trailer sizes: 3m, 3.5m, 4m, custom on request.</p>
+      <dl class="spec-grid">
+        <dt>Frame</dt><dd>Galvanised steel</dd>
+        <dt>Braking</dt><dd>Braking system with brake lever, anti-sway control</dd>
+        <dt>Running gear</dt><dd>Axle &amp; suspension, solid wheels &amp; mounting brackets, spare tyre with mount</dd>
+        <dt>Safety kit</dt><dd>Full lights, reflectors, side markers; ratchet straps &amp; anchoring points; stabilising station poles</dd>
+        <dt>Build</dt><dd>Weather-resistant, road-legal (compliance &amp; licensing), delivered fully built</dd>
+        <dt>Included</dt><dd>User manual, aftercare &amp; warranty</dd>
+      </dl>
+      <div class="spec-note">
+        <span class="n-tag">Electrics</span>
+        Mobiles are fully turnkey: professionally tested and wired, battery and solar fitted, ready to go. Different from residential builds (which need the customer's electrician for the mains connection).
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ICE BATHS & HOT TUBS ============ -->
+  <div class="ff-section" id="ff-water">
+    <div class="spec">
+      <div class="spec-head"><h3>Ice baths: the dippers</h3><img class="mark" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cff484614db7528b9.png" alt="Double Dipper line drawing"></div>
+      <p class="spec-sub">The Single Dipper is cold only. The Double Dipper is ice bath and hot tub: heats to 40°, cools to zero. Not instant-switch: decide overnight.</p>
+      <table class="qtable">
+        <tr><th>Model</th><th>Price</th></tr>
+        <tr><td>Single dipper (chiller / filter)</td><td>£3,995 + VAT</td></tr>
+        <tr><td>Double dipper (chiller / filter)</td><td>£5,995 + VAT</td></tr>
+      </table>
+      <div class="spec-note">Comes complete: thin wood steps, lids, inserts, seats. Delivery included when brought with the sauna (one trip).</div>
+    </div>
+
+    <div class="spec">
+      <div class="spec-head"><h3>Hot tubs</h3><img class="mark" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee1430b0f957ccb86d28.png" alt="Hot tub line drawing"></div>
+      <p class="spec-sub">Round, clad to match the sauna. Woodburn or electric heated.</p>
+      <table class="qtable">
+        <tr><th>Item</th><th>Price</th></tr>
+        <tr><td>Thermowood hot tub (jets, LED, stairs, thermocover)</td><td>£5,995</td></tr>
+        <tr><td>2 x Thermowood hot tub</td><td>£11,395</td></tr>
+        <tr><td>Barrel shower</td><td>£2,495</td></tr>
+        <tr><td>Heated water tank (wood burner option)</td><td>+£375</td></tr>
+      </table>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  <div class="details" style="background-image:linear-gradient(90deg,rgba(22,38,28,0.88) 0%,rgba(22,38,28,0.55) 48%,rgba(22,38,28,0.80) 100%),url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa00cb4f44f6ea72fcb18fa.png');">
+    <div class="details-in">
+      <div class="ddisc" style="background-image:url(&quot;https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab400c7ec718870e13b1869.png&quot;);background-size:190%;background-position:53% 47%;"></div>
+      <h3>Built to last, <span class="acc">in Wales</span></h3>
+    </div>
+  </div>
+</div>
+
+<div class="tab-panel" id="tab-qa">
+  <div class="band hasbot">
+    <div class="band-in">
+      <div class="dash"></div>
+      <div class="kicker">Q&amp;A</div>
+      <h2>The questions every <span class="acc">buyer</span> asks</h2>
+      <p>Eleven cards. Look it up, answer it, move on. Prices are starting points; everything is made to order. All prices are plus VAT.</p>
+    </div>
+    <svg class="bot bot-band" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="104" cy="206" rx="46" ry="8" fill="rgba(0,0,0,0.22)"/>
+<path d="M62 108 Q62 86 104 86 Q146 86 146 108 L146 168 Q146 190 104 190 Q62 190 62 168 Z" fill="#8fae86"/>
+<path d="M62 108 Q62 86 104 86 Q146 86 146 108 L146 116 Q146 94 104 94 Q62 94 62 116 Z" fill="#2B5336" opacity="0.30"/>
+<line x1="83" y1="90" x2="83" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<line x1="104" y1="87" x2="104" y2="190" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<line x1="125" y1="90" x2="125" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<path d="M62 122 Q104 134 146 122" stroke="#D6A868" stroke-width="6" fill="none"/>
+<path d="M62 156 Q104 168 146 156" stroke="#D6A868" stroke-width="6" fill="none"/>
+<ellipse cx="86" cy="196" rx="15" ry="9" fill="#417C51"/>
+<ellipse cx="122" cy="196" rx="15" ry="9" fill="#417C51"/>
+<path d="M62 118 L20 112" stroke="#417C51" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="16" cy="111" r="11" fill="#D6A868"/>
+<path d="M148 124 Q166 138 158 156" stroke="#417C51" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="156" cy="160" r="11" fill="#D6A868"/>
+<rect x="64" y="18" width="80" height="62" rx="26" fill="#417C51"/>
+<rect x="74" y="32" width="60" height="34" rx="17" fill="#16261C"/>
+<circle cx="92" cy="49" r="7.5" fill="#D6A868"/><circle cx="116" cy="49" r="7.5" fill="#D6A868"/><path d="M96 58 Q104 63 112 58" stroke="#D6A868" stroke-width="3" fill="none" stroke-linecap="round"/>
+<line x1="104" y1="18" x2="104" y2="8" stroke="#417C51" stroke-width="4"/>
+<circle cx="104" cy="6" r="5.5" fill="#D6A868"/>
+<rect x="96" y="78" width="16" height="10" fill="#16261C"/></svg>
+  </div>
+
+
+  <div class="wrap pad">
+  <div class="card" id="q1">
+    <div class="qhead"><div class="disc">⚡</div><div><span class="num">One</span><h2>Electrics: "Do I Need Power for It?"</h2></div></div>
+    <span class="label">Saunas</span>
+    <div class="say">
+      <p><span class="b">Wood burner:</span> no electric needed for the heater itself. The only draw is the lights, and the solar lighting option powers porch, changing room and sauna off-grid, no mains, zero running cost.</p>
+      <p><span class="b">Electric WiFi heater</span> (Harvia, app control): needs mains access, single or three phase depending on supply. Better fit for commercial/Airbnb where lighting a fire daily is a chore.</p>
+      <p>Wiring is done by a qualified local electrician after the build.</p>
+    </div>
+    <span class="label">Hot tubs</span>
+    <div class="say">
+      <p><span class="b">Wood-fired tub:</span> electric draw is very low. A standard 240V plug socket covers it, and that only runs the lights and jets, nothing heavy.</p>
+      <p><span class="b">No jets, no lights:</span> no electric required at all. Fully off-grid capable.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q2">
+    <div class="qhead"><div class="disc">📏</div><div><span class="num">Two</span><h2>Dimensions &amp; Sizing</h2></div></div>
+    <span class="label">Made to order</span>
+    <div class="say">
+      <p>Lengths run from 1.8m to 6m. What fits at each length (changing room, porch, side door, how many it seats) is in Fast Facts under Length &amp; Layout Rules.</p>
+      <p>Diameter, windows, heaters and layout are all chosen separately. Standard diameter is 2m; 2.3m gains surprising space.</p>
+      <p><span class="b">Spec rule:</span> the changing room comes <em>out of</em> the total length, not on top. A 3m sauna with a 1m changing room is a 2m hot room.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q3">
+    <div class="qhead"><div class="disc">🧱</div><div><span class="num">Three</span><h2>Base, Siting &amp; Groundworks</h2></div></div>
+    <span class="label">"What do I stand it on? Do I need to prep?"</span>
+    <div class="say">
+      <p>Any solid, <span class="b">level</span> surface works: patio, concrete pad, gravel, hardstanding. As long as it's level, it works. No need to lift an existing patio.</p>
+      <p>The sauna sits on <span class="b">horizontal legs/feet</span>, cut precise to form the barrel. It rests on them unfixed; the weight packs it right down onto the base.</p>
+      <p><span class="b">Railway sleepers</span> are the cheapest leveller: dig them in where the feet sit, done. On an existing slab: build straight on it if level, sleepers under the feet if any levelling's needed.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q4">
+    <div class="qhead"><div class="disc">🚚</div><div><span class="num">Four</span><h2>Delivery &amp; Install: The Prices</h2></div></div>
+    <table class="qtable">
+      <tr><th>Option</th><th>Price</th></tr>
+      <tr><td>Fully assembled: England/Wales</td><td>+£495</td></tr>
+      <tr><td>Full onsite build</td><td>+£1,250</td></tr>
+      <tr><td>Large sauna onsite build</td><td>+£1,500</td></tr>
+      <tr><td>Ireland / Scotland / Isle of Wight</td><td>+£300</td></tr>
+      <tr><td>EU delivery</td><td>+£500</td></tr>
+      <tr><td>Crane (HIAB) delivery</td><td>+£1,200 est.</td></tr>
+      <tr><td>Collection</td><td>Included</td></tr>
+      <tr><td>Custom / remote access</td><td>Priced on request</td></tr>
+    </table>
+    <div class="say">
+      <p><span class="b">HIAB crane</span> for local: lifts over drives, walls, obstacles. <span class="b">Delivery trailer</span> for further afield, ready for a lift on the client's side. Client can use their own crane/local company, farms, estates, commercial all fine.</p>
+      <p><span class="b">Always get an access-route video.</span> It determines the delivery method (HIAB vs trailer vs handball).</p>
+    </div>
+  </div>
+
+  <div class="card" id="q5">
+    <div class="qhead"><div class="disc">🔧</div><div><span class="num">Five</span><h2>On-Site Build vs Delivery</h2></div></div>
+    <span class="label">The cost difference</span>
+    <div class="say">
+      <p>Delivered fully assembled is <span class="b">+£495</span>. Full on-site build is <span class="b">+£1,250</span> (£1,500 for large). So on-site build runs roughly <span class="b">£755 to £1,005 more</span> than assembled delivery, depending on size.</p>
+      <p>On-site build is for when access won't allow a pre-built unit in, not the default. If access is easy and there's hardstanding, we bring it fully built and lift it into place.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q6">
+    <div class="qhead"><div class="disc">🌍</div><div><span class="num">Six</span><h2>Ireland &amp; International</h2></div></div>
+    <span class="label">The answer</span>
+    <div class="say">
+      <p><span class="b">Ireland:</span> no problem: +£300 delivery. Ian, qualified carpenter and long-standing team member, is Ireland-based; comes to the UK for install stints, then does the rounds on Ireland installs.</p>
+      <p><span class="b">International/EU:</span> +£500 EU, custom beyond. Take the details and pass them to <span class="b">James</span>; don't price it on the spot.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q7">
+    <div class="qhead"><div class="disc">💧</div><div><span class="num">Seven</span><h2>Hot Tubs &amp; Ice Baths: The Prices</h2></div></div>
+    <span class="label">The most-asked-for numbers</span>
+    <table class="qtable">
+      <tr><th>Item</th><th>Price</th></tr>
+      <tr><td>Single dipper ice bath (chiller/filter)</td><td>£3,995 + VAT</td></tr>
+      <tr><td>Double dipper ice bath (chiller/filter)</td><td>£5,995 + VAT</td></tr>
+      <tr><td>Thermowood hot tub</td><td>£5,995</td></tr>
+      <tr><td>Barrel shower</td><td>£2,495</td></tr>
+      <tr><td>Heated water tank (wood burner)</td><td>+£375</td></tr>
+    </table>
+    <div class="say">
+      <p><span class="b">The dippers explained:</span> the Single Dipper is a cold plunge, chiller and filter, cold only. The Double Dipper adds a heater: heats to 40°, cools to zero, so it is ice bath <em>and</em> hot tub, but not instant-switch: decide the night before and switch overnight. Both come complete: thin wood steps, lids, inserts, seats.</p>
+      <p>Traditional wood-fired hot tub can be <span class="b">woodburn or electric</span> heated. Delivery included when brought <span class="b">with the sauna</span>, one trip, no second delivery charge.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q8">
+    <div class="qhead"><div class="disc honey">💷</div><div><span class="num">Eight</span><h2>Base Sauna Price List (Thermowood)</h2></div></div>
+    <span class="label">Starting prices: made to order, before upgrades</span>
+    <table class="qtable">
+      <tr><th>Length</th><th>Price</th></tr>
+      <tr><td>1.8m</td><td>£5,250</td></tr>
+      <tr><td>2.5m</td><td>£7,995</td></tr>
+      <tr><td>3.2m</td><td>£8,795</td></tr>
+      <tr><td>3.6m</td><td>£10,250</td></tr>
+      <tr><td>4.1m</td><td>£10,995</td></tr>
+      <tr><td>4.6m</td><td>£11,795</td></tr>
+      <tr><td>5m</td><td>£12,745</td></tr>
+      <tr><td>6m</td><td>£13,495</td></tr>
+    </table>
+    <div class="say">
+      <p>Diameter, windows, heaters, lighting and delivery are all priced separately. The option prices are in Fast Facts.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q9">
+    <div class="qhead"><div class="disc">🔥</div><div><span class="num">Nine</span><h2>Heaters: Wood vs Electric</h2></div></div>
+    <span class="label">The quick facts</span>
+    <div class="say">
+      <p><span class="b">Wood burner:</span> ambient, the glow, natural and therapeutic. All safety accessories included as standard, base plate, heat shields, guardrail, flue shields.</p>
+      <p><span class="b">Electric WiFi (Harvia):</span> app control, remote on/off, timers. Less maintenance for commercial/Airbnb. Volcanic stones, real steam, not a zappy infrared feel. Single- or three-phase depending on supply.</p>
+      <p><span class="b">Spec rule:</span> external-feed wood burner ONLY pairs with the two double-glazed windows or the half-moon, <em>never</em> the big flat glass. You're not feeding logs through a sheet of glass.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q10">
+    <div class="qhead"><div class="disc">🏠</div><div><span class="num">Ten</span><h2>"If We Move House, Can We Take It?"</h2></div></div>
+    <span class="label">Reusable as is</span>
+    <div class="say">
+      <p>Yes. One sauna went to three expos before landing at a client's house.</p>
+      <p><span class="b">Local move:</span> HIAB is best: lift and go. <span class="b">Further:</span> lift into a trailer and drive it. <span class="b">Worst case:</span> disassemble and reassemble. Can be moved as a full unit too.</p>
+    </div>
+  </div>
+
+  <div class="card" id="q11">
+    <div class="qhead"><div class="disc">📋</div><div><span class="num">Eleven</span><h2>Planning Permission</h2></div></div>
+    <span class="label">The answer</span>
+    <div class="say">
+      <p><span class="b">Eco glamping pods:</span> no planning permission required: permitted development in most cases. Saunas and tubs generally sit under permitted development too, but it's site-dependent.</p>
+    </div>
+  </div>
+
+  </div>
+</div>
+<div class="tab-panel" id="tab-terms">
+  <div class="band">
+    <div class="band-in">
+      <div class="dash"></div>
+      <div class="kicker">Working terms</div>
+      <h2>The Seller Agreement, <span class="acc">day to day</span></h2>
+      <p>A summary of the Agreement as it applies in practice. It does not replace the Agreement. Where the two differ, the signed Agreement prevails.</p>
+    </div>
+  </div>
+  <div class="wrap pad">
+  <div class="card">
+    <ol class="terms">
+      <li><div><span class="t">Records</span>All leads, enquiries, call notes, messages and estimates are recorded in the Company's CRM. These records are the property of the Company.</div></li>
+      <li><div><span class="t">Pricing</span>All pricing is produced through the Company's estimate builder. Anything outside its scope is priced by the Company, case by case.</div></li>
+      <li><div><span class="t">Estimates and invoices</span>Every figure given to a customer is an estimate. The invoice raised by the Company is the binding document. The term is "estimate" throughout.</div></li>
+      <li><div><span class="t">Commitments</span>Discounts, delivery dates and specifications are offered only where they appear in the estimate builder or have been confirmed by James in writing.</div></li>
+      <li><div><span class="t">Referrals</span>Sales, pricing, product and specification questions are referred to James. Systems, links and estimate builder questions are referred to Nikki. Progress on clients, orders and builds is referred to Marta and Millie.</div></li>
+      <li><div><span class="t">Content</span>Company photographs, renders, videos and written material are used solely to sell Company products. They are not published on personal social media or personal advertising, and Company work is not presented as the Seller's own.</div></li>
+      <li><div><span class="t">Confidentiality</span>Pricing methodology, margins and customer details are not disclosed to any third party and are not entered into public AI tools.</div></li>
+      <li><div><span class="t">Customers</span>Every lead and every customer belongs to the Company, during the engagement and after it. No lead or customer is taken outside the Company's system.</div></li>
+      <li><div><span class="t">The deposit</span>The £500 deposit is non-refundable, holds the customer's place in the build queue and comes off the total. On receipt, the Company takes over the customer relationship, invoicing and build.</div></li>
+      <li><div><span class="t">Remuneration</span>Payment terms are set out in the Seller Agreement and the earnings schedule issued with it.</div></li>
+      <li><div><span class="t">Customer finance</span>Finance is available to customers through Jason Reid, a vetted provider, on terms from 1 to 5 years. The customer's invoice is cleared upfront. The form may be completed on the customer's behalf.<br><a class="pill" href="https://www.barrelsaunauk.com/finance" target="_blank" rel="noopener">Open the Finance Form</a></div></li>
+    </ol>
+    <div class="closing"><svg class="bot bot-close" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="100" cy="206" rx="46" ry="8" fill="rgba(0,0,0,0.22)"/>
+<path d="M144 116 Q168 102 164 76" stroke="#417C51" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="163" cy="72" r="11" fill="#D6A868"/>
+<path d="M56 116 Q32 102 36 76" stroke="#417C51" stroke-width="13" fill="none" stroke-linecap="round"/><circle cx="37" cy="72" r="11" fill="#D6A868"/>
+<path d="M58 108 Q58 86 100 86 Q142 86 142 108 L142 168 Q142 190 100 190 Q58 190 58 168 Z" fill="#8fae86"/>
+<path d="M58 108 Q58 86 100 86 Q142 86 142 108 L142 116 Q142 94 100 94 Q58 94 58 116 Z" fill="#2B5336" opacity="0.30"/>
+<line x1="79" y1="90" x2="79" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<line x1="100" y1="87" x2="100" y2="190" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<line x1="121" y1="90" x2="121" y2="188" stroke="#2B5336" stroke-width="2.5" opacity="0.45"/>
+<path d="M58 122 Q100 134 142 122" stroke="#D6A868" stroke-width="6" fill="none"/>
+<path d="M58 156 Q100 168 142 156" stroke="#D6A868" stroke-width="6" fill="none"/>
+<ellipse cx="82" cy="196" rx="15" ry="9" fill="#417C51"/>
+<ellipse cx="118" cy="196" rx="15" ry="9" fill="#417C51"/>
+<rect x="60" y="18" width="80" height="62" rx="26" fill="#417C51"/>
+<rect x="70" y="32" width="60" height="34" rx="17" fill="#16261C"/>
+<path d="M82 50 Q88 43 94 50" stroke="#D6A868" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M106 50 Q112 43 118 50" stroke="#D6A868" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M90 57 Q100 66 110 57" stroke="#D6A868" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<line x1="100" y1="18" x2="100" y2="8" stroke="#417C51" stroke-width="4"/>
+<circle cx="100" cy="6" r="5.5" fill="#D6A868"/>
+<rect x="92" y="78" width="16" height="10" fill="#16261C"/></svg>
+      <div class="who">
+        <div class="who-k">Who to ask</div>
+        <div class="who-row">
+          <div class="who-item"><div class="disc">🤝</div><div><span class="who-t">Sales, pricing, product</span><span class="who-n">James</span></div></div>
+          <div class="who-item"><div class="disc">⚙️</div><div><span class="who-t">Systems, links, estimate builder</span><span class="who-n">Nikki</span></div></div>
+          <div class="who-item"><div class="disc">📋</div><div><span class="who-t">Progress on clients, orders, builds</span><span class="who-n">Marta and Millie</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<footer>
+  <div class="pfoot">
+    <div class="icons">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db7528f5.png" alt="Glamping pod">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14de8ed1c29f9e137f.png" alt="Shepherd's hut">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11bdaa5e26a9690935.png" alt="Hot tub">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14bdaa5e26a969097d.png" alt="Mobile sauna">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cde8ed1c29f9e1305.png" alt="Barrel sauna">
+      <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908f0.png" alt="Double Dipper">
+    </div>
+    <div class="signoff">The Barrel Sauna UK Team</div>
+    <div class="dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales &nbsp;&middot;&nbsp; v5</div>
+  </div>
+</footer>
+
+<script>
+  var tabBtns=document.querySelectorAll('.tab-btn'),tabPanels=document.querySelectorAll('.tab-panel');
+  function activateTab(id){
+    tabBtns.forEach(function(b){b.classList.toggle('active',b.getAttribute('data-tab')===id);});
+    tabPanels.forEach(function(p){p.classList.toggle('active',p.id===id);});
+  }
+  tabBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){activateTab(btn.getAttribute('data-tab'));window.scrollTo({top:0,behavior:'instant'});});
+  });
+  document.addEventListener('click',function(e){
+    var s=e.target.closest('.subtab');
+    if(!s) return;
+    s.parentElement.querySelectorAll('.subtab').forEach(function(b){b.classList.remove('active');});
+    s.classList.add('active');
+    document.querySelectorAll('.ff-section').forEach(function(sec){sec.classList.toggle('active',sec.id===s.dataset.ff);});
+    var sel=document.getElementById('tocSelect'); if(sel) sel.value=s.dataset.ff;
+    var top=document.querySelector('.tab-wrap').offsetTop;
+    window.scrollTo({top:top,behavior:'instant'});
+  });
+  function showFF(id){
+    document.querySelectorAll('.toc .subtab').forEach(function(b){b.classList.toggle('active',b.dataset.ff===id);});
+    document.querySelectorAll('.ff-section').forEach(function(sec){sec.classList.toggle('active',sec.id===id);});
+    var sel=document.getElementById('tocSelect'); if(sel) sel.value=id;
+  }
+  var tocSel=document.getElementById('tocSelect');
+  if(tocSel){tocSel.addEventListener('change',function(){showFF(tocSel.value);var top=document.querySelector('.tab-wrap').offsetTop;window.scrollTo({top:top,behavior:'instant'});});}
+  document.getElementById('homeBtn').addEventListener('click',function(){activateTab('tab-facts');showFF('ff-included');window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+</body>
+</html>
