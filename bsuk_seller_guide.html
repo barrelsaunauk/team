@@ -353,6 +353,10 @@ body.t-facts .facts-only { display: block; }
   .shots { grid-template-columns: 1fr; }
 }
 
+/* v7: 3D renders on white on white lift cards */
+.shots.lift .shot__frame { border: 0; border-radius: 22px; box-shadow: var(--shadow); padding: 14px; }
+.shots.lift { gap: 18px; }
+
 </style>
 </head>
 <body class="t-facts">
@@ -525,8 +529,8 @@ body.t-facts .facts-only { display: block; }
       Heater placement depends on the rear window. See the Heater Compatibility tab: it's the single source of truth. Globe windows are side-placement only, always.
     </div>
 
-    <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4756c13d4373c2dc9120.png" alt="Barrel sauna rear wall in full wood" loading="lazy"></div>
+    <div class="spec"><div class="shots c3"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4756c13d4373c2dc9120.png" alt="Barrel sauna rear wall in full wood" loading="lazy"></div><p class="shot__lab">Full Wood Wall</p><p class="shot__st">Included</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7852109994d35aa0e208d3.jpg" alt="Half glass rear wall" loading="lazy"></div><p class="shot__lab">Half Glass Rear Wall</p><p class="shot__st">+£500</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a774d8f5a64f2b567b78ab6.jpg" alt="Full flat glass rear wall" loading="lazy"></div><p class="shot__lab">Full Flat Glass</p><p class="shot__st">+£850</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850b003343f290f69b50f.jpg" alt="Blackout globe window" loading="lazy"></div><p class="shot__lab">Blackout Globe</p><p class="shot__st">+£2,200</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850cb9a9c7792ea50e3e6.jpg" alt="Tint globe window" loading="lazy"></div><p class="shot__lab">Tint Globe</p><p class="shot__st">Price on request</p></div></div></div>
+<div class="spec">
       <div class="spec-head"><h3>Full Wood Wall</h3><span class="spec-price inc">Included</span></div>
       <p class="spec-sub">Full-privacy solid timber rear wall: no glass.</p>
       <dl class="spec-grid">
@@ -550,7 +554,6 @@ body.t-facts .facts-only { display: block; }
     </div>
 
     <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7852109994d35aa0e208d3.jpg" alt="Half glass rear wall" loading="lazy"></div>
       <div class="spec-head"><h3>Half Glass Rear Wall</h3><span class="spec-price">+£500</span></div>
       <p class="spec-sub">Split wood-and-glass rear wall: tinted tempered glass top, timber bottom.</p>
       <dl class="spec-grid">
@@ -562,7 +565,6 @@ body.t-facts .facts-only { display: block; }
     </div>
 
     <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a774d8f5a64f2b567b78ab6.jpg" alt="Full flat glass rear wall" loading="lazy"></div>
       <div class="spec-head"><h3>Full Flat Glass</h3><span class="spec-price">+£850</span></div>
       <p class="spec-sub">Modern fully-glazed rear wall: full-height tempered glass with Thermowood border.</p>
       <dl class="spec-grid">
@@ -574,7 +576,6 @@ body.t-facts .facts-only { display: block; }
     </div>
 
     <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850b003343f290f69b50f.jpg" alt="Blackout globe window" loading="lazy"></div>
       <div class="spec-head"><h3>Blackout Globe</h3><span class="spec-price">+£2,200</span></div>
       <p class="spec-sub">Dark-tinted curved dome window with a bold privacy finish: moulded in the UK.</p>
       <dl class="spec-grid">
@@ -587,7 +588,6 @@ body.t-facts .facts-only { display: block; }
     </div>
 
     <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a7850cb9a9c7792ea50e3e6.jpg" alt="Tint globe window" loading="lazy"></div>
       <div class="spec-head"><h3>Tint Globe</h3><span class="spec-price inc">Price on request</span></div>
       <p class="spec-sub">Tinted curved dome window: the panoramic favourite, custom-moulded and tinted to match.</p>
       <dl class="spec-grid">
@@ -603,9 +603,8 @@ body.t-facts .facts-only { display: block; }
     <button class="got" type="button" data-sec="ff-entrance-win">Got it</button>
   </div>
       <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ffe8ed63e08439cc2f9ad.jpeg" alt="Full glass facade entrance" loading="lazy"></div>
       <div class="spec-head"><h3>Entrance window options</h3></div>
-      <p class="spec-sub">The glass is slightly tinted and reflective, so it gives built-in privacy.</p>
+      <p class="spec-sub">The glass is slightly tinted and reflective, so it gives built-in privacy.</p><div class="shots c2"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9ffe8ed63e08439cc2f9ad.jpeg" alt="Full glass facade entrance" loading="lazy"></div><p class="shot__lab">Full glass facade</p><p class="shot__st">Full glass door in the centre with two tall side panels</p></div></div>
       <dl class="spec-grid">
         <dt>Standard</dt><dd>One vertical tinted window in the front door</dd>
         <dt>More light</dt><dd>An extra window either side of the door, or both: three slim windows across the front</dd>
@@ -623,8 +622,8 @@ body.t-facts .facts-only { display: block; }
     <div><p class="kicker">Windows and doors</p><h2>Front <span>doors</span></h2></div>
     <button class="got" type="button" data-sec="ff-doors">Got it</button>
   </div>
-      <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4883b5e520ac1734dd9e.png" alt="Classic sauna door" loading="lazy"></div>
+  <div class="spec"><div class="shots c2"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4883b5e520ac1734dd9e.png" alt="Classic sauna door" loading="lazy"></div><p class="shot__lab">Classic Sauna Door</p><p class="shot__st">Included</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4a05be703c7b303ebe40.jpeg" alt="Full glass front door" loading="lazy"></div><p class="shot__lab">Full Glass Door</p><p class="shot__st">+£150</p></div></div></div>
+    <div class="spec">
       <div class="spec-head"><h3>Classic Sauna Door</h3><span class="spec-price inc">Included</span></div>
       <p class="spec-sub">The most private and weather-ready option: included as standard.</p>
       <dl class="spec-grid">
@@ -635,7 +634,6 @@ body.t-facts .facts-only { display: block; }
     </div>
 
     <div class="spec">
-      <div class="photo"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aba4a05be703c7b303ebe40.jpeg" alt="Full glass front door" loading="lazy"></div>
       <div class="spec-head"><h3>Full Glass Door</h3><span class="spec-price">+£150</span></div>
       <p class="spec-sub">Full-glass front door with slim-line spa look.</p>
       <dl class="spec-grid">
@@ -762,7 +760,7 @@ body.t-facts .facts-only { display: block; }
       <div class="spec">
       <div class="spec-head"><h3>Bench layout options</h3></div>
       <p class="spec-sub">Three layouts, each with its own flow and function. Bench layout dictates heater placement, which dictates window choice, so settle it bench, then heater, then window.</p>
-      <div class="shots c3"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c32022bc27f58f4459c2.jpg" alt="Straight bench layout" loading="lazy"></div><p class="shot__lab">Straight</p><p class="shot__st">Most popular</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac0bc217d735ea2a1f1aa0a.jpg" alt="U-shape bench layout with globe window" loading="lazy"></div><p class="shot__lab">U-shape</p><p class="shot__st">Heater on the side, view unobstructed</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c5f6bbad531ac8993eac.jpg" alt="L-shape bench layout, compact" loading="lazy"></div><p class="shot__lab">L-shape</p><p class="shot__st">For compact builds</p></div></div>
+      <div class="shots c3 lift"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c32022bc27f58f4459c2.jpg" alt="Straight bench layout" loading="lazy"></div><p class="shot__lab">Straight</p><p class="shot__st">Most popular</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac0bc217d735ea2a1f1aa0a.jpg" alt="U-shape bench layout with globe window" loading="lazy"></div><p class="shot__lab">U-shape</p><p class="shot__st">Heater on the side, view unobstructed</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1c5f6bbad531ac8993eac.jpg" alt="L-shape bench layout, compact" loading="lazy"></div><p class="shot__lab">L-shape</p><p class="shot__st">For compact builds</p></div></div>
       <dl class="spec-grid">
         <dt>3-Way Straight</dt><dd>Most popular: benches along both side walls and the back wall. Comfortable for groups and lying down.</dd>
         <dt>U-Shape</dt><dd>Heater on the side, view unobstructed. Interchangeable middle section option (aspen) for stretching, yoga, sprawling.</dd>
@@ -822,7 +820,7 @@ body.t-facts .facts-only { display: block; }
   </div>
       <div class="spec">
       <div class="spec-head"><h3>Mobile barrel sauna: trailer specs</h3><img class="mark" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee114091fa65e6a8fa27.png" alt="Mobile sauna line drawing"></div>
-      <p class="spec-sub">Preset trailer sizes: 3m, 3.5m, 4m, custom on request.</p>
+      <p class="spec-sub">Preset trailer sizes: 3m, 3.5m, 4m, custom on request.</p><div class="shots c2"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1cc6f7d735ea2a10c07da.jpg" alt="Mobile barrel sauna on its trailer" loading="lazy"></div><p class="shot__lab">Sauna on its trailer</p><p class="shot__st">Delivered fully built</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac1ce1cc478ac5535b2022e.jpg" alt="BSUK sauna trailer on its own" loading="lazy"></div><p class="shot__lab">The trailer</p><p class="shot__st">Galvanised steel frame</p></div></div>
       <dl class="spec-grid">
         <dt>Frame</dt><dd>Galvanised steel</dd>
         <dt>Braking</dt><dd>Braking system with brake lever, anti-sway control</dd>
@@ -1087,7 +1085,7 @@ body.t-facts .facts-only { display: block; }
     <div class="foot__icons"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db7528f5.png" alt="Glamping pod"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14de8ed1c29f9e137f.png" alt="Shepherd's hut"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11bdaa5e26a9690935.png" alt="Hot tub"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14bdaa5e26a969097d.png" alt="Mobile sauna"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cde8ed1c29f9e1305.png" alt="Barrel sauna"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908f0.png" alt="Double Dipper"></div>
     <img class="foot__logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
     <p class="foot__signoff">The Barrel Sauna UK Team</p>
-    <p class="foot__dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales &nbsp;&middot;&nbsp; v6</p>
+    <p class="foot__dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales &nbsp;&middot;&nbsp; v7</p>
     <div class="foot__sig"><a href="https://www.barrelsaunauk.com" target="_blank" rel="noopener"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Barrel Sauna UK signature"></a></div>
   </div>
 </footer>
