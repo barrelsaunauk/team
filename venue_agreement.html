@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venue Agreement | Barrel Sauna UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ground: #16261C; --forest-deep: #1F3D28; --forest: #2B5336; --mid: #417C51;
+  --sage: #50795F; --sage-pale: #8fae86; --honey: #C08B41; --honey-l: #D6A868;
+  --tint: #dbe7dd; --tint-l: #eef4ef; --ink: #3A4240; --ink-l: #5C6663;
+  --rule-soft: rgba(65,124,81,0.12); --hairline: rgba(65,124,81,0.30);
+  --shadow: 0 10px 30px rgba(22,38,28,0.12);
+  --face: 'Raleway', Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: clip; }
+body { margin: 0; background: #ffffff; font-family: var(--face); color: var(--ink); font-weight: 400; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+.top { background: var(--ground); color: #fff; }
+.top .wrap { padding-top: 26px; padding-bottom: 40px; }
+.top img { width: 92px; height: auto; display: block; margin: 0 0 40px 0; }
+.dash { width: 44px; height: 2px; background: var(--honey-l); margin: 0 0 14px 0; }
+.kicker { font-size: 11px; font-weight: 700; letter-spacing: 0.32em; text-transform: uppercase; color: var(--honey); margin: 0 0 8px 0; }
+.top .kicker { color: var(--honey-l); }
+h1 { font-size: 40px; font-weight: 700; line-height: 1.1; margin: 0 0 10px 0; color: #fff; }
+h1 span { color: var(--honey-l); }
+.top p { margin: 0; color: #dfe9df; font-size: 15px; line-height: 1.7; max-width: 560px; }
+
+.note { margin: 28px 0 0 0; background: var(--tint); border-left: 3px solid var(--forest-deep); border-radius: 14px; padding: 18px 20px; font-size: 14px; line-height: 1.7; color: var(--forest-deep); }
+.note .lab { display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin: 0 0 4px 0; }
+
+.card { background: #fff; border: 1px solid var(--rule-soft); border-radius: 22px; box-shadow: var(--shadow); padding: 28px; margin: 18px 0 0 0; }
+.parties { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.party { background: var(--tint-l); border-radius: 16px; padding: 18px 20px; }
+.party .lab { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin: 0 0 6px 0; }
+.party .v { font-size: 16px; font-weight: 700; color: var(--forest-deep); margin: 0 0 4px 0; line-height: 1.4; }
+.party p { margin: 0; font-size: 13px; color: var(--ink-l); line-height: 1.6; }
+
+ol.clauses { list-style: none; counter-reset: c; margin: 0; padding: 0; }
+ol.clauses > li { counter-increment: c; display: grid; grid-template-columns: 34px 1fr; gap: 0 14px; padding: 18px 0; border-bottom: 1px solid var(--rule-soft); font-size: 14.5px; line-height: 1.75; }
+ol.clauses > li:first-child { padding-top: 0; }
+ol.clauses > li:last-child { border-bottom: 0; padding-bottom: 0; }
+ol.clauses > li::before { content: counter(c); width: 28px; height: 28px; border-radius: 50%; background: var(--forest-deep); color: #fff; font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+.t { display: block; font-weight: 700; color: var(--forest-deep); font-size: 16px; margin: 0 0 4px 0; }
+ol.clauses p { margin: 0 0 8px 0; }
+ol.clauses p:last-child { margin-bottom: 0; }
+ul.sub { margin: 6px 0 0 0; padding: 0 0 0 18px; }
+ul.sub li { margin: 0 0 6px 0; }
+
+.tbc { display: inline; background: #fff; border: 1.5px dashed var(--honey); color: var(--honey); border-radius: 8px; padding: 1px 8px; font-size: 13px; font-weight: 700; white-space: normal; }
+
+.sign { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.sig { border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; }
+.sig .lab { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin: 0 0 14px 0; }
+.line { border-bottom: 1px solid var(--hairline); height: 34px; margin: 0 0 4px 0; }
+.ll { font-size: 12px; color: var(--ink-l); margin: 0 0 14px 0; }
+
+.foot { margin: 46px 0 0 0; background: var(--ground); text-align: center; padding: 30px 16px; }
+.foot p { margin: 0; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-pale); }
+
+@media (max-width: 640px) {
+  h1 { font-size: 30px; }
+  .card { padding: 20px; }
+  .parties, .sign { grid-template-columns: 1fr; }
+  ol.clauses > li { grid-template-columns: 28px 1fr; gap: 0 10px; }
+}
+@media print {
+  .card { box-shadow: none; }
+  .note { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
+    <div class="dash"></div>
+    <p class="kicker">Draft agreement &middot; v1</p>
+    <h1>Venue Sauna <span>Agreement</span></h1>
+    <p>A mobile sauna placed at a wedding venue, booked by guests through the Barrel Sauna UK system.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="note"><span class="lab">Draft for review</span>Honey boxes are terms still to be set by James. This draft is a starting point and should be checked by a solicitor before anyone signs it. This note does not print.</div>
+
+  <div class="card">
+    <div class="parties">
+      <div class="party">
+        <p class="lab">Barrel Sauna UK</p>
+        <p class="v">Thermal Living Limited, trading as Barrel Sauna UK</p>
+        <p>Referred to as "BSUK"</p>
+      </div>
+      <div class="party">
+        <p class="lab">The venue</p>
+        <p class="v"><span class="tbc">Venue name and address</span></p>
+        <p>Referred to as "the Venue"</p>
+      </div>
+    </div>
+    <p style="margin:16px 0 0 0;font-size:14px;color:var(--ink-l);line-height:1.7;">Dated <span class="tbc">date</span></p>
+  </div>
+
+  <div class="card">
+    <ol class="clauses">
+      <li><div><span class="t">Purpose</span>
+        <p>BSUK places a mobile sauna at the Venue. The Venue offers sauna access to wedding guests as an add-on to its wedding packages, and every booking is made through the BSUK booking system.</p>
+      </div></li>
+
+      <li><div><span class="t">The sauna</span>
+        <p>The sauna is <span class="tbc">model and size</span>. It remains the property of BSUK at all times. Its position on the Venue's grounds is agreed in writing before delivery and is not moved without BSUK's agreement.</p>
+      </div></li>
+
+      <li><div><span class="t">What BSUK provides</span>
+        <p>At no cost to the Venue, BSUK provides:</p>
+        <ul class="sub">
+          <li>delivery and setup of the sauna;</li>
+          <li>the booking system, including guest booking and payment;</li>
+          <li>a digital key lock, so guests can only use the sauna during their booked time;</li>
+          <li>maintenance of the sauna.</li>
+        </ul>
+      </div></li>
+
+      <li><div><span class="t">What the Venue provides</span>
+        <ul class="sub">
+          <li>A solid, level base for the sauna, and access for delivery, maintenance and collection.</li>
+          <li>Power to the sauna if needed: <span class="tbc">power and running costs</span>.</li>
+          <li>The sauna included as an option in its wedding packages and promoted to couples.</li>
+          <li>No bookings or payments for the sauna taken outside the BSUK system.</li>
+        </ul>
+      </div></li>
+
+      <li><div><span class="t">Bookings and payment</span>
+        <p>All bookings and payments go through the BSUK system. Each payment is split automatically between the Venue and BSUK.</p>
+        <ul class="sub">
+          <li>Price per wedding: <span class="tbc">per wedding amount</span></li>
+          <li>Split between the Venue and BSUK: <span class="tbc">split</span></li>
+          <li>When each party's share is paid: <span class="tbc">payout timing</span></li>
+        </ul>
+      </div></li>
+
+      <li><div><span class="t">Showcase</span>
+        <p>The sauna also serves as a showcase for BSUK in the area. By arrangement with the Venue, BSUK may photograph and film the sauna on site and bring prospective customers to see it, at times that do not clash with weddings.</p>
+      </div></li>
+
+      <li><div><span class="t">Use and safety</span>
+        <p>BSUK supplies the safety rules for using the sauna. The Venue makes sure guests are given them and that the sauna is only used during booked times.</p>
+      </div></li>
+
+      <li><div><span class="t">Damage, insurance and transport</span>
+        <ul class="sub">
+          <li>Damage to the sauna while at the Venue: <span class="tbc">who carries it</span></li>
+          <li>Insurance of the sauna and public liability for guest use: <span class="tbc">who carries it</span></li>
+          <li>Transport to and from the Venue: <span class="tbc">who carries it</span></li>
+        </ul>
+      </div></li>
+
+      <li><div><span class="t">Term</span>
+        <p>This agreement starts on <span class="tbc">start date</span> and runs for <span class="tbc">term</span>, then continues until either party ends it under clause 11.</p>
+      </div></li>
+
+      <li><div><span class="t">Removal of the sauna</span>
+        <p>BSUK may remove the sauna on <span class="tbc">notice period</span> written notice. BSUK may remove it straight away if bookings or payments for the sauna are taken outside the BSUK system.</p>
+      </div></li>
+
+      <li><div><span class="t">Ending the agreement</span>
+        <p>Either party may end this agreement with <span class="tbc">notice period</span> written notice. BSUK then collects the sauna, and the Venue gives access for collection. Bookings already paid for are <span class="tbc">honoured or refunded</span>.</p>
+      </div></li>
+
+      <li><div><span class="t">Guest information</span>
+        <p>Guest booking details are held in the BSUK system and used only to manage sauna bookings.</p>
+      </div></li>
+
+      <li><div><span class="t">Liability</span>
+        <p><span class="tbc">Liability terms, for solicitor review</span></p>
+      </div></li>
+
+      <li><div><span class="t">Law</span>
+        <p>This agreement is governed by the law of England and Wales.</p>
+      </div></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <div class="sign">
+      <div class="sig">
+        <p class="lab">For Thermal Living Limited</p>
+        <div class="line"></div><p class="ll">Signature</p>
+        <div class="line"></div><p class="ll">Name</p>
+        <div class="line"></div><p class="ll">Date</p>
+      </div>
+      <div class="sig">
+        <p class="lab">For the Venue</p>
+        <div class="line"></div><p class="ll">Signature</p>
+        <div class="line"></div><p class="ll">Name</p>
+        <div class="line"></div><p class="ll">Date</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="foot"><p>barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales</p></footer>
+
+</body>
+</html>
