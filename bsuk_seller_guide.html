@@ -357,6 +357,24 @@ body.t-facts .facts-only { display: block; }
 .shots.lift .shot__frame { border: 0; border-radius: 22px; box-shadow: var(--shadow); padding: 14px; }
 .shots.lift { gap: 18px; }
 
+/* v9: four tabs, real sales */
+.modes { grid-template-columns: repeat(4, 1fr); }
+.ex { display: grid; gap: 14px; }
+.ex .card + .card { margin-top: 0; }
+.exk { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sage); margin: 0 0 6px 0; }
+.excard h3 { font-size: 20px; font-weight: 700; color: var(--forest-deep); margin: 0 0 10px 0; line-height: 1.3; }
+.quotes { margin: 14px 0 0 0; border-left: 3px solid var(--mid); padding: 4px 0 4px 16px; }
+.quotes p { margin: 0 0 8px 0; font-size: 14.5px; line-height: 1.65; color: var(--ink); font-style: italic; }
+.quotes p:last-child { margin-bottom: 0; }
+.quotes .who { display: block; font-style: normal; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); margin: 0 0 2px 0; }
+.lesson { margin: 14px 0 0 0; background: var(--tint); border-left: 3px solid var(--forest-deep); border-radius: 14px; padding: 14px 18px; }
+.lesson p { margin: 0; font-size: 14.5px; font-weight: 700; color: var(--forest-deep); line-height: 1.55; }
+.lesson .label { font-weight: 700; font-size: 10px; margin-bottom: 4px; }
+@media (max-width: 640px) {
+  .modes { gap: 3px; padding: 4px; }
+  .modes button { font-size: 9.5px; letter-spacing: 0.3px; padding: 10px 2px; }
+}
+
 </style>
 </head>
 <body class="t-facts">
@@ -379,6 +397,7 @@ body.t-facts .facts-only { display: block; }
     <div class="modes">
       <button type="button" class="on" data-tab="facts">Fast Facts</button>
       <button type="button" data-tab="qa">Q&amp;A</button>
+      <button type="button" data-tab="sales">Real Sales</button>
       <button type="button" data-tab="terms">Working Terms</button>
     </div>
     <div class="facts-only">
@@ -505,7 +524,7 @@ body.t-facts .facts-only { display: block; }
   </div>
       <div class="spec">
       <div class="spec-head"><h3>Barrel sauna foundations</h3><img class="mark" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908e5.png" alt="Barrel sauna line drawing"></div>
-      <p class="spec-sub">The siting rules. Base pricing (decking / concrete) is priced separately, on request, not in the estimate.</p><div class="shots c2"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a85604fd07034adc248abd8.jpg" alt="Barrel sauna resting on its wooden feet" loading="lazy"></div><p class="shot__lab">Feet rest unfixed</p><p class="shot__st">Horizontal wooden feet, not bolted down</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac147c0c478ac5535a5f73d.png" alt="Front view of the feet spacing" loading="lazy"></div><p class="shot__lab">Feet spacing</p><p class="shot__st">Front view</p></div></div>
+      <p class="spec-sub">The siting rules. Base pricing (decking / concrete) is priced separately, on request, not in the estimate.</p><div class="shots c3"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a85604fd07034adc248abd8.jpg" alt="Barrel sauna resting on its wooden feet" loading="lazy"></div><p class="shot__lab">Feet rest unfixed</p><p class="shot__st">Horizontal wooden feet, not bolted down</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ac147c0c478ac5535a5f73d.png" alt="Front view of the feet spacing" loading="lazy"></div><p class="shot__lab">Feet spacing</p><p class="shot__st">Front view</p></div><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a80d3c3fe4291bd10ef1253.jpg" alt="Side view of the feet spacing on a 4.5m barrel" loading="lazy"></div><p class="shot__lab">Feet spacing</p><p class="shot__st">Side view, 4.5m barrel</p></div></div>
       <dl class="spec-grid">
         <dt>Needs</dt><dd>Solid, level base: level ground, concrete slab, or bore-hole decking base</dd>
         <dt>Avoid</dt><dd>Flood-prone or soggy areas</dd>
@@ -800,7 +819,7 @@ body.t-facts .facts-only { display: block; }
 
     <div class="spec">
       <div class="spec-head"><h3>Exterior Stain Palette</h3><span class="spec-price">Wood stain +£395</span></div>
-      <p class="spec-sub">Optional stained finish: enhances appearance and protects timber from weather and UV.</p><div class="shots c2"><div class="shot"><div class="shot__frame"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6aa5a689c9a6c7937b6111f0.png" alt="Exterior stain colour chart" loading="lazy"></div><p class="shot__lab">Stain palette</p><p class="shot__st">Wood stain +£395</p></div></div>
+      <p class="spec-sub">Optional stained finish: enhances appearance and protects timber from weather and UV.</p>
       <dl class="spec-grid">
         <dt>Type</dt><dd>Water-based UV-stable stain, satin matte</dd>
         <dt>Protection</dt><dd>Enhanced water, mould &amp; UV resistance</dd>
@@ -1078,6 +1097,161 @@ body.t-facts .facts-only { display: block; }
     </div>
   </section>
 </div>
+
+<div class="tab" id="tab-sales">
+  <div class="wrap">
+    <section class="sec">
+      <div class="sec__head"><div class="sec__num">R</div><div><p class="kicker">Real sales</p><h2>How real buyers said <span>yes</span></h2></div></div>
+      <p class="prose">Real BSUK sales, taken from the call notes. No scripts: just what the buyer needed, what moved them, and the lesson. Buyers are described, not named. Any price change or extra goes through James first.</p>
+    </section>
+
+    <section class="sec" id="rs-same">
+      <div class="sec__head"><div class="sec__num">1</div><div><p class="kicker">Same day sales</p><h2>Deposit paid on <span>the day</span></h2></div></div>
+      <div class="ex">
+
+        <div class="card excard">
+          <p class="exk">Same day &middot; Bespoke barrel sauna</p>
+          <h3>The buyer with a deadline</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A 3.2m barrel with porch and glass, finished before Christmas. Base and electrician already lined up.</dd>
+            <dt>What closed it</dt><dd>He asked for the next step himself. James tied the deposit to the build queue and to his Christmas date, and added an accessory pack rather than cutting the price.</dd>
+            <dt>Result</dt><dd>Deposit paid within an hour of the call.</dd>
+          </dl>
+          <div class="quotes">
+            <p><span class="who">Customer</span>"what's the next step, James?"</p>
+            <p><span class="who">James</span>"we build them in order of those £500 payments. So as soon as that's in, you're next in line."</p>
+          </div>
+          <div class="lesson"><p class="label">The lesson</p><p>When the buyer gives you a date, tie the deposit to hitting it.</p></div>
+        </div>
+
+        <div class="card excard">
+          <p class="exk">Same day &middot; Compact sauna and ice bath</p>
+          <h3>The cheaper competitor</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A compact 1.8m sauna and an ice bath with chiller, for a tight garden.</dd>
+            <dt>What closed it</dt><dd>She named a cheaper plunge tub. James matched like for like on the tub alone and held firm on the chiller, explaining why it lasts. She asked for the itemised estimate and the deposit link.</dd>
+            <dt>Result</dt><dd>Deposit paid about 80 minutes after the call.</dd>
+          </dl>
+          <div class="quotes">
+            <p><span class="who">James</span>"We can match that price without the machinery."</p>
+            <p><span class="who">Customer</span>"...and the link to pay a deposit, I'll make a decision"</p>
+          </div>
+          <div class="lesson"><p class="label">The lesson</p><p>Match the base item, defend the upgrade on reliability, and never cut the whole price.</p></div>
+        </div>
+
+        <div class="card excard">
+          <p class="exk">Same day &middot; Holiday home sauna and hot tub</p>
+          <h3>The "not until I have a total" buyer</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A 4.5m sauna with a view window and an eight seater hot tub for a holiday home.</dd>
+            <dt>What closed it</dt><dd>He refused any deposit without one total price. James did not push and kept the price he had given. The buyer called back with power and timber questions, got clear answers, and offered the deposit himself.</dd>
+            <dt>Result</dt><dd>Deposit paid on the second call, about 90 minutes after the first.</dd>
+          </dl>
+          <div class="quotes">
+            <p><span class="who">Customer</span>"I don't think I'm gonna do anything until I've got a total cost for everything"</p>
+            <p><span class="who">Customer</span>"I'm happy to put the £500 deposit down"</p>
+          </div>
+          <div class="lesson"><p class="label">The lesson</p><p>A buyer who calls back with technical questions is close. Answer every one well.</p></div>
+        </div>
+
+        <div class="card excard">
+          <p class="exk">Same day &middot; Commercial gym sauna</p>
+          <h3>The link while the call is warm</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A sauna with a tinted globe window for a gym, decided by three business partners on one call.</dd>
+            <dt>What closed it</dt><dd>The deposit link went out straight after the call, before the paperwork was finished.</dd>
+            <dt>Result</dt><dd>Deposit paid 30 minutes after the link.</dd>
+          </dl>
+          <div class="lesson"><p class="label">The lesson</p><p>Send the link while everyone is still on board.</p></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="sec" id="rs-long">
+      <div class="sec__head"><div class="sec__num">2</div><div><p class="kicker">Longer term sales</p><h2>Deposit paid after <span>a gap</span></h2></div></div>
+      <div class="ex">
+
+        <div class="card excard">
+          <p class="exk">Longer term &middot; Wedding venue and holiday let</p>
+          <h3>The payback buyer</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A large sauna for eight to ten people at a wedding venue that also lets on Airbnb.</dd>
+            <dt>What held her back</dt><dd>Whether it would pay for itself in a quiet area.</dd>
+            <dt>What closed it</dt><dd>James worked out the return with her: guests arriving a day early, a weekend add-on. Then a showroom visit.</dd>
+            <dt>Result</dt><dd>Deposit paid on the day of the visit, three days after the call.</dd>
+          </dl>
+          <div class="quotes">
+            <p><span class="who">James</span>"Maybe for the weddings, though, it could entice people to come, like, a day sooner"</p>
+          </div>
+          <div class="lesson"><p class="label">The lesson</p><p>With a business buyer, work out the payback in their own numbers.</p></div>
+        </div>
+
+        <div class="card excard">
+          <p class="exk">Longer term &middot; Barrel sauna built on site</p>
+          <h3>Two options for a couple</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A 3.2m sauna with porch, and a choice between the globe and flat glass.</dd>
+            <dt>What held them back</dt><dd>The globe cost more than double the flat glass.</dd>
+            <dt>What closed it</dt><dd>Both prices given plainly, the globe explained as about 0.5m of extra space, and two estimates sent so they could choose before their holiday.</dd>
+            <dt>Result</dt><dd>Deposit paid within days.</dd>
+          </dl>
+          <div class="quotes">
+            <p><span class="who">James</span>"with the globe, you get about 0.5 meters of extra space in the sauna"</p>
+            <p><span class="who">Customer</span>"We're going on holiday quite soon, so I imagine we'll make a decision fairly soon."</p>
+          </div>
+          <div class="lesson"><p class="label">The lesson</p><p>Two priced options turn "should we buy" into "which one". Explain the payment stages before the invoice lands.</p></div>
+        </div>
+
+        <div class="card excard">
+          <p class="exk">Longer term &middot; Campsite, mobile sauna and ice baths</p>
+          <h3>Several options still open</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A mobile sauna and ice baths for a campsite, with estimates needed for a grant application.</dd>
+            <dt>What held them back</dt><dd>Still weighing up three options.</dd>
+            <dt>What closed it</dt><dd>Separate estimates, a site visit, and the deposit explained as coming off whatever they finally order.</dd>
+            <dt>Result</dt><dd>Deposit paid the day after the second call.</dd>
+          </dl>
+          <div class="quotes">
+            <p><span class="who">James</span>"it'll come off wherever you end up ordering."</p>
+          </div>
+          <div class="lesson"><p class="label">The lesson</p><p>When several products are in play, the deposit is not a bet on one of them.</p></div>
+        </div>
+
+        <div class="card excard">
+          <p class="exk">Longer term &middot; Home sauna</p>
+          <h3>The workshop visit</h3>
+          <dl class="spec-grid">
+            <dt>Wanted</dt><dd>A sauna with an electric heater package, installed in Kent.</dd>
+            <dt>What closed it</dt><dd>A visit to the workshop, meeting the team who would build and install it.</dd>
+            <dt>Result</dt><dd>Deposit paid five days after the visit. The buyers offered to transfer it themselves.</dd>
+          </dl>
+          <div class="quotes">
+            <p><span class="who">Customer</span>"We were really impressed when Yarrik said he installs with his son"</p>
+          </div>
+          <div class="lesson"><p class="label">The lesson</p><p>If they are unsure, get them in front of the build and the people.</p></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="sec" id="rs-gap">
+      <div class="sec__head"><div class="sec__num">3</div><div><p class="kicker">Closing the gap</p><h2>Tips for the <span>longer term</span></h2></div></div>
+      <div class="card">
+        <ol class="terms">
+          <li><div><span class="t">Offer to share a delivery</span>When an order lands near a buyer who went quiet, offer to share the delivery cost on that date.</div></li>
+          <li><div><span class="t">Ask the budget first</span>Ask the budget before pricing the full spec. A buyer shown a price far over budget ends the call with "send it all over".</div></li>
+          <li><div><span class="t">Find out who signs off</span>If a partner or a team decides, plan the next call or visit with both of them there.</div></li>
+          <li><div><span class="t">Book the next touch</span>Agree a date for the next call before hanging up. Most stalled estimates have no next step booked.</div></li>
+          <li><div><span class="t">Tie the deposit to their date</span>When the site is not ready yet, tie the deposit to their install date, not to today.</div></li>
+          <li><div><span class="t">Let them see it</span>Offer the workshop or a local install to try. Seeing the build is what closed most of the longer term sales.</div></li>
+          <li><div><span class="t">Keep our side tight</span>Be on time, check the estimate arrived and has not gone to junk, and use the channel the buyer asked for.</div></li>
+        </ol>
+      </div>
+    </section>
+  </div>
+</div>
+
 </main>
 
 <footer class="dark foot">
@@ -1085,7 +1259,7 @@ body.t-facts .facts-only { display: block; }
     <div class="foot__icons"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11ff484614db7528f5.png" alt="Glamping pod"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14de8ed1c29f9e137f.png" alt="Shepherd's hut"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee11bdaa5e26a9690935.png" alt="Hot tub"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee14bdaa5e26a969097d.png" alt="Mobile sauna"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cde8ed1c29f9e1305.png" alt="Barrel sauna"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6ab0ee0cbdaa5e26a96908f0.png" alt="Double Dipper"></div>
     <img class="foot__logo" src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a159cbca7ceea4e5718f77f.png" alt="Barrel Sauna UK">
     <p class="foot__signoff">The Barrel Sauna UK Team</p>
-    <p class="foot__dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales &nbsp;&middot;&nbsp; v8</p>
+    <p class="foot__dom">barrelsaunauk.com &nbsp;&middot;&nbsp; Handcrafted in Wales &nbsp;&middot;&nbsp; v9</p>
     <div class="foot__sig"><a href="https://www.barrelsaunauk.com" target="_blank" rel="noopener"><img src="https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a96e859fac7854efe0a2fdc.jpeg" alt="Barrel Sauna UK signature"></a></div>
   </div>
 </footer>
