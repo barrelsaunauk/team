@@ -137,7 +137,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     <p>Everything from Tuesday's meeting, plus the plan for the first shoot on Wednesday 21 October.</p>
     <div class="tabs" id="tabs">
       <button class="tab on" data-tab="overview">Overview</button>
-      <button class="tab" data-tab="shots">Shot checklist</button>
+      <button class="tab" data-tab="shots">Proposed shot list</button>
       <button class="tab" data-tab="day1">Shoot day 1</button>
       <button class="tab person t-liam" data-tab="liam">Liam</button>
       <button class="tab person t-jake" data-tab="jake">Jake</button>
@@ -196,7 +196,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     <div class="kicker">What we agreed</div>
     <div class="card">
       <ul class="plain">
-        <li>A list gets made of exactly what we need in each scene, so we can tick it off and not miss anything. That list is the Shot checklist tab.</li>
+        <li>A list gets made of exactly what we need in each scene, so we can tick it off and not miss anything. That list is the Proposed shot list tab.</li>
         <li>Unit first, for clean product shots in bright light.</li>
         <li>House in the afternoon, for lifestyle and cinematic shots.</li>
       </ul>
@@ -208,17 +208,96 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 <!-- ============ SHOT CHECKLIST ============ -->
 <section class="wrap panel hide" id="shots">
   <div class="sec">
-    <div class="kicker">Every variation we sell</div>
-    <h2>Shot checklist</h2>
-    <p style="margin:0;color:var(--muted)">Marta's list confirms what's at the unit and the house on Wednesday. Anything we can't get this time moves to the next shoot.</p>
+    <div class="kicker">For every sauna on the day</div>
+    <h2>Proposed shot list</h2>
+    <p style="margin:0;color:var(--muted)">The same shots for every sauna, whatever model is there. Stills come from the clips.</p>
   </div>
   <div class="sec">
     <span class="partlabel unit">At the unit: product shots</span>
-    <div id="unitshots" class="sec" style="gap:28px"></div>
+    <div class="card"><h3>Outside</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s1"><span class="t">Straight on from the front</span></label></li>
+      <li><label><input type="checkbox" data-k="s2"><span class="t">Side on, full length</span></label></li>
+      <li><label><input type="checkbox" data-k="s3"><span class="t">Straight on from the back</span></label></li>
+      <li><label><input type="checkbox" data-k="s4"><span class="t">Three quarter angle</span></label></li>
+      <li><label><input type="checkbox" data-k="s5"><span class="t">Slow walk around</span></label></li>
+      <li><label><input type="checkbox" data-k="s6"><span class="t">From above</span></label></li>
+      <li><label><input type="checkbox" data-k="s7"><span class="t">Low angle looking up</span></label></li>
+      <li><label><input type="checkbox" data-k="s8"><span class="t">Person beside it for size</span></label></li>
+    </ul><div class="notes" data-spot="sl-g1" data-label="Proposed shot list: Outside"></div></div>
+    <div class="card"><h3>Entrance and door</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s9"><span class="t">Entrance wide</span></label></li>
+      <li><label><input type="checkbox" data-k="s10"><span class="t">Entrance close</span></label></li>
+      <li><label><input type="checkbox" data-k="s11"><span class="t">Door opening</span></label></li>
+      <li><label><input type="checkbox" data-k="s12"><span class="t">Door closing</span></label></li>
+      <li><label><input type="checkbox" data-k="s13"><span class="t">Handle close up</span></label></li>
+      <li><label><input type="checkbox" data-k="s14"><span class="t">Lock and key</span></label></li>
+      <li><label><input type="checkbox" data-k="s15"><span class="t">Walking in through the door</span></label></li>
+    </ul><div class="notes" data-spot="sl-g2" data-label="Proposed shot list: Entrance and door"></div></div>
+    <div class="card"><h3>Windows</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s16"><span class="t">Every window from outside</span></label></li>
+      <li><label><input type="checkbox" data-k="s17"><span class="t">Every window from inside</span></label></li>
+      <li><label><input type="checkbox" data-k="s18"><span class="t">View out from the bench</span></label></li>
+      <li><label><input type="checkbox" data-k="s19"><span class="t">Through the window shot</span></label></li>
+      <li><label><input type="checkbox" data-k="s20"><span class="t">Glass and frame close up</span></label></li>
+    </ul><div class="notes" data-spot="sl-g3" data-label="Proposed shot list: Windows"></div></div>
+    <div class="card"><h3>Inside</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s21"><span class="t">Wide from the door</span></label></li>
+      <li><label><input type="checkbox" data-k="s22"><span class="t">Wide from the back looking out</span></label></li>
+      <li><label><input type="checkbox" data-k="s23"><span class="t">Benches full length</span></label></li>
+      <li><label><input type="checkbox" data-k="s24"><span class="t">Bench and backrest close up</span></label></li>
+      <li><label><input type="checkbox" data-k="s25"><span class="t">Ceiling curve</span></label></li>
+      <li><label><input type="checkbox" data-k="s26"><span class="t">Floor</span></label></li>
+      <li><label><input type="checkbox" data-k="s27"><span class="t">Vents</span></label></li>
+      <li><label><input type="checkbox" data-k="s28"><span class="t">Sitting view</span></label></li>
+    </ul><div class="notes" data-spot="sl-g4" data-label="Proposed shot list: Inside"></div></div>
+    <div class="card"><h3>Heater, whatever type it has</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s29"><span class="t">Heater wide in the room</span></label></li>
+      <li><label><input type="checkbox" data-k="s30"><span class="t">Heater close up</span></label></li>
+      <li><label><input type="checkbox" data-k="s31"><span class="t">Stones</span></label></li>
+      <li><label><input type="checkbox" data-k="s32"><span class="t">Water on the stones, steam</span></label></li>
+      <li><label><input type="checkbox" data-k="s33"><span class="t">Controls or switch</span></label></li>
+      <li><label><input type="checkbox" data-k="s34"><span class="t">Guard and fire plates</span></label></li>
+      <li><label><input type="checkbox" data-k="s35"><span class="t">Lighting the fire</span></label></li>
+      <li><label><input type="checkbox" data-k="s36"><span class="t">Chimney outside</span></label></li>
+    </ul><div class="notes" data-spot="sl-g5" data-label="Proposed shot list: Heater, whatever type it has"></div></div>
+    <div class="card"><h3>Lighting</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s37"><span class="t">Lights off</span></label></li>
+      <li><label><input type="checkbox" data-k="s38"><span class="t">Lights on</span></label></li>
+      <li><label><input type="checkbox" data-k="s39"><span class="t">Switching on</span></label></li>
+      <li><label><input type="checkbox" data-k="s40"><span class="t">Under seat glow</span></label></li>
+    </ul><div class="notes" data-spot="sl-g6" data-label="Proposed shot list: Lighting"></div></div>
+    <div class="card"><h3>If it has a changing room</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s41"><span class="t">Changing room wide</span></label></li>
+      <li><label><input type="checkbox" data-k="s42"><span class="t">Inner door between rooms</span></label></li>
+      <li><label><input type="checkbox" data-k="s43"><span class="t">Storage open</span></label></li>
+      <li><label><input type="checkbox" data-k="s44"><span class="t">Towel hooks</span></label></li>
+      <li><label><input type="checkbox" data-k="s45"><span class="t">From changing room into sauna</span></label></li>
+    </ul><div class="notes" data-spot="sl-g7" data-label="Proposed shot list: If it has a changing room"></div></div>
+    <div class="card"><h3>Craft and details</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s46"><span class="t">Timber grain macro</span></label></li>
+      <li><label><input type="checkbox" data-k="s47"><span class="t">Joints and grooves</span></label></li>
+      <li><label><input type="checkbox" data-k="s48"><span class="t">Steel bands</span></label></li>
+      <li><label><input type="checkbox" data-k="s49"><span class="t">Roof close up</span></label></li>
+      <li><label><input type="checkbox" data-k="s50"><span class="t">Roof edge</span></label></li>
+      <li><label><input type="checkbox" data-k="s51"><span class="t">Base and feet</span></label></li>
+      <li><label><input type="checkbox" data-k="s52"><span class="t">Badge or logo</span></label></li>
+    </ul><div class="notes" data-spot="sl-g8" data-label="Proposed shot list: Craft and details"></div></div>
+    <div class="card"><h3>Moving shots</h3><ul class="chk">
+      <li><label><input type="checkbox" data-k="s53"><span class="t">Slow push in</span></label></li>
+      <li><label><input type="checkbox" data-k="s54"><span class="t">Slow pull out</span></label></li>
+      <li><label><input type="checkbox" data-k="s55"><span class="t">Pan across</span></label></li>
+    </ul><div class="notes" data-spot="sl-g9" data-label="Proposed shot list: Moving shots"></div></div>
   </div>
   <div class="sec">
     <span class="partlabel house">At the house: lifestyle and cinematic</span>
-    <div id="houseshots"></div>
+    <div class="card"><ul class="chk">
+      <li><label><input type="checkbox" data-k="hs1"><span class="t">Hero shots of each sauna in the garden</span></label></li>
+      <li><label><input type="checkbox" data-k="hs2"><span class="t">Lit up from outside at dusk</span></label></li>
+      <li><label><input type="checkbox" data-k="hs3"><span class="t">Drone pass</span></label></li>
+      <li><label><input type="checkbox" data-k="hs4"><span class="t">Through the window shot at golden hour</span></label></li>
+      <li><label><input type="checkbox" data-k="hs5"><span class="t">Grill cabin, plus stills for the website</span></label></li>
+      <li><label><input type="checkbox" data-k="hs6"><span class="t">One clip to post on Instagram</span></label></li>
+    </ul><div class="notes" data-spot="sl-house" data-label="Proposed shot list: at the house"></div></div>
   </div>
 </section>
 
@@ -237,7 +316,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <div>
     <div class="slot"><div class="time">12:00<small>to 14:15</small></div><div class="body"><div class="card">
       <span class="loc unit">The unit</span><h3>Product shots</h3>
-      <p class="style">Work through the unit half of the Shot checklist.</p>
+      <p class="style">Work through the Proposed shot list for each sauna.</p>
       <ul class="chk">
         <li><label><input type="checkbox" data-k="d-hm4"><span class="t">4m half moon window sauna</span></label></li>
         <li><label><input type="checkbox" data-k="d-hm3"><span class="t">3m half moon window sauna</span></label></li>
@@ -281,7 +360,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 
     <div class="slot"><div class="time">16:30<small>to 18:30</small></div><div class="body"><div class="card">
       <span class="loc house">Liam's house</span><h3>Lifestyle and cinematic, into golden hour</h3>
-      <p class="style">Work through the house half of the Shot checklist.</p>
+      <p class="style">Work through the house part of the Proposed shot list.</p>
       <div class="notes" data-spot="slot-house" data-label="Shoot day 1: lifestyle and cinematic at the house"></div>
     </div></div></div>
   </div>
@@ -313,7 +392,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <div class="card pcard"><h3>What we need from you before Wednesday</h3>
     <ul class="chk">
       <li><label><input type="checkbox" data-k="j-drone"><span class="t">Pick the drone, with a screen on the remote, and have it delivered to you to practise with</span></label></li>
-      <li><label><input type="checkbox" data-k="j-itin"><span class="t">Shoot itinerary and shot lists, using the Shot checklist</span></label></li>
+      <li><label><input type="checkbox" data-k="j-itin"><span class="t">Shoot itinerary and shot lists, using the Proposed shot list</span></label></li>
       <li><label><input type="checkbox" data-k="j-weather"><span class="t">Check Monday's forecast for wind and cloud, then confirm Wednesday</span></label></li>
     </ul>
     <div class="notes" data-spot="jake-before" data-label="Jake: before Wednesday"></div></div>
@@ -353,13 +432,13 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       <li><label><input type="checkbox" data-k="n-dropbox"><span class="t">Dropbox upgraded and shared with Jake</span></label></li>
       <li><label><input type="checkbox" data-k="n-walk"><span class="t">Recorded walkthrough with Liam of every part of a sauna</span></label></li>
       <li><label><input type="checkbox" data-k="n-qs"><span class="t">List of questions clients ask about each feature, so the shots answer them</span></label></li>
-      <li><label><input type="checkbox" data-k="n-check"><span class="t">Check the Shot checklist against Marta's list</span></label></li>
+      <li><label><input type="checkbox" data-k="n-check"><span class="t">Check the Proposed shot list against Marta's list</span></label></li>
     </ul>
     <div class="notes" data-spot="nikki-before" data-label="Nikki: before Wednesday"></div></div>
   <div class="card pcard"><h3>After Wednesday</h3>
     <ul class="chk">
-      <li><label><input type="checkbox" data-k="n-sort"><span class="t">Sort the footage into the library by Shot checklist number</span></label></li>
-      <li><label><input type="checkbox" data-k="n-swap"><span class="t">Swap the photos in the Shot checklist for the new stills</span></label></li>
+      <li><label><input type="checkbox" data-k="n-sort"><span class="t">Sort the footage into the library</span></label></li>
+      <li><label><input type="checkbox" data-k="n-swap"><span class="t">Pull the best stills for the gallery and brochure</span></label></li>
       <li><label><input type="checkbox" data-k="n-auto"><span class="t">Set up the six week install update so it updates the content dates too</span></label></li>
     </ul>
     <div class="notes" data-spot="nikki-after" data-label="Nikki: after Wednesday"></div></div>
@@ -376,84 +455,6 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   var PEOPLE = {Liam:'#2E6DB4',Jake:'#C0392B',Marta:'#D6589A',Millie:'#1C8C8C',Nikki:'#6B5BB5'};
   var LS_ME='bsuk-plan-me', LS_DATA='bsuk-plan-local';
 
-  // ---------- shot checklist data ----------
-  var UNIT = [
-    {t:'Entrance', items:[
-      ['Flush entrance','6abe85af10ee4f155617ea3f.jpg'],
-      ['Porch','6ac14798c478ac5535a5f24b.jpeg'],
-      ['Porch, no arm rests','6ac2391422bc27f58f4b8a6e.png'],
-      ['Porch with arm rests','6ac238ec195f9172ed5f32d5.jpg']]},
-    {t:'Front windows', items:[
-      ['No windows',''],
-      ['One window in the door',''],
-      ['Two side windows',''],
-      ['Three windows, door and both sides',''],
-      ['Full glass facade and glass door','6a9ffe8ed63e08439cc2f9ad.jpeg']]},
-    {t:'Front door', items:[
-      ['Classic door','6aba4883b5e520ac1734dd9e.png'],
-      ['Zenview Spa, full sandglass','6aba4a05be703c7b303ebe40.jpeg'],
-      ['Zenview Secure, lock and key','6a9fead316ed327815a3be35.jpg']]},
-    {t:'Rear window', items:[
-      ['Full wood wall','6aba4756c13d4373c2dc9120.png'],
-      ['Two vertical windows',''],
-      ['Half glass','6abba695c13d4373c2ff8459.png'],
-      ['Full flat glass','6aca31c2bd6bb710ca2a5543.jpg'],
-      ['Tint globe','6aca31c2bd6bb710ca2a5539.jpg'],
-      ['Panoramic globe, blackout','6ac7735c8c077584b4f4db29.jpg']]},
-    {t:'Inside', items:[
-      ['Straight benches, two tier, electric heater','6aae42f3de8ed1c29f684114.jpg'],
-      ['L shaped benches, two tier','6aae42f330b0f957cc829c16.jpg'],
-      ['Changing room','6ab3b95a25d854bb65f2f80c.jpg'],
-      ['Under seat storage','6aa00e43a08d19d9274e1f9e.jpg']]},
-    {t:'Heaters', items:[
-      ['Harvia electric, wall mounted','6aab956a9f8b31b6ab5a1525.jpg'],
-      ['Standing heater',''],
-      ['Wood burner, internal feed','6ac23bdfbbad531ac8a08888.jpeg'],
-      ['Wood burner, external feed','6ac24050c478ac5535b8f777.jpeg']]},
-    {t:'Lighting', items:[
-      ['Under seat LED','6a905464722007d7fff00239.png'],
-      ['LED in the changing room','6aa5a40adf2d01555339f4fe.png'],
-      ['Heat proof wall light','']]},
-    {t:'Roof and solar', items:[
-      ['Hexagon shingles','6a9ffded641597c752ab2abb.png'],
-      ['Solar panel','6a9ffdedf44f6ea72fc9f758.png'],
-      ['Solar lighting','6ac23863bbad531ac8a05790.jpg']]},
-    {t:'Other products', items:[
-      ['Mobile sauna on its trailer','6ab2679830b0f957ccdd3f20.jpg'],
-      ['Double Dipper ice bath',''],
-      ['Single plunge','6ac7957fbbad531ac82edc4e.jpg'],
-      ['Hot tub','6aa5a3c549f830e49bea8a41.jpg'],
-      ['Barrel shower','6aa5a3ddc9a6c7937b60d664.png'],
-      ['The pile of chillers','']]}
-  ];
-  var HOUSE = [
-    ['Hero shots of each sauna in the garden','6ac773d6bbad531ac82c7843.jpg'],
-    ['Through the window: in through the sauna, out the other side, look back','6abe882c612cffc49a276a07.jpg'],
-    ['Globe sauna: 1m changing room, under seat storage, three windows','6acc579f4770fb500b009b4a.jpg'],
-    ['Side placed wood burner angled towards the dome','6abe8bf11325c552eecadff8.jpg'],
-    ['Half moon with the coloured under seat lighting','6a78773688808720198d0c81.png'],
-    ['Drone exterior passes',''],
-    ['Grill cabin, plus stills for the website',''],
-    ['One clip to post on Instagram','']
-  ];
-
-  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
-  function shotCard(n,label,img,key){
-    var ph = img ? '<img loading="lazy" src="'+CDN+img+'" alt="'+esc(label)+'">' : '<div class="none">Photo needed</div>';
-    return '<div class="shot"><div class="ph">'+ph+'<span class="num">'+n+'</span></div><div class="bot">'+
-      '<label><input type="checkbox" data-k="'+key+'"><span>'+esc(label)+'</span></label>'+
-      '<div class="notes" data-spot="'+key+'" data-label="Shot '+n+': '+esc(label)+'"></div></div></div>';
-  }
-  var n=0, html='';
-  UNIT.forEach(function(g){
-    html+='<div class="group sec"><h3>'+g.t+'</h3><div class="shots">';
-    g.items.forEach(function(it){n++;html+=shotCard(n,it[0],it[1],'u'+n)});
-    html+='</div></div>';
-  });
-  document.getElementById('unitshots').innerHTML=html;
-  html='<div class="shots">';
-  HOUSE.forEach(function(it){n++;html+=shotCard(n,it[0],it[1],'h'+n)});
-  document.getElementById('houseshots').innerHTML=html+'</div>';
 
   // ---------- tabs ----------
   var tabs=document.querySelectorAll('.tab');
