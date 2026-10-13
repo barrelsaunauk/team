@@ -18,13 +18,20 @@
 *{box-sizing:border-box}
 body{background:var(--ground);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.6;margin:0}
 button,input,textarea{font-family:var(--font)}
-.mast{background:var(--forest);color:#fff;padding-inline:16px}
-.mast-in{max-width:860px;margin:0 auto;padding-block:36px 0}
+.mast{position:relative;color:#fff;padding-inline:16px;background:#16261C url('https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/6a9b307bac5d03a1095ebcb5.png') center/cover no-repeat;overflow:hidden}
+.mast:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,.55) 0%,rgba(22,38,28,.78) 55%,rgba(22,38,28,.96) 100%)}
+.mast-in{position:relative;max-width:860px;margin:0 auto;padding-block:clamp(56px,12vw,104px) 0}
+.mast h1 em{font-style:normal;color:var(--honeylt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.chip{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;color:#fff}
+.chip b{color:var(--honeylt);font-weight:700}
+.crew{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;align-items:center;font-size:12px;color:#dbe7dd;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.crew span.p{letter-spacing:0;text-transform:none;font-size:13px;color:#fff;border-radius:999px;padding:3px 12px}
 .kicker{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--honey)}
 .mast .kicker{color:var(--honeylt)}
-h1{font-size:clamp(28px,6vw,40px);line-height:1.1;font-weight:800;margin:8px 0 10px;color:#fff}
-.mast p{margin:0;color:#dbe7dd;max-width:60ch}
-.tabs{display:flex;gap:4px;margin-top:24px;flex-wrap:wrap;align-items:flex-end}
+h1{font-size:clamp(40px,10vw,72px);line-height:1;letter-spacing:-.02em;font-weight:800;margin:12px 0 14px;color:#fff}
+.mast p{margin:0;color:#e7efe8;max-width:52ch;font-size:17px}
+.tabs{display:flex;gap:4px;margin-top:36px;flex-wrap:wrap;align-items:flex-end}
 .tab{border:0;cursor:pointer;font:600 14px/1 var(--font);padding:13px 16px;border-radius:12px 12px 0 0;background:transparent;color:#dbe7dd;border-bottom:4px solid transparent}
 .tab.on{background:var(--ground);color:var(--ink)}
 .tab.person{color:#fff;border-radius:12px 12px 0 0}
@@ -132,9 +139,11 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 
 <header class="mast">
   <div class="mast-in">
-    <div class="kicker">Barrel Sauna UK · Content</div>
-    <h1>The content plan</h1>
+    <div class="kicker">Barrel Sauna UK · Content 🎥</div>
+    <h1>The content <em>plan</em></h1>
     <p>Everything from Tuesday's meeting, plus the plan for the first shoot on Wednesday 21 October.</p>
+    <div class="chips"><span class="chip"><b>Shoot day 1</b> Wed 21 Oct</span><span class="chip">12:00 to 18:30</span><span class="chip">Unit, then the house</span></div>
+    <div class="crew">Crew <span class="p" style="background:var(--liam)">Liam</span><span class="p" style="background:var(--jake)">Jake</span><span class="p" style="background:var(--marta)">Marta</span><span class="p" style="background:var(--millie)">Millie</span><span class="p" style="background:var(--nikki)">Nikki</span></div>
     <div class="tabs" id="tabs">
       <button class="tab on" data-tab="overview">Overview</button>
       <button class="tab" data-tab="shots">Proposed shot list</button>
@@ -391,16 +400,15 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <div class="person-head" style="background:var(--jake)"><div class="kicker">Jake</div><h2>Plans, films and edits</h2></div>
   <div class="card pcard"><h3>What we need from you before Wednesday</h3>
     <ul class="chk">
-      <li><label><input type="checkbox" data-k="j-drone"><span class="t">Pick the drone, with a screen on the remote, and have it delivered to you to practise with</span></label></li>
-      <li><label><input type="checkbox" data-k="j-itin"><span class="t">Shoot itinerary and shot lists, using the Proposed shot list</span></label></li>
-      <li><label><input type="checkbox" data-k="j-weather"><span class="t">Check Monday's forecast for wind and cloud, then confirm Wednesday</span></label></li>
+      <li><label><input type="checkbox" data-k="j-drone"><span class="t">Get the drone situation organised</span></label></li>
+      <li><label><input type="checkbox" data-k="j-itin"><span class="t">Finalise the shot list</span></label></li>
     </ul>
     <div class="notes" data-spot="jake-before" data-label="Jake: before Wednesday"></div></div>
   <div class="card pcard"><h3>After Wednesday</h3>
     <ul class="chk">
-      <li><label><input type="checkbox" data-k="j-edit"><span class="t">Edit the B-roll and upload it to Dropbox</span></label></li>
-      <li><label><input type="checkbox" data-k="j-guide"><span class="t">Turn the reference shots into the crew filming guide</span></label></li>
-      <li><label><input type="checkbox" data-k="j-insta"><span class="t">Edit the first clip for Instagram</span></label></li>
+      <li><label><input type="checkbox" data-k="j-old"><span class="t">Send Nikki all the old BSUK content you showed us in the meeting</span></label></li>
+      <li><label><input type="checkbox" data-k="j-guide2"><span class="t">Turn Wednesday's test shots into a filming guide for the install crew</span></label></li>
+      <li><label><input type="checkbox" data-k="j-social"><span class="t">Meeting with Nikki to plan how we run social media from now on, so it gets automated</span></label></li>
     </ul>
     <div class="notes" data-spot="jake-after" data-label="Jake: after Wednesday"></div></div>
 </section>
@@ -413,12 +421,12 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       <li><label><input type="checkbox" data-k="m-list"><span class="t">List of every product at the unit and the house, with a few specs for each</span></label></li>
       <li><label><input type="checkbox" data-k="m-layout"><span class="t">Ask the workshop to lay out the Double Dippers and chillers ready to film</span></label></li>
       <li><label><input type="checkbox" data-k="m-crew"><span class="t">Check Jarek and Sam are free on Wednesday</span></label></li>
+      <li><label><input type="checkbox" data-k="m-sheet"><span class="t">Get the upcoming installs spreadsheet up to date, so Jake can plan which builds to film</span></label></li>
     </ul>
     <div class="notes" data-spot="marta-before" data-label="Marta: before Wednesday"></div></div>
   <div class="card pcard"><h3>After Wednesday</h3>
     <ul class="chk">
       <li><label><input type="checkbox" data-k="m-tubs"><span class="t">Let Jake know when the hot tubs arrive</span></label></li>
-      <li><label><input type="checkbox" data-k="m-dates"><span class="t">Keep install dates updated at the six week point, so Jake can see what's coming</span></label></li>
     </ul>
     <div class="notes" data-spot="marta-after" data-label="Marta: after Wednesday"></div></div>
 </section>
@@ -428,11 +436,11 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   <div class="person-head" style="background:var(--nikki)"><div class="kicker">Nikki</div><h2>Systems, the footage library and this plan</h2></div>
   <div class="card pcard"><h3>What we need from you before Wednesday</h3>
     <ul class="chk">
-      <li><label><input type="checkbox" data-k="n-notes"><span class="t">Send Jake the meeting notes</span></label></li>
       <li><label><input type="checkbox" data-k="n-dropbox"><span class="t">Dropbox upgraded and shared with Jake</span></label></li>
       <li><label><input type="checkbox" data-k="n-walk"><span class="t">Recorded walkthrough with Liam of every part of a sauna</span></label></li>
       <li><label><input type="checkbox" data-k="n-qs"><span class="t">List of questions clients ask about each feature, so the shots answer them</span></label></li>
       <li><label><input type="checkbox" data-k="n-check"><span class="t">Check the Proposed shot list against Marta's list</span></label></li>
+      <li><label><input type="checkbox" data-k="n-weather"><span class="t">Check Monday's forecast for wind and cloud, then confirm Wednesday</span></label></li>
     </ul>
     <div class="notes" data-spot="nikki-before" data-label="Nikki: before Wednesday"></div></div>
   <div class="card pcard"><h3>After Wednesday</h3>
@@ -440,6 +448,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       <li><label><input type="checkbox" data-k="n-sort"><span class="t">Sort the footage into the library</span></label></li>
       <li><label><input type="checkbox" data-k="n-swap"><span class="t">Pull the best stills for the gallery and brochure</span></label></li>
       <li><label><input type="checkbox" data-k="n-auto"><span class="t">Set up the six week install update so it updates the content dates too</span></label></li>
+      <li><label><input type="checkbox" data-k="n-flow"><span class="t">Finish the automation that takes Jake's edits from Dropbox to the content calendar and gets them posted</span></label></li>
     </ul>
     <div class="notes" data-spot="nikki-after" data-label="Nikki: after Wednesday"></div></div>
 </section>
