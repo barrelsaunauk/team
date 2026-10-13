@@ -138,7 +138,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 .note .pic{display:block;margin-top:8px}
 .note .pic img{display:block;max-width:100%;max-height:360px;border-radius:8px;border:1px solid var(--line);background:#fff}
 .note .where{border:0;background:transparent;padding:0;font:600 12px var(--font);color:var(--muted);text-decoration:underline;cursor:pointer}
-.attach{border:1px solid var(--line);background:#fff;color:var(--forest2);border-radius:10px;padding:7px 10px;font-size:17px;line-height:1;cursor:pointer}
+.attach{border:1px solid var(--line);background:#fff;color:var(--forest2);border-radius:10px;padding:8px 10px;line-height:0;cursor:pointer;display:inline-flex;align-items:center}
 .addnote input[type=file]{display:none}
 .pending{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
 .pending img{height:56px;width:auto;border-radius:6px;border:1px solid var(--line)}
@@ -603,7 +603,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     if(x.localImg)return '<span class="pic"><img src="'+x.localImg+'" alt="Image"></span>';
     if(!x.img)return '';
     var id=encodeURIComponent(x.img);
-    return '<a class="pic" href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener"><img src="https://drive.google.com/thumbnail?id='+id+'&sz=w1200" alt="Image" loading="lazy"></a>';
+    return '<a class="pic" href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/d/'+id+'=w1200" referrerpolicy="no-referrer" alt="Image"></a>';
   }
 
   // ---------- notes ----------
@@ -625,7 +625,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   function composer(spot){
     var pend=pendingImg[spot]?'<div class="pending"><img src="'+pendingImg[spot]+'" alt=""><span>Image ready to add</span><button data-unpic="'+spot+'">Remove</button></div>':'';
     return pend+'<div class="addnote"><textarea rows="1" placeholder="Write a note. Type @ and a name to tag someone." data-spot="'+spot+'"></textarea>'+
-      '<label class="attach" title="Add a screenshot or photo"><input type="file" accept="image/*" data-file="'+spot+'">&#128247;</label>'+
+      '<label class="attach" title="Add a screenshot or photo"><input type="file" accept="image/*" data-file="'+spot+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></svg></label>'+
       '<button data-add="'+spot+'">Add</button></div>'+
       '<div class="tagbar">Tag:'+Object.keys(PEOPLE).map(function(p){return '<button data-tag="'+p+'" data-spot="'+spot+'" style="--c:'+PEOPLE[p]+'">@'+p+'</button>'}).join('')+'</div>';
   }
