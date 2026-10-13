@@ -46,6 +46,9 @@ h1{font-size:clamp(40px,10vw,72px);line-height:1;letter-spacing:-.02em;font-weig
 .who-btn.on{background:var(--c);color:#fff}
 .whobar .hint{color:var(--muted);margin-left:auto}
 .whobar.need{background:#fff7e8}
+.whobar.set .who-btn:not(.on){display:none}
+.who-change{display:none;border:0;background:transparent;color:var(--mid);font-weight:600;font-size:13px;cursor:pointer;padding:4px 6px;text-decoration:underline}
+.whobar.set .who-change{display:inline-block}
 
 .wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:28px 72px;display:flex;flex-direction:column;gap:28px}
 h2{font-size:24px;line-height:1.2;font-weight:700;margin:0}
@@ -132,7 +135,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 .tagbar button{border:1px solid var(--c);color:var(--c);background:#fff;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:700;cursor:pointer}
 .status{font-size:12px;color:var(--muted)}
 .hide{display:none}
-@media (max-width:560px){.slot{grid-template-columns:1fr;gap:0}.time{text-align:left;padding-top:8px}.body{border-left:0;padding-left:0}.body:before{display:none}.tab{padding:11px 12px;font-size:13px}.whobar .hint{margin-left:0;width:100%}}
+@media (max-width:560px){.slot{grid-template-columns:1fr;gap:0}.time{text-align:left;padding-top:8px}.body{border-left:0;padding-left:0}.body:before{display:none}.tab{padding:11px 12px;font-size:13px;flex:0 0 auto;white-space:nowrap}.tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}.tabs::-webkit-scrollbar{display:none}.whobar{padding:8px 16px}.whobar.set .hint{display:none}.whobar .hint{margin-left:0;width:100%}}
 </style>
 </head>
 <body>
@@ -164,6 +167,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     <button class="who-btn" data-who="Marta" style="--c:var(--marta)">Marta</button>
     <button class="who-btn" data-who="Millie" style="--c:var(--millie)">Millie</button>
     <button class="who-btn" data-who="Nikki" style="--c:var(--nikki)">Nikki</button>
+    <button class="who-change" id="whochange">Change</button>
     <span class="hint" id="whohint">Pick your name so your notes show in your colour.</span>
   </div>
 </div>
@@ -472,7 +476,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     for(var j=0;j<panels.length;j++)panels[j].classList.toggle('hide',panels[j].id!==id);
     for(var k=0;k<tabs.length;k++)tabs[k].classList.toggle('on',tabs[k].getAttribute('data-tab')===id);
   }
-  for(var i=0;i<tabs.length;i++)tabs[i].addEventListener('click',function(){show(this.getAttribute('data-tab'));try{history.replaceState(null,'','#'+this.getAttribute('data-tab'))}catch(e){}window.scrollTo(0,0)});
+  for(var i=0;i<tabs.length;i++)tabs[i].addEventListener('click',function(){show(this.getAttribute('data-tab'));try{history.replaceState(null,'','#'+this.getAttribute('data-tab'))}catch(e){}try{this.scrollIntoView({inline:'nearest',block:'nearest'})}catch(e){}window.scrollTo(0,0)});
   var h=(location.hash||'').slice(1); if(document.getElementById(h)&&document.getElementById(h).classList.contains('panel'))show(h);
 
   // ---------- who am I ----------
@@ -482,8 +486,10 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     for(var i=0;i<b.length;i++)b[i].classList.toggle('on',b[i].getAttribute('data-who')===me);
     document.getElementById('whohint').textContent = me ? 'Your notes show in your colour.' : 'Pick your name so your notes show in your colour.';
     document.getElementById('whobar').classList.toggle('need',!me);
+    document.getElementById('whobar').classList.toggle('set',!!me);
   }
   document.getElementById('whobar').addEventListener('click',function(e){
+    if(e.target.closest('#whochange')){document.getElementById('whobar').classList.remove('set');return}
     var b=e.target.closest('.who-btn'); if(!b)return;
     me=b.getAttribute('data-who'); try{localStorage.setItem(LS_ME,me)}catch(err){}
     paintWho(); renderNotes();
