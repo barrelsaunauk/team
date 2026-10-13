@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BSUK Content Plan</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --ground:#ffffff; --panel:#eef4ef; --panel2:#dbe7dd; --line:#d6e2d8;
+  --ink:#16261C; --muted:#4e6457; --forest:#1F3D28; --forest2:#2B5336; --mid:#417C51;
+  --honey:#C08B41; --honeylt:#D6A868; --card:#ffffff;
+  --liam:#2E6DB4; --jake:#C0392B; --marta:#D6589A; --millie:#1C8C8C; --nikki:#6B5BB5;
+  --shadow:0 1px 2px rgba(22,38,28,.06),0 8px 24px rgba(22,38,28,.06);
+  --font:'Poppins',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.6;margin:0}
+button,input,textarea{font-family:var(--font)}
+.mast{background:var(--forest);color:#fff;padding-inline:16px}
+.mast-in{max-width:860px;margin:0 auto;padding-block:36px 0}
+.kicker{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--honey)}
+.mast .kicker{color:var(--honeylt)}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.1;font-weight:800;margin:8px 0 10px;color:#fff}
+.mast p{margin:0;color:#dbe7dd;max-width:60ch}
+.tabs{display:flex;gap:4px;margin-top:24px;flex-wrap:wrap;align-items:flex-end}
+.tab{border:0;cursor:pointer;font:600 14px/1 var(--font);padding:13px 16px;border-radius:12px 12px 0 0;background:transparent;color:#dbe7dd;border-bottom:4px solid transparent}
+.tab.on{background:var(--ground);color:var(--ink)}
+.tab.person{color:#fff;border-radius:12px 12px 0 0}
+.tab.person.on{border-bottom-color:#fff;box-shadow:inset 0 -4px 0 #fff}
+.t-liam{background:var(--liam)}.t-jake{background:var(--jake)}.t-marta{background:var(--marta)}.t-nikki{background:var(--nikki)}
+.tab.person.on.t-liam{background:var(--liam);color:#fff}.tab.person.on.t-jake{background:var(--jake);color:#fff}.tab.person.on.t-marta{background:var(--marta);color:#fff}.tab.person.on.t-nikki{background:var(--nikki);color:#fff}
+
+.whobar{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--line);padding:10px 16px}
+.whobar-in{max-width:860px;margin:0 auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}
+.whobar b{margin-right:4px}
+.who-btn{border:2px solid var(--c);background:#fff;color:var(--c);border-radius:999px;padding:4px 12px;font-weight:700;font-size:13px;cursor:pointer}
+.who-btn.on{background:var(--c);color:#fff}
+.whobar .hint{color:var(--muted);margin-left:auto}
+.whobar.need{background:#fff7e8}
+
+.wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:28px 72px;display:flex;flex-direction:column;gap:28px}
+h2{font-size:24px;line-height:1.2;font-weight:700;margin:0}
+h3{font-size:16px;font-weight:700;margin:0}
+.sec{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:20px}
+.lead{font-size:17px;line-height:1.65;margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.fact{background:var(--panel);border-radius:12px;padding:14px}
+.fact b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fact span{font-weight:700;font-size:16px}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.working{background:var(--forest2);color:#fff;border-radius:16px;padding:20px 22px}
+.working h2{color:#fff;font-size:20px}
+.working p{margin:8px 0 0;color:#e7efe8}
+.working .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.working .tg{border-radius:999px;padding:2px 10px;font-weight:700;font-size:13px;color:#fff}
+
+.chk{list-style:none;margin:0;padding:0}
+.chk li{border-top:1px solid var(--line)}
+.chk li:first-child{border-top:0}
+.chk label{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;padding:10px 2px;cursor:pointer}
+.chk input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--mid)}
+.chk input:checked + .t{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--honey)}
+.sub{display:block;font-size:13px;color:var(--muted)}
+
+/* shots */
+.group h3{display:flex;align-items:baseline;gap:10px}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.shot{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.shot .ph{position:relative;aspect-ratio:4/3;background:var(--panel);max-width:100%}
+.shot .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.shot .ph .none{position:absolute;inset:0;display:grid;place-items:center;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:2px dashed var(--line);border-radius:0}
+.shot .num{position:absolute;top:10px;left:10px;background:var(--forest);color:#fff;font-weight:700;font-size:13px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center}
+.shot .bot{padding:10px 12px 12px;display:flex;flex-direction:column;gap:6px}
+.shot label{display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:start;font-size:14px;line-height:1.4;cursor:pointer}
+.shot input{width:18px;height:18px;margin:1px 0 0;accent-color:var(--mid)}
+.shot input:checked + span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--honey)}
+.partlabel{display:inline-flex;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.partlabel.unit{background:var(--panel2);color:var(--forest2)}
+.partlabel.house{background:var(--honey);color:#fff}
+
+/* run sheet */
+.slot{display:grid;grid-template-columns:92px 1fr;gap:16px}
+.time{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px;padding-top:20px;text-align:right;color:var(--forest2)}
+.time small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.body{border-left:2px solid var(--line);padding:12px 0 12px 20px;position:relative;min-width:0}
+.body:before{content:"";position:absolute;left:-7px;top:26px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--mid)}
+.slot.travel .body:before{border-color:var(--honey)}
+.slot .card,.travelcard{display:flex;flex-direction:column;gap:10px}
+.loc{display:inline-flex;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:999px;align-self:flex-start}
+.loc.unit{background:var(--panel2);color:var(--forest2)}
+.loc.house{background:var(--honey);color:#fff}
+.loc.road{background:#fff;color:var(--muted);border:1px solid var(--line)}
+.style{font-size:13px;color:var(--muted);margin:0}
+.travelcard{background:var(--panel);border:1px dashed var(--line);border-radius:14px;padding:16px 20px}
+.travelcard p{margin:0;color:var(--muted)}
+
+/* person tabs */
+.person-head{border-radius:16px;padding:22px;color:#fff}
+.person-head .kicker{color:rgba(255,255,255,.85)}
+.person-head h2{color:#fff;margin-top:4px}
+.pcard{border-top:5px solid var(--pc)}
+.pcard h3{color:var(--pc);margin-bottom:6px}
+.p-liam{--pc:var(--liam)}.p-jake{--pc:var(--jake)}.p-marta{--pc:var(--marta)}.p-nikki{--pc:var(--nikki)}
+.p-liam .chk input,.p-jake .chk input,.p-marta .chk input,.p-nikki .chk input{accent-color:var(--pc)}
+
+/* notes */
+.notes{border-top:1px dashed var(--line);margin-top:4px;padding-top:8px;display:flex;flex-direction:column;gap:6px}
+.notes-toggle{border:0;background:transparent;color:var(--mid);font-weight:600;font-size:13px;cursor:pointer;padding:2px 0;align-self:flex-start}
+.notes-toggle .n{display:inline-block;min-width:20px;padding:0 6px;margin-left:4px;border-radius:999px;background:var(--panel2);color:var(--forest2);font-size:12px;text-align:center}
+.note{border-left:4px solid var(--c);background:var(--bg);border-radius:8px;padding:8px 10px;font-size:14px;line-height:1.45;position:relative}
+.note .meta{font-size:12px;font-weight:700;color:var(--c);display:flex;gap:8px;align-items:center}
+.note .meta time{font-weight:500;color:var(--muted)}
+.note .del{margin-left:auto;border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:13px}
+.note .txt{white-space:pre-wrap;word-break:break-word}
+.tagchip{font-weight:700;border-radius:6px;padding:0 4px;color:#fff;background:var(--c)}
+.note.me-tagged{box-shadow:0 0 0 2px var(--honey)}
+.addnote{display:flex;gap:6px;align-items:flex-end}
+.addnote textarea{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:14px;resize:vertical;min-height:40px;background:#fff;color:var(--ink)}
+.addnote textarea:focus{outline:2px solid var(--honey);border-color:transparent}
+.addnote button{border:0;border-radius:10px;background:var(--forest2);color:#fff;font-weight:700;padding:9px 14px;cursor:pointer}
+.tagbar{display:flex;flex-wrap:wrap;gap:4px;font-size:12px;color:var(--muted);align-items:center}
+.tagbar button{border:1px solid var(--c);color:var(--c);background:#fff;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:700;cursor:pointer}
+.status{font-size:12px;color:var(--muted)}
+.hide{display:none}
+@media (max-width:560px){.slot{grid-template-columns:1fr;gap:0}.time{text-align:left;padding-top:8px}.body{border-left:0;padding-left:0}.body:before{display:none}.tab{padding:11px 12px;font-size:13px}.whobar .hint{margin-left:0;width:100%}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-in">
+    <div class="kicker">Barrel Sauna UK · Content</div>
+    <h1>The content plan</h1>
+    <p>Everything from Tuesday's meeting, plus the plan for the first shoot on Wednesday 21 October.</p>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="shots">Shot checklist</button>
+      <button class="tab" data-tab="day1">Shoot day 1</button>
+      <button class="tab person t-liam" data-tab="liam">Liam</button>
+      <button class="tab person t-jake" data-tab="jake">Jake</button>
+      <button class="tab person t-marta" data-tab="marta">Marta</button>
+      <button class="tab person t-nikki" data-tab="nikki">Nikki</button>
+    </div>
+  </div>
+</header>
+
+<div class="whobar" id="whobar">
+  <div class="whobar-in">
+    <b>You are:</b>
+    <button class="who-btn" data-who="Liam" style="--c:var(--liam)">Liam</button>
+    <button class="who-btn" data-who="Jake" style="--c:var(--jake)">Jake</button>
+    <button class="who-btn" data-who="Marta" style="--c:var(--marta)">Marta</button>
+    <button class="who-btn" data-who="Millie" style="--c:var(--millie)">Millie</button>
+    <button class="who-btn" data-who="Nikki" style="--c:var(--nikki)">Nikki</button>
+    <span class="hint" id="whohint">Pick your name so your notes show in your colour.</span>
+  </div>
+</div>
+
+<main>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="wrap panel" id="overview">
+
+  <div class="working">
+    <div class="kicker" style="color:var(--honeylt)">This is a working document</div>
+    <h2>Please add your notes, ideas and planning as we go</h2>
+    <p>Every section has a notes box. Pick your name at the top, write your note, and it shows in your colour for everyone. To get someone's attention, tag them and they'll get an email with your note.</p>
+    <div class="tags">
+      <span class="tg" style="background:var(--liam)">@Liam</span>
+      <span class="tg" style="background:var(--jake)">@Jake</span>
+      <span class="tg" style="background:var(--marta)">@Marta</span>
+      <span class="tg" style="background:var(--millie)">@Millie</span>
+      <span class="tg" style="background:var(--nikki)">@Nikki</span>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="kicker">Decisions we made</div>
+    <h2>What we're filming on Wednesday, and why</h2>
+    <div class="card">
+      <p class="lead">This month is all about building a library of B-roll and stills of every configuration we make, so we have it ready for brochures, sales calls and the gallery.</p>
+      <p class="lead" style="margin-top:12px">Our builds come in so many variations, and understanding them is what leads to the sale. Our salespeople need to understand it, and so does the person buying.</p>
+      <div class="notes" data-spot="ov-decisions" data-label="Overview: decisions we made"></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>First shoot</b><span>Wed 21 Oct</span></div>
+      <div class="fact"><b>Hours</b><span>12:00 to 18:30</span></div>
+      <div class="fact"><b>Locations</b><span>Unit, then house</span></div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="kicker">What we agreed</div>
+    <div class="card">
+      <ul class="plain">
+        <li>A list gets made of exactly what we need in each scene, so we can tick it off and not miss anything. That list is the Shot checklist tab.</li>
+        <li>Unit first, for clean product shots in bright light.</li>
+        <li>House in the afternoon, for lifestyle and cinematic shots.</li>
+      </ul>
+      <div class="notes" data-spot="ov-agreed" data-label="Overview: what we agreed"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOT CHECKLIST ============ -->
+<section class="wrap panel hide" id="shots">
+  <div class="sec">
+    <div class="kicker">Every variation we sell</div>
+    <h2>Shot checklist</h2>
+    <p style="margin:0;color:var(--muted)">Marta's list confirms what's at the unit and the house on Wednesday. Anything we can't get this time moves to the next shoot.</p>
+  </div>
+  <div class="sec">
+    <span class="partlabel unit">At the unit: product shots</span>
+    <div id="unitshots" class="sec" style="gap:28px"></div>
+  </div>
+  <div class="sec">
+    <span class="partlabel house">At the house: lifestyle and cinematic</span>
+    <div id="houseshots"></div>
+  </div>
+</section>
+
+<!-- ============ SHOOT DAY 1 ============ -->
+<section class="wrap panel hide" id="day1">
+  <div class="sec">
+    <div class="kicker">Wednesday 21 October</div>
+    <h2>Shoot day 1</h2>
+    <div class="facts">
+      <div class="fact"><b>Start</b><span>12:00 at the unit</span></div>
+      <div class="fact"><b>Finish</b><span>About 18:30</span></div>
+      <div class="fact"><b>Golden hour</b><span>Around 17:45</span></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="slot"><div class="time">12:00<small>to 14:15</small></div><div class="body"><div class="card">
+      <span class="loc unit">The unit</span><h3>Product shots</h3>
+      <p class="style">Work through the unit half of the Shot checklist.</p>
+      <ul class="chk">
+        <li><label><input type="checkbox" data-k="d-hm4"><span class="t">4m half moon window sauna</span></label></li>
+        <li><label><input type="checkbox" data-k="d-hm3"><span class="t">3m half moon window sauna</span></label></li>
+        <li><label><input type="checkbox" data-k="d-glass"><span class="t">Flat glass mobile sauna with changing room</span></label></li>
+        <li><label><input type="checkbox" data-k="d-dd"><span class="t">Two Double Dipper ice baths</span></label></li>
+        <li><label><input type="checkbox" data-k="d-single"><span class="t">Single ice bath and the big round plunge</span></label></li>
+        <li><label><input type="checkbox" data-k="d-shower"><span class="t">Barrel shower</span></label></li>
+        <li><label><input type="checkbox" data-k="d-chill"><span class="t">The pile of chillers</span></label></li>
+      </ul>
+      <div class="notes" data-spot="slot-unit" data-label="Shoot day 1: product shots at the unit"></div>
+    </div></div></div>
+
+    <div class="slot"><div class="time">14:15<small>to 15:00</small></div><div class="body"><div class="card">
+      <span class="loc unit">The unit</span><h3>Crew filming guide</h3>
+      <p class="style">Reference shots, so Jake can turn them into a guide the crews follow on every install.</p>
+      <ul class="chk">
+        <li><label><input type="checkbox" data-k="d-wide"><span class="t">Wide shot of the site before anything starts</span></label></li>
+        <li><label><input type="checkbox" data-k="d-half"><span class="t">Half built and coming together</span></label></li>
+        <li><label><input type="checkbox" data-k="d-done"><span class="t">Finished build, front and inside</span></label></li>
+        <li><label><input type="checkbox" data-k="d-detail"><span class="t">Close ups of the details</span></label></li>
+      </ul>
+      <div class="notes" data-spot="slot-guide" data-label="Shoot day 1: crew filming guide"></div>
+    </div></div></div>
+
+    <div class="slot travel"><div class="time">15:00<small>to 15:45</small></div><div class="body"><div class="travelcard">
+      <span class="loc road">On the road</span>
+      <h3>Drive to the house and a break</h3>
+      <p>Drive time to be confirmed.</p>
+      <div class="notes" data-spot="slot-drive" data-label="Shoot day 1: drive to the house"></div>
+    </div></div></div>
+
+    <div class="slot"><div class="time">15:45<small>to 16:30</small></div><div class="body"><div class="card">
+      <span class="loc house">Liam's house</span><h3>Drone with Sam</h3>
+      <ul class="chk">
+        <li><label><input type="checkbox" data-k="d-test"><span class="t">Test flights around the sauna outside</span></label></li>
+        <li><label><input type="checkbox" data-k="d-sam"><span class="t">Walk Sam through it, including slow hovering walkthrough shots</span></label></li>
+        <li><label><input type="checkbox" data-k="d-samlist"><span class="t">Sam's set shot list for installs</span></label></li>
+      </ul>
+      <div class="notes" data-spot="slot-drone" data-label="Shoot day 1: drone with Sam"></div>
+    </div></div></div>
+
+    <div class="slot"><div class="time">16:30<small>to 18:30</small></div><div class="body"><div class="card">
+      <span class="loc house">Liam's house</span><h3>Lifestyle and cinematic, into golden hour</h3>
+      <p class="style">Work through the house half of the Shot checklist.</p>
+      <div class="notes" data-spot="slot-house" data-label="Shoot day 1: lifestyle and cinematic at the house"></div>
+    </div></div></div>
+  </div>
+</section>
+
+<!-- ============ LIAM ============ -->
+<section class="wrap panel hide p-liam" id="liam">
+  <div class="person-head" style="background:var(--liam)"><div class="kicker">Liam</div><h2>Decides and signs off</h2></div>
+  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="l-drone"><span class="t">Approve and pay for the drone</span></label></li>
+      <li><label><input type="checkbox" data-k="l-clear"><span class="t">Keep Wednesday clear of sales calls</span></label></li>
+      <li><label><input type="checkbox" data-k="l-walk"><span class="t">Recorded walkthrough with Nikki of every part of a sauna and why it's built that way</span></label></li>
+      <li><label><input type="checkbox" data-k="l-house"><span class="t">Confirm what's at the house: the globe, the half moon with coloured lights, the grill cabin</span></label></li>
+    </ul>
+    <div class="notes" data-spot="liam-before" data-label="Liam: before Wednesday"></div></div>
+  <div class="card pcard"><h3>After Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="l-post"><span class="t">Pick the first clip to post</span></label></li>
+      <li><label><input type="checkbox" data-k="l-sam"><span class="t">Set Sam's content role and pay</span></label></li>
+      <li><label><input type="checkbox" data-k="l-next"><span class="t">Set the date for the next shoot</span></label></li>
+    </ul>
+    <div class="notes" data-spot="liam-after" data-label="Liam: after Wednesday"></div></div>
+</section>
+
+<!-- ============ JAKE ============ -->
+<section class="wrap panel hide p-jake" id="jake">
+  <div class="person-head" style="background:var(--jake)"><div class="kicker">Jake</div><h2>Plans, films and edits</h2></div>
+  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="j-drone"><span class="t">Pick the drone, with a screen on the remote, and have it delivered to you to practise with</span></label></li>
+      <li><label><input type="checkbox" data-k="j-itin"><span class="t">Shoot itinerary and shot lists, using the Shot checklist</span></label></li>
+      <li><label><input type="checkbox" data-k="j-weather"><span class="t">Check Monday's forecast for wind and cloud, then confirm Wednesday</span></label></li>
+    </ul>
+    <div class="notes" data-spot="jake-before" data-label="Jake: before Wednesday"></div></div>
+  <div class="card pcard"><h3>After Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="j-edit"><span class="t">Edit the B-roll and upload it to Dropbox</span></label></li>
+      <li><label><input type="checkbox" data-k="j-guide"><span class="t">Turn the reference shots into the crew filming guide</span></label></li>
+      <li><label><input type="checkbox" data-k="j-insta"><span class="t">Edit the first clip for Instagram</span></label></li>
+    </ul>
+    <div class="notes" data-spot="jake-after" data-label="Jake: after Wednesday"></div></div>
+</section>
+
+<!-- ============ MARTA ============ -->
+<section class="wrap panel hide p-marta" id="marta">
+  <div class="person-head" style="background:var(--marta)"><div class="kicker">Marta</div><h2>Knows what's where, and when</h2></div>
+  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="m-list"><span class="t">List of every product at the unit and the house, with a few specs for each</span></label></li>
+      <li><label><input type="checkbox" data-k="m-layout"><span class="t">Ask the workshop to lay out the Double Dippers and chillers ready to film</span></label></li>
+      <li><label><input type="checkbox" data-k="m-crew"><span class="t">Check Jarek and Sam are free on Wednesday</span></label></li>
+    </ul>
+    <div class="notes" data-spot="marta-before" data-label="Marta: before Wednesday"></div></div>
+  <div class="card pcard"><h3>After Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="m-tubs"><span class="t">Let Jake know when the hot tubs arrive</span></label></li>
+      <li><label><input type="checkbox" data-k="m-dates"><span class="t">Keep install dates updated at the six week point, so Jake can see what's coming</span></label></li>
+    </ul>
+    <div class="notes" data-spot="marta-after" data-label="Marta: after Wednesday"></div></div>
+</section>
+
+<!-- ============ NIKKI ============ -->
+<section class="wrap panel hide p-nikki" id="nikki">
+  <div class="person-head" style="background:var(--nikki)"><div class="kicker">Nikki</div><h2>Systems, the footage library and this plan</h2></div>
+  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="n-notes"><span class="t">Send Jake the meeting notes</span></label></li>
+      <li><label><input type="checkbox" data-k="n-dropbox"><span class="t">Dropbox upgraded and shared with Jake</span></label></li>
+      <li><label><input type="checkbox" data-k="n-walk"><span class="t">Recorded walkthrough with Liam of every part of a sauna</span></label></li>
+      <li><label><input type="checkbox" data-k="n-qs"><span class="t">List of questions clients ask about each feature, so the shots answer them</span></label></li>
+      <li><label><input type="checkbox" data-k="n-check"><span class="t">Check the Shot checklist against Marta's list</span></label></li>
+    </ul>
+    <div class="notes" data-spot="nikki-before" data-label="Nikki: before Wednesday"></div></div>
+  <div class="card pcard"><h3>After Wednesday</h3>
+    <ul class="chk">
+      <li><label><input type="checkbox" data-k="n-sort"><span class="t">Sort the footage into the library by Shot checklist number</span></label></li>
+      <li><label><input type="checkbox" data-k="n-swap"><span class="t">Swap the photos in the Shot checklist for the new stills</span></label></li>
+      <li><label><input type="checkbox" data-k="n-auto"><span class="t">Set up the six week install update so it updates the content dates too</span></label></li>
+    </ul>
+    <div class="notes" data-spot="nikki-after" data-label="Nikki: after Wednesday"></div></div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  // Shared notes and ticks live in a Google Sheet behind this address.
+  var API = '';
+  var PAGE = 'https://barrelsaunauk.github.io/team/shoot_plan.html';
+  var CDN = 'https://assets.cdn.filesafe.space/J378Bt0d7JvG2rXks3zo/media/';
+  var PEOPLE = {Liam:'#2E6DB4',Jake:'#C0392B',Marta:'#D6589A',Millie:'#1C8C8C',Nikki:'#6B5BB5'};
+  var LS_ME='bsuk-plan-me', LS_DATA='bsuk-plan-local';
+
+  // ---------- shot checklist data ----------
+  var UNIT = [
+    {t:'Entrance', items:[
+      ['Flush entrance','6abe85af10ee4f155617ea3f.jpg'],
+      ['Porch','6ac14798c478ac5535a5f24b.jpeg'],
+      ['Porch, no arm rests','6ac2391422bc27f58f4b8a6e.png'],
+      ['Porch with arm rests','6ac238ec195f9172ed5f32d5.jpg']]},
+    {t:'Front windows', items:[
+      ['No windows',''],
+      ['One window in the door',''],
+      ['Two side windows',''],
+      ['Three windows, door and both sides',''],
+      ['Full glass facade and glass door','6a9ffe8ed63e08439cc2f9ad.jpeg']]},
+    {t:'Front door', items:[
+      ['Classic door','6aba4883b5e520ac1734dd9e.png'],
+      ['Zenview Spa, full sandglass','6aba4a05be703c7b303ebe40.jpeg'],
+      ['Zenview Secure, lock and key','6a9fead316ed327815a3be35.jpg']]},
+    {t:'Rear window', items:[
+      ['Full wood wall','6aba4756c13d4373c2dc9120.png'],
+      ['Two vertical windows',''],
+      ['Half glass','6abba695c13d4373c2ff8459.png'],
+      ['Full flat glass','6aca31c2bd6bb710ca2a5543.jpg'],
+      ['Tint globe','6aca31c2bd6bb710ca2a5539.jpg'],
+      ['Panoramic globe, blackout','6ac7735c8c077584b4f4db29.jpg']]},
+    {t:'Inside', items:[
+      ['Straight benches, two tier, electric heater','6aae42f3de8ed1c29f684114.jpg'],
+      ['L shaped benches, two tier','6aae42f330b0f957cc829c16.jpg'],
+      ['Changing room','6ab3b95a25d854bb65f2f80c.jpg'],
+      ['Under seat storage','6aa00e43a08d19d9274e1f9e.jpg']]},
+    {t:'Heaters', items:[
+      ['Harvia electric, wall mounted','6aab956a9f8b31b6ab5a1525.jpg'],
+      ['Standing heater',''],
+      ['Wood burner, internal feed','6ac23bdfbbad531ac8a08888.jpeg'],
+      ['Wood burner, external feed','6ac24050c478ac5535b8f777.jpeg']]},
+    {t:'Lighting', items:[
+      ['Under seat LED','6a905464722007d7fff00239.png'],
+      ['LED in the changing room','6aa5a40adf2d01555339f4fe.png'],
+      ['Heat proof wall light','']]},
+    {t:'Roof and solar', items:[
+      ['Hexagon shingles','6a9ffded641597c752ab2abb.png'],
+      ['Solar panel','6a9ffdedf44f6ea72fc9f758.png'],
+      ['Solar lighting','6ac23863bbad531ac8a05790.jpg']]},
+    {t:'Other products', items:[
+      ['Mobile sauna on its trailer','6ab2679830b0f957ccdd3f20.jpg'],
+      ['Double Dipper ice bath',''],
+      ['Single plunge','6ac7957fbbad531ac82edc4e.jpg'],
+      ['Hot tub','6aa5a3c549f830e49bea8a41.jpg'],
+      ['Barrel shower','6aa5a3ddc9a6c7937b60d664.png'],
+      ['The pile of chillers','']]}
+  ];
+  var HOUSE = [
+    ['Hero shots of each sauna in the garden','6ac773d6bbad531ac82c7843.jpg'],
+    ['Through the window: in through the sauna, out the other side, look back','6abe882c612cffc49a276a07.jpg'],
+    ['Globe sauna: 1m changing room, under seat storage, three windows','6acc579f4770fb500b009b4a.jpg'],
+    ['Side placed wood burner angled towards the dome','6abe8bf11325c552eecadff8.jpg'],
+    ['Half moon with the coloured under seat lighting','6a78773688808720198d0c81.png'],
+    ['Drone exterior passes',''],
+    ['Grill cabin, plus stills for the website',''],
+    ['One clip to post on Instagram','']
+  ];
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function shotCard(n,label,img,key){
+    var ph = img ? '<img loading="lazy" src="'+CDN+img+'" alt="'+esc(label)+'">' : '<div class="none">Photo needed</div>';
+    return '<div class="shot"><div class="ph">'+ph+'<span class="num">'+n+'</span></div><div class="bot">'+
+      '<label><input type="checkbox" data-k="'+key+'"><span>'+esc(label)+'</span></label>'+
+      '<div class="notes" data-spot="'+key+'" data-label="Shot '+n+': '+esc(label)+'"></div></div></div>';
+  }
+  var n=0, html='';
+  UNIT.forEach(function(g){
+    html+='<div class="group sec"><h3>'+g.t+'</h3><div class="shots">';
+    g.items.forEach(function(it){n++;html+=shotCard(n,it[0],it[1],'u'+n)});
+    html+='</div></div>';
+  });
+  document.getElementById('unitshots').innerHTML=html;
+  html='<div class="shots">';
+  HOUSE.forEach(function(it){n++;html+=shotCard(n,it[0],it[1],'h'+n)});
+  document.getElementById('houseshots').innerHTML=html+'</div>';
+
+  // ---------- tabs ----------
+  var tabs=document.querySelectorAll('.tab');
+  function show(id){
+    var panels=document.querySelectorAll('.panel');
+    for(var j=0;j<panels.length;j++)panels[j].classList.toggle('hide',panels[j].id!==id);
+    for(var k=0;k<tabs.length;k++)tabs[k].classList.toggle('on',tabs[k].getAttribute('data-tab')===id);
+  }
+  for(var i=0;i<tabs.length;i++)tabs[i].addEventListener('click',function(){show(this.getAttribute('data-tab'));try{history.replaceState(null,'','#'+this.getAttribute('data-tab'))}catch(e){}window.scrollTo(0,0)});
+  var h=(location.hash||'').slice(1); if(document.getElementById(h)&&document.getElementById(h).classList.contains('panel'))show(h);
+
+  // ---------- who am I ----------
+  var me=''; try{me=localStorage.getItem(LS_ME)||''}catch(e){}
+  function paintWho(){
+    var b=document.querySelectorAll('.who-btn');
+    for(var i=0;i<b.length;i++)b[i].classList.toggle('on',b[i].getAttribute('data-who')===me);
+    document.getElementById('whohint').textContent = me ? 'Your notes show in your colour.' : 'Pick your name so your notes show in your colour.';
+    document.getElementById('whobar').classList.toggle('need',!me);
+  }
+  document.getElementById('whobar').addEventListener('click',function(e){
+    var b=e.target.closest('.who-btn'); if(!b)return;
+    me=b.getAttribute('data-who'); try{localStorage.setItem(LS_ME,me)}catch(err){}
+    paintWho(); renderNotes();
+  });
+  paintWho();
+
+  // ---------- data ----------
+  var state={notes:[],ticks:{}}, open={};
+  function local(){try{return JSON.parse(localStorage.getItem(LS_DATA)||'{"notes":[],"ticks":{}}')}catch(e){return {notes:[],ticks:{}}}}
+  function saveLocal(){try{localStorage.setItem(LS_DATA,JSON.stringify(state))}catch(e){}}
+  function post(obj){
+    if(!API){saveLocal();return Promise.resolve()}
+    return fetch(API,{method:'POST',body:JSON.stringify(obj)}).then(function(r){return r.json()}).catch(function(){});
+  }
+  function load(){
+    if(!API){state=local();paint();return}
+    fetch(API).then(function(r){return r.json()}).then(function(d){
+      if(document.activeElement && document.activeElement.tagName==='TEXTAREA' && document.activeElement.value)return;
+      state={notes:d.notes||[],ticks:d.ticks||{}};paint();
+    }).catch(function(){});
+  }
+
+  // ---------- ticks ----------
+  function paintTicks(){
+    var c=document.querySelectorAll('input[data-k]');
+    for(var i=0;i<c.length;i++)c[i].checked=!!state.ticks[c[i].getAttribute('data-k')];
+  }
+  document.addEventListener('change',function(e){
+    var c=e.target; if(!c.matches||!c.matches('input[data-k]'))return;
+    var k=c.getAttribute('data-k'); state.ticks[k]=c.checked;
+    post({action:'tick',key:k,done:c.checked,who:me});
+  });
+
+  // ---------- notes ----------
+  function fmt(text){
+    var t=esc(text);
+    return t.replace(/@(Liam|Jake|Marta|Millie|Nikki)\b/gi,function(m,name){
+      var nm=name.charAt(0).toUpperCase()+name.slice(1).toLowerCase();
+      return '<span class="tagchip" style="--c:'+PEOPLE[nm]+'">@'+nm+'</span>';
+    });
+  }
+  function when(at){try{var d=new Date(at);return d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})+' '+d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}catch(e){return ''}}
+  function renderNotes(){
+    var boxes=document.querySelectorAll('.notes');
+    for(var i=0;i<boxes.length;i++){
+      var box=boxes[i], spot=box.getAttribute('data-spot');
+      var list=state.notes.filter(function(x){return x.spot===spot});
+      var isOpen=open[spot]||list.length>0;
+      var hh='<button class="notes-toggle" data-spot="'+spot+'">'+(isOpen?'Notes':'+ Add a note')+(list.length?'<span class="n">'+list.length+'</span>':'')+'</button>';
+      if(isOpen){
+        list.forEach(function(x){
+          var c=PEOPLE[x.who]||'#4e6457';
+          var tagged=me && new RegExp('@'+me+'\\b','i').test(x.text);
+          hh+='<div class="note'+(tagged?' me-tagged':'')+'" style="--c:'+c+';--bg:'+c+'14"><div class="meta">'+esc(x.who||'Someone')+' <time>'+when(x.at)+'</time>'+
+            (x.who===me?'<button class="del" data-id="'+esc(x.id)+'" title="Delete your note">Delete</button>':'')+'</div><div class="txt">'+fmt(x.text)+'</div></div>';
+        });
+        hh+='<div class="addnote"><textarea rows="1" placeholder="Write a note. Type @ and a name to tag someone." data-spot="'+spot+'"></textarea><button data-add="'+spot+'">Add</button></div>'+
+          '<div class="tagbar">Tag:'+Object.keys(PEOPLE).map(function(p){return '<button data-tag="'+p+'" data-spot="'+spot+'" style="--c:'+PEOPLE[p]+'">@'+p+'</button>'}).join('')+'</div>';
+      }
+      box.innerHTML=hh;
+    }
+  }
+  function paint(){paintTicks();renderNotes()}
+
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('.notes-toggle');
+    if(t){var s=t.getAttribute('data-spot');open[s]=true;renderNotes();var ta=document.querySelector('textarea[data-spot="'+s+'"]');if(ta)ta.focus();return}
+    var tg=e.target.closest('[data-tag]');
+    if(tg){var ta2=document.querySelector('textarea[data-spot="'+tg.getAttribute('data-spot')+'"]');if(ta2){ta2.value=(ta2.value?ta2.value.replace(/\s*$/,' '):'')+'@'+tg.getAttribute('data-tag')+' ';ta2.focus()}return}
+    var a=e.target.closest('[data-add]');
+    if(a){addNote(a.getAttribute('data-add'));return}
+    var d=e.target.closest('.del');
+    if(d){var id=d.getAttribute('data-id');state.notes=state.notes.filter(function(x){return x.id!==id});renderNotes();post({action:'delete',id:id,who:me});return}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.target.tagName==='TEXTAREA' && e.key==='Enter' && (e.metaKey||e.ctrlKey)){e.preventDefault();addNote(e.target.getAttribute('data-spot'))}
+  });
+  function addNote(spot){
+    var ta=document.querySelector('textarea[data-spot="'+spot+'"]'); if(!ta)return;
+    var text=ta.value.trim(); if(!text)return;
+    if(!me){document.getElementById('whobar').classList.add('need');window.scrollTo({top:0,behavior:'smooth'});document.getElementById('whohint').textContent='Pick your name first, then add your note.';return}
+    var box=document.querySelector('.notes[data-spot="'+spot+'"]');
+    var note={id:'n'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),spot:spot,label:box?box.getAttribute('data-label'):spot,who:me,text:text,at:new Date().toISOString(),page:PAGE+'#'+(document.querySelector('.panel:not(.hide)')||{}).id};
+    state.notes.push(note); ta.value=''; renderNotes();
+    post(Object.assign({action:'note'},note));
+  }
+
+  load();
+  if(API)setInterval(load,30000);
+})();
+</script>
+</body>
+</html>
