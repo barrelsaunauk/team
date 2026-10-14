@@ -111,6 +111,25 @@ li.done > label .t{color:var(--muted)}
 #vprev[disabled],#vnext[disabled]{display:none}
 .vtools{display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px}
 #vremove{color:#a33a2c}
+.tab.custom.coloured{background:var(--tbc);color:#fff}
+.tab.custom.coloured.on{background:var(--tbc);color:#fff;box-shadow:inset 0 -4px 0 #fff}
+.tcs{display:inline-flex;gap:4px;align-items:center;margin-left:4px}
+.tcsw{width:22px;height:22px;border-radius:50%;border:2px solid #fff;background:var(--s);box-shadow:0 0 0 1px var(--line);cursor:pointer;padding:0}
+.tcsw.on{box-shadow:0 0 0 2px var(--ink)}
+.tabbar-custom{margin-bottom:0}
+.tabbar-custom .tabtools{flex:1 1 100%;margin-top:0}
+.tabtools .printbtn{margin-left:auto;background:#fff;color:var(--forest2);border:1px solid var(--line);font-weight:600}
+.tabtools .tcsw{width:22px;height:22px;border-radius:50%;border:2px solid #fff;background:var(--s);box-shadow:0 0 0 1px var(--line);padding:0}
+.tabtools .tcsw.on{box-shadow:0 0 0 2px var(--ink)}
+.custom-panel{--tc:#2B5336}
+.custom-panel > .sec > h2{color:var(--tc);font-size:28px}
+.custom-panel .b-heading{border-top:3px solid var(--tc);padding-top:14px;margin-top:12px}
+.custom-panel .b-heading .btext.bh{color:var(--ink)}
+.custom-panel .blocks > .b-heading:first-child{margin-top:0}
+.custom-panel .b-para{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow)}
+.custom-panel .blocks > .b-para:first-child{background:transparent;border:0;box-shadow:none;padding:0 0 4px}
+.custom-panel .b-list .card,.custom-panel .b-plainlist .card,.custom-panel .b-notes .card{border-top:3px solid var(--tc)}
+.custom-panel .k-block > .ctl{top:8px}
 @media (max-width:560px){ul.chk > li.hhost > label{flex-basis:100%}}
 .achip{display:inline-block;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:700;color:#fff;background:var(--c)}
 .achip.late{box-shadow:0 0 0 2px #a33a2c}
@@ -265,7 +284,8 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 .note .meta{font-size:12px;font-weight:700;color:var(--c);display:flex;gap:8px;align-items:center}
 .note .meta time{font-weight:500;color:var(--muted)}
 .note .del{margin-left:auto;border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:13px}
-.note .txt{white-space:pre-wrap;word-break:break-word}
+.note .txt{white-space:pre-wrap;word-break:break-word;color:var(--c);font-weight:500}
+.note{background:color-mix(in srgb,var(--c) 11%,#fff)}
 .tagchip{font-weight:700;border-radius:6px;padding:0 4px;color:#fff;background:var(--c)}
 .note.me-tagged{box-shadow:0 0 0 2px var(--honey)}
 .addnote{display:flex;gap:6px;align-items:flex-end}
@@ -812,7 +832,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     if(document.getElementById(id))return;
     var btn=document.createElement('button'); btn.className='tab custom'; btn.setAttribute('data-tab',id); btn.textContent=title||'New tab';
     $('#tabs').appendChild(btn);
-    var sec=document.createElement('section'); sec.className='wrap panel hide'; sec.id=id;
+    var sec=document.createElement('section'); sec.className='wrap panel hide custom-panel'; sec.id=id;
     sec.innerHTML='<div class="sec"><h2 data-e="'+id+'-title">'+esc(title||'New tab')+'</h2></div><div class="blocks" data-blocks="'+id+'"></div><div class="hiddenbox" data-hidden-for="'+id+'"></div>';
     $('main').appendChild(sec);
   }
@@ -873,6 +893,8 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       } else if(x.k==='tabname'){
         var b=tabBtn(x.key); if(!b)return; var badge=$('.badge',b);
         b.textContent=d.title||''; if(badge){b.appendChild(document.createTextNode(' '));b.appendChild(badge)}
+      } else if(x.k==='tabcolor'){
+        setTabColour(x.key,d.c);
       } else if(x.k==='btype'){
         var bt=$('[data-e="'+q(x.key)+'"]'); if(bt){bt.classList.toggle('bh',d.t==='heading');bt.classList.toggle('bp',d.t!=='heading')}
       }
@@ -880,6 +902,12 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     decorate(); renderHidden(); paintStatus(); paintAssign(); paintJobsCount(); paintRefs();
   }
   function current_(k,key){var x=lastBy[k+'|'+key];return x?x.d:null}
+  var TABCOL={Forest:'#2B5336',Liam:PEOPLE.Liam,Jake:PEOPLE.Jake,Marta:PEOPLE.Marta,Millie:PEOPLE.Millie,Nikki:PEOPLE.Nikki,Honey:'#C08B41'};
+  function setTabColour(id,name){
+    var b=tabBtn(id), p=document.getElementById(id), c=TABCOL[name]||'';
+    if(b){b.classList.toggle('coloured',!!c);b.style.setProperty('--tbc',c||'')}
+    if(p){if(c)p.style.setProperty('--tc',c);else p.style.removeProperty('--tc');$$('.tcsw',p).forEach(function(w){w.classList.toggle('on',w.getAttribute('data-tc')===name)})}
+  }
   var undoStack=[];
   function saveEdit(kind,key,data,undoOps){
     if(needMe())return false;
@@ -948,9 +976,12 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     $$('.panel').forEach(function(p){
       if(p.id==='chat'||$(':scope > .tabbar',p))return;
       var custom=tabBtn(p.id)&&tabBtn(p.id).classList.contains('custom');
-      var t=document.createElement('div'); t.className='tabbar';
-      t.innerHTML='<button type="button" class="printbtn">Print or save as PDF</button><details class="tabopts"><summary>Tab options</summary><div class="tabtools"><label>Tab name <input type="text" class="tabname"></label><button type="button" class="savename">Save name</button>'+(custom?'<button type="button" class="hidetab">Remove this tab</button>':'')+'</div></details>';
+      var t=document.createElement('div'); t.className='tabbar'+(custom?' tabbar-custom':'');
+      var sw='<span class="tcs">Colour '+Object.keys(TABCOL).map(function(n){return '<button type="button" class="tcsw" data-tc="'+n+'" title="'+n+'" style="--s:'+TABCOL[n]+'"></button>'}).join('')+'</span>';
+      if(custom)t.innerHTML='<div class="tabtools"><label>Tab name <input type="text" class="tabname"></label><button type="button" class="savename">Save name</button>'+sw+'<button type="button" class="hidetab">Remove this tab</button><button type="button" class="printbtn">Print or save as PDF</button></div>';
+      else t.innerHTML='<button type="button" class="printbtn">Print or save as PDF</button><details class="tabopts"><summary>Tab options</summary><div class="tabtools"><label>Tab name <input type="text" class="tabname"></label><button type="button" class="savename">Save name</button></div></details>';
       p.insertBefore(t,p.firstChild);
+      var tc=current_('tabcolor',p.id); if(tc)setTabColour(p.id,tc.c);
     });
     // shot status on every shot list item
     $$('#shots ul.chk > li').forEach(function(li){
@@ -1137,6 +1168,10 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     var b=e.target.closest('button'); if(!b)return;
     var a=document.activeElement; if(!a||!a.isContentEditable){flash('Tap into some text first, then pick a style.');return}
     var cmd=b.getAttribute('data-cmd'), arg=b.getAttribute('data-arg');
+    var sel=window.getSelection(), whole=false;
+    if(cmd!=='btype'&&(!sel.rangeCount||sel.isCollapsed||!a.contains(sel.anchorNode))){
+      var rg=document.createRange(); rg.selectNodeContents(a); sel.removeAllRanges(); sel.addRange(rg); whole=true;
+    }
     try{document.execCommand('styleWithCSS',false,true)}catch(err){}
     if(cmd==='bigger'||cmd==='smaller'){
       try{document.execCommand('styleWithCSS',false,false)}catch(err){}
@@ -1152,6 +1187,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       saveEdit('btype',blk.getAttribute('data-e'),{t:t,label:labelFor(blk)},[['btype',blk.getAttribute('data-e'),{t:t==='heading'?'para':'heading'}]]);
       return;
     } else document.execCommand(cmd,false,arg||null);
+    if(whole){try{sel.collapseToEnd()}catch(err){}}
     var host=a.closest('[data-e]'); if(host){clearTimeout(timers[host.getAttribute('data-e')]);timers[host.getAttribute('data-e')]=setTimeout(function(){saveText(host)},1200)}
   });
   var toastT;
@@ -1276,6 +1312,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     }
     if((t=e.target.closest('.hidetab'))){var p2=t.closest('.panel');if(saveEdit('hide','tab:'+p2.id,{on:true,label:'Removed the tab '+tabName(p2.id)},[['hide','tab:'+p2.id,{on:false}]])){applyEdits();show('overview')}return}
     if(e.target.closest('.printbtn')){printTab();return}
+    if((t=e.target.closest('.tcsw'))){var pp=t.closest('.panel'),nm=t.getAttribute('data-tc'),prevc=(current_('tabcolor',pp.id)||{}).c||'';if(saveEdit('tabcolor',pp.id,{c:nm,label:tabName(pp.id)+': colour'},[['tabcolor',pp.id,{c:prevc}]]))setTabColour(pp.id,nm);return}
   });
 
   // ---------- drag to move (mouse and touch) ----------
