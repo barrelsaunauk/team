@@ -896,7 +896,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
       } else if(x.k==='tabcolor'){
         setTabColour(x.key,d.c);
       } else if(x.k==='btype'){
-        var bt=$('[data-e="'+q(x.key)+'"]'); if(bt){bt.classList.toggle('bh',d.t==='heading');bt.classList.toggle('bp',d.t!=='heading')}
+        var bt=$('[data-e="'+q(x.key)+'"]'); if(bt){bt.classList.toggle('bh',d.t==='heading');bt.classList.toggle('bp',d.t!=='heading');var bw=bt.closest('.block');if(bw){bw.classList.toggle('b-heading',d.t==='heading');bw.classList.toggle('b-para',d.t!=='heading')}}
       }
     });
     decorate(); renderHidden(); paintStatus(); paintAssign(); paintJobsCount(); paintRefs();
@@ -1183,7 +1183,7 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     } else if(cmd==='btype'){
       var blk=a.closest('.btext'); if(!blk||!(blk.classList.contains('bh')||blk.classList.contains('bp'))){flash('Heading or paragraph works on blocks you added.');return}
       var t=blk.classList.contains('bh')?'para':'heading';
-      blk.classList.toggle('bh',t==='heading');blk.classList.toggle('bp',t!=='heading');
+      blk.classList.toggle('bh',t==='heading');blk.classList.toggle('bp',t!=='heading');var bw2=blk.closest('.block');if(bw2){bw2.classList.toggle('b-heading',t==='heading');bw2.classList.toggle('b-para',t!=='heading')}
       saveEdit('btype',blk.getAttribute('data-e'),{t:t,label:labelFor(blk)},[['btype',blk.getAttribute('data-e'),{t:t==='heading'?'para':'heading'}]]);
       return;
     } else document.execCommand(cmd,false,arg||null);
