@@ -49,6 +49,63 @@ h1{font-size:clamp(40px,10vw,72px);line-height:1;letter-spacing:-.02em;font-weig
 .whobar.set .who-btn:not(.on){display:none}
 .who-change{display:none;border:0;background:transparent;color:var(--mid);font-weight:600;font-size:13px;cursor:pointer;padding:4px 6px;text-decoration:underline}
 .whobar.set .who-change{display:inline-block}
+.editbtn,.newtab{border:0;border-radius:999px;padding:5px 14px;font-weight:700;font-size:13px;cursor:pointer;background:var(--forest2);color:#fff}
+.editbtn.on{background:var(--honey)}
+.newtab{display:none;background:#fff;color:var(--forest2);border:2px solid var(--forest2)}
+body.editing .newtab{display:inline-block}
+body.editing [contenteditable="true"]{outline:1px dashed #b8cbbd;outline-offset:2px;border-radius:4px;cursor:text}
+body.editing [contenteditable="true"]:focus{outline:2px solid var(--honey)}
+.is-hidden{display:none!important}
+.hhost{position:relative}
+.hidebtn{display:none;position:absolute;top:4px;right:4px;z-index:3;border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;font:600 11px var(--font);padding:2px 8px;cursor:pointer}
+body.editing .hidebtn{display:inline-block}
+.chk li.hhost .hidebtn{top:9px}
+.addline{display:none;margin-top:6px;border:1px dashed var(--mid);background:#fff;color:var(--mid);border-radius:10px;padding:6px 12px;font:600 13px var(--font);cursor:pointer;align-self:flex-start}
+body.editing .addline{display:inline-block}
+.addblock{display:none;flex-wrap:wrap;gap:6px;align-items:center;padding:12px;border:1px dashed var(--mid);border-radius:14px;background:var(--panel);font-size:13px;color:var(--forest2);font-weight:600}
+body.editing .addblock{display:flex}
+.addblock button{border:1px solid var(--line);background:#fff;color:var(--forest2);border-radius:999px;padding:5px 12px;font:600 13px var(--font);cursor:pointer}
+.tabtools{display:none;gap:8px;align-items:center;flex-wrap:wrap;background:#fff7e8;border:1px solid var(--honeylt);border-radius:12px;padding:10px 12px;font-size:13px;font-weight:600}
+body.editing .tabtools{display:flex}
+.tabtools input{border:1px solid var(--line);border-radius:8px;padding:6px 10px;font:500 14px var(--font);margin-left:6px;max-width:200px}
+.tabtools button{border:0;border-radius:999px;background:var(--forest2);color:#fff;font:700 12px var(--font);padding:6px 12px;cursor:pointer}
+.tabtools .hidetab{background:#fff;color:var(--muted);border:1px solid var(--line)}
+.blocks{display:flex;flex-direction:column;gap:14px}
+.blocks:empty{display:none}
+.block{position:relative}
+.bctl{display:none;gap:4px;margin-bottom:4px}
+body.editing .bctl{display:flex}
+.bctl button,.grip{border:1px solid var(--line);background:#fff;color:var(--forest2);border-radius:8px;padding:2px 8px;font-size:13px;cursor:pointer;line-height:1.4}
+.grip{cursor:grab}
+.block.dragging{opacity:.5}
+.btext.bh{font-size:24px;line-height:1.2;font-weight:700}
+.btext.bp{font-size:16px;line-height:1.65}
+.btext.bs{font-weight:700;font-size:16px;margin-bottom:6px}
+.btext.bc{font-size:13px;color:var(--muted);margin-top:6px}
+.imgwrap{position:relative;max-width:100%}
+.imgwrap img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:var(--panel)}
+.rs{display:none;position:absolute;right:-6px;bottom:-6px;width:22px;height:22px;border-radius:50%;background:var(--honey);border:3px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.25);cursor:nwse-resize;touch-action:none}
+body.editing .rs{display:block}
+.bdiv{border:0;border-top:2px solid var(--line);margin:8px 0}
+.hiddenbox details{border:1px dashed var(--line);border-radius:12px;padding:8px 12px;font-size:13px;color:var(--muted)}
+.hiddenbox{display:none}
+body.editing .hiddenbox{display:block}
+.hiddenbox summary{cursor:pointer;font-weight:700}
+.hrow{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:6px 0;border-top:1px solid var(--line)}
+.hrow button{border:0;border-radius:999px;background:var(--forest2);color:#fff;font:700 12px var(--font);padding:4px 10px;cursor:pointer;flex:0 0 auto}
+.editline{font-size:12px;color:var(--muted);padding:2px 4px}
+.editline time{margin-left:4px}
+.fbar{display:none;position:fixed;left:50%;bottom:12px;transform:translateX(-50%);z-index:40;background:var(--forest);border-radius:14px;padding:6px;gap:4px;flex-wrap:wrap;justify-content:center;max-width:calc(100% - 24px);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+body.editing .fbar{display:flex}
+.fbar button{border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:8px;min-width:34px;height:34px;padding:0 8px;font:600 14px var(--font);cursor:pointer}
+.fbar .sw{background:var(--s);border:2px solid rgba(255,255,255,.7);min-width:26px;width:26px;height:26px;border-radius:50%;padding:0;margin:4px 2px}
+.fbar .sep{width:1px;background:rgba(255,255,255,.25);margin:4px 2px}
+.fbar .hl{background:#FFE58F;color:var(--ink);padding:0 4px;border-radius:3px}
+.fbar .hl.off{background:transparent;color:#fff;text-decoration:line-through}
+body.editing main{padding-bottom:110px}
+.toast{position:fixed;left:50%;top:14px;transform:translateX(-50%) translateY(-80px);background:var(--ink);color:#fff;border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;z-index:50;transition:transform .25s}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media (max-width:560px){.fbar{left:0;right:0;transform:none;bottom:0;border-radius:14px 14px 0 0;max-width:none;flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding:8px 10px calc(8px + env(safe-area-inset-bottom))}.fbar button{flex:0 0 auto}.fbar .sep{flex:0 0 1px}}
 
 .wrap{max-width:860px;margin:0 auto;padding-inline:16px;padding-block:28px 72px;display:flex;flex-direction:column;gap:28px}
 h2{font-size:24px;line-height:1.2;font-weight:700;margin:0}
@@ -155,380 +212,403 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 </style>
 </head>
 <body>
-
 <header class="mast">
-  <div class="mast-in">
-    <div class="kicker">Barrel Sauna UK · Content 🎥</div>
-    <h1>The content <em>plan</em></h1>
-    <p>Everything from Tuesday's meeting, plus the plan for the first shoot on Wednesday 21 October.</p>
-    <div class="chips"><span class="chip"><b>Shoot day 1</b> Wed 21 Oct</span><span class="chip">12:00 to 18:30</span><span class="chip">Unit, then the house</span></div>
-    <div class="crew">Crew <span class="p" style="background:var(--liam)">Liam</span><span class="p" style="background:var(--jake)">Jake</span><span class="p" style="background:var(--marta)">Marta</span><span class="p" style="background:var(--millie)">Millie</span><span class="p" style="background:var(--nikki)">Nikki</span></div>
-    <div class="tabs" id="tabs">
-      <button class="tab on" data-tab="overview">Overview</button>
-      <button class="tab" data-tab="shots">Proposed shot list</button>
-      <button class="tab" data-tab="day1">Shoot day 1</button>
-      <button class="tab" data-tab="chat">Chat <span class="badge hide" id="chatbadge"></span></button>
-      <button class="tab person t-liam" data-tab="liam">Liam</button>
-      <button class="tab person t-jake" data-tab="jake">Jake</button>
-      <button class="tab person t-marta" data-tab="marta">Marta</button>
-      <button class="tab person t-nikki" data-tab="nikki">Nikki</button>
-    </div>
-  </div>
-</header>
-
-<div class="whobar" id="whobar">
-  <div class="whobar-in">
-    <b>You are:</b>
-    <button class="who-btn" data-who="Liam" style="--c:var(--liam)">Liam</button>
-    <button class="who-btn" data-who="Jake" style="--c:var(--jake)">Jake</button>
-    <button class="who-btn" data-who="Marta" style="--c:var(--marta)">Marta</button>
-    <button class="who-btn" data-who="Millie" style="--c:var(--millie)">Millie</button>
-    <button class="who-btn" data-who="Nikki" style="--c:var(--nikki)">Nikki</button>
-    <button class="who-change" id="whochange">Change</button>
-    <span class="hint" id="whohint">Pick your name so your notes show in your colour.</span>
-  </div>
+<div class="mast-in">
+<div class="kicker" data-e="hd-k">Barrel Sauna UK · Content 🎥</div>
+<h1 data-e="hd-h1">The content <em>plan</em></h1>
+<p data-e="hd-p">Everything from Tuesday's meeting, plus the plan for the first shoot on Wednesday 21 October.</p>
+<div class="chips"><span class="chip" data-e="hd-c1"><b>Shoot day 1</b> Wed 21 Oct</span><span class="chip" data-e="hd-c2">12:00 to 18:30</span><span class="chip" data-e="hd-c3">Unit, then the house</span></div>
+<div class="crew">Crew <span class="p" style="background:var(--liam)">Liam</span><span class="p" style="background:var(--jake)">Jake</span><span class="p" style="background:var(--marta)">Marta</span><span class="p" style="background:var(--millie)">Millie</span><span class="p" style="background:var(--nikki)">Nikki</span></div>
+<div class="tabs" id="tabs">
+<button class="tab on" data-tab="overview">Overview</button>
+<button class="tab" data-tab="shots">Proposed shot list</button>
+<button class="tab" data-tab="day1">Shoot day 1</button>
+<button class="tab" data-tab="chat">Chat <span class="badge hide" id="chatbadge"></span></button>
+<button class="tab person t-liam" data-tab="liam">Liam</button>
+<button class="tab person t-jake" data-tab="jake">Jake</button>
+<button class="tab person t-marta" data-tab="marta">Marta</button>
+<button class="tab person t-nikki" data-tab="nikki">Nikki</button>
 </div>
-
+</div>
+</header>
+<div class="whobar" id="whobar">
+<div class="whobar-in">
+<b>You are:</b>
+<button class="who-btn" data-who="Liam" style="--c:var(--liam)">Liam</button>
+<button class="who-btn" data-who="Jake" style="--c:var(--jake)">Jake</button>
+<button class="who-btn" data-who="Marta" style="--c:var(--marta)">Marta</button>
+<button class="who-btn" data-who="Millie" style="--c:var(--millie)">Millie</button>
+<button class="who-btn" data-who="Nikki" style="--c:var(--nikki)">Nikki</button>
+<button class="who-change" id="whochange">Change</button>
+<button class="editbtn" id="editbtn" type="button">Edit page</button><button class="newtab" id="newtab" type="button">+ New tab</button>
+<span class="hint" id="whohint">Pick your name so your notes show in your colour.</span>
+</div>
+</div>
 <main>
-
 <!-- ============ OVERVIEW ============ -->
 <section class="wrap panel" id="overview">
-
-  <div class="working">
-    <div class="kicker" style="color:var(--honeylt)">This is a working document</div>
-    <h2>Please add your notes, ideas and planning as we go</h2>
-    <p>Every section has a notes box. Pick your name at the top, write your note, and it shows in your colour for everyone. Tag someone to get their attention, and add a screenshot or photo to any note. Everything also lands in the Chat tab.</p>
-    <div class="tags">
-      <span class="tg" style="background:var(--liam)">@Liam</span>
-      <span class="tg" style="background:var(--jake)">@Jake</span>
-      <span class="tg" style="background:var(--marta)">@Marta</span>
-      <span class="tg" style="background:var(--millie)">@Millie</span>
-      <span class="tg" style="background:var(--nikki)">@Nikki</span>
-    </div>
-  </div>
-
-  <div class="sec">
-    <div class="kicker">Decisions we made</div>
-    <h2>What we're filming on Wednesday, and why</h2>
-    <div class="card">
-      <p class="lead">This month is all about building a library of B-roll and stills of every configuration we make, so we have it ready for brochures, sales calls and the gallery.</p>
-      <p class="lead" style="margin-top:12px">Our builds come in so many variations, and understanding them is what leads to the sale. Our salespeople need to understand it, and so does the person buying.</p>
-      <div class="notes" data-spot="ov-decisions" data-label="Overview: decisions we made"></div>
-    </div>
-    <div class="facts">
-      <div class="fact"><b>First shoot</b><span>Wed 21 Oct</span></div>
-      <div class="fact"><b>Hours</b><span>12:00 to 18:30</span></div>
-      <div class="fact"><b>Locations</b><span>Unit, then house</span></div>
-    </div>
-  </div>
-
-  <div class="sec">
-    <div class="kicker">What we agreed</div>
-    <div class="card">
-      <ul class="plain">
-        <li>A list gets made of exactly what we need in each scene, so we can tick it off and not miss anything. That list is the Proposed shot list tab.</li>
-        <li>Unit first, for clean product shots in bright light.</li>
-        <li>House in the afternoon, for lifestyle and cinematic shots.</li>
-      </ul>
-      <div class="notes" data-spot="ov-agreed" data-label="Overview: what we agreed"></div>
-    </div>
-  </div>
-</section>
-
+<div class="working" data-h="overview-h1">
+<div class="kicker" data-e="overview-e1" style="color:var(--honeylt)">This is a working document</div>
+<h2 data-e="overview-e2">Please add your notes, ideas and planning as we go</h2>
+<p data-e="overview-e3">Every section has a notes box. Pick your name at the top, write your note, and it shows in your colour for everyone. Tag someone to get their attention, and add a screenshot or photo to any note. Everything also lands in the Chat tab.</p>
+<div class="tags">
+<span class="tg" style="background:var(--liam)">@Liam</span>
+<span class="tg" style="background:var(--jake)">@Jake</span>
+<span class="tg" style="background:var(--marta)">@Marta</span>
+<span class="tg" style="background:var(--millie)">@Millie</span>
+<span class="tg" style="background:var(--nikki)">@Nikki</span>
+</div>
+</div>
+<div class="sec">
+<div class="kicker" data-e="overview-e4">Decisions we made</div>
+<h2 data-e="overview-e5">What we're filming on Wednesday, and why</h2>
+<div class="card" data-h="overview-h2">
+<p class="lead" data-e="overview-e6">This month is all about building a library of B-roll and stills of every configuration we make, so we have it ready for brochures, sales calls and the gallery.</p>
+<p class="lead" data-e="overview-e7" style="margin-top:12px">Our builds come in so many variations, and understanding them is what leads to the sale. Our salespeople need to understand it, and so does the person buying.</p>
+<div class="notes" data-label="Overview: decisions we made" data-spot="ov-decisions"></div>
+</div>
+<div class="facts">
+<div class="fact" data-h="overview-h3"><b data-e="overview-e8">First shoot</b><span data-e="overview-e9">Wed 21 Oct</span></div>
+<div class="fact" data-h="overview-h4"><b data-e="overview-e10">Hours</b><span data-e="overview-e11">12:00 to 18:30</span></div>
+<div class="fact" data-h="overview-h5"><b data-e="overview-e12">Locations</b><span data-e="overview-e13">Unit, then house</span></div>
+</div>
+</div>
+<div class="sec">
+<div class="kicker" data-e="overview-e14">What we agreed</div>
+<div class="card" data-h="overview-h6">
+<ul class="plain" data-list="overview-L1">
+<li data-h="overview-h7"><span class="pt" data-e="overview-e15">A list gets made of exactly what we need in each scene, so we can tick it off and not miss anything. That list is the Proposed shot list tab.</span></li>
+<li data-h="overview-h8"><span class="pt" data-e="overview-e16">Unit first, for clean product shots in bright light.</span></li>
+<li data-h="overview-h9"><span class="pt" data-e="overview-e17">House in the afternoon, for lifestyle and cinematic shots.</span></li>
+</ul>
+<div class="notes" data-label="Overview: what we agreed" data-spot="ov-agreed"></div>
+</div>
+</div>
+<div class="blocks" data-blocks="overview"></div><div class="hiddenbox" data-hidden-for="overview"></div></section>
 <!-- ============ SHOT CHECKLIST ============ -->
 <section class="wrap panel hide" id="shots">
-  <div class="sec">
-    <div class="kicker">For every sauna on the day</div>
-    <h2>Proposed shot list</h2>
-    <p style="margin:0;color:var(--muted)">The same shots for every sauna, whatever model is there. Stills come from the clips.</p>
-  </div>
-  <div class="sec">
-    <span class="partlabel unit">At the unit: product shots</span>
-    <div class="card"><h3>Outside</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s1"><span class="t">Straight on from the front</span></label></li>
-      <li><label><input type="checkbox" data-k="s2"><span class="t">Side on, full length</span></label></li>
-      <li><label><input type="checkbox" data-k="s3"><span class="t">Straight on from the back</span></label></li>
-      <li><label><input type="checkbox" data-k="s4"><span class="t">Three quarter angle</span></label></li>
-      <li><label><input type="checkbox" data-k="s5"><span class="t">Slow walk around</span></label></li>
-      <li><label><input type="checkbox" data-k="s6"><span class="t">From above</span></label></li>
-      <li><label><input type="checkbox" data-k="s7"><span class="t">Low angle looking up</span></label></li>
-      <li><label><input type="checkbox" data-k="s8"><span class="t">Person beside it for size</span></label></li>
-    </ul><div class="notes" data-spot="sl-g1" data-label="Proposed shot list: Outside"></div></div>
-    <div class="card"><h3>Entrance and door</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s9"><span class="t">Entrance wide</span></label></li>
-      <li><label><input type="checkbox" data-k="s10"><span class="t">Entrance close</span></label></li>
-      <li><label><input type="checkbox" data-k="s11"><span class="t">Door opening</span></label></li>
-      <li><label><input type="checkbox" data-k="s12"><span class="t">Door closing</span></label></li>
-      <li><label><input type="checkbox" data-k="s13"><span class="t">Handle close up</span></label></li>
-      <li><label><input type="checkbox" data-k="s14"><span class="t">Lock and key</span></label></li>
-      <li><label><input type="checkbox" data-k="s15"><span class="t">Walking in through the door</span></label></li>
-    </ul><div class="notes" data-spot="sl-g2" data-label="Proposed shot list: Entrance and door"></div></div>
-    <div class="card"><h3>Windows</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s16"><span class="t">Every window from outside</span></label></li>
-      <li><label><input type="checkbox" data-k="s17"><span class="t">Every window from inside</span></label></li>
-      <li><label><input type="checkbox" data-k="s18"><span class="t">View out from the bench</span></label></li>
-      <li><label><input type="checkbox" data-k="s19"><span class="t">Through the window shot</span></label></li>
-      <li><label><input type="checkbox" data-k="s20"><span class="t">Glass and frame close up</span></label></li>
-    </ul><div class="notes" data-spot="sl-g3" data-label="Proposed shot list: Windows"></div></div>
-    <div class="card"><h3>Inside</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s21"><span class="t">Wide from the door</span></label></li>
-      <li><label><input type="checkbox" data-k="s22"><span class="t">Wide from the back looking out</span></label></li>
-      <li><label><input type="checkbox" data-k="s23"><span class="t">Benches full length</span></label></li>
-      <li><label><input type="checkbox" data-k="s24"><span class="t">Bench and backrest close up</span></label></li>
-      <li><label><input type="checkbox" data-k="s25"><span class="t">Ceiling curve</span></label></li>
-      <li><label><input type="checkbox" data-k="s26"><span class="t">Floor</span></label></li>
-      <li><label><input type="checkbox" data-k="s27"><span class="t">Vents</span></label></li>
-      <li><label><input type="checkbox" data-k="s28"><span class="t">Sitting view</span></label></li>
-    </ul><div class="notes" data-spot="sl-g4" data-label="Proposed shot list: Inside"></div></div>
-    <div class="card"><h3>Heater, whatever type it has</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s29"><span class="t">Heater wide in the room</span></label></li>
-      <li><label><input type="checkbox" data-k="s30"><span class="t">Heater close up</span></label></li>
-      <li><label><input type="checkbox" data-k="s31"><span class="t">Stones</span></label></li>
-      <li><label><input type="checkbox" data-k="s32"><span class="t">Water on the stones, steam</span></label></li>
-      <li><label><input type="checkbox" data-k="s33"><span class="t">Controls or switch</span></label></li>
-      <li><label><input type="checkbox" data-k="s34"><span class="t">Guard and fire plates</span></label></li>
-      <li><label><input type="checkbox" data-k="s35"><span class="t">Lighting the fire</span></label></li>
-      <li><label><input type="checkbox" data-k="s36"><span class="t">Chimney outside</span></label></li>
-    </ul><div class="notes" data-spot="sl-g5" data-label="Proposed shot list: Heater, whatever type it has"></div></div>
-    <div class="card"><h3>Lighting</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s37"><span class="t">Lights off</span></label></li>
-      <li><label><input type="checkbox" data-k="s38"><span class="t">Lights on</span></label></li>
-      <li><label><input type="checkbox" data-k="s39"><span class="t">Switching on</span></label></li>
-      <li><label><input type="checkbox" data-k="s40"><span class="t">Under seat glow</span></label></li>
-    </ul><div class="notes" data-spot="sl-g6" data-label="Proposed shot list: Lighting"></div></div>
-    <div class="card"><h3>If it has a changing room</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s41"><span class="t">Changing room wide</span></label></li>
-      <li><label><input type="checkbox" data-k="s42"><span class="t">Inner door between rooms</span></label></li>
-      <li><label><input type="checkbox" data-k="s43"><span class="t">Storage open</span></label></li>
-      <li><label><input type="checkbox" data-k="s44"><span class="t">Towel hooks</span></label></li>
-      <li><label><input type="checkbox" data-k="s45"><span class="t">From changing room into sauna</span></label></li>
-    </ul><div class="notes" data-spot="sl-g7" data-label="Proposed shot list: If it has a changing room"></div></div>
-    <div class="card"><h3>Craft and details</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s46"><span class="t">Timber grain macro</span></label></li>
-      <li><label><input type="checkbox" data-k="s47"><span class="t">Joints and grooves</span></label></li>
-      <li><label><input type="checkbox" data-k="s48"><span class="t">Steel bands</span></label></li>
-      <li><label><input type="checkbox" data-k="s49"><span class="t">Roof close up</span></label></li>
-      <li><label><input type="checkbox" data-k="s50"><span class="t">Roof edge</span></label></li>
-      <li><label><input type="checkbox" data-k="s51"><span class="t">Base and feet</span></label></li>
-      <li><label><input type="checkbox" data-k="s52"><span class="t">Badge or logo</span></label></li>
-    </ul><div class="notes" data-spot="sl-g8" data-label="Proposed shot list: Craft and details"></div></div>
-    <div class="card"><h3>Moving shots</h3><ul class="chk">
-      <li><label><input type="checkbox" data-k="s53"><span class="t">Slow push in</span></label></li>
-      <li><label><input type="checkbox" data-k="s54"><span class="t">Slow pull out</span></label></li>
-      <li><label><input type="checkbox" data-k="s55"><span class="t">Pan across</span></label></li>
-    </ul><div class="notes" data-spot="sl-g9" data-label="Proposed shot list: Moving shots"></div></div>
-  </div>
-  <div class="sec">
-    <span class="partlabel house">At the house: lifestyle and cinematic</span>
-    <div class="card"><ul class="chk">
-      <li><label><input type="checkbox" data-k="hs1"><span class="t">Hero shots of each sauna in the garden</span></label></li>
-      <li><label><input type="checkbox" data-k="hs2"><span class="t">Lit up from outside at dusk</span></label></li>
-      <li><label><input type="checkbox" data-k="hs3"><span class="t">Drone pass</span></label></li>
-      <li><label><input type="checkbox" data-k="hs4"><span class="t">Through the window shot at golden hour</span></label></li>
-      <li><label><input type="checkbox" data-k="hs5"><span class="t">Grill cabin, plus stills for the website</span></label></li>
-      <li><label><input type="checkbox" data-k="hs6"><span class="t">One clip to post on Instagram</span></label></li>
-    </ul><div class="notes" data-spot="sl-house" data-label="Proposed shot list: at the house"></div></div>
-  </div>
-</section>
-
+<div class="sec">
+<div class="kicker" data-e="shots-e1">For every sauna on the day</div>
+<h2 data-e="shots-e2">Proposed shot list</h2>
+<p data-e="shots-e3" style="margin:0;color:var(--muted)">The same shots for every sauna, whatever model is there. Stills come from the clips.</p>
+</div>
+<div class="sec">
+<span class="partlabel unit" data-e="shots-e4">At the unit: product shots</span>
+<div class="card" data-h="shots-h1"><h3 data-e="shots-e5">Outside</h3><ul class="chk" data-list="shots-L1">
+<li data-h="h-s1"><label><input data-k="s1" type="checkbox"/><span class="t" data-e="t-s1">Straight on from the front</span></label></li>
+<li data-h="h-s2"><label><input data-k="s2" type="checkbox"/><span class="t" data-e="t-s2">Side on, full length</span></label></li>
+<li data-h="h-s3"><label><input data-k="s3" type="checkbox"/><span class="t" data-e="t-s3">Straight on from the back</span></label></li>
+<li data-h="h-s4"><label><input data-k="s4" type="checkbox"/><span class="t" data-e="t-s4">Three quarter angle</span></label></li>
+<li data-h="h-s5"><label><input data-k="s5" type="checkbox"/><span class="t" data-e="t-s5">Slow walk around</span></label></li>
+<li data-h="h-s6"><label><input data-k="s6" type="checkbox"/><span class="t" data-e="t-s6">From above</span></label></li>
+<li data-h="h-s7"><label><input data-k="s7" type="checkbox"/><span class="t" data-e="t-s7">Low angle looking up</span></label></li>
+<li data-h="h-s8"><label><input data-k="s8" type="checkbox"/><span class="t" data-e="t-s8">Person beside it for size</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Outside" data-spot="sl-g1"></div></div>
+<div class="card" data-h="shots-h2"><h3 data-e="shots-e6">Entrance and door</h3><ul class="chk" data-list="shots-L2">
+<li data-h="h-s9"><label><input data-k="s9" type="checkbox"/><span class="t" data-e="t-s9">Entrance wide</span></label></li>
+<li data-h="h-s10"><label><input data-k="s10" type="checkbox"/><span class="t" data-e="t-s10">Entrance close</span></label></li>
+<li data-h="h-s11"><label><input data-k="s11" type="checkbox"/><span class="t" data-e="t-s11">Door opening</span></label></li>
+<li data-h="h-s12"><label><input data-k="s12" type="checkbox"/><span class="t" data-e="t-s12">Door closing</span></label></li>
+<li data-h="h-s13"><label><input data-k="s13" type="checkbox"/><span class="t" data-e="t-s13">Handle close up</span></label></li>
+<li data-h="h-s14"><label><input data-k="s14" type="checkbox"/><span class="t" data-e="t-s14">Lock and key</span></label></li>
+<li data-h="h-s15"><label><input data-k="s15" type="checkbox"/><span class="t" data-e="t-s15">Walking in through the door</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Entrance and door" data-spot="sl-g2"></div></div>
+<div class="card" data-h="shots-h3"><h3 data-e="shots-e7">Windows</h3><ul class="chk" data-list="shots-L3">
+<li data-h="h-s16"><label><input data-k="s16" type="checkbox"/><span class="t" data-e="t-s16">Every window from outside</span></label></li>
+<li data-h="h-s17"><label><input data-k="s17" type="checkbox"/><span class="t" data-e="t-s17">Every window from inside</span></label></li>
+<li data-h="h-s18"><label><input data-k="s18" type="checkbox"/><span class="t" data-e="t-s18">View out from the bench</span></label></li>
+<li data-h="h-s19"><label><input data-k="s19" type="checkbox"/><span class="t" data-e="t-s19">Through the window shot</span></label></li>
+<li data-h="h-s20"><label><input data-k="s20" type="checkbox"/><span class="t" data-e="t-s20">Glass and frame close up</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Windows" data-spot="sl-g3"></div></div>
+<div class="card" data-h="shots-h4"><h3 data-e="shots-e8">Inside</h3><ul class="chk" data-list="shots-L4">
+<li data-h="h-s21"><label><input data-k="s21" type="checkbox"/><span class="t" data-e="t-s21">Wide from the door</span></label></li>
+<li data-h="h-s22"><label><input data-k="s22" type="checkbox"/><span class="t" data-e="t-s22">Wide from the back looking out</span></label></li>
+<li data-h="h-s23"><label><input data-k="s23" type="checkbox"/><span class="t" data-e="t-s23">Benches full length</span></label></li>
+<li data-h="h-s24"><label><input data-k="s24" type="checkbox"/><span class="t" data-e="t-s24">Bench and backrest close up</span></label></li>
+<li data-h="h-s25"><label><input data-k="s25" type="checkbox"/><span class="t" data-e="t-s25">Ceiling curve</span></label></li>
+<li data-h="h-s26"><label><input data-k="s26" type="checkbox"/><span class="t" data-e="t-s26">Floor</span></label></li>
+<li data-h="h-s27"><label><input data-k="s27" type="checkbox"/><span class="t" data-e="t-s27">Vents</span></label></li>
+<li data-h="h-s28"><label><input data-k="s28" type="checkbox"/><span class="t" data-e="t-s28">Sitting view</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Inside" data-spot="sl-g4"></div></div>
+<div class="card" data-h="shots-h5"><h3 data-e="shots-e9">Heater, whatever type it has</h3><ul class="chk" data-list="shots-L5">
+<li data-h="h-s29"><label><input data-k="s29" type="checkbox"/><span class="t" data-e="t-s29">Heater wide in the room</span></label></li>
+<li data-h="h-s30"><label><input data-k="s30" type="checkbox"/><span class="t" data-e="t-s30">Heater close up</span></label></li>
+<li data-h="h-s31"><label><input data-k="s31" type="checkbox"/><span class="t" data-e="t-s31">Stones</span></label></li>
+<li data-h="h-s32"><label><input data-k="s32" type="checkbox"/><span class="t" data-e="t-s32">Water on the stones, steam</span></label></li>
+<li data-h="h-s33"><label><input data-k="s33" type="checkbox"/><span class="t" data-e="t-s33">Controls or switch</span></label></li>
+<li data-h="h-s34"><label><input data-k="s34" type="checkbox"/><span class="t" data-e="t-s34">Guard and fire plates</span></label></li>
+<li data-h="h-s35"><label><input data-k="s35" type="checkbox"/><span class="t" data-e="t-s35">Lighting the fire</span></label></li>
+<li data-h="h-s36"><label><input data-k="s36" type="checkbox"/><span class="t" data-e="t-s36">Chimney outside</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Heater, whatever type it has" data-spot="sl-g5"></div></div>
+<div class="card" data-h="shots-h6"><h3 data-e="shots-e10">Lighting</h3><ul class="chk" data-list="shots-L6">
+<li data-h="h-s37"><label><input data-k="s37" type="checkbox"/><span class="t" data-e="t-s37">Lights off</span></label></li>
+<li data-h="h-s38"><label><input data-k="s38" type="checkbox"/><span class="t" data-e="t-s38">Lights on</span></label></li>
+<li data-h="h-s39"><label><input data-k="s39" type="checkbox"/><span class="t" data-e="t-s39">Switching on</span></label></li>
+<li data-h="h-s40"><label><input data-k="s40" type="checkbox"/><span class="t" data-e="t-s40">Under seat glow</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Lighting" data-spot="sl-g6"></div></div>
+<div class="card" data-h="shots-h7"><h3 data-e="shots-e11">If it has a changing room</h3><ul class="chk" data-list="shots-L7">
+<li data-h="h-s41"><label><input data-k="s41" type="checkbox"/><span class="t" data-e="t-s41">Changing room wide</span></label></li>
+<li data-h="h-s42"><label><input data-k="s42" type="checkbox"/><span class="t" data-e="t-s42">Inner door between rooms</span></label></li>
+<li data-h="h-s43"><label><input data-k="s43" type="checkbox"/><span class="t" data-e="t-s43">Storage open</span></label></li>
+<li data-h="h-s44"><label><input data-k="s44" type="checkbox"/><span class="t" data-e="t-s44">Towel hooks</span></label></li>
+<li data-h="h-s45"><label><input data-k="s45" type="checkbox"/><span class="t" data-e="t-s45">From changing room into sauna</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: If it has a changing room" data-spot="sl-g7"></div></div>
+<div class="card" data-h="shots-h8"><h3 data-e="shots-e12">Craft and details</h3><ul class="chk" data-list="shots-L8">
+<li data-h="h-s46"><label><input data-k="s46" type="checkbox"/><span class="t" data-e="t-s46">Timber grain macro</span></label></li>
+<li data-h="h-s47"><label><input data-k="s47" type="checkbox"/><span class="t" data-e="t-s47">Joints and grooves</span></label></li>
+<li data-h="h-s48"><label><input data-k="s48" type="checkbox"/><span class="t" data-e="t-s48">Steel bands</span></label></li>
+<li data-h="h-s49"><label><input data-k="s49" type="checkbox"/><span class="t" data-e="t-s49">Roof close up</span></label></li>
+<li data-h="h-s50"><label><input data-k="s50" type="checkbox"/><span class="t" data-e="t-s50">Roof edge</span></label></li>
+<li data-h="h-s51"><label><input data-k="s51" type="checkbox"/><span class="t" data-e="t-s51">Base and feet</span></label></li>
+<li data-h="h-s52"><label><input data-k="s52" type="checkbox"/><span class="t" data-e="t-s52">Badge or logo</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Craft and details" data-spot="sl-g8"></div></div>
+<div class="card" data-h="shots-h9"><h3 data-e="shots-e13">Moving shots</h3><ul class="chk" data-list="shots-L9">
+<li data-h="h-s53"><label><input data-k="s53" type="checkbox"/><span class="t" data-e="t-s53">Slow push in</span></label></li>
+<li data-h="h-s54"><label><input data-k="s54" type="checkbox"/><span class="t" data-e="t-s54">Slow pull out</span></label></li>
+<li data-h="h-s55"><label><input data-k="s55" type="checkbox"/><span class="t" data-e="t-s55">Pan across</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: Moving shots" data-spot="sl-g9"></div></div>
+</div>
+<div class="sec">
+<span class="partlabel house" data-e="shots-e14">At the house: lifestyle and cinematic</span>
+<div class="card" data-h="shots-h10"><ul class="chk" data-list="shots-L10">
+<li data-h="h-hs1"><label><input data-k="hs1" type="checkbox"/><span class="t" data-e="t-hs1">Hero shots of each sauna in the garden</span></label></li>
+<li data-h="h-hs2"><label><input data-k="hs2" type="checkbox"/><span class="t" data-e="t-hs2">Lit up from outside at dusk</span></label></li>
+<li data-h="h-hs3"><label><input data-k="hs3" type="checkbox"/><span class="t" data-e="t-hs3">Drone pass</span></label></li>
+<li data-h="h-hs4"><label><input data-k="hs4" type="checkbox"/><span class="t" data-e="t-hs4">Through the window shot at golden hour</span></label></li>
+<li data-h="h-hs5"><label><input data-k="hs5" type="checkbox"/><span class="t" data-e="t-hs5">Grill cabin, plus stills for the website</span></label></li>
+<li data-h="h-hs6"><label><input data-k="hs6" type="checkbox"/><span class="t" data-e="t-hs6">One clip to post on Instagram</span></label></li>
+</ul><div class="notes" data-label="Proposed shot list: at the house" data-spot="sl-house"></div></div>
+</div>
+<div class="blocks" data-blocks="shots"></div><div class="hiddenbox" data-hidden-for="shots"></div></section>
 <!-- ============ SHOOT DAY 1 ============ -->
 <section class="wrap panel hide" id="day1">
-  <div class="sec">
-    <div class="kicker">Wednesday 21 October</div>
-    <h2>Shoot day 1</h2>
-    <div class="facts">
-      <div class="fact"><b>Start</b><span>12:00 at the unit</span></div>
-      <div class="fact"><b>Finish</b><span>About 18:30</span></div>
-      <div class="fact"><b>Golden hour</b><span>Around 17:45</span></div>
-    </div>
-  </div>
-
-  <div>
-    <div class="slot"><div class="time">12:00<small>to 14:15</small></div><div class="body"><div class="card">
-      <span class="loc unit">The unit</span><h3>Product shots</h3>
-      <p class="style">Work through the Proposed shot list for each sauna.</p>
-      <ul class="chk">
-        <li><label><input type="checkbox" data-k="d-hm4"><span class="t">4m half moon window sauna</span></label></li>
-        <li><label><input type="checkbox" data-k="d-hm3"><span class="t">3m half moon window sauna</span></label></li>
-        <li><label><input type="checkbox" data-k="d-glass"><span class="t">Flat glass mobile sauna with changing room</span></label></li>
-        <li><label><input type="checkbox" data-k="d-dd"><span class="t">Two Double Dipper ice baths</span></label></li>
-        <li><label><input type="checkbox" data-k="d-single"><span class="t">Single ice bath and the big round plunge</span></label></li>
-        <li><label><input type="checkbox" data-k="d-shower"><span class="t">Barrel shower</span></label></li>
-        <li><label><input type="checkbox" data-k="d-chill"><span class="t">The pile of chillers</span></label></li>
-      </ul>
-      <div class="notes" data-spot="slot-unit" data-label="Shoot day 1: product shots at the unit"></div>
-    </div></div></div>
-
-    <div class="slot"><div class="time">14:15<small>to 15:00</small></div><div class="body"><div class="card">
-      <span class="loc unit">The unit</span><h3>Crew filming guide</h3>
-      <p class="style">Reference shots, so Jake can turn them into a guide the crews follow on every install.</p>
-      <ul class="chk">
-        <li><label><input type="checkbox" data-k="d-wide"><span class="t">Wide shot of the site before anything starts</span></label></li>
-        <li><label><input type="checkbox" data-k="d-half"><span class="t">Half built and coming together</span></label></li>
-        <li><label><input type="checkbox" data-k="d-done"><span class="t">Finished build, front and inside</span></label></li>
-        <li><label><input type="checkbox" data-k="d-detail"><span class="t">Close ups of the details</span></label></li>
-      </ul>
-      <div class="notes" data-spot="slot-guide" data-label="Shoot day 1: crew filming guide"></div>
-    </div></div></div>
-
-    <div class="slot travel"><div class="time">15:00<small>to 15:45</small></div><div class="body"><div class="travelcard">
-      <span class="loc road">On the road</span>
-      <h3>Drive to the house and a break</h3>
-      <p>Drive time to be confirmed.</p>
-      <div class="notes" data-spot="slot-drive" data-label="Shoot day 1: drive to the house"></div>
-    </div></div></div>
-
-    <div class="slot"><div class="time">15:45<small>to 16:30</small></div><div class="body"><div class="card">
-      <span class="loc house">Liam's house</span><h3>Drone with Sam</h3>
-      <ul class="chk">
-        <li><label><input type="checkbox" data-k="d-test"><span class="t">Test flights around the sauna outside</span></label></li>
-        <li><label><input type="checkbox" data-k="d-sam"><span class="t">Walk Sam through it, including slow hovering walkthrough shots</span></label></li>
-        <li><label><input type="checkbox" data-k="d-samlist"><span class="t">Sam's set shot list for installs</span></label></li>
-      </ul>
-      <div class="notes" data-spot="slot-drone" data-label="Shoot day 1: drone with Sam"></div>
-    </div></div></div>
-
-    <div class="slot"><div class="time">16:30<small>to 18:30</small></div><div class="body"><div class="card">
-      <span class="loc house">Liam's house</span><h3>Lifestyle and cinematic, into golden hour</h3>
-      <p class="style">Work through the house part of the Proposed shot list.</p>
-      <div class="notes" data-spot="slot-house" data-label="Shoot day 1: lifestyle and cinematic at the house"></div>
-    </div></div></div>
-  </div>
-</section>
-
+<div class="sec">
+<div class="kicker" data-e="day1-e1">Wednesday 21 October</div>
+<h2 data-e="day1-e2">Shoot day 1</h2>
+<div class="facts">
+<div class="fact" data-h="day1-h1"><b data-e="day1-e3">Start</b><span data-e="day1-e4">12:00 at the unit</span></div>
+<div class="fact" data-h="day1-h2"><b data-e="day1-e5">Finish</b><span data-e="day1-e6">About 18:30</span></div>
+<div class="fact" data-h="day1-h3"><b data-e="day1-e7">Golden hour</b><span data-e="day1-e8">Around 17:45</span></div>
+</div>
+</div>
+<div data-slots="day1-slots">
+<div class="slot" data-h="day1-h4"><div class="time" data-e="day1-e9">12:00<small>to 14:15</small></div><div class="body"><div class="card" data-h="day1-h5">
+<span class="loc unit" data-e="day1-e10">The unit</span><h3 data-e="day1-e11">Product shots</h3>
+<p class="style" data-e="day1-e12">Work through the Proposed shot list for each sauna.</p>
+<ul class="chk" data-list="day1-L1">
+<li data-h="h-d-hm4"><label><input data-k="d-hm4" type="checkbox"/><span class="t" data-e="t-d-hm4">4m half moon window sauna</span></label></li>
+<li data-h="h-d-hm3"><label><input data-k="d-hm3" type="checkbox"/><span class="t" data-e="t-d-hm3">3m half moon window sauna</span></label></li>
+<li data-h="h-d-glass"><label><input data-k="d-glass" type="checkbox"/><span class="t" data-e="t-d-glass">Flat glass mobile sauna with changing room</span></label></li>
+<li data-h="h-d-dd"><label><input data-k="d-dd" type="checkbox"/><span class="t" data-e="t-d-dd">Two Double Dipper ice baths</span></label></li>
+<li data-h="h-d-single"><label><input data-k="d-single" type="checkbox"/><span class="t" data-e="t-d-single">Single ice bath and the big round plunge</span></label></li>
+<li data-h="h-d-shower"><label><input data-k="d-shower" type="checkbox"/><span class="t" data-e="t-d-shower">Barrel shower</span></label></li>
+<li data-h="h-d-chill"><label><input data-k="d-chill" type="checkbox"/><span class="t" data-e="t-d-chill">The pile of chillers</span></label></li>
+</ul>
+<div class="notes" data-label="Shoot day 1: product shots at the unit" data-spot="slot-unit"></div>
+</div></div></div>
+<div class="slot" data-h="day1-h6"><div class="time" data-e="day1-e13">14:15<small>to 15:00</small></div><div class="body"><div class="card" data-h="day1-h7">
+<span class="loc unit" data-e="day1-e14">The unit</span><h3 data-e="day1-e15">Crew filming guide</h3>
+<p class="style" data-e="day1-e16">Reference shots, so Jake can turn them into a guide the crews follow on every install.</p>
+<ul class="chk" data-list="day1-L2">
+<li data-h="h-d-wide"><label><input data-k="d-wide" type="checkbox"/><span class="t" data-e="t-d-wide">Wide shot of the site before anything starts</span></label></li>
+<li data-h="h-d-half"><label><input data-k="d-half" type="checkbox"/><span class="t" data-e="t-d-half">Half built and coming together</span></label></li>
+<li data-h="h-d-done"><label><input data-k="d-done" type="checkbox"/><span class="t" data-e="t-d-done">Finished build, front and inside</span></label></li>
+<li data-h="h-d-detail"><label><input data-k="d-detail" type="checkbox"/><span class="t" data-e="t-d-detail">Close ups of the details</span></label></li>
+</ul>
+<div class="notes" data-label="Shoot day 1: crew filming guide" data-spot="slot-guide"></div>
+</div></div></div>
+<div class="slot travel" data-h="day1-h8"><div class="time" data-e="day1-e17">15:00<small>to 15:45</small></div><div class="body"><div class="travelcard">
+<span class="loc road" data-e="day1-e18">On the road</span>
+<h3 data-e="day1-e19">Drive to the house and a break</h3>
+<p data-e="day1-e20">Drive time to be confirmed.</p>
+<div class="notes" data-label="Shoot day 1: drive to the house" data-spot="slot-drive"></div>
+</div></div></div>
+<div class="slot" data-h="day1-h9"><div class="time" data-e="day1-e21">15:45<small>to 16:30</small></div><div class="body"><div class="card" data-h="day1-h10">
+<span class="loc house" data-e="day1-e22">Liam's house</span><h3 data-e="day1-e23">Drone with Sam</h3>
+<ul class="chk" data-list="day1-L3">
+<li data-h="h-d-test"><label><input data-k="d-test" type="checkbox"/><span class="t" data-e="t-d-test">Test flights around the sauna outside</span></label></li>
+<li data-h="h-d-sam"><label><input data-k="d-sam" type="checkbox"/><span class="t" data-e="t-d-sam">Walk Sam through it, including slow hovering walkthrough shots</span></label></li>
+<li data-h="h-d-samlist"><label><input data-k="d-samlist" type="checkbox"/><span class="t" data-e="t-d-samlist">Sam's set shot list for installs</span></label></li>
+</ul>
+<div class="notes" data-label="Shoot day 1: drone with Sam" data-spot="slot-drone"></div>
+</div></div></div>
+<div class="slot" data-h="day1-h11"><div class="time" data-e="day1-e24">16:30<small>to 18:30</small></div><div class="body"><div class="card" data-h="day1-h12">
+<span class="loc house" data-e="day1-e25">Liam's house</span><h3 data-e="day1-e26">Lifestyle and cinematic, into golden hour</h3>
+<p class="style" data-e="day1-e27">Work through the house part of the Proposed shot list.</p>
+<div class="notes" data-label="Shoot day 1: lifestyle and cinematic at the house" data-spot="slot-house"></div>
+</div></div></div>
+</div>
+<div class="blocks" data-blocks="day1"></div><div class="hiddenbox" data-hidden-for="day1"></div></section>
 <!-- ============ CHAT ============ -->
 <section class="wrap panel hide" id="chat">
-  <div class="sec">
-    <div class="kicker">Group chat</div>
-    <h2>Chat</h2>
-    <p class="style">Post here, or add notes anywhere on the plan. Every note shows up in this chat. Tap the section name to jump to it.</p>
-  </div>
-  <div class="card chatcard">
-    <div class="newfor hide" id="newfor"></div>
-    <div class="feed" id="feed"></div>
-    <div class="notes chatnotes" data-spot="chat" data-label="Chat"></div>
-  </div>
-  <div class="card">
-    <h3>Email me this chat</h3>
-    <p class="style" style="margin:4px 0 10px">Pop your email in and the whole chat lands in your inbox.</p>
-    <div class="emailrow"><input type="email" id="chatemail" placeholder="you@example.com" autocomplete="email"><button id="chatsend">Send it to me</button></div>
-    <p class="status" id="chatstatus"></p>
-  </div>
+<div class="sec">
+<div class="kicker" data-e="chat-e1">Group chat</div>
+<h2 data-e="chat-e2">Chat</h2>
+<p class="style" data-e="chat-e3">Post here, or add notes anywhere on the plan. Every note shows up in this chat. Tap the section name to jump to it.</p>
+</div>
+<div class="card chatcard" data-h="chat-h1">
+<div class="newfor hide" id="newfor"></div>
+<div class="feed" id="feed"></div>
+<div class="notes chatnotes" data-label="Chat" data-spot="chat"></div>
+</div>
+<div class="card" data-h="chat-h2">
+<h3 data-e="chat-e4">Email me this chat</h3>
+<p class="style" data-e="chat-e5" style="margin:4px 0 10px">Pop your email in and the whole chat lands in your inbox.</p>
+<div class="emailrow"><input autocomplete="email" id="chatemail" placeholder="you@example.com" type="email"/><button id="chatsend">Send it to me</button></div>
+<p class="status" id="chatstatus"></p>
+</div>
 </section>
-
 <!-- ============ LIAM ============ -->
 <section class="wrap panel hide p-liam" id="liam">
-  <div class="person-head" style="background:var(--liam)"><div class="kicker">Liam</div><h2>Decides and signs off</h2></div>
-  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="l-drone"><span class="t">Approve and pay for the drone</span></label></li>
-      <li><label><input type="checkbox" data-k="l-clear"><span class="t">Keep Wednesday clear of sales calls</span></label></li>
-      <li><label><input type="checkbox" data-k="l-walk"><span class="t">Recorded walkthrough with Nikki of every part of a sauna and why it's built that way</span></label></li>
-      <li><label><input type="checkbox" data-k="l-house"><span class="t">Confirm what's at the house: the globe, the half moon with coloured lights, the grill cabin</span></label></li>
-    </ul>
-    <div class="notes" data-spot="liam-before" data-label="Liam: before Wednesday"></div></div>
-  <div class="card pcard"><h3>After Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="l-post"><span class="t">Pick the first clip to post</span></label></li>
-      <li><label><input type="checkbox" data-k="l-sam"><span class="t">Set Sam's content role and pay</span></label></li>
-      <li><label><input type="checkbox" data-k="l-next"><span class="t">Set the date for the next shoot</span></label></li>
-    </ul>
-    <div class="notes" data-spot="liam-after" data-label="Liam: after Wednesday"></div></div>
-</section>
-
+<div class="person-head" style="background:var(--liam)"><div class="kicker" data-e="liam-e1">Liam</div><h2 data-e="liam-e2">Decides and signs off</h2></div>
+<div class="card pcard" data-h="liam-h1"><h3 data-e="liam-e3">What we need from you before Wednesday</h3>
+<ul class="chk" data-list="liam-L1">
+<li data-h="h-l-drone"><label><input data-k="l-drone" type="checkbox"/><span class="t" data-e="t-l-drone">Approve and pay for the drone</span></label></li>
+<li data-h="h-l-clear"><label><input data-k="l-clear" type="checkbox"/><span class="t" data-e="t-l-clear">Keep Wednesday clear of sales calls</span></label></li>
+<li data-h="h-l-walk"><label><input data-k="l-walk" type="checkbox"/><span class="t" data-e="t-l-walk">Recorded walkthrough with Nikki of every part of a sauna and why it's built that way</span></label></li>
+<li data-h="h-l-house"><label><input data-k="l-house" type="checkbox"/><span class="t" data-e="t-l-house">Confirm what's at the house: the globe, the half moon with coloured lights, the grill cabin</span></label></li>
+</ul>
+<div class="notes" data-label="Liam: before Wednesday" data-spot="liam-before"></div></div>
+<div class="card pcard" data-h="liam-h2"><h3 data-e="liam-e4">After Wednesday</h3>
+<ul class="chk" data-list="liam-L2">
+<li data-h="h-l-post"><label><input data-k="l-post" type="checkbox"/><span class="t" data-e="t-l-post">Pick the first clip to post</span></label></li>
+<li data-h="h-l-sam"><label><input data-k="l-sam" type="checkbox"/><span class="t" data-e="t-l-sam">Set Sam's content role and pay</span></label></li>
+<li data-h="h-l-next"><label><input data-k="l-next" type="checkbox"/><span class="t" data-e="t-l-next">Set the date for the next shoot</span></label></li>
+</ul>
+<div class="notes" data-label="Liam: after Wednesday" data-spot="liam-after"></div></div>
+<div class="blocks" data-blocks="liam"></div><div class="hiddenbox" data-hidden-for="liam"></div></section>
 <!-- ============ JAKE ============ -->
 <section class="wrap panel hide p-jake" id="jake">
-  <div class="person-head" style="background:var(--jake)"><div class="kicker">Jake</div><h2>Plans, films and edits</h2></div>
-  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="j-drone"><span class="t">Get the drone situation organised</span></label></li>
-      <li><label><input type="checkbox" data-k="j-itin"><span class="t">Finalise the shot list</span></label></li>
-    </ul>
-    <div class="notes" data-spot="jake-before" data-label="Jake: before Wednesday"></div></div>
-  <div class="card pcard"><h3>After Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="j-old"><span class="t">Send Nikki all the old BSUK content you showed us in the meeting</span></label></li>
-      <li><label><input type="checkbox" data-k="j-guide2"><span class="t">Turn Wednesday's test shots into a filming guide for the install crew</span></label></li>
-      <li><label><input type="checkbox" data-k="j-social"><span class="t">Meeting with Nikki to plan how we run social media from now on, so it gets automated</span></label></li>
-    </ul>
-    <div class="notes" data-spot="jake-after" data-label="Jake: after Wednesday"></div></div>
-</section>
-
+<div class="person-head" style="background:var(--jake)"><div class="kicker" data-e="jake-e1">Jake</div><h2 data-e="jake-e2">Plans, films and edits</h2></div>
+<div class="card pcard" data-h="jake-h1"><h3 data-e="jake-e3">What we need from you before Wednesday</h3>
+<ul class="chk" data-list="jake-L1">
+<li data-h="h-j-drone"><label><input data-k="j-drone" type="checkbox"/><span class="t" data-e="t-j-drone">Get the drone situation organised</span></label></li>
+<li data-h="h-j-itin"><label><input data-k="j-itin" type="checkbox"/><span class="t" data-e="t-j-itin">Finalise the shot list</span></label></li>
+</ul>
+<div class="notes" data-label="Jake: before Wednesday" data-spot="jake-before"></div></div>
+<div class="card pcard" data-h="jake-h2"><h3 data-e="jake-e4">After Wednesday</h3>
+<ul class="chk" data-list="jake-L2">
+<li data-h="h-j-old"><label><input data-k="j-old" type="checkbox"/><span class="t" data-e="t-j-old">Send Nikki all the old BSUK content you showed us in the meeting</span></label></li>
+<li data-h="h-j-guide2"><label><input data-k="j-guide2" type="checkbox"/><span class="t" data-e="t-j-guide2">Turn Wednesday's test shots into a filming guide for the install crew</span></label></li>
+<li data-h="h-j-social"><label><input data-k="j-social" type="checkbox"/><span class="t" data-e="t-j-social">Meeting with Nikki to plan how we run social media from now on, so it gets automated</span></label></li>
+</ul>
+<div class="notes" data-label="Jake: after Wednesday" data-spot="jake-after"></div></div>
+<div class="blocks" data-blocks="jake"></div><div class="hiddenbox" data-hidden-for="jake"></div></section>
 <!-- ============ MARTA ============ -->
 <section class="wrap panel hide p-marta" id="marta">
-  <div class="person-head" style="background:var(--marta)"><div class="kicker">Marta</div><h2>Knows what's where, and when</h2></div>
-  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="m-list"><span class="t">List of every product at the unit and the house, with a few specs for each</span></label></li>
-      <li><label><input type="checkbox" data-k="m-layout"><span class="t">Ask the workshop to lay out the Double Dippers and chillers ready to film</span></label></li>
-      <li><label><input type="checkbox" data-k="m-crew"><span class="t">Check Jarek and Sam are free on Wednesday</span></label></li>
-      <li><label><input type="checkbox" data-k="m-sheet"><span class="t">Get the upcoming installs spreadsheet up to date, so Jake can plan which builds to film</span></label></li>
-    </ul>
-    <div class="notes" data-spot="marta-before" data-label="Marta: before Wednesday"></div></div>
-  <div class="card pcard"><h3>After Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="m-tubs"><span class="t">Let Jake know when the hot tubs arrive</span></label></li>
-    </ul>
-    <div class="notes" data-spot="marta-after" data-label="Marta: after Wednesday"></div></div>
-</section>
-
+<div class="person-head" style="background:var(--marta)"><div class="kicker" data-e="marta-e1">Marta</div><h2 data-e="marta-e2">Knows what's where, and when</h2></div>
+<div class="card pcard" data-h="marta-h1"><h3 data-e="marta-e3">What we need from you before Wednesday</h3>
+<ul class="chk" data-list="marta-L1">
+<li data-h="h-m-list"><label><input data-k="m-list" type="checkbox"/><span class="t" data-e="t-m-list">List of every product at the unit and the house, with a few specs for each</span></label></li>
+<li data-h="h-m-layout"><label><input data-k="m-layout" type="checkbox"/><span class="t" data-e="t-m-layout">Ask the workshop to lay out the Double Dippers and chillers ready to film</span></label></li>
+<li data-h="h-m-crew"><label><input data-k="m-crew" type="checkbox"/><span class="t" data-e="t-m-crew">Check Jarek and Sam are free on Wednesday</span></label></li>
+<li data-h="h-m-sheet"><label><input data-k="m-sheet" type="checkbox"/><span class="t" data-e="t-m-sheet">Get the upcoming installs spreadsheet up to date, so Jake can plan which builds to film</span></label></li>
+</ul>
+<div class="notes" data-label="Marta: before Wednesday" data-spot="marta-before"></div></div>
+<div class="card pcard" data-h="marta-h2"><h3 data-e="marta-e4">After Wednesday</h3>
+<ul class="chk" data-list="marta-L2">
+<li data-h="h-m-tubs"><label><input data-k="m-tubs" type="checkbox"/><span class="t" data-e="t-m-tubs">Let Jake know when the hot tubs arrive</span></label></li>
+</ul>
+<div class="notes" data-label="Marta: after Wednesday" data-spot="marta-after"></div></div>
+<div class="blocks" data-blocks="marta"></div><div class="hiddenbox" data-hidden-for="marta"></div></section>
 <!-- ============ NIKKI ============ -->
 <section class="wrap panel hide p-nikki" id="nikki">
-  <div class="person-head" style="background:var(--nikki)"><div class="kicker">Nikki</div><h2>Systems, the footage library and this plan</h2></div>
-  <div class="card pcard"><h3>What we need from you before Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="n-dropbox"><span class="t">Dropbox upgraded and shared with Jake</span></label></li>
-      <li><label><input type="checkbox" data-k="n-walk"><span class="t">Recorded walkthrough with Liam of every part of a sauna</span></label></li>
-      <li><label><input type="checkbox" data-k="n-qs"><span class="t">List of questions clients ask about each feature, so the shots answer them</span></label></li>
-      <li><label><input type="checkbox" data-k="n-check"><span class="t">Check the Proposed shot list against Marta's list</span></label></li>
-      <li><label><input type="checkbox" data-k="n-weather"><span class="t">Check Monday's forecast for wind and cloud, then confirm Wednesday</span></label></li>
-    </ul>
-    <div class="notes" data-spot="nikki-before" data-label="Nikki: before Wednesday"></div></div>
-  <div class="card pcard"><h3>After Wednesday</h3>
-    <ul class="chk">
-      <li><label><input type="checkbox" data-k="n-sort"><span class="t">Sort the footage into the library</span></label></li>
-      <li><label><input type="checkbox" data-k="n-swap"><span class="t">Pull the best stills for the gallery and brochure</span></label></li>
-      <li><label><input type="checkbox" data-k="n-auto"><span class="t">Set up the six week install update so it updates the content dates too</span></label></li>
-      <li><label><input type="checkbox" data-k="n-flow"><span class="t">Finish the automation that takes Jake's edits from Dropbox to the content calendar and gets them posted</span></label></li>
-    </ul>
-    <div class="notes" data-spot="nikki-after" data-label="Nikki: after Wednesday"></div></div>
-</section>
-
+<div class="person-head" style="background:var(--nikki)"><div class="kicker" data-e="nikki-e1">Nikki</div><h2 data-e="nikki-e2">Systems, the footage library and this plan</h2></div>
+<div class="card pcard" data-h="nikki-h1"><h3 data-e="nikki-e3">What we need from you before Wednesday</h3>
+<ul class="chk" data-list="nikki-L1">
+<li data-h="h-n-dropbox"><label><input data-k="n-dropbox" type="checkbox"/><span class="t" data-e="t-n-dropbox">Dropbox upgraded and shared with Jake</span></label></li>
+<li data-h="h-n-walk"><label><input data-k="n-walk" type="checkbox"/><span class="t" data-e="t-n-walk">Recorded walkthrough with Liam of every part of a sauna</span></label></li>
+<li data-h="h-n-qs"><label><input data-k="n-qs" type="checkbox"/><span class="t" data-e="t-n-qs">List of questions clients ask about each feature, so the shots answer them</span></label></li>
+<li data-h="h-n-check"><label><input data-k="n-check" type="checkbox"/><span class="t" data-e="t-n-check">Check the Proposed shot list against Marta's list</span></label></li>
+<li data-h="h-n-weather"><label><input data-k="n-weather" type="checkbox"/><span class="t" data-e="t-n-weather">Check Monday's forecast for wind and cloud, then confirm Wednesday</span></label></li>
+</ul>
+<div class="notes" data-label="Nikki: before Wednesday" data-spot="nikki-before"></div></div>
+<div class="card pcard" data-h="nikki-h2"><h3 data-e="nikki-e4">After Wednesday</h3>
+<ul class="chk" data-list="nikki-L2">
+<li data-h="h-n-sort"><label><input data-k="n-sort" type="checkbox"/><span class="t" data-e="t-n-sort">Sort the footage into the library</span></label></li>
+<li data-h="h-n-swap"><label><input data-k="n-swap" type="checkbox"/><span class="t" data-e="t-n-swap">Pull the best stills for the gallery and brochure</span></label></li>
+<li data-h="h-n-auto"><label><input data-k="n-auto" type="checkbox"/><span class="t" data-e="t-n-auto">Set up the six week install update so it updates the content dates too</span></label></li>
+<li data-h="h-n-flow"><label><input data-k="n-flow" type="checkbox"/><span class="t" data-e="t-n-flow">Finish the automation that takes Jake's edits from Dropbox to the content calendar and gets them posted</span></label></li>
+</ul>
+<div class="notes" data-label="Nikki: after Wednesday" data-spot="nikki-after"></div></div>
+<div class="blocks" data-blocks="nikki"></div><div class="hiddenbox" data-hidden-for="nikki"></div></section>
 </main>
-
+<div class="fbar" id="fbar" aria-label="Text styles">
+  <button type="button" data-cmd="bold" title="Bold"><b>B</b></button>
+  <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
+  <button type="button" data-cmd="underline" title="Underline"><u>U</u></button>
+  <button type="button" data-cmd="strikeThrough" title="Cross out"><s>S</s></button>
+  <button type="button" data-cmd="hilite" data-arg="#FFE58F" title="Highlight"><span class="hl">H</span></button>
+  <button type="button" data-cmd="hilite" data-arg="transparent" title="Remove highlight"><span class="hl off">H</span></button>
+  <span class="sep"></span>
+  <button type="button" data-cmd="foreColor" data-arg="#16261C" title="Dark text" class="sw" style="--s:#16261C"></button>
+  <button type="button" data-cmd="foreColor" data-arg="#2B5336" title="Forest" class="sw" style="--s:#2B5336"></button>
+  <button type="button" data-cmd="foreColor" data-arg="#C08B41" title="Honey" class="sw" style="--s:#C08B41"></button>
+  <button type="button" data-cmd="foreColor" data-arg="#2E6DB4" title="Liam blue" class="sw" style="--s:#2E6DB4"></button>
+  <button type="button" data-cmd="foreColor" data-arg="#C0392B" title="Jake red" class="sw" style="--s:#C0392B"></button>
+  <button type="button" data-cmd="foreColor" data-arg="#D6589A" title="Marta pink" class="sw" style="--s:#D6589A"></button>
+  <button type="button" data-cmd="foreColor" data-arg="#1C8C8C" title="Millie teal" class="sw" style="--s:#1C8C8C"></button>
+  <button type="button" data-cmd="foreColor" data-arg="#6B5BB5" title="Nikki purple" class="sw" style="--s:#6B5BB5"></button>
+  <span class="sep"></span>
+  <button type="button" data-cmd="bigger" title="Bigger">A+</button>
+  <button type="button" data-cmd="smaller" title="Smaller">A&minus;</button>
+  <button type="button" data-cmd="btype" title="Switch heading or paragraph">H/P</button>
+  <button type="button" data-cmd="removeFormat" title="Clear styles">Clear</button>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<input type="file" accept="image/*" id="blockfile" hidden>
 <script>
 (function(){
-  // Shared notes, ticks and images live in a Google Sheet (and a Drive folder) behind this address.
+  // Shared notes, ticks, images and page edits live in a Google Sheet (and a Drive folder) behind this address.
   var API = 'https://script.google.com/macros/s/AKfycbybyAT8a9UmRSwBiYsGR_6TOnTiV5BYgZFZ5LrHSXgUEnK7ytdlny20xdxFk0A9Xlg7/exec';
-  var PAGE = 'https://barrelsaunauk.github.io/team/shoot_plan.html';
   var PEOPLE = {Liam:'#2E6DB4',Jake:'#C0392B',Marta:'#D6589A',Millie:'#1C8C8C',Nikki:'#6B5BB5'};
-  var LS_ME='bsuk-plan-me', LS_DATA='bsuk-plan-local', LS_SEEN='bsuk-plan-seen';
+  var LS_ME='bsuk-plan-me', LS_SEEN='bsuk-plan-seen';
 
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+  function newId(p){return p+Date.now().toString(36)+Math.random().toString(36).slice(2,6)}
+  function q(v){return String(v).replace(/"/g,'\\"')}
 
   // ---------- tabs ----------
-  var tabs=document.querySelectorAll('.tab');
   var current='overview';
+  function tabBtn(id){return $('.tab[data-tab="'+q(id)+'"]')}
   function show(id){
+    var p=document.getElementById(id); if(!p||!p.classList.contains('panel'))id='overview';
     current=id;
-    var panels=document.querySelectorAll('.panel');
-    for(var j=0;j<panels.length;j++)panels[j].classList.toggle('hide',panels[j].id!==id);
-    for(var k=0;k<tabs.length;k++)tabs[k].classList.toggle('on',tabs[k].getAttribute('data-tab')===id);
+    $$('.panel').forEach(function(x){x.classList.toggle('hide',x.id!==id)});
+    $$('.tab').forEach(function(t){t.classList.toggle('on',t.getAttribute('data-tab')===id)});
     if(id==='chat'){markSeen();renderFeed()}
+    syncTabName();
   }
-  for(var i=0;i<tabs.length;i++)tabs[i].addEventListener('click',function(){show(this.getAttribute('data-tab'));try{history.replaceState(null,'','#'+this.getAttribute('data-tab'))}catch(e){}try{this.scrollIntoView({inline:'nearest',block:'nearest'})}catch(e){}window.scrollTo(0,0)});
+  document.getElementById('tabs').addEventListener('click',function(e){
+    var t=e.target.closest('.tab'); if(!t)return;
+    var id=t.getAttribute('data-tab'); show(id);
+    try{history.replaceState(null,'','#'+id)}catch(err){}
+    try{t.scrollIntoView({inline:'nearest',block:'nearest'})}catch(err){}
+    window.scrollTo(0,0);
+  });
+  function tabName(id){var b=tabBtn(id);if(!b)return id;var c=b.cloneNode(true);$$('.badge',c).forEach(function(x){x.remove()});return c.textContent.trim()}
 
   // ---------- who am I ----------
   var me=''; try{me=localStorage.getItem(LS_ME)||''}catch(e){}
   function paintWho(){
-    var b=document.querySelectorAll('.who-btn');
-    for(var i=0;i<b.length;i++)b[i].classList.toggle('on',b[i].getAttribute('data-who')===me);
-    document.getElementById('whohint').textContent = me ? 'Your notes show in your colour.' : 'Pick your name so your notes show in your colour.';
-    document.getElementById('whobar').classList.toggle('need',!me);
-    document.getElementById('whobar').classList.toggle('set',!!me);
+    $$('.who-btn').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-who')===me)});
+    $('#whohint').textContent = me ? 'Your notes show in your colour.' : 'Pick your name so your notes show in your colour.';
+    $('#whobar').classList.toggle('need',!me);
+    $('#whobar').classList.toggle('set',!!me);
   }
-  document.getElementById('whobar').addEventListener('click',function(e){
-    if(e.target.closest('#whochange')){document.getElementById('whobar').classList.remove('set');return}
+  function needMe(){
+    if(me)return false;
+    $('#whobar').classList.remove('set');$('#whobar').classList.add('need');
+    window.scrollTo({top:0,behavior:'smooth'});
+    $('#whohint').textContent='Pick your name first.';
+    return true;
+  }
+  $('#whobar').addEventListener('click',function(e){
+    if(e.target.closest('#whochange')){$('#whobar').classList.remove('set');return}
+    if(e.target.closest('#editbtn')){setEditing(!editing);return}
+    if(e.target.closest('#newtab')){addTab();return}
     var b=e.target.closest('.who-btn'); if(!b)return;
     me=b.getAttribute('data-who'); try{localStorage.setItem(LS_ME,me)}catch(err){}
     paintWho(); paint();
@@ -536,68 +616,380 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   paintWho();
 
   // ---------- data ----------
-  var state={notes:[],ticks:{}}, open={}, pendingImg={};
-  function local(){try{return JSON.parse(localStorage.getItem(LS_DATA)||'{"notes":[],"ticks":{}}')}catch(e){return {notes:[],ticks:{}}}}
-  function saveLocal(){try{localStorage.setItem(LS_DATA,JSON.stringify(state))}catch(e){}}
+  var state={notes:[],ticks:{},edits:[]}, open={}, pendingImg={};
   function post(obj){
-    if(!API){saveLocal();return Promise.resolve({ok:true})}
     return fetch(API,{method:'POST',body:JSON.stringify(obj)}).then(function(r){return r.json()}).catch(function(){return {ok:false}});
   }
+  function busy(){var a=document.activeElement;return a && ((a.tagName==='TEXTAREA'&&a.value)||a.isContentEditable)}
   function load(){
-    if(!API){state=local();paint();return}
     fetch(API).then(function(r){return r.json()}).then(function(d){
-      var a=document.activeElement;
-      if(a && a.tagName==='TEXTAREA' && a.value)return;
       var server=d.notes||[], ids={};
       server.forEach(function(x){ids[x.id]=1});
       var mine=state.notes.filter(function(x){return x.sending && !ids[x.id]});
-      state={notes:server.concat(mine),ticks:d.ticks||{}};paint();
+      var se=d.edits||[], eids={};
+      se.forEach(function(x){if(x.d&&x.d._e)eids[x.d._e]=1});
+      var mineE=state.edits.filter(function(x){return x.local && !eids[x.d._e]});
+      state={notes:server.concat(mine),ticks:d.ticks||{},edits:se.concat(mineE)};
+      paint();
     }).catch(function(){});
   }
 
-  // ---------- ticks ----------
-  function paintTicks(){
-    var c=document.querySelectorAll('input[data-k]');
-    for(var i=0;i<c.length;i++)c[i].checked=!!state.ticks[c[i].getAttribute('data-k')];
+  // ---------- sanitising edited text ----------
+  var OK_TAGS={B:1,STRONG:1,I:1,EM:1,U:1,S:1,STRIKE:1,SPAN:1,MARK:1,BR:1,SMALL:1,DIV:1,P:1};
+  var OK_CSS=['color','background-color','font-size','font-weight','font-style','text-decoration','text-decoration-line'];
+  function clean(html){
+    var box=document.createElement('div'); box.innerHTML=html;
+    (function walk(node){
+      $$(':scope > *',node).forEach(function(el){
+        walk(el);
+        if(el.tagName==='FONT'){var sp=document.createElement('span');if(el.color)sp.style.color=el.color;while(el.firstChild)sp.appendChild(el.firstChild);el.replaceWith(sp);el=sp}
+        if(!OK_TAGS[el.tagName]){
+          if(/^(SCRIPT|STYLE|BUTTON|INPUT|TEXTAREA|SELECT|IFRAME|OBJECT|SVG|IMG|LABEL)$/.test(el.tagName)){el.remove();return}
+          while(el.firstChild)el.parentNode.insertBefore(el.firstChild,el); el.remove(); return;
+        }
+        var st=el.getAttribute('style')||'', keep=[];
+        st.split(';').forEach(function(rule){var i=rule.indexOf(':');if(i<0)return;var k=rule.slice(0,i).trim().toLowerCase(),v=rule.slice(i+1).trim();if(OK_CSS.indexOf(k)>=0&&!/url\(|expression/i.test(v))keep.push(k+':'+v)});
+        for(var a=el.attributes.length-1;a>=0;a--)el.removeAttribute(el.attributes[a].name);
+        if(keep.length)el.setAttribute('style',keep.join(';'));
+      });
+    })(box);
+    return box.innerHTML;
   }
-  document.addEventListener('change',function(e){
-    var c=e.target;
-    if(c.matches && c.matches('input[data-k]')){
-      var k=c.getAttribute('data-k'); state.ticks[k]=c.checked;
-      post({action:'tick',key:k,done:c.checked,who:me});
+
+  // ---------- builders for added things ----------
+  function itemHTML(id,text){
+    return '<label><input type="checkbox" data-k="'+esc(id)+'"><span class="t" data-e="t-'+esc(id)+'">'+esc(text||'New item')+'</span></label>';
+  }
+  function makeItem(id,into,text,plain){
+    var ul=$('[data-list="'+q(into)+'"]'); if(!ul)return null;
+    var li=document.createElement('li'); li.setAttribute('data-h',(plain?'':'h-')+id); li.setAttribute('data-new',id);
+    li.innerHTML=plain?'<span class="pt" data-e="'+esc(id)+'">'+esc(text||'New line')+'</span>':itemHTML(id,text);
+    ul.appendChild(li); return li;
+  }
+  function makeSlot(id,text){
+    var box=$('[data-slots]'); if(!box)return null;
+    var d=document.createElement('div'); d.className='slot'; d.setAttribute('data-h',id); d.setAttribute('data-new',id);
+    d.innerHTML='<div class="time" data-e="'+id+'-time">Time<small>to time</small></div><div class="body"><div class="card">'+
+      '<h3 data-e="'+id+'-h">'+esc(text||'New slot')+'</h3><p class="style" data-e="'+id+'-p">What happens in this slot.</p>'+
+      '<ul class="chk" data-list="'+id+'-L"></ul><div class="notes" data-spot="'+id+'" data-label="Shoot day 1: new slot"></div></div></div>';
+    box.appendChild(d); return d;
+  }
+  function makeBlock(id,into,d){
+    var box=$('[data-blocks="'+q(into)+'"]'); if(!box)return null;
+    var b=document.createElement('div'); b.className='block b-'+d.btype; b.setAttribute('data-h',id); b.setAttribute('data-b',id); b.setAttribute('data-new',id);
+    var inner='';
+    if(d.btype==='heading')inner='<div class="btext bh" data-e="'+id+'">'+esc(d.text||'New heading')+'</div>';
+    else if(d.btype==='para')inner='<div class="btext bp" data-e="'+id+'">'+esc(d.text||'Write here.')+'</div>';
+    else if(d.btype==='list')inner='<div class="card"><div class="btext bs" data-e="'+id+'-h">Checklist</div><ul class="chk" data-list="'+id+'-L"></ul></div>';
+    else if(d.btype==='image')inner='<div class="imgwrap" style="width:'+(d.w||100)+'%"><img alt="" referrerpolicy="no-referrer" src="'+(d.local||('https://lh3.googleusercontent.com/d/'+encodeURIComponent(d.img||'')+'=w1600'))+'"><span class="rs" title="Drag to resize"></span></div><div class="btext bc" data-e="'+id+'-cap">Caption</div>';
+    else if(d.btype==='notes')inner='<div class="card"><div class="btext bs" data-e="'+id+'-h">Notes</div><div class="notes" data-spot="'+id+'" data-label="'+esc(tabName(into))+': notes"></div></div>';
+    else if(d.btype==='divider')inner='<hr class="bdiv">';
+    b.innerHTML='<div class="bctl"><span class="grip" draggable="true" title="Drag to move">&#10303;</span><button data-mv="-1" title="Move up">&#8593;</button><button data-mv="1" title="Move down">&#8595;</button></div>'+inner;
+    box.appendChild(b); return b;
+  }
+  function makeTab(id,title){
+    if(document.getElementById(id))return;
+    var btn=document.createElement('button'); btn.className='tab custom'; btn.setAttribute('data-tab',id); btn.textContent=title||'New tab';
+    $('#tabs').appendChild(btn);
+    var sec=document.createElement('section'); sec.className='wrap panel hide'; sec.id=id;
+    sec.innerHTML='<div class="sec"><h2 data-e="'+id+'-title">'+esc(title||'New tab')+'</h2></div><div class="blocks" data-blocks="'+id+'"></div><div class="hiddenbox" data-hidden-for="'+id+'"></div>';
+    $('main').appendChild(sec);
+  }
+
+  // ---------- applying the saved edits ----------
+  function applyEdits(){
+    var E=state.edits, last={};
+    E.forEach(function(x){
+      if(x.k==='tab')makeTab(x.key,x.d.title);
+      else if(x.k==='add'){
+        if(document.querySelector('[data-new="'+q(x.key)+'"]'))return;
+        var d=x.d||{};
+        if(d.type==='item')makeItem(x.key,d.into,d.text,false);
+        else if(d.type==='plain')makeItem(x.key,d.into,d.text,true);
+        else if(d.type==='slot')makeSlot(x.key,d.text);
+        else if(d.type==='block')makeBlock(x.key,d.into,d);
+      }
+      last[x.k+'|'+x.key]=x;
+    });
+    Object.keys(last).forEach(function(k){
+      var x=last[k], d=x.d||{};
+      if(x.k==='order'){
+        var box=$('[data-blocks="'+q(x.key)+'"]'); if(!box)return;
+        (d.ids||[]).forEach(function(id){var b=$('[data-b="'+q(id)+'"]',box);if(b)box.appendChild(b)});
+      } else if(x.k==='hide'){
+        if(x.key.indexOf('tab:')===0){var tid=x.key.slice(4),tb=tabBtn(tid);if(tb)tb.classList.toggle('is-hidden',!!d.on);if(d.on&&current===tid)show('overview');return}
+        var el=$('[data-h="'+q(x.key)+'"]'); if(el)el.classList.toggle('is-hidden',!!d.on);
+      } else if(x.k==='size'){
+        var w=$('[data-b="'+q(x.key)+'"] .imgwrap'); if(w)w.style.width=Math.max(15,Math.min(100,d.w||100))+'%';
+      } else if(x.k==='text'){
+        var t=$('[data-e="'+q(x.key)+'"]'); if(!t||t===document.activeElement)return;
+        var h=clean(d.html||''); if(t.innerHTML!==h){t.innerHTML=h;t.setAttribute('data-saved',h)}
+      } else if(x.k==='tabname'){
+        var b=tabBtn(x.key); if(!b)return; var badge=$('.badge',b);
+        b.textContent=d.title||''; if(badge){b.appendChild(document.createTextNode(' '));b.appendChild(badge)}
+      } else if(x.k==='btype'){
+        var bt=$('[data-e="'+q(x.key)+'"]'); if(bt){bt.classList.toggle('bh',d.t==='heading');bt.classList.toggle('bp',d.t!=='heading')}
+      }
+    });
+    decorate(); renderHidden();
+  }
+  function saveEdit(kind,key,data){
+    if(needMe())return false;
+    data=data||{}; data._e=newId('e');
+    var row={at:new Date().toISOString(),who:me,k:kind,key:key,d:data,local:true};
+    state.edits.push(row);
+    post({action:'edit',who:me,at:row.at,kind:kind,key:key,data:data}).then(function(r){
+      if(r&&r.ok)row.local=false; else flash('That change did not save. Please check your signal and try again.');
+    });
+    return true;
+  }
+
+  // ---------- labels for the chat log ----------
+  function labelFor(el){
+    var p=el.closest('.panel'), tab=p?tabName(p.id):'Page';
+    var c=el.closest('.card,.slot,.block,.sec,.fact'), h=c?$('h3,h2,.bs,.bh',c):null;
+    var head=h&&h!==el?h.textContent.trim():'';
+    return tab+(head&&head!==tab?': '+head.slice(0,50):'');
+  }
+
+  // ---------- edit mode ----------
+  var editing=false;
+  function setEditing(on){
+    editing=on; document.body.classList.toggle('editing',on);
+    var b=$('#editbtn'); b.textContent=on?'Done editing':'Edit page'; b.classList.toggle('on',on);
+    decorate();
+    if(!on && document.activeElement && document.activeElement.isContentEditable)document.activeElement.blur();
+  }
+  function decorate(){
+    $$('[data-e]').forEach(function(el){
+      var want=editing?'true':'false';
+      if(el.getAttribute('contenteditable')!==want)el.setAttribute('contenteditable',want);
+      if(!el.hasAttribute('data-saved'))el.setAttribute('data-saved',clean(el.innerHTML));
+    });
+    $$('[data-h]').forEach(function(el){
+      el.classList.add('hhost');
+      if(!$(':scope > .hidebtn',el)){var b=document.createElement('button');b.className='hidebtn';b.type='button';b.textContent='Hide';b.setAttribute('contenteditable','false');el.appendChild(b)}
+    });
+    $$('ul[data-list]').forEach(function(ul){
+      var nx=ul.nextElementSibling;
+      if(!nx||!nx.classList.contains('addline')){var b=document.createElement('button');b.type='button';b.className='addline';b.setAttribute('data-addto',ul.getAttribute('data-list'));b.textContent=ul.classList.contains('plain')?'+ Add a line':'+ Add an item';ul.parentNode.insertBefore(b,ul.nextSibling)}
+    });
+    var sl=$('[data-slots]');
+    if(sl&&!(sl.nextElementSibling&&sl.nextElementSibling.classList.contains('addslot'))){var a=document.createElement('button');a.type='button';a.className='addline addslot';a.textContent='+ Add a slot';sl.parentNode.insertBefore(a,sl.nextSibling)}
+    $$('[data-blocks]').forEach(function(box){
+      var nx=box.nextElementSibling;
+      if(!nx||!nx.classList.contains('addblock')){
+        var bar=document.createElement('div'); bar.className='addblock'; bar.setAttribute('data-for',box.getAttribute('data-blocks'));
+        bar.innerHTML='<span>Add a block:</span>'+[['heading','Heading'],['para','Paragraph'],['list','Checklist'],['image','Image'],['notes','Notes box'],['divider','Divider']].map(function(t){return '<button type="button" data-bt="'+t[0]+'">'+t[1]+'</button>'}).join('');
+        box.parentNode.insertBefore(bar,box.nextSibling);
+      }
+    });
+    $$('.panel').forEach(function(p){
+      if(p.id==='chat')return;
+      if(!$(':scope > .tabtools',p)){
+        var t=document.createElement('div'); t.className='tabtools';
+        t.innerHTML='<label>Tab name <input type="text" class="tabname"></label><button type="button" class="savename">Save name</button>'+(p.querySelector('[data-e$="-title"]')&&tabBtn(p.id)&&tabBtn(p.id).classList.contains('custom')?'<button type="button" class="hidetab">Hide this tab</button>':'');
+        p.insertBefore(t,p.firstChild);
+      }
+    });
+    $$('.grip').forEach(function(g){g.setAttribute('draggable',editing?'true':'false')});
+    syncTabName();
+  }
+  function syncTabName(){$$('.panel').forEach(function(p){var i=$('.tabname',p);if(i&&i!==document.activeElement)i.value=tabName(p.id)})}
+  function renderHidden(){
+    $$('[data-hidden-for]').forEach(function(box){
+      var pid=box.getAttribute('data-hidden-for'), p=document.getElementById(pid); if(!p)return;
+      var list=$$('.is-hidden[data-h]',p);
+      var rows=list.map(function(el){var c=el.cloneNode(true);$$('.hidebtn,.bctl,.notes,.addline',c).forEach(function(x){x.remove()});var s=c.textContent.replace(/\s+/g,' ').trim().slice(0,70)||'Image or divider';return '<div class="hrow"><span>'+esc(s)+'</span><button type="button" data-unhide="'+esc(el.getAttribute('data-h'))+'">Bring back</button></div>'});
+      if(pid==='overview'){
+        $$('.tab.is-hidden').forEach(function(t){rows.push('<div class="hrow"><span>Tab: '+esc(tabName(t.getAttribute('data-tab')))+'</span><button type="button" data-unhide="tab:'+esc(t.getAttribute('data-tab'))+'">Bring back</button></div>')});
+      }
+      box.innerHTML=rows.length?'<details><summary>Hidden ('+rows.length+')</summary>'+rows.join('')+'</details>':'';
+    });
+  }
+
+  // ---------- saving typed edits ----------
+  var timers={};
+  function saveText(el){
+    if(!el||!el.hasAttribute('data-e'))return;
+    var h=clean(el.innerHTML);
+    if(h===el.getAttribute('data-saved'))return;
+    if(saveEdit('text',el.getAttribute('data-e'),{html:h,label:labelFor(el)}))el.setAttribute('data-saved',h);
+  }
+  document.addEventListener('input',function(e){
+    var el=e.target.closest&&e.target.closest('[data-e]'); if(!el||!editing)return;
+    var k=el.getAttribute('data-e'); clearTimeout(timers[k]);
+    timers[k]=setTimeout(function(){saveText(el)},2500);
+  });
+  document.addEventListener('focusout',function(e){
+    var el=e.target.closest&&e.target.closest('[data-e]'); if(!el||!editing)return;
+    clearTimeout(timers[el.getAttribute('data-e')]); saveText(el);
+  });
+  document.addEventListener('keydown',function(e){
+    var el=e.target.closest&&e.target.closest('[data-e]');
+    if(el&&editing&&e.key==='Enter'&&!e.shiftKey&&(el.classList.contains('t')||el.classList.contains('pt')||el.classList.contains('bh')||el.classList.contains('bs')||/^H[1-3]$/.test(el.tagName))){e.preventDefault();el.blur()}
+  });
+  // clicking a checklist line in edit mode edits it instead of ticking it
+  document.addEventListener('click',function(e){
+    if(editing&&e.target.closest('label')&&e.target.closest('[data-e]'))e.preventDefault();
+  },true);
+
+  // ---------- formatting bar ----------
+  var fbar=$('#fbar');
+  fbar.addEventListener('pointerdown',function(e){if(e.target.closest('button'))e.preventDefault()});
+  fbar.addEventListener('mousedown',function(e){if(e.target.closest('button'))e.preventDefault()});
+  fbar.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    var a=document.activeElement; if(!a||!a.isContentEditable){flash('Tap into some text first, then pick a style.');return}
+    var cmd=b.getAttribute('data-cmd'), arg=b.getAttribute('data-arg');
+    try{document.execCommand('styleWithCSS',false,true)}catch(err){}
+    if(cmd==='bigger'||cmd==='smaller'){
+      try{document.execCommand('styleWithCSS',false,false)}catch(err){}
+      document.execCommand('fontSize',false,'7');
+      $$('font[size="7"]',a).forEach(function(f){var sp=document.createElement('span');sp.style.fontSize=cmd==='bigger'?'1.25em':'0.85em';while(f.firstChild)sp.appendChild(f.firstChild);f.replaceWith(sp)});
+      $$('span',a).forEach(function(s){if(/xxx-large/.test(s.style.fontSize))s.style.fontSize=cmd==='bigger'?'1.25em':'0.85em'});
+    } else if(cmd==='hilite'){
+      document.execCommand('hiliteColor',false,arg)||document.execCommand('backColor',false,arg);
+    } else if(cmd==='btype'){
+      var blk=a.closest('.btext'); if(!blk||!(blk.classList.contains('bh')||blk.classList.contains('bp'))){flash('Heading or paragraph works on blocks you added.');return}
+      var t=blk.classList.contains('bh')?'para':'heading';
+      blk.classList.toggle('bh',t==='heading');blk.classList.toggle('bp',t!=='heading');
+      saveEdit('btype',blk.getAttribute('data-e'),{t:t,label:labelFor(blk)});
+      return;
+    } else {
+      document.execCommand(cmd,false,arg||null);
+    }
+    var host=a.closest('[data-e]'); if(host){clearTimeout(timers[host.getAttribute('data-e')]);timers[host.getAttribute('data-e')]=setTimeout(function(){saveText(host)},1200)}
+  });
+  var toast;
+  function flash(msg){var t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast);toast=setTimeout(function(){t.classList.remove('show')},3000)}
+
+  // ---------- add, hide, move ----------
+  function addTab(){
+    if(needMe())return;
+    var id=newId('tab');
+    if(saveEdit('tab',id,{title:'New tab',label:''})){makeTab(id,'New tab');decorate();renderHidden();show(id);setTimeout(function(){var i=$('.tabname',document.getElementById(id));if(i){i.focus();i.select()}},50)}
+  }
+  function blockOrder(box){return $$(':scope > .block',box).map(function(b){return b.getAttribute('data-b')})}
+  document.addEventListener('click',function(e){
+    if(!editing)return;
+    var t;
+    if((t=e.target.closest('.hidebtn'))){var host=t.parentElement,key=host.getAttribute('data-h');if(saveEdit('hide',key,{on:true,label:labelFor(host)})){host.classList.add('is-hidden');renderHidden()}return}
+    if((t=e.target.closest('[data-unhide]'))){var k=t.getAttribute('data-unhide');if(saveEdit('hide',k,{on:false,label:'Brought back an item'})){applyEdits()}return}
+    if((t=e.target.closest('[data-addto]'))){
+      var into=t.getAttribute('data-addto'), ul=$('[data-list="'+q(into)+'"]'), plain=ul&&ul.classList.contains('plain'), id=newId(plain?'pl':'it');
+      if(saveEdit('add',id,{type:plain?'plain':'item',into:into,text:plain?'New line':'New item',label:labelFor(ul)})){var li=makeItem(id,into,plain?'New line':'New item',plain);decorate();var ed=$('[data-e]',li);if(ed){ed.focus();selectAll(ed)}}
       return;
     }
-    if(c.matches && c.matches('input[data-file]') && c.files && c.files[0]){
-      takeImage(c.getAttribute('data-file'),c.files[0]); c.value='';
+    if(e.target.closest('.addslot')){
+      var sid=newId('sl');
+      if(saveEdit('add',sid,{type:'slot',text:'New slot',label:'Shoot day 1: new slot'})){var s=makeSlot(sid,'New slot');decorate();renderNotes();var h3=$('h3',s);h3.focus();selectAll(h3)}
+      return;
     }
+    if((t=e.target.closest('[data-bt]'))){
+      var bar=t.closest('.addblock'), into2=bar.getAttribute('data-for'), bt=t.getAttribute('data-bt'), bid=newId('bk');
+      if(bt==='image'){pickBlockImage(into2,bid);return}
+      if(saveEdit('add',bid,{type:'block',btype:bt,into:into2,label:tabName(into2)})){var b=makeBlock(bid,into2,{btype:bt});decorate();renderNotes();var ed2=$('[data-e]',b);if(ed2){ed2.focus();selectAll(ed2)}}
+      return;
+    }
+    if((t=e.target.closest('[data-mv]'))){
+      var blk=t.closest('.block'), box=blk.parentElement, dir=+t.getAttribute('data-mv');
+      if(dir<0&&blk.previousElementSibling)box.insertBefore(blk,blk.previousElementSibling);
+      else if(dir>0&&blk.nextElementSibling)box.insertBefore(blk.nextElementSibling,blk);
+      saveEdit('order',box.getAttribute('data-blocks'),{ids:blockOrder(box),label:tabName(box.getAttribute('data-blocks'))+': moved a block'});
+      return;
+    }
+    if((t=e.target.closest('.savename'))){
+      var p=t.closest('.panel'), v=$('.tabname',p).value.trim(); if(!v)return;
+      if(saveEdit('tabname',p.id,{title:v,label:v})){
+        var tt=$('[data-e="'+q(p.id)+'-title"]',p);
+        if(tt&&tt.textContent.trim()==='New tab')saveEdit('text',p.id+'-title',{html:esc(v),label:v});
+        applyEdits();flash('Tab renamed.');
+      }
+      return;
+    }
+    if((t=e.target.closest('.hidetab'))){
+      var p2=t.closest('.panel');
+      if(saveEdit('hide','tab:'+p2.id,{on:true,label:'Hid the tab '+tabName(p2.id)})){applyEdits();show('overview')}
+      return;
+    }
+  });
+  function selectAll(el){try{var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}}
+
+  // drag to move blocks (computer)
+  var dragB=null;
+  document.addEventListener('dragstart',function(e){var g=e.target.closest&&e.target.closest('.grip');if(!g||!editing)return;dragB=g.closest('.block');dragB.classList.add('dragging');try{e.dataTransfer.setData('text/plain','b');e.dataTransfer.effectAllowed='move'}catch(err){}});
+  document.addEventListener('dragover',function(e){
+    if(!dragB)return; var box=e.target.closest&&e.target.closest('[data-blocks]'); if(!box||box!==dragB.parentElement)return;
+    e.preventDefault(); var over=e.target.closest('.block'); if(!over||over===dragB)return;
+    var r=over.getBoundingClientRect(); box.insertBefore(dragB,(e.clientY>r.top+r.height/2)?over.nextSibling:over);
+  });
+  document.addEventListener('dragend',function(){
+    if(!dragB)return; var box=dragB.parentElement; dragB.classList.remove('dragging'); dragB=null;
+    saveEdit('order',box.getAttribute('data-blocks'),{ids:blockOrder(box),label:tabName(box.getAttribute('data-blocks'))+': moved a block'});
+  });
+
+  // resize images by dragging the corner
+  var rs=null;
+  document.addEventListener('pointerdown',function(e){
+    var h=e.target.closest&&e.target.closest('.rs'); if(!h||!editing)return;
+    e.preventDefault(); var w=h.closest('.imgwrap'); rs={w:w,blk:h.closest('.block'),x:e.clientX,start:w.getBoundingClientRect().width,full:w.parentElement.getBoundingClientRect().width};
+    try{h.setPointerCapture(e.pointerId)}catch(err){}
+  });
+  document.addEventListener('pointermove',function(e){if(!rs)return;var px=rs.start+(e.clientX-rs.x);rs.w.style.width=Math.max(15,Math.min(100,px/rs.full*100))+'%'});
+  document.addEventListener('pointerup',function(){
+    if(!rs)return; var pct=Math.round(parseFloat(rs.w.style.width)); var key=rs.blk.getAttribute('data-b'); rs=null;
+    saveEdit('size',key,{w:pct,label:labelFor(document.querySelector('[data-b="'+q(key)+'"]'))+': resized an image'});
   });
 
   // ---------- images ----------
-  function takeImage(spot,file){
+  function shrink(file,cb){
     if(!/^image\//.test(file.type))return;
     var rd=new FileReader();
     rd.onload=function(){
       var img=new Image();
       img.onload=function(){
-        var max=1600, w=img.naturalWidth, h=img.naturalHeight, k=Math.min(1,max/Math.max(w,h));
-        var cv=document.createElement('canvas'); cv.width=Math.round(w*k); cv.height=Math.round(h*k);
-        var cx=cv.getContext('2d'); cx.fillStyle='#fff'; cx.fillRect(0,0,cv.width,cv.height); cx.drawImage(img,0,0,cv.width,cv.height);
-        pendingImg[spot]=cv.toDataURL('image/jpeg',0.82);
-        open[spot]=true; keepDraft(spot,function(){renderNotes()});
+        var max=1600,w=img.naturalWidth,h=img.naturalHeight,k=Math.min(1,max/Math.max(w,h));
+        var cv=document.createElement('canvas');cv.width=Math.round(w*k);cv.height=Math.round(h*k);
+        var cx=cv.getContext('2d');cx.fillStyle='#fff';cx.fillRect(0,0,cv.width,cv.height);cx.drawImage(img,0,0,cv.width,cv.height);
+        cb(cv.toDataURL('image/jpeg',0.82));
       };
       img.src=rd.result;
     };
     rd.readAsDataURL(file);
   }
-  function keepDraft(spot,fn){
-    var ta=document.querySelector('textarea[data-spot="'+spot+'"]'), v=ta?ta.value:'';
-    fn();
-    var t2=document.querySelector('textarea[data-spot="'+spot+'"]'); if(t2){t2.value=v;t2.focus()}
-  }
+  var blockPick=null, bfile=$('#blockfile');
+  function pickBlockImage(into,id){if(needMe())return;blockPick={into:into,id:id};bfile.value='';bfile.click()}
+  bfile.addEventListener('change',function(){
+    var f=bfile.files&&bfile.files[0], bp=blockPick; if(!f||!bp)return; blockPick=null;
+    shrink(f,function(data){
+      makeBlock(bp.id,bp.into,{btype:'image',local:data}); decorate(); flash('Uploading the image...');
+      post({action:'image',who:me,image:data}).then(function(r){
+        if(!r||!r.img){flash('The image did not upload. Please try again.');var b=$('[data-b="'+q(bp.id)+'"]');if(b)b.remove();return}
+        saveEdit('add',bp.id,{type:'block',btype:'image',into:bp.into,img:r.img,label:tabName(bp.into)+': added an image'});
+        flash('Image added.');
+      });
+    });
+  });
+  document.addEventListener('change',function(e){
+    var c=e.target;
+    if(c.matches&&c.matches('input[data-k]')){var k=c.getAttribute('data-k');state.ticks[k]=c.checked;post({action:'tick',key:k,done:c.checked,who:me});return}
+    if(c.matches&&c.matches('input[data-file]')&&c.files&&c.files[0]){
+      var spot=c.getAttribute('data-file');
+      shrink(c.files[0],function(d){pendingImg[spot]=d;open[spot]=true;keepDraft(spot,renderNotes)}); c.value='';
+    }
+  });
+  function keepDraft(spot,fn){var ta=$('textarea[data-spot="'+q(spot)+'"]'),v=ta?ta.value:'';fn();var t2=$('textarea[data-spot="'+q(spot)+'"]');if(t2){t2.value=v;t2.focus()}}
   document.addEventListener('paste',function(e){
-    var t=e.target; if(!t || t.tagName!=='TEXTAREA' || !t.getAttribute('data-spot'))return;
-    var items=(e.clipboardData||{}).items||[];
-    for(var i=0;i<items.length;i++){if(items[i].type && items[i].type.indexOf('image/')===0){var f=items[i].getAsFile();if(f){e.preventDefault();takeImage(t.getAttribute('data-spot'),f);return}}}
+    var t=e.target;
+    if(t&&t.tagName==='TEXTAREA'&&t.getAttribute('data-spot')){
+      var items=(e.clipboardData||{}).items||[];
+      for(var i=0;i<items.length;i++){if(items[i].type&&items[i].type.indexOf('image/')===0){var f=items[i].getAsFile();if(f){e.preventDefault();var spot=t.getAttribute('data-spot');shrink(f,function(d){pendingImg[spot]=d;open[spot]=true;keepDraft(spot,renderNotes)});return}}}
+      return;
+    }
+    // pasting into editable text keeps the words, not outside formatting
+    var ed=t&&t.closest&&t.closest('[contenteditable="true"]');
+    if(ed){e.preventDefault();var txt=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,txt)}
   });
   function picHTML(x){
     if(x.localImg)return '<span class="pic"><img src="'+x.localImg+'" alt="Image"></span>';
@@ -605,6 +997,9 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     var id=encodeURIComponent(x.img);
     return '<a class="pic" href="https://drive.google.com/file/d/'+id+'/view" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/d/'+id+'=w1200" referrerpolicy="no-referrer" alt="Image"></a>';
   }
+
+  // ---------- ticks ----------
+  function paintTicks(){$$('input[data-k]').forEach(function(c){c.checked=!!state.ticks[c.getAttribute('data-k')]})}
 
   // ---------- notes ----------
   function fmt(text){
@@ -617,57 +1012,69 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
   function tagsMe(x){return me && x.who!==me && new RegExp('@'+me+'\\b','i').test(x.text||'')}
   function noteHTML(x,withWhere){
     var c=PEOPLE[x.who]||'#4e6457';
-    var where=(withWhere && x.spot!=='chat')?' <button class="where" data-goto="'+esc(x.spot)+'">'+esc(x.label||'')+'</button>':'';
+    var where=(withWhere&&x.spot!=='chat')?' <button class="where" data-goto="'+esc(x.spot)+'">'+esc(x.label||'')+'</button>':'';
     return '<div class="note'+(tagsMe(x)?' me-tagged':'')+'" style="--c:'+c+';--bg:'+c+'14"><div class="meta">'+esc(x.who||'Someone')+' <time>'+(x.sending?'Saving...':when(x.at))+'</time>'+where+
       (x.who===me?'<button class="del" data-id="'+esc(x.id)+'" title="Delete your note">Delete</button>':'')+'</div>'+
       (x.text?'<div class="txt">'+fmt(x.text)+'</div>':'')+picHTML(x)+'</div>';
   }
   function composer(spot){
-    var pend=pendingImg[spot]?'<div class="pending"><img src="'+pendingImg[spot]+'" alt=""><span>Image ready to add</span><button data-unpic="'+spot+'">Remove</button></div>':'';
-    return pend+'<div class="addnote"><textarea rows="1" placeholder="Write a note. Type @ and a name to tag someone." data-spot="'+spot+'"></textarea>'+
-      '<label class="attach" title="Add a screenshot or photo"><input type="file" accept="image/*" data-file="'+spot+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></svg></label>'+
-      '<button data-add="'+spot+'">Add</button></div>'+
-      '<div class="tagbar">Tag:'+Object.keys(PEOPLE).map(function(p){return '<button data-tag="'+p+'" data-spot="'+spot+'" style="--c:'+PEOPLE[p]+'">@'+p+'</button>'}).join('')+'</div>';
+    var pend=pendingImg[spot]?'<div class="pending"><img src="'+pendingImg[spot]+'" alt=""><span>Image ready to add</span><button data-unpic="'+esc(spot)+'">Remove</button></div>':'';
+    return pend+'<div class="addnote"><textarea rows="1" placeholder="Write a note. Type @ and a name to tag someone." data-spot="'+esc(spot)+'"></textarea>'+
+      '<label class="attach" title="Add a screenshot or photo"><input type="file" accept="image/*" data-file="'+esc(spot)+'"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></svg></label>'+
+      '<button data-add="'+esc(spot)+'">Add</button></div>'+
+      '<div class="tagbar">Tag:'+Object.keys(PEOPLE).map(function(p){return '<button data-tag="'+p+'" data-spot="'+esc(spot)+'" style="--c:'+PEOPLE[p]+'">@'+p+'</button>'}).join('')+'</div>';
   }
   function renderNotes(){
-    var boxes=document.querySelectorAll('.notes');
-    for(var i=0;i<boxes.length;i++){
-      var box=boxes[i], spot=box.getAttribute('data-spot');
-      if(spot==='chat'){box.innerHTML=composer('chat');continue}
+    $$('.notes').forEach(function(box){
+      var spot=box.getAttribute('data-spot');
+      if(spot==='chat'){if(!$('textarea',box))box.innerHTML=composer('chat');else{var pend=pendingImg.chat;var has=$('.pending',box);if(!!pend!==!!has)box.innerHTML=composer('chat')}return}
       var list=state.notes.filter(function(x){return x.spot===spot});
       var isOpen=open[spot]||list.length>0;
-      var hh='<button class="notes-toggle" data-spot="'+spot+'">'+(isOpen?'Notes':'+ Add a note')+(list.length?'<span class="n">'+list.length+'</span>':'')+'</button>';
-      if(isOpen){hh+=list.map(function(x){return noteHTML(x,false)}).join('')+composer(spot)}
+      var hh='<button class="notes-toggle" data-spot="'+esc(spot)+'">'+(isOpen?'Notes':'+ Add a note')+(list.length?'<span class="n">'+list.length+'</span>':'')+'</button>';
+      if(isOpen)hh+=list.map(function(x){return noteHTML(x,false)}).join('')+composer(spot);
       box.innerHTML=hh;
-    }
+    });
   }
-  function sorted(){return state.notes.slice().sort(function(a,b){return String(a.at)<String(b.at)?-1:1})}
+  function editLine(x){
+    var c=PEOPLE[x.who]||'#4e6457', d=x.d||{}, verb={text:'edited',hide:d.on?'hid':'brought back',add:'added to',order:'moved a block in',size:'resized an image in',tab:'made a new tab',tabname:'renamed a tab to',btype:'changed a block in'}[x.k]||'changed';
+    var lab=d.label||'';
+    if(x.k==='hide'||x.k==='tabname'||x.k==='tab')lab=d.label||'';
+    return '<div class="editline"><b style="color:'+c+'">'+esc(x.who||'Someone')+'</b> '+verb+' <span>'+esc(lab)+'</span> <time>'+when(x.at)+'</time></div>';
+  }
   function renderFeed(){
-    var f=document.getElementById('feed'); if(!f)return;
-    var list=sorted();
-    f.innerHTML=list.length?list.map(function(x){return noteHTML(x,true)}).join(''):'<p class="empty">No messages yet. Say hello.</p>';
+    var f=$('#feed'); if(!f)return;
+    var items=state.notes.map(function(x){return {at:String(x.at),h:noteHTML(x,true)}});
+    var lastSeen={};
+    state.edits.forEach(function(x){
+      if(x.k==='size'||x.k==='order')return;
+      var key=x.who+'|'+x.k+'|'+((x.d&&x.d.label)||x.key), t=new Date(x.at).getTime();
+      if(lastSeen[key]&&t-lastSeen[key].t<10*60*1000){lastSeen[key].item.at=String(x.at);lastSeen[key].t=t;return}
+      var it={at:String(x.at),h:editLine(x)}; items.push(it); lastSeen[key]={t:t,item:it};
+    });
+    items.sort(function(a,b){return new Date(a.at)-new Date(b.at)});
+    f.innerHTML=items.length?items.map(function(i){return i.h}).join(''):'<p class="empty">No messages yet. Say hello.</p>';
   }
   function seenAt(){try{return localStorage.getItem(LS_SEEN)||''}catch(e){return ''}}
-  function unread(){var s=seenAt();return state.notes.filter(function(x){return tagsMe(x) && String(x.at)>s})}
+  function unread(){var s=seenAt();return state.notes.filter(function(x){return tagsMe(x)&&String(x.at)>s})}
   function paintBadge(){
-    var n=unread().length, b=document.getElementById('chatbadge'), nf=document.getElementById('newfor');
+    var n=unread().length,b=$('#chatbadge');
     b.textContent=n; b.classList.toggle('hide',!n);
-    if(current!=='chat'){nf.classList.add('hide')}
+    if(current!=='chat')$('#newfor').classList.add('hide');
   }
   function markSeen(){
-    var n=unread().length, nf=document.getElementById('newfor');
+    var n=unread().length,nf=$('#newfor');
     if(n){nf.textContent=n+' new for you, highlighted below.';nf.classList.remove('hide')}else nf.classList.add('hide');
     try{localStorage.setItem(LS_SEEN,new Date().toISOString())}catch(e){}
-    var b=document.getElementById('chatbadge'); b.classList.add('hide');
+    $('#chatbadge').classList.add('hide');
   }
   function paint(){
-    var keep={}, tas=document.querySelectorAll('textarea[data-spot]');
-    for(var i=0;i<tas.length;i++)if(tas[i].value)keep[tas[i].getAttribute('data-spot')]=tas[i].value;
-    paintTicks();renderNotes();renderFeed();paintBadge();
-    for(var s in keep){var t=document.querySelector('textarea[data-spot="'+s+'"]');if(t)t.value=keep[s]}
+    var keep={};
+    $$('textarea[data-spot]').forEach(function(t){if(t.value)keep[t.getAttribute('data-spot')]=t.value});
+    applyEdits(); paintTicks(); renderNotes(); renderFeed(); paintBadge();
+    Object.keys(keep).forEach(function(s){var t=$('textarea[data-spot="'+q(s)+'"]');if(t)t.value=keep[s]});
   }
   function goTo(spot){
-    var box=document.querySelector('.notes[data-spot="'+spot+'"]'); if(!box)return;
+    var box=$('.notes[data-spot="'+q(spot)+'"]'); if(!box)return;
     var panel=box.closest('.panel'); if(!panel)return;
     open[spot]=true; show(panel.id); renderNotes();
     setTimeout(function(){box.scrollIntoView({behavior:'smooth',block:'center'})},50);
@@ -675,9 +1082,9 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
 
   document.addEventListener('click',function(e){
     var t=e.target.closest('.notes-toggle');
-    if(t){var s=t.getAttribute('data-spot');open[s]=true;renderNotes();var ta=document.querySelector('textarea[data-spot="'+s+'"]');if(ta)ta.focus();return}
+    if(t){var s=t.getAttribute('data-spot');open[s]=true;renderNotes();var ta=$('textarea[data-spot="'+q(s)+'"]');if(ta)ta.focus();return}
     var tg=e.target.closest('[data-tag]');
-    if(tg){var ta2=document.querySelector('textarea[data-spot="'+tg.getAttribute('data-spot')+'"]');if(ta2){ta2.value=(ta2.value?ta2.value.replace(/\s*$/,' '):'')+'@'+tg.getAttribute('data-tag')+' ';ta2.focus()}return}
+    if(tg){var ta2=$('textarea[data-spot="'+q(tg.getAttribute('data-spot'))+'"]');if(ta2){ta2.value=(ta2.value?ta2.value.replace(/\s*$/,' '):'')+'@'+tg.getAttribute('data-tag')+' ';ta2.focus()}return}
     var a=e.target.closest('[data-add]');
     if(a){addNote(a.getAttribute('data-add'));return}
     var u=e.target.closest('[data-unpic]');
@@ -689,34 +1096,37 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
     if(e.target.closest('#chatsend')){sendChat();return}
   });
   document.addEventListener('keydown',function(e){
-    if(e.target.tagName==='TEXTAREA' && e.key==='Enter' && (e.metaKey||e.ctrlKey)){e.preventDefault();addNote(e.target.getAttribute('data-spot'))}
+    if(e.target.tagName==='TEXTAREA'&&e.key==='Enter'&&(e.metaKey||e.ctrlKey)){e.preventDefault();addNote(e.target.getAttribute('data-spot'))}
   });
   function addNote(spot){
-    var ta=document.querySelector('textarea[data-spot="'+spot+'"]'); if(!ta)return;
+    var ta=$('textarea[data-spot="'+q(spot)+'"]'); if(!ta)return;
     var text=ta.value.trim(), img=pendingImg[spot];
-    if(!text && !img)return;
-    if(!me){document.getElementById('whobar').classList.remove('set');document.getElementById('whobar').classList.add('need');window.scrollTo({top:0,behavior:'smooth'});document.getElementById('whohint').textContent='Pick your name first, then add your note.';return}
-    var box=document.querySelector('.notes[data-spot="'+spot+'"]');
-    var note={id:'n'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),spot:spot,label:box?box.getAttribute('data-label'):spot,who:me,text:text,at:new Date().toISOString()};
+    if(!text&&!img)return;
+    if(needMe())return;
+    var box=$('.notes[data-spot="'+q(spot)+'"]');
+    var note={id:newId('n'),spot:spot,label:box?box.getAttribute('data-label'):spot,who:me,text:text,at:new Date().toISOString()};
     var view=Object.assign({},note,{sending:true,localImg:img||''});
     state.notes.push(view); ta.value=''; delete pendingImg[spot]; paint();
     post(Object.assign({action:'note',image:img||''},note)).then(function(res){
       view.sending=false;
-      if(res && res.img){view.img=res.img;view.localImg=''}
-      if(res && res.ok===false){view.text=(view.text?view.text+'\n':'')+'(Not saved, please try again)'}
+      if(res&&res.img){view.img=res.img;view.localImg=''}
+      if(!res||res.ok===false){view.text=(view.text?view.text+'\n':'')+'(Not saved, please try again)'}
       paint();
     });
   }
   function sendChat(){
-    var inp=document.getElementById('chatemail'), st=document.getElementById('chatstatus'), v=(inp.value||'').trim();
+    var inp=$('#chatemail'),st=$('#chatstatus'),v=(inp.value||'').trim();
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){st.textContent='Please check that email address.';return}
     st.textContent='Sending...';
     post({action:'email',to:v}).then(function(r){st.textContent=(r&&r.ok)?'Sent. Check your inbox in a minute.':'That did not send. Please try again.'});
   }
 
-  var h=(location.hash||'').slice(1); if(document.getElementById(h)&&document.getElementById(h).classList.contains('panel'))show(h);
+  decorate();
+  var h=(location.hash||'').slice(1);
   load();
-  if(API)setInterval(load,30000);
+  setInterval(function(){if(!busy())load()},30000);
+  // wait for custom tabs to exist before following a link to one
+  var tries=0;(function follow(){if(document.getElementById(h)||tries>20||!h){if(h)show(h);return}tries++;setTimeout(follow,500)})();
 })();
 </script>
 </body>
