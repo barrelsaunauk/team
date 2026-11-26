@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Library | BSUK Sales Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{--g:#16261C;--g2:#1F3D28;--pale:#B9D3B0;--red:#E5484D;--ok:#3FBF6B;--soft:#66756B;--hair:#E5EAE6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Poppins,sans-serif;background:#fff;color:var(--g);-webkit-font-smoothing:antialiased}
+.ph{max-width:760px;margin:0 auto}
+.k{font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--soft)}
+h1{font-weight:600;font-size:30px;line-height:1.05;margin-top:8px;letter-spacing:-.02em}
+h1 .b{font-weight:500;font-size:1.4em;color:var(--pale)}
+.hero{position:relative;min-height:300px;background:#16261C center/cover;color:#fff;display:flex;align-items:flex-end;padding:24px 20px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,.35),rgba(22,38,28,.92))}
+.hero>*{position:relative}
+.hero .k{color:rgba(255,255,255,.75)}
+.hero p{font-size:14px;color:rgba(255,255,255,.82);margin-top:8px;max-width:520px}
+.top{position:absolute;top:16px;left:20px;right:20px;display:flex;justify-content:space-between;z-index:2}
+.top a{color:#fff;text-decoration:none;font-size:12.5px;border:1px solid rgba(255,255,255,.4);border-radius:99px;padding:6px 12px}
+.wrap{padding:24px 18px 50px}
+.search{display:flex;gap:8px;align-items:center;border:1px solid var(--hair);border-radius:99px;padding:6px 6px 6px 16px;margin-bottom:22px}
+.search input{flex:1;border:none;outline:none;font:16px Poppins,sans-serif;min-width:0;color:var(--g)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chap{position:relative;display:block;border-radius:24px;overflow:hidden;min-height:150px;color:#fff;text-decoration:none;background:#16261C center/cover}
+.chap::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,38,28,.2),rgba(22,38,28,.9))}
+.chap .in{position:absolute;left:14px;right:14px;bottom:14px}
+.chap .n{position:absolute;top:12px;right:14px;font-size:11px;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.8)}
+.chap b{display:block;font-size:16px;font-weight:600;line-height:1.2}
+.chap span{display:block;font-size:11.5px;opacity:.8;margin-top:3px;line-height:1.35}
+.chap .ic{font-size:22px;display:block;margin-bottom:4px}
+.card{border:1px solid var(--hair);border-radius:24px;padding:18px 18px 8px;margin-bottom:14px}
+.card h3{font-size:17px;font-weight:600;line-height:1.25}
+.card .sub{font-size:12px;color:var(--soft);margin-top:2px}
+.sr{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--hair);font-size:14px;line-height:1.5}
+.card h3+.sr,.card .sub+.sr{margin-top:10px}
+.sr dt{font-weight:600;font-size:12.5px;color:var(--g2)}
+.tb{border:1px solid var(--hair);border-radius:24px;overflow:hidden;margin-bottom:14px}
+.tb h3{font-size:17px;font-weight:600;padding:16px 18px 10px}
+.tbw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th{background:#EEF4EF;text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--g2);padding:10px 12px;white-space:nowrap}
+td{padding:10px 12px;border-top:1px solid var(--hair);vertical-align:top}
+td:first-child{font-weight:500}
+.note{background:#EEF4EF;border-radius:18px;padding:13px 16px;font-size:13.5px;line-height:1.55;margin-bottom:14px}
+.note.warn{background:#FDECEC;color:#7d2427}
+.lk{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--hair);border-radius:20px;padding:14px 16px;margin-bottom:10px}
+.lk b{display:block;font-size:15px;font-weight:600}.lk span{font-size:12.5px;color:var(--soft)}
+.lb{display:flex;gap:6px;flex:none}
+.lb a,.lb button{font:600 12.5px Poppins,sans-serif;border-radius:99px;padding:9px 13px;text-decoration:none;border:1px solid var(--hair);background:#fff;color:var(--g);cursor:pointer}
+.lb a{background:var(--g);color:#fff;border-color:var(--g)}
+.pn{font-size:12px;color:var(--soft);margin:4px 0 18px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:24px}
+.nav a{flex:1;text-decoration:none;border:1px solid var(--hair);border-radius:20px;padding:12px 14px;color:var(--g);font-size:13px}
+.nav a b{display:block;font-size:14px;font-weight:600}
+.nav a.r{text-align:right}
+.hit{border:1px solid var(--hair);border-radius:18px;padding:12px 14px;margin-bottom:8px;display:block;text-decoration:none;color:var(--g)}
+.hit b{font-size:14px;font-weight:600}.hit span{display:block;font-size:12px;color:var(--soft)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--g);color:#fff;border-radius:99px;padding:10px 18px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media(max-width:520px){.sr{grid-template-columns:1fr;gap:2px}.lk{flex-direction:column;align-items:flex-start}.grid{gap:10px}.chap{min-height:140px}}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr 1fr}}
+</style></head><body><div class="ph" id="app"></div><div class="toast" id="toast"></div>
+<script>
+const PH="https://files.leadconnectorhq.com/file/";
+const PHOTOS={globe:PH+"6abbaa58735e4fa2a0081563/338859603-1380983262652339-1861041336050567187-n-3.jpg",mobile:PH+"6a774d8f9a9c7792ead970e2/decked-trailer.jpeg",glass:PH+"6adb54e4524edd3e3bfd1b1d/glass-door-open.jpg",inside:PH+"6a9f76f7551b2e2c30e89704/subtle-life.jpg",porch:PH+"6ad6615088927761f53d6c8a/workshop-light.jpg",water:PH+"6af9b9a47c3b573a62547b33/raw-25fps-00-45-19-22-still040.jpg",roof:PH+"6af9b9b07c3b573a62547c83/dji-20261102095650-0516-d.jpg"};
+const OBJ=[
+ ["It's more than the flat pack I saw online.","You're right, ours aren't the cheapest, and we're not trying to be. Every one is built by hand in Wales. No pressure though. If a flat pack does the job, go for it. If it lets you down, we'll still be here.","porch"],
+ ["I need to talk to my partner.","Absolutely, it's a big decision to make together. Happy to jump on a call with you both. Shall I send you the link so you can look tonight?","inside"],
+ ["I want to think about it.","Of course. What would you be thinking over? Let's go through it now so you're not left guessing. The £500 deposit gets you next in line.","roof"],
+ ["We're not ready yet.","That's completely fine. Can I ask what's holding you back? The timing, the space, something else? Let's see if we can sort it together.","glass"],
+ ["It's out of our budget.","Completely understand. It's a lifetime investment and we offer finance. What did you have in mind? A smaller size can give the same feeling.","mobile"]];
+const esc=t=>String(t??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const S=(t,sub,rows)=>`<div class="card"><h3>${t}</h3>${sub?`<div class="sub">${sub}</div>`:""}${rows.map(r=>`<dl class="sr"><dt>${r[0]}</dt><dd>${r[1]}</dd></dl>`).join("")}</div>`;
+const T=(t,h,rows)=>`<div class="tb"><h3>${t}</h3><div class="tbw"><table><tr>${h.map(x=>`<th>${x}</th>`).join("")}</tr>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</table></div></div>`;
+const N=(t,c)=>`<div class="note ${c||""}">${t}</div>`;
+/* Library chapters. Lifted from the Seller Guide (Fast Facts, Q&A, Real Sales, Working Terms) plus share links.
+   Helpers: S(title,sub,rows) spec card, T(head,rows) table, N(text) note, P(text) plain. */
+const PRICE_NOTE='Every price is plus VAT and a starting point. The estimate builder is final. Delivery and installation are always separate.';
+const CH=[
+{id:'build',ic:'🪵',t:'The build',sub:'What every sauna includes, sizes, timber, base',img:'porch',body:()=>
+ S('What\'s included with every barrel sauna','Included · from £5,250',[
+  ['Structure','Handcrafted barrel sauna, benches with backrests, moisture-managed internal construction, structural fixed floor panels, wooden base feet'],
+  ['Door','Solid timber front door, framed opening, vertical tinted window, lock, handle and spare keys'],
+  ['Heater','Wood-burning or electric heater, with heater surround, fire protection plates, safety guarding and rail'],
+  ['Stones','High-density volcanic sauna stones (5 to 10cm)'],
+  ['Roof','Black hexagon bitumen shingles (UV-resistant), roof edge lip panels'],
+  ['Fixings','Stainless steel tightening bands, exterior fixings, door hinges, lockable latch'],
+  ['Systems','Floor drainage, rodent guard plates, integrated ventilation fixtures'],
+  ['Warranty','24 months on structural components. Heaters carry the manufacturer\'s warranty.']])+
+ N('On a budget, the customer can stop here and have a fully working sauna. The only extra is delivery and installation.')+
+ N('Not included: any electrics installation. Wiring is done by a qualified local electrician after the build. An optional £1,200 a year maintenance plan is offered after ordering, never in the estimate.','warn')+
+ T('Base prices (Thermowood)',['Length','Price'],[['1.8m','£5,250'],['2.5m','£7,995'],['3.2m','£8,795'],['3.6m','£10,250'],['4.1m','£10,995'],['4.6m','£11,795'],['5m','£12,745'],['6m','£13,495']])+
+ T('Length and seating: what fits at each length',['Length','Seats','Changing room','Porch','Side door'],[['1.8m','2 to 3','✕','✕','✕'],['2.5m','3 to 4','✕','✓','✕'],['3.2m','4 to 5','✓','✓','✕'],['3.7m','5 to 6','✓','✓','✕'],['4.2m','6 to 7','✓','✓','✕'],['4.7m','7 to 8','✓','✓','✕'],['5m','8 to 10','✓','✓','✓'],['6.1m','10+','✓','✓','✓']])+
+ N('The changing room comes out of the total length, never on top. A 3m sauna with a 1m changing room is a 2m hot room.')+
+ T('Diameter: 2m or 2.3m',['Option','Price'],[['2m x 2m','Included (with selected windows)'],['2.3m x 2.3m with wider seats','+£725'],['Large 2.3m with wider seats','+£995'],['Large 2.3m with wider bench design','+£1,100']])+
+ N('Widening is much cheaper than lengthening, so 2.3m is the better-value route to more room: wider seats, thicker backrests, more space between benches.')+
+ S('Thermowood: the standard','Standard build',[['Thickness','48mm Thermowood'],['Treatment','Heat-treated at 200°C, removes up to 96% of moisture'],['Stability','Won\'t warp, swell or crack'],['Resistance','Mould-resistant, weatherproof, antibacterial'],['Chemicals','None, just heat and steam']])+
+ S('Foundations and base','Base is priced separately, on request',[['Needs','A solid, level base: level ground, concrete slab or decking'],['Avoid','Flood-prone or soggy areas'],['Height','The base sits above ground to prevent rot'],['Best','Concrete long term. Railway sleepers are the cheapest leveller.'],['Feet','The sauna rests on horizontal wooden feet, not bolted down. Its weight packs it onto the base.']])},
+{id:'windows',ic:'🪟',t:'Windows and doors',sub:'Rear windows, entrance, doors, porch, changing room',img:'glass',body:()=>
+ N('Heater placement depends on the rear window. The heater table in "Inside" is the single source of truth. Globe windows are side heater only, always.','warn')+
+ T('Rear windows',['Window','Price','Heater','Benches'],[['Full wood wall','Included','Any','Any'],['2 x vertical sleek glass','+£275','Any','Any'],['Half glass rear wall','+£500','Centre or side, suits external-feed burners','Any'],['Full flat glass','+£850','Side or centre, not external-feed','Any (floating bench)'],['Blackout globe','+£2,200','Side only, not external-feed','U-shape only, adds 0.5m inside'],['Tint globe','On request','Side only','U-shape']])+
+ N('Full flat glass is included at 2.3m. Globes are a fixed 2m. Upgrading other rear walls to 2.3m is +£475.')+
+ S('Entrance windows','Tinted and reflective, so built-in privacy',[['Standard','One vertical tinted window in the front door'],['More light','An extra window either side of the door, or both: three slim windows'],['Full glass facade','Full glass door in the centre with two tall side panels']])+
+ T('Front doors',['Door','Price','Notes'],[['Classic sauna door','Included','Most private and weather-ready, stainless lock and key'],['Full glass door','+£150','Spa look, light security, suits sheltered spots'],['Full glass door, secure','+£175','Thicker frame and proper key lock, for exposed spots']])+
+ T('Flush or porch',['Option','Price'],[['Flush','Included, keeps all the space inside'],['Porch','+£350, takes 0.6m off the inside'],['Porch with armrests','+£400 (towel spot and drinks hole)']])+
+ N('A porch needs a sauna of 2.5m or longer.')+
+ T('Changing room and extras',['Option','Price'],[['All sauna space','Included'],['1m changing room with sandglass door','+£725'],['1.5m changing room with sandglass door','+£725'],['Under-seat storage in the changing room','+£150'],['Towel hanger, 4 hooks','+£20'],['Towel hanger, 8 hooks','+£35'],['Fold-up table','+£195'],['Bespoke layout','On request']])},
+{id:'inside',ic:'🔥',t:'Inside: heaters, seating, roof',sub:'Heater rules, bench and seating layouts, roof and stain',img:'inside',body:()=>
+ T('Heater and rear window: what goes where',['Heater','Half glass','Vertical sleek','Globe','Full glass wall'],[['Harvia M3 (internal feed)','Side, centre','Side, centre','Side only','Side, centre'],['Harvia M3 SL (external feed)','Centre only','Centre only','✕','✕'],['Harvia KIP90 (electric)','Side, centre','Side, centre','Side only','Side only'],['Harvia Cilindro (electric, freestanding)','Side, centre','Side, centre','Side only','Side, centre']])+
+ N('The two hard rules: an external-feed burner only works centre, on half glass or vertical sleek. A globe is side heater only for every heater.','warn')+
+ S('Bench layouts and seating','Settle it in this order: benches, then heater, then window',[['3-way straight','Most popular. Benches along both side walls and the back. Comfortable for groups and lying down.'],['U-shape','Heater on the side, view unobstructed. Optional removable aspen middle section for stretching and yoga.'],['L-shape','For compact builds, heater on the left as you walk in. Electric heater only.']])+
+ S('Heaters: wood or electric','',[['Wood burner','The glow, natural and therapeutic. All safety accessories included: base plate, heat shields, guardrail, flue shields.'],['Electric (Harvia, WiFi)','App control, remote on and off, timers. Less upkeep for Airbnb and commercial. Single or three phase.'],['Both','Volcanic stones and real steam, not a zappy infrared feel.']])+
+ S('Roof and finish','',[['Hexagon shingles','Included. Charcoal black bitumen, UV-resistant, waterproof.'],['Roof edge lips','Included. Seals the edge and controls water runoff.'],['Exterior stain','+£395. Water-based, UV-stable. Popular: charcoal grey, soft pine, driftwood brown.']])+
+ N('Stain colour can be chosen up to 7 days after the deposit. Customers can also supply and apply their own colour.')},
+{id:'other',ic:'🛁',t:'Other products',sub:'Mobile saunas, ice baths, Double Dipper, hot tubs',img:'water',body:()=>
+ S('Mobile barrel sauna: the trailer','Preset 3m, 3.5m, 4m, custom on request',[['Frame','Galvanised steel'],['Braking','Brake lever and anti-sway control'],['Running gear','Axle and suspension, solid wheels, spare tyre'],['Safety kit','Full lights, reflectors, side markers, ratchet straps, stabilising poles'],['Build','Weather-resistant, road legal, delivered fully built'],['Electrics','Fully turnkey: tested, wired, battery and solar fitted']])+
+ T('Ice baths',['Model','Price'],[['Single Dipper (chiller and filter)','£3,995 + VAT'],['Double Dipper (chiller and filter)','£5,995 + VAT']])+
+ N('The Single Dipper is cold only. The Double Dipper heats to 40° and cools to zero, so it is ice bath and hot tub, but not instant: switch overnight. Both come complete with steps, lids, inserts and seats.')+
+ T('Hot tubs and more',['Item','Price'],[['Thermowood hot tub (jets, LED, stairs, thermocover)','£5,995'],['2 x Thermowood hot tubs','£11,395'],['Barrel shower','£2,495'],['Heated water tank (wood burner option)','+£375']])+
+ N('Delivery is included when it comes with the sauna, one trip.')},
+{id:'money',ic:'💷',t:'Deposit and delivery',sub:'The £500 deposit, delivery and install prices',img:'mobile',body:()=>
+ S('The £500 deposit','Non-refundable, comes off the total',[['What it does','Holds their place in the build queue. Builds go in order of deposit.'],['What it costs','Nothing extra. It is the first £500 of the sauna and comes straight off the total.'],['Refunds','Non-refundable: it reserves the build slot and the materials.'],['Optional?','Yes. Only their place in the queue changes.'],['When to send it','After the call, with the itemised estimate. Never as the opening move, never as a cold link.']])+
+ N('Send customers to barrelsaunauk.com/secure-your-build for the deposit. Once it lands, the office takes over: contact, invoicing and the build.')+
+ T('Delivery and installation',['Option','Price'],[['Fully assembled: England and Wales','+£495'],['Full on-site build','+£1,250'],['Large sauna on-site build','+£1,500'],['Ireland, Scotland, Isle of Wight','+£300'],['EU delivery','+£500'],['Crane (HIAB) delivery','+£1,200 est.'],['Collection','Included'],['Custom or remote access','On request']])+
+ N('Always ask for an access-route video. It decides crane, trailer or carry. On-site build is for when access won\'t allow a built unit, not the default.')+
+ N('International beyond the EU: take the details and pass them to James. Don\'t price it on the spot.')+
+ S('Finance','',[['Provider','Jason Reid, a vetted provider, 1 to 5 years'],['How','The customer\'s invoice is cleared upfront. The form can be filled in on their behalf.']])},
+{id:'qa',ic:'❓',t:'Questions buyers ask',sub:'Power, siting, moving house, planning',img:'roof',body:()=>
+ S('Do I need power for it?','',[['Wood burner sauna','No power for the heater. Only the lights, and the solar option runs them off-grid.'],['Electric heater','Needs mains, single or three phase. Wired by their own electrician after the build.'],['Wood-fired hot tub','A standard 240V socket covers lights and jets. No jets or lights, no power at all.']])+
+ S('What do I stand it on?','',[['Any solid, level surface','Patio, concrete pad, gravel, hardstanding. No need to lift an existing patio.'],['Cheapest','Railway sleepers dug in where the feet sit.']])+
+ S('If we move house, can we take it?','',[['Yes','One sauna went to three expos before landing at a client\'s house.'],['How','Local: crane lift and go. Further: lift onto a trailer. Worst case: take it apart and rebuild.']])+
+ S('Do I need planning permission?','',[['Glamping pods','No, permitted development in most cases.'],['Saunas and tubs','Generally permitted development too, but it depends on the site.']])+
+ S('Ireland?','',[['Yes','+£300 delivery. Ian, our Ireland-based carpenter, does the Ireland installs.']])},
+{id:'objections',ic:'🔁',t:'Turn a no into a yes',sub:'Calm, no-pressure answers to the common pushbacks',img:'glass',body:()=>OBJ.map(o=>S('"'+o[0]+'"','',[['You say',o[1]]])).join('')+N('Paint the picture. Sell the feeling (their evenings, their garden, their wellness), not the spec sheet.')},
+{id:'sales',ic:'🏆',t:'How real buyers said yes',sub:'Real BSUK sales and the lesson from each',img:'globe',body:()=>
+ [['The buyer with a deadline','Wanted a 3.2m sauna with porch before Christmas. He asked for the next step himself, and James tied the deposit to his Christmas date. Deposit paid within an hour.','When the buyer gives you a date, tie the deposit to hitting it.'],
+  ['The cheaper competitor','She named a cheaper plunge tub. James matched like for like on the tub and held firm on the chiller, explaining why it lasts. Deposit paid 80 minutes later.','Match the base item, defend the upgrade on reliability, never cut the whole price.'],
+  ['"Not until I have a total"','He refused a deposit without one total price. James kept his price, answered every technical question on the callback, and the buyer offered the deposit himself.','A buyer who calls back with technical questions is close. Answer every one well.'],
+  ['The link while the call is warm','Three gym partners decided on one call. The deposit link went straight after the call. Paid 30 minutes later.','Send the link while everyone is still on board.'],
+  ['The payback buyer','A wedding venue that also lets on Airbnb. James worked out the payback with her in her own numbers, then a workshop visit. Deposit paid on the day of the visit.','With a business buyer, work out the payback in their numbers.'],
+  ['Two options for a couple','Globe or flat glass? Both prices given plainly, two estimates sent before their holiday. Deposit paid within days.','Two priced options turn "should we buy" into "which one".'],
+  ['The workshop visit','Unsure buyers visited the workshop and met the team who would build it. Deposit paid five days later.','If they are unsure, get them in front of the build and the people.']]
+ .map(x=>S(x[0],'',[['What happened',x[1]],['The lesson',x[2]]])).join('')+
+ S('Closing the gap','Tips for the longer term',[['Ask the budget first','Before pricing the full spec.'],['Find out who signs off','Plan the next call with both partners there.'],['Book the next touch','Agree a date before hanging up.'],['Let them see it','Offer the workshop or a local install.'],['Keep our side tight','Be on time, check the estimate didn\'t go to junk.']])},
+{id:'terms',ic:'🤝',t:'Who to ask, and the rules',sub:'Working terms in plain English',img:'roof',body:()=>
+ S('Who to ask','',[['James','Sales, pricing, product'],['Nikki','Systems, links, the estimate builder'],['Marta and Millie','Progress on clients, orders and builds']])+
+ S('The rules','The signed Seller Agreement always wins',[['Pricing','Everything is priced through the estimate builder. Anything outside it is priced by the company.'],['Estimates','Every figure is an estimate. The invoice is the binding document.'],['Commitments','Discounts, dates and specs only if they are in the estimate builder or confirmed by James in writing.'],['Customers','Every lead and customer belongs to the company, during and after.'],['Content','Company photos and videos are for selling company products only, never personal social media.'],['Confidentiality','No pricing methods, margins or customer details to anyone, or into public AI tools.']])},
+{id:'links',ic:'🔗',t:'Links to share',sub:'Brochures and pages you can send to customers',img:'globe',body:()=>LINKS.map(L=>`<div class="lk"><div><b>${L[0]}</b><span>${L[1]}</span></div><div class="lb"><a href="${L[2]}" target="_blank" rel="noopener">Open</a><button type="button" data-copy="${L[2]}">Copy link</button></div></div>`).join('')},
+{id:'proposals',ic:'✨',t:'Proposal to show',sub:'What a serious buyer gets',img:'porch',body:()=>
+ N('We only make bespoke proposals for serious buyers who are close to a yes, when the proposal is the last piece of the puzzle. Don\'t offer one to everyone.','warn')+
+ `<div class="lk"><div><b>⭐ Example proposal</b><span>Their build shown in a garden, fully tailored. The images are AI generated to show the idea, not photos of a finished build.</span></div><div class="lb"><a href="https://barrelsaunauk.github.io/bsukcustomproject/alan_hodari.html" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.github.io/bsukcustomproject/alan_hodari.html">Copy link</button></div></div>`}
+];
+const LINKS=[
+ ['Full brochure','Everything we build. Send any time.','https://barrelsaunauk.github.io/explore/brochure.html'],
+ ['The Double Dipper','Ice bath and hot tub in one.','https://barrelsaunauk.github.io/explore/the_double-dipper.html'],
+ ['Cold plunge range','Ice baths and plunges.','https://barrelsaunauk.github.io/explore/cold_plunge_range.html'],
+ ['Hot tub guide','Our wood-fired and electric tubs.','https://barrelsaunauk.github.io/explore/hot_tub_guide.html'],
+ ['Circle and square hot tubs','Shapes and sizes.','https://barrelsaunauk.github.io/explore/circle_and_square_hot_tubs.html'],
+ ['Eco glamping pods','Pods for gardens and holiday lets.','https://barrelsaunauk.github.io/explore/eco_glamping_pods.html'],
+ ['In-stock saunas','Ready now. Stock changes, so check with the office before promising one.','https://barrelsaunauk.github.io/explore/in_stock_saunas.html'],
+ ['Your build timeline','Sent after the deposit. Great for "why windows, not dates?".','https://barrelsaunauk.github.io/internal/deposit_paid_build_timeline.html']
+];
+
+function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("on");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("on"),2200)}
+function bind(){document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Link copied")}catch(e){toast("Couldn't copy, press and hold the link instead")}})}
+function contents(){
+  document.title="Library | BSUK Sales Hub";
+  app.innerHTML=`<div class="hero" style="background-image:url('${PHOTOS.roof}')"><div class="top"><a href="sales_hub.html">← Sales Hub</a></div><div><div class="k">The library</div><h1>Everything you <span class="b">need</span></h1><p>Pick a chapter. Each one opens on its own page, so it's never one long scroll.</p></div></div>
+  <div class="wrap"><form class="search" id="sf"><span>🔎</span><input id="q" type="search" placeholder="seating, porch price, deposit" autocomplete="off"></form><div id="hits"></div>
+  <div class="k" style="margin-bottom:12px">Contents</div>
+  <div class="grid">${CH.map((c,i)=>`<a class="chap" href="?ch=${c.id}" target="_blank" rel="noopener" style="background-image:url('${PHOTOS[c.img]}')"><span class="n">${String(i+1).padStart(2,"0")}</span><div class="in"><span class="ic">${c.ic}</span><b>${c.t}</b><span>${c.sub}</span></div></a>`).join("")}</div></div>`;
+  const q=document.getElementById("q");q.oninput=()=>search(q.value);document.getElementById("sf").onsubmit=e=>{e.preventDefault();search(q.value)};
+  const pre=new URLSearchParams(location.search).get("q");if(pre){q.value=pre;search(pre)}
+}
+function search(v){
+  const w=v.toLowerCase().split(/\s+/).filter(x=>x.length>2),box=document.getElementById("hits");
+  if(!w.length){box.innerHTML="";return}
+  const hits=[];CH.forEach(c=>{const tmp=document.createElement("div");tmp.innerHTML=c.body();tmp.querySelectorAll(".card,.tb,.note,.lk").forEach(el=>{const t=el.textContent.toLowerCase();const n=w.filter(x=>t.includes(x)).length;if(n)hits.push({c,n,title:(el.querySelector("h3,b")||el).textContent.slice(0,80)})})});
+  hits.sort((a,b)=>b.n-a.n);
+  box.innerHTML=hits.length?`<div class="k" style="margin-bottom:8px">Found</div>`+hits.slice(0,8).map(h=>`<a class="hit" href="?ch=${h.c.id}" target="_blank" rel="noopener"><b>${esc(h.title)}</b><span>${h.c.ic} ${h.c.t}</span></a>`).join("")+'<div style="height:18px"></div>':'<p class="pn">Nothing for that yet. Try one word, like "porch" or "deposit".</p>';
+}
+function chapter(id){
+  const i=CH.findIndex(c=>c.id===id);if(i<0)return contents();const c=CH[i],p=CH[i-1],n=CH[i+1];
+  document.title=c.t+" | BSUK Library";
+  app.innerHTML=`<div class="hero" style="background-image:url('${PHOTOS[c.img]}')"><div class="top"><a href="library.html">← Contents</a></div><div><div class="k">Chapter ${i+1}</div><h1>${c.ic} ${c.t}</h1><p>${c.sub}</p></div></div>
+  <div class="wrap"><p class="pn">${PRICE_NOTE}</p>${c.body()}
+  <div class="nav">${p?`<a href="?ch=${p.id}">← Previous<b>${p.t}</b></a>`:"<span></span>"}${n?`<a class="r" href="?ch=${n.id}">Next →<b>${n.t}</b></a>`:"<span></span>"}</div></div>`;
+  bind();scrollTo(0,0);
+}
+const ch=new URLSearchParams(location.search).get("ch");ch?chapter(ch):contents();
+</script></body></html>
