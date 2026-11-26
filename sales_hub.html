@@ -442,6 +442,21 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
 .coach .sc{margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
 .coach .sc .lab{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:8px}
 
+/* round 6: walk round video */
+.vband{background:#16261C;color:#fff;padding:34px 0 0;margin-top:0}
+.vband .vhead{padding:0 22px 18px;max-width:900px;margin:0 auto}
+.vband .k{color:#C08B41}
+.vband h2{color:#fff;margin:6px 0 4px}
+.vband h2 .b{color:#D6A868}
+.vband .vsub{color:rgba(255,255,255,.72);font-size:14px}
+.vwrap{position:relative;width:100%;background:#000;line-height:0}
+.vwrap video{display:block;width:100%;height:auto;max-height:86vh;background:#000;object-fit:contain}
+.vplay{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:92px;height:92px;border-radius:50%;border:0;background:#C08B41;box-shadow:0 10px 34px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s}
+.vplay:hover{transform:translate(-50%,-50%) scale(1.06)}
+.vplay svg{width:40px;height:40px;fill:#fff;margin-left:5px}
+.vwrap.playing .vplay{display:none}
+@media(max-width:600px){.vplay{width:74px;height:74px}.vplay svg{width:32px;height:32px}}
+
 </style>
 </head>
 <body>
@@ -483,6 +498,12 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
  <div class="hint sm" style="margin-left:26px"><svg viewBox="0 0 30 26"><path d="M26 22C16 22 9 17 8 6"/><path d="M4 10l4-5 4 5"/></svg><div>use any keyword<div class="sub">to find what you're looking for</div></div></div></div>
 </div>
 
+
+<div class="bleed vband" id="walk">
+ <div class="vhead"><div class="k">Watch before your first call</div><h2>Walk round the <span class="b">build</span></h2><div class="vsub">James shows you every part of a sauna in 3 minutes</div></div>
+ <div class="vwrap" id="vwrap"><video id="walkVid" playsinline preload="metadata" poster="https://files.leadconnectorhq.com/file/6ad6615088927761f53d6c8a/workshop-light.jpg" src="https://files.leadconnectorhq.com/file/6b081e7c2683f7092ed38da7/explainer-unit-walkaround.mp4#t=0.5"></video>
+ <button type="button" class="vplay" id="vplay" aria-label="Play the walk round video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></button></div>
+</div>
 <div class="pad">
 <div class="card light buddy hidden" id="buddy"></div>
 
@@ -1025,6 +1046,11 @@ $("heroSearch").addEventListener("submit",e=>{e.preventDefault();const q=$("hero
 
 (function(){const f=$("fab"),c=$("coachSec");f.onclick=()=>c.scrollIntoView({behavior:"smooth",block:"start"});
  const f2=$("fab2"),bb=$("build");addEventListener("scroll",()=>{const r=c.getBoundingClientRect(),q=bb.getBoundingClientRect();f.classList.toggle("hide",!(scrollY>500&&(r.bottom<0||r.top>innerHeight)));f2.classList.toggle("hide",!(scrollY>500&&(q.bottom<0||q.top>innerHeight)))},{passive:true})})();
+
+;(function(){var v=document.getElementById('walkVid'),w=document.getElementById('vwrap'),p=document.getElementById('vplay');if(!v||!p)return;
+p.addEventListener('click',function(){v.controls=true;w.classList.add('playing');var r=v.play();if(r&&r.catch)r.catch(function(){});});
+v.addEventListener('pause',function(){if(v.ended){w.classList.remove('playing');v.controls=false;}});
+v.addEventListener('ended',function(){w.classList.remove('playing');v.controls=false;});})();
 
 async function act(path,body,previewMsg){
   if(preview){toast(previewMsg);return true}
