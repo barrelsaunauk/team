@@ -467,6 +467,21 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
 .vplay svg{width:100%!important;height:100%!important;margin:0!important;fill:none;filter:drop-shadow(0 4px 14px rgba(0,0,0,.3))}
 @media(max-width:600px){.vplay{width:78px!important;height:78px!important}}
 
+/* shareable links */
+#share{padding-top:8px}
+.shg{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#417C51;margin:20px 0 10px}
+.shl{display:grid;gap:10px}
+@media(min-width:760px){.shl{grid-template-columns:1fr 1fr}}
+.shc{display:flex;align-items:center;gap:14px;background:#1F3D28;color:#fff;border-radius:18px;padding:14px 14px 14px 16px}
+.shc .e3{width:38px;height:38px;flex:none}
+.sht{flex:1;min-width:0}.sht b{display:block;font-size:15px;font-weight:700}.sht span{display:block;font-size:12.5px;color:rgba(255,255,255,.72);margin-top:2px;line-height:1.35}
+.shb{display:flex;flex-direction:column;gap:6px;flex:none}
+.shb a,.shb button{font:700 12.5px Poppins,sans-serif;border-radius:999px;padding:8px 14px;text-align:center;cursor:pointer;text-decoration:none}
+.shb a{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:#fff}
+.shb button{background:#C08B41;border:0;color:#fff}
+.shall{display:inline-block;margin-top:14px;font-weight:700;font-size:13.5px;color:#1F3D28}
+.shb a,.shb button{min-width:86px}
+
 </style>
 </head>
 <body>
@@ -540,6 +555,26 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
  <div class="ostage" id="stage"><div class="drum" id="drum"></div></div>
  <div class="dots" id="dots"></div>
  <div class="swipeh">swipe right <svg viewBox="0 0 34 22"><path d="M2 11h28"/><path d="M24 5l6 6-6 6"/></svg></div>
+</div>
+
+<div class="pad">
+<div class="sec" id="share"><div class="k">Send these on a call</div><h2>Links that help you <span class="b">close</span></h2>
+ <div class="hint sm" style="margin:4px 0 6px 6px"><svg viewBox="0 0 30 26"><path d="M4 4C12 4 20 9 22 20"/><path d="M17 17l5 5 4-6"/></svg><div>tap copy, then paste<div class="sub">into WhatsApp, text or email</div></div></div>
+ <div class="shg">Help them decide</div><div class="shl">
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Glowing%20star/3D/glowing_star_3d.png" alt=""><div class="sht"><b>Walk round video</b><span>The 6 minute tour of a real build. Great first send.</span></div><div class="shb"><a href="https://files.leadconnectorhq.com/file/6b082f5e3abd658855c6c190/bsuk-workshop-walkaround-explainer-full-v11.mp4" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://files.leadconnectorhq.com/file/6b082f5e3abd658855c6c190/bsuk-workshop-walkaround-explainer-full-v11.mp4">Copy</button></div></div>
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Open%20book/3D/open_book_3d.png" alt=""><div class="sht"><b>Full brochure</b><span>Everything we build. Send any time.</span></div><div class="shb"><a href="https://barrelsaunauk.github.io/explore/brochure.html" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.github.io/explore/brochure.html">Copy</button></div></div>
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Hourglass%20done/3D/hourglass_done_3d.png" alt=""><div class="sht"><b>In-stock saunas</b><span>Ready now. Check with the office before promising one.</span></div><div class="shb"><a href="https://barrelsaunauk.github.io/explore/in_stock_saunas.html" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.github.io/explore/in_stock_saunas.html">Copy</button></div></div>
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Ice/3D/ice_3d.png" alt=""><div class="sht"><b>The Double Dipper</b><span>Ice bath and hot tub in one.</span></div><div class="shb"><a href="https://barrelsaunauk.github.io/explore/the_double-dipper.html" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.github.io/explore/the_double-dipper.html">Copy</button></div></div>
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Snowflake/3D/snowflake_3d.png" alt=""><div class="sht"><b>Cold plunge range</b><span>Ice baths and plunges.</span></div><div class="shb"><a href="https://barrelsaunauk.github.io/explore/cold_plunge_range.html" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.github.io/explore/cold_plunge_range.html">Copy</button></div></div>
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Hot%20springs/3D/hot_springs_3d.png" alt=""><div class="sht"><b>Hot tub guide</b><span>Our wood-fired and electric tubs.</span></div><div class="shb"><a href="https://barrelsaunauk.github.io/explore/hot_tub_guide.html" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.github.io/explore/hot_tub_guide.html">Copy</button></div></div>
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Camping/3D/camping_3d.png" alt=""><div class="sht"><b>Eco glamping pods</b><span>Pods for gardens and holiday lets.</span></div><div class="shb"><a href="https://barrelsaunauk.github.io/explore/eco_glamping_pods.html" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.github.io/explore/eco_glamping_pods.html">Copy</button></div></div>
+ </div>
+ <div class="shg">Move them forward</div><div class="shl">
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/House/3D/house_3d.png" alt=""><div class="sht"><b>Book a workshop tour</b><span>When they want to see it in person, near Blackwood.</span></div><div class="shb"><a href="https://api.leadconnectorhq.com/widget/booking/pDS4tyQDPrkzCKBcVTLe" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://api.leadconnectorhq.com/widget/booking/pDS4tyQDPrkzCKBcVTLe">Copy</button></div></div>
+  <div class="shc"><img class="e3" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Key/3D/key_3d.png" alt=""><div class="sht"><b>Secure your build</b><span>The £500 deposit page. Gets them next in line.</span></div><div class="shb"><a href="https://barrelsaunauk.com/secure-your-build" target="_blank" rel="noopener">Open</a><button type="button" data-copy="https://barrelsaunauk.com/secure-your-build">Copy</button></div></div>
+ </div>
+ <a class="shall" href="library.html?ch=links" target="_blank" rel="noopener">More links in the Library ↗</a>
+</div>
 </div>
 
 <div class="bleed weekhead on-dark" id="dash"><div><div class="k">How you're doing</div><h2>Beat last <span class="b">week</span></h2></div></div>
@@ -1063,6 +1098,9 @@ v.addEventListener('pause',function(){if(v.ended){w.classList.remove('playing');
 v.addEventListener('ended',function(){w.classList.remove('playing');v.controls=false;});})();
 
 ;document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&screen.orientation&&screen.orientation.unlock){try{screen.orientation.unlock()}catch(e){}}});
+;document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('#share [data-copy]');if(!b)return;var u=b.getAttribute('data-copy');function ok(){b.textContent='Copied ✓';setTimeout(function(){b.textContent='Copy'},1600);try{toast('Link copied. Paste it into WhatsApp, text or email.')}catch(x){}}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(ok,function(){fb()})}else fb();
+function fb(){var t=document.createElement('textarea');t.value=u;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');ok()}catch(x){}document.body.removeChild(t)}});
 
 async function act(path,body,previewMsg){
   if(preview){toast(previewMsg);return true}
