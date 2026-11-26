@@ -580,6 +580,32 @@ section.band{padding:56px 0}
   .sec-head h2.mix{font-size:21px}
   section.band{padding:34px 0}
 }
+
+/* ===== final: call buddy, back office, reminders, sign-up ===== */
+.buddy{margin-top:26px;background:#fff;border-radius:28px;padding:22px;border-left:7px solid var(--deep);box-shadow:0 1px 2px rgba(0,0,0,.04),0 22px 44px -18px rgba(31,61,40,.3),0 40px 80px -40px rgba(0,0,0,.25);animation:slidein .5s ease}
+@keyframes slidein{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+.buddy-top{display:flex;justify-content:space-between;align-items:center}
+.frost.dark{background:#F2F2F0;color:#222;border-color:#e6e6e2}
+.buddy h3{font-size:21px;margin:10px 0 4px}
+.buddy-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.buddy-actions .btn{border-radius:999px;background:#F2F2F0;color:#111;font-size:13.5px;padding:11px 16px}
+.buddy-actions .btn.primary{background:var(--deep);color:#fff}
+.wa-line{font-size:12px;color:#888;margin-top:12px}
+.rchip{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:500;padding:3px 10px;border-radius:999px;background:#F2F2F0;color:#555}
+.rchip.late{background:#FDE8E8;color:var(--red)}
+.suggest{font-size:13.5px;background:#F4F8F4;border-radius:14px;padding:10px 14px;margin:0 0 12px;color:#333}
+.suggest b{font-weight:600;color:var(--deep)}
+.suggest span{display:block;font-size:12.5px;color:#666;margin-top:2px}
+.office{margin:16px 0 4px;padding:14px;border-radius:18px;background:#F7F7F5}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.steps span{font-size:12px;padding:4px 10px;border-radius:999px;background:#fff;color:#888;box-shadow:inset 0 0 0 1px #e6e6e2}
+.steps span.ok{color:#1d5c32;background:#E3F3E8;box-shadow:none;font-weight:500}
+.onote{font-size:13px;color:#555;margin:4px 0 10px}
+.office-btn{width:100%;border-radius:999px;background:#fff;color:#111;font-size:13.5px;padding:11px;box-shadow:inset 0 0 0 1px #e1e1dd}
+.call-wrap .hand{top:-14px!important}
+.rule-line{font-size:12px;color:#777;text-align:center;margin-top:8px}
+#signupBox p,#signinBox p{color:#666;font-size:14px;margin-bottom:16px}
+@media(max-width:760px){.buddy{padding:18px;border-radius:24px}.buddy-actions .btn{flex:1 1 100%}}
 </style>
 </head>
 <body>
@@ -589,11 +615,24 @@ section.band{padding:56px 0}
   <div class="login-card">
     <div class="kicker">Barrel Sauna UK</div>
     <h1>Sales <span>Hub</span></h1>
-    <p>Type your work email and we'll send you a link. One tap and you're in for 30 days.</p>
-    <form id="loginForm">
-      <input class="field" type="email" id="loginEmail" placeholder="you@barrelsaunauk.com" autocomplete="email" required>
-      <button class="btn btn-primary btn-block" style="margin-top:12px" type="submit" id="loginBtn">Send my link</button>
-    </form>
+    <div id="signupBox">
+      <p>New to the team? Create your profile. Once it's approved, you're in.</p>
+      <form id="signupForm">
+        <input class="field" id="suName" placeholder="Full name" autocomplete="name" required>
+        <input class="field" id="suEmail" type="email" placeholder="Email" autocomplete="email" required style="margin-top:10px">
+        <input class="field" id="suPhone" type="tel" placeholder="Mobile or WhatsApp number" autocomplete="tel" required style="margin-top:10px">
+        <button class="btn btn-primary btn-block" style="margin-top:14px" type="submit" id="signupBtn">Create my profile</button>
+      </form>
+      <div class="login-alt" style="margin-top:14px">Already have a profile? <button type="button" id="toSignin">Sign in</button></div>
+    </div>
+    <div id="signinBox" class="hidden">
+      <p>Welcome back. Enter your email and we'll send you a sign-in button.</p>
+      <form id="loginForm">
+        <input class="field" type="email" id="loginEmail" placeholder="Email" autocomplete="email" required>
+        <button class="btn btn-primary btn-block" style="margin-top:12px" type="submit" id="loginBtn">Sign in</button>
+      </form>
+      <div class="login-alt" style="margin-top:14px">New here? <button type="button" id="toSignup">Create your profile</button></div>
+    </div>
     <div class="login-msg hidden" id="loginMsg"></div>
     <div class="login-alt"><button type="button" id="previewBtn">See it with sample data</button></div>
   </div>
@@ -634,6 +673,8 @@ section.band{padding:56px 0}
           <a class="jump" href="#build"><span class="ji">🛠️</span>Build a sauna with your customer</a>
         </div>
       </div>
+
+      <div class="buddy hidden" id="buddy"></div>
 
       <div class="promise-card" id="promiseCard">
         <span class="nudge" aria-hidden="true">👉</span>
@@ -1160,12 +1201,13 @@ const SAMPLE = {
       stages:[["1 Warm opening",1],["2 Discovery",1],["3 Value",2],["4 Configure",1],["5 Price",0],["6 Objections",1],["7 Close",2],["8 Next step",1]].map(([label,score])=>({label,score}))},
     promises:[{title:"🔥 PROMISE: Send Sarah the globe window video",due:nextWeekday(1),contactName:"Sarah Bennett"}],
     followUps:[{title:"Follow up: Gareth, mobile sauna estimate",due:nextWeekday(1),contactName:"Gareth Price"},{title:"Check Priya got the dipper brochure",due:nextWeekday(2),contactName:"Priya Shah"}]},
+  lastCall:{id:"demo-1",name:"Sarah Bennett",ended:"12 minutes ago",todo:"She asked for the globe window video and a call with Tom on Friday."},
   customers:[
-    {id:"demo-1",name:"Sarah Bennett",phone:"+44 7700 900123",product:"Barrel sauna, 3.2m with changing room, globe window",objection:"Needs to talk to her partner",nextTouch:"Friday morning",lastOutcome:"Thinking",stage:"Estimate sent",
+    {id:"demo-1",suggest:{date:nextWeekday(2),reason:"2 days, she is talking it through with Tom first"},office:{done:1,note:"Marta: estimate emailed and globe video sent, 25 Nov"},name:"Sarah Bennett",phone:"+44 7700 900123",product:"Barrel sauna, 3.2m with changing room, globe window",objection:"Needs to talk to her partner",nextTouch:"Friday morning",lastOutcome:"Thinking",stage:"Estimate sent",
      summary:"Sarah wants a sauna for her and her partner after his knee surgery, on the patio at the bottom of the garden with a view over fields. Loved the globe. Asked for the estimate by email and said she needs to talk it through with Tom.",notes:["Prefers email over WhatsApp.","Garden access is through a 1m side gate."]},
-    {id:"demo-2",name:"Gareth Price",phone:"+44 7700 900456",product:"Mobile sauna on trailer, wood burner",objection:"Price, compared a flat pack online",nextTouch:"Not agreed",lastOutcome:"Unclear",stage:"Spoken to a human",
+    {id:"demo-2",suggest:{date:nextWeekday(4),reason:"4 days, give him time to compare, then call with the trailer video"},office:{done:1,note:"Office: no reply to the estimate email yet"},name:"Gareth Price",phone:"+44 7700 900456",product:"Mobile sauna on trailer, wood burner",objection:"Price, compared a flat pack online",nextTouch:"Not agreed",lastOutcome:"Unclear",stage:"Spoken to a human",
      summary:"Gareth runs paddleboard sessions on the Gower and wants a mobile sauna for the beach car park. He compared us to a flat pack trailer kit online and went quiet at the price.",notes:["Has a 4x4 and a towing licence, he says."]},
-    {id:"demo-3",name:"Priya Shah",phone:"+44 7700 900789",product:"Double dipper ice bath and hot tub",objection:"None",nextTouch:"Monday, 10am",lastOutcome:"Confirmed",stage:"Call booked",
+    {id:"demo-3",suggest:{date:nextWeekday(1),reason:"Tomorrow, the day after her call with James"},office:{done:1,note:"Office: call with James booked for Monday 10am"},name:"Priya Shah",phone:"+44 7700 900789",product:"Double dipper ice bath and hot tub",objection:"None",nextTouch:"Monday, 10am",lastOutcome:"Confirmed",stage:"Call booked",
      summary:"Priya is building a home gym in her garage and wants cold plunge and hot tub in one. Booked a call with James for Monday.",notes:[]}
   ]
 };
@@ -1201,8 +1243,22 @@ $("loginForm").addEventListener("submit",async(e)=>{
     if(j.demo&&j.link){msg.innerHTML=esc(j.message)+' <a href="'+esc(j.link)+'" style="color:var(--mid);font-weight:700">Open the demo</a>';}
     else msg.textContent=j.message||j.error||"Check your email.";
   }catch(err){msg.classList.remove("hidden");msg.textContent="Couldn't reach the hub. Try again in a minute.";}
-  btn.disabled=false;btn.textContent="Send my link";
+  btn.disabled=false;btn.textContent="Sign in";
 });
+$("signupForm").addEventListener("submit",async(e)=>{
+  e.preventDefault();
+  const btn=$("signupBtn"),msg=$("loginMsg");btn.disabled=true;btn.textContent="Creating...";
+  try{
+    const r=await fetch(API+"/signup",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:$("suName").value,email:$("suEmail").value,phone:$("suPhone").value})});
+    const j=await r.json();msg.classList.remove("hidden");msg.textContent=j.message||j.error||"Thanks, we'll be in touch.";
+    if(j.ok)$("signupForm").classList.add("hidden");
+  }catch(err){msg.classList.remove("hidden");msg.textContent="Couldn't reach the hub. Try again in a minute.";}
+  btn.disabled=false;btn.textContent="Create my profile";
+});
+const showBox=(up)=>{$("signupBox").classList.toggle("hidden",!up);$("signinBox").classList.toggle("hidden",up);$("loginMsg").classList.add("hidden")};
+$("toSignin").addEventListener("click",()=>showBox(false));
+$("toSignup").addEventListener("click",()=>showBox(true));
+if(store.get("bsuk_hub_known"))showBox(false);
 $("previewBtn").addEventListener("click",()=>{preview=true;start()});
 $("signOut").addEventListener("click",signOut);
 function signOut(){store.del("bsuk_hub_token");token="";preview=false;$("hubView").classList.add("hidden");$("loginView").classList.remove("hidden")}
@@ -1279,8 +1335,24 @@ function renderToday(){
   }else $("focusCard").innerHTML='<div class="kicker">This week\'s challenge</div><h3>Nothing yet</h3><p class="empty">After a few calls, your challenge shows up here.</p>';
 
   // promises and follow-ups
-  const li=(t)=>`<div class="item${t.due&&new Date(t.due)<new Date()?" overdue":""}"><span class="tick" title="Tick off">&#10003;</span><div><div class="t">${esc(t.title.replace(/^🔥\s*PROMISE:\s*/,""))}</div><div class="d">${esc(t.contactName||"")}${t.due?" · "+fmtDate(t.due):""}</div></div></div>`;
-  $("promises").innerHTML=(ME.promises||[]).length?ME.promises.map(li).join(""):'<p class="empty">Nothing promised. Anything you promise on a call lands here.</p>';
+  const chip=(t)=>{const late=t.due&&new Date(t.due)<new Date();return `<span class="rchip${late?" late":""}">${late?"🔴 Overdue, reminded again today":"⏰ Reminded today. We'll check again tomorrow"}</span>`};
+  const li=(t,pr)=>`<div class="item${t.due&&new Date(t.due)<new Date()?" overdue":""}"><span class="tick" title="Tick off">&#10003;</span><div><div class="t">${esc(t.title.replace(/^🔥\s*PROMISE:\s*/,""))}</div><div class="d">${esc(t.contactName||"")}${t.due?" · "+fmtDate(t.due):""}</div>${pr===true?chip(t):""}</div></div>`;
+  // call buddy: shows after a call has just ended
+  const LC=preview?SAMPLE.lastCall:ME.lastCall;
+  if(LC&&!store.get("buddy_"+LC.id+"_"+LC.ended)){
+    const b=$("buddy");b.classList.remove("hidden");
+    b.innerHTML=`<div class="buddy-top"><span class="frost dark">📞 Call buddy</span><button class="x" type="button" id="buddyX" aria-label="Close">&#215;</button></div>
+      <h3 class="mix">Your call with ${esc(LC.name.split(" ")[0])} just <span class="big">ended</span></h3>
+      <p class="muted small-text">${esc(LC.ended)}. ${esc(LC.todo||"")} Shoulda done anything?</p>
+      <div class="buddy-actions"><button class="btn" type="button" data-b="done">✅ All done</button><button class="btn primary" type="button" data-b="follow">📅 Book the follow-up</button><button class="btn" type="button" data-b="note">📝 Add a note</button></div>
+      <p class="wa-line">📲 Also sent to your WhatsApp</p>`;
+    const close=()=>{b.classList.add("hidden");store.set("buddy_"+LC.id+"_"+LC.ended,"1")};
+    $("buddyX").onclick=close;
+    b.querySelectorAll("[data-b]").forEach(x=>x.onclick=()=>{const k=x.dataset.b;
+      if(k==="done"){toast("Nice one ✅");close();return}
+      const i=QUEUE.findIndex(c=>c.id===LC.id);if(i>=0){qi=i;showCustomer().then(()=>{k==="follow"?followModal():noteModal()})}else toast("Open the customer card to do this")});
+  }
+  $("promises").innerHTML=(ME.promises||[]).length?ME.promises.map(x=>li(x,true)).join(""):'<p class="empty">Nothing promised. Anything you promise on a call lands here.</p>';
   const over=(ME.promises||[]).filter(x=>x.due&&new Date(x.due)<new Date()).length,pb=$("promiseBadge");
   pb.textContent=over?over+" overdue":(ME.promises||[]).length+" open";pb.classList.toggle("hidden",!(ME.promises||[]).length);pb.classList.toggle("late",!!over);
   $("followups").innerHTML=(ME.followUps||[]).length?ME.followUps.map(li).join(""):'<p class="empty">All clear 🎉</p>';
@@ -1334,12 +1406,18 @@ async function showCustomer(){
           <div class="${objection?"red":""}">🚧<span><span class="lab">Holding back</span><b>${esc(objection?c.objection:"Nothing yet")}</b></span></div>
           <div>📅<span><span class="lab">Next touch</span><b>${esc(c.nextTouch||"Not agreed")}</b></span></div>
         </div>
+        ${c.suggest?`<div class="suggest">💡 Suggested follow-up: <b>${esc(fmtDate(c.suggest.date))}</b><span>${esc(c.suggest.reason)}</span></div>`:""}
         <p class="told">${esc(c.summary||"No calls yet. Open with who we are and find out what they're after.")}</p>
         ${(c.notes||[]).length?`<div class="notes">${c.notes.map(x=>`<div>${esc(x)}</div>`).join("")}</div>`:""}
+        ${c.office?`<div class="office"><div class="kicker">🏢 Back office</div>
+          <div class="steps">${["Estimate sent","Deposit","Build booked","Installed"].map((s,i)=>`<span class="${i<c.office.done?"ok":""}">${i<c.office.done?"✓":"○"} ${s}</span>`).join("")}</div>
+          <p class="onote">${esc(c.office.note||"")}</p>
+          <button class="btn office-btn" type="button" id="aOffice">💬 Ask the office about ${esc(c.name.split(" ")[0])}</button></div>`:""}
         <div class="call-wrap"><span class="hand">tap to call &#8601;</span>
           <button class="pill-btn green" type="button" id="aCall" style="margin-top:30px">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-          Call ${esc(c.name.split(" ")[0])}</button></div>
+          Call ${esc(c.name.split(" ")[0])}</button>
+          <p class="rule-line">🔒 Calls and messages go from your BSUK number, never your own phone.</p></div>
         <div class="cust-actions">
           <button class="btn" type="button" id="aNote">📝 Note</button>
           <button class="btn" type="button" id="aFollow">📅 Follow-up</button>
@@ -1359,6 +1437,7 @@ async function showCustomer(){
   box.querySelectorAll(".side-card").forEach(b=>b.onclick=()=>{qi=+b.dataset.i;showCustomer()});
   $("aCall").addEventListener("click",()=>act("/call",{contactId:c.id},"Sample data: your phone would ring, then you'd be put through to "+c.name.split(" ")[0]+"."));
   $("aNote").addEventListener("click",noteModal);
+  const ao=$("aOffice");if(ao)ao.addEventListener("click",officeModal);
   $("aFollow").addEventListener("click",followModal);
   $("aHelp").addEventListener("click",()=>openPanel({customer:c}));
 }
@@ -1382,11 +1461,17 @@ function noteModal(){
   modal(`<div class="kicker">${esc(CUR.name)}</div><h3>Add a note</h3><textarea placeholder="What should the team know? e.g. Partner is the one who decides, call after 6pm."></textarea>`,
     async(m)=>{const t=m.querySelector("textarea").value.trim();if(!t){toast("Write something first");return false}return act("/note",{contactId:CUR.id,text:t},"Sample data: the note would be saved on "+CUR.name+".")});
 }
+function officeModal(){
+  modal(`<div class="kicker">${esc(CUR.name)}</div><h3>Ask the office</h3><textarea placeholder="e.g. Has her deposit come through? Can someone send the trailer video?"></textarea>`,
+    async(m)=>{const q=m.querySelector("textarea").value.trim();if(!q){toast("Write your question first");return false}return act("/note",{contactId:CUR.id,text:"QUESTION FOR THE OFFICE: "+q},"Sample data: your question would go to the office.")});
+}
 function followModal(){
-  const d=new Date(Date.now()+864e5);while(d.getDay()===0||d.getDay()===6)d.setDate(d.getDate()+1);
+  let d=new Date(Date.now()+864e5);while(d.getDay()===0||d.getDay()===6)d.setDate(d.getDate()+1);
+  if(CUR&&CUR.suggest&&CUR.suggest.date)d=new Date(CUR.suggest.date);
   modal(`<div class="kicker">${esc(CUR.name)}</div><h3>Book a follow-up</h3>
     <label for="fuT">What for</label><input class="field" id="fuT" value="Follow up: ${esc(CUR.name.split(" ")[0])}">
     <label for="fuD">When</label><input class="field" id="fuD" type="date" value="${d.toISOString().slice(0,10)}">
+    ${CUR.suggest?`<p class="suggest" style="margin-top:10px">💡 ${esc(CUR.suggest.reason)}</p>`:""}
     <p class="muted small-text" style="margin-top:8px">Weekends move to Monday.</p>`,
     async(m)=>act("/followup",{contactId:CUR.id,title:m.querySelector("#fuT").value,date:m.querySelector("#fuD").value},"Sample data: follow-up would be booked on "+m.querySelector("#fuD").value+"."));
 }
@@ -1458,7 +1543,7 @@ $("libTop").addEventListener("click",()=>{openPanel();$("search").value="";showL
    ========================================================================= */
 (function boot(){
   const m=location.hash.match(/t=([^&]+)/);
-  if(m){store.set("bsuk_hub_token",m[1]);history.replaceState(null,"",location.pathname)}
+  if(m){store.set("bsuk_hub_token",m[1]);store.set("bsuk_hub_known","1");history.replaceState(null,"",location.pathname)}
   token=store.get("bsuk_hub_token")||"";
   if(new URLSearchParams(location.search).get("preview")==="1")preview=true;
   if(token||preview)start();
