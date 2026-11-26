@@ -461,6 +461,12 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
 .vplay:hover{transform:scale(1.06)!important}
 @media(max-width:600px){.vplay{left:14px!important;bottom:14px;width:62px!important;height:62px!important}.vplay svg{width:28px!important;height:28px!important}}
 
+/* play button: centred, see-through white, cut-out arrow */
+.vplay{left:50%!important;top:50%!important;bottom:auto!important;transform:translate(-50%,-50%)!important;width:96px!important;height:96px!important;background:transparent!important;box-shadow:none!important;border-radius:50%;padding:0;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.vplay:hover{transform:translate(-50%,-50%) scale(1.06)!important}
+.vplay svg{width:100%!important;height:100%!important;margin:0!important;fill:none;filter:drop-shadow(0 4px 14px rgba(0,0,0,.3))}
+@media(max-width:600px){.vplay{width:78px!important;height:78px!important}}
+
 </style>
 </head>
 <body>
@@ -506,7 +512,7 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
 <div class="bleed vband" id="walk">
  <div class="vhead"><div class="k">Watch before your first call</div><h2>Walk round the <span class="b">build</span></h2><div class="vsub">James shows you every part of a sauna in 6 minutes</div></div>
  <div class="vwrap" id="vwrap"><video id="walkVid" preload="none" poster="img/walkround_poster.jpg" src="https://files.leadconnectorhq.com/file/6b082f5e3abd658855c6c190/bsuk-workshop-walkaround-explainer-full-v11.mp4"></video>
- <button type="button" class="vplay" id="vplay" aria-label="Play the walk round video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></button></div>
+ <button type="button" class="vplay" id="vplay" aria-label="Play the walk round video"><svg viewBox="0 0 100 100"><defs><mask id="vpm"><rect width="100" height="100" fill="#fff"/><path d="M41 31l30 19-30 19z" fill="#000"/></mask></defs><circle cx="50" cy="50" r="48" fill="rgba(255,255,255,.42)" mask="url(#vpm)"/><circle cx="50" cy="50" r="47" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2"/></svg></button></div>
 </div>
 <div class="pad">
 <div class="card light buddy hidden" id="buddy"></div>
