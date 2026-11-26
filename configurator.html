@@ -175,6 +175,10 @@ h2 .b{font-weight:500!important;letter-spacing:-.025em}
 .chead h1 .b{font-weight:500;font-size:1.35em;color:var(--g2)}
 #cfg .lede{margin-top:4px}
 .sumtot{display:none}
+#cfg .pop-b{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:pan-y}
+body.popopen{overflow:hidden}
+@media(max-width:900px){#cfg .stage{position:relative!important;top:auto!important;z-index:auto!important;border-bottom:none!important}#cfg .pop{z-index:50!important}#cfg .cfg-scrim.show{z-index:45!important}#cfg .pop-b{max-height:70vh!important}}
+body.popopen{position:fixed;left:0;right:0;width:100%}
 @media(max-width:900px){
  body{padding-bottom:84px}
  #cfg .sum{position:fixed!important;top:auto!important;left:10px;right:10px;bottom:10px;z-index:14;background:#fff;max-height:78vh;overflow:auto;border-radius:24px;box-shadow:0 -4px 30px rgba(0,0,0,.18);transform:translateY(calc(100% - 66px));transition:transform .3s ease}
@@ -189,7 +193,7 @@ h2 .b{font-weight:500!important;letter-spacing:-.025em}
 }
 </style></head>
 <body>
-<div class="chead"><div class="cbar"><b>BSUK <span style="font-weight:400;color:var(--g2)">Sales Hub</span></b><a href="sales_hub.html">← Back to the Hub</a></div>
+<div class="chead"><div class="cbar"><b>BSUK <span style="font-weight:400;color:var(--g2)">Sales Hub</span></b><a href="sales_hub.html" onclick="if(window.opener||history.length<2){window.close();}">← Back to the Hub</a></div>
 <div class="k">Use it on a call</div><h1>Build what you're <span class="b">selling</span></h1>
 <div class="hint" style="margin-left:-6px;align-items:flex-end"><svg viewBox="0 0 30 26"><path d="M27 4C15 4 7 10 7 21"/><path d="M3 17l4 5 4-5"/></svg><div>or just use it for practice<div class="sub">Click through every option until you know them all.</div></div></div></div>
 <section class="cfgsec"><div id="cfg">
@@ -393,4 +397,9 @@ h.addEventListener('click',()=>{if(innerWidth<=900)sum.classList.toggle('open')}
 const upd=()=>{st.innerHTML=tot.textContent.replace(/\s*\+\s*VAT/,'')+' + VAT <i>▲</i>'};upd();new MutationObserver(upd).observe(tot,{childList:true,subtree:true,characterData:true});
 document.addEventListener('click',e=>{if(innerWidth<=900&&sum.classList.contains('open')&&!sum.contains(e.target)&&!e.target.closest('.pop'))sum.classList.remove('open')});})();
 </script>
+<script>(function(){const p=document.getElementById('cfgPop'),root=document.getElementById('cfg'),stage=document.getElementById('cfgStage');let y=0;
+function home(){if(innerWidth<=900){if(p.parentNode!==root)root.appendChild(p)}else if(p.parentNode!==stage)stage.appendChild(p)}home();addEventListener('resize',home);
+new MutationObserver(()=>{const on=p.classList.contains('show')&&innerWidth<=900,b=document.body;
+ if(on&&!b.classList.contains('popopen')){y=scrollY;b.style.top=-y+'px';b.classList.add('popopen')}
+ else if(!on&&b.classList.contains('popopen')){b.classList.remove('popopen');b.style.top='';scrollTo(0,y)}}).observe(p,{attributes:true,attributeFilter:['class']})})();</script>
 </body></html>

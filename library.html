@@ -166,7 +166,7 @@ function toast(m){const t=document.getElementById("toast");t.textContent=m;t.cla
 function bind(){document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Link copied")}catch(e){toast("Couldn't copy, press and hold the link instead")}})}
 function contents(){
   document.title="Library | BSUK Sales Hub";
-  app.innerHTML=`<div class="hero" style="background-image:url('${PHOTOS.roof}')"><div class="top"><a href="sales_hub.html">← Sales Hub</a></div><div><div class="k">The library</div><h1>Everything you <span class="b">need</span></h1><p>Pick a chapter. Each one opens on its own page, so it's never one long scroll.</p></div></div>
+  app.innerHTML=`<div class="hero" style="background-image:url('${PHOTOS.roof}')"><div class="top"><a href="sales_hub.html" onclick="if(window.opener){window.close();}">← Sales Hub</a></div><div><div class="k">The library</div><h1>Everything you <span class="b">need</span></h1><p>Pick a chapter. Each one opens on its own page, so it's never one long scroll.</p></div></div>
   <div class="wrap"><form class="search" id="sf"><span>🔎</span><input id="q" type="search" placeholder="seating, porch price, deposit" autocomplete="off"></form><div id="hits"></div>
   <div class="k" style="margin-bottom:12px">Contents</div>
   <div class="grid">${CH.map((c,i)=>`<a class="chap" href="?ch=${c.id}" target="_blank" rel="noopener" style="background-image:url('${PHOTOS[c.img]}')"><span class="n">${String(i+1).padStart(2,"0")}</span><div class="in"><span class="ic">${c.ic}</span><b>${c.t}</b><span>${c.sub}</span></div></a>`).join("")}</div></div>`;

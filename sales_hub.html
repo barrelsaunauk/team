@@ -428,6 +428,20 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
 @media(min-width:700px){#next .orbit{height:760px!important}}
 #next .orbit .oh{bottom:26px}
 
+/* ===== round 5 ===== */
+#next{margin-left:0!important;margin-right:0!important}
+#next>.k,#next>h2{padding:0!important}
+#next .orbit{height:640px!important;border-radius:30px!important}
+#next #custCard{padding:0!important}
+#next .node.core{width:250px!important;height:250px!important}
+#next .node.sat{width:124px!important;height:124px!important}
+@media(min-width:700px){#next .orbit{height:640px!important}}
+.coach .top3{flex-wrap:nowrap;gap:10px;align-items:center}
+.coach .ck{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.75)}
+.coach .chip.w{white-space:nowrap;flex:none}
+.coach .sc{margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:14px}
+.coach .sc .lab{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:8px}
+
 </style>
 </head>
 <body>
@@ -914,22 +928,20 @@ function renderToday(){
   else{
     const opts=["Fair one, clever clogs. Add that to my follow-up notes.","I see your point, but I was reading the room.","Not this time, I knew that customer better."];
     cc.innerHTML=`<div class="bg" style="background-image:url('${PHOTOS.inside}')"></div><div class="in">
-      <div class="top3"><span class="chip">Your personal AI sales coach</span><span class="chip w">Call score ${esc(L.score)}/16</span></div>
+      <div class="top3"><span class="ck">Your personal AI sales coach</span><span class="chip w">Call score ${esc(L.score)}/16</span></div>
       <img class="bot" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Robot/3D/robot_3d.png" alt="">
       <h3>Your feedback</h3><p class="lead">Personalised feedback on the call you just had. Friendly tips to help you close more, never a test.</p><div class="from">${esc(L.title)}</div>
       <div class="cb try"><div class="lab">💬 Try this line next time</div><p>${esc(L.tryLine)}</p></div>
       <div class="cb"><div class="lab">✅ Done well</div><p>${esc(L.doneWell)}</p></div>
       <div class="cb"><div class="lab">🎯 Next call</div><p>${esc(L.changeNext)}</p></div>
       <div class="replies">${opts.map(o=>`<button class="reply${L.reply===o?" sel":""}" type="button">${esc(o)}</button>`).join("")}</div>
-      <button class="fullbtn" type="button" id="fullReview">See the full scorecard</button>
-      <div id="fullReviewBox" class="hidden"><div class="bars">${(L.stages||[]).map(x=>`<div class="barrow"><span>${esc(x.label)}</span><div class="track"><div class="fill${x.score<1?" low":""}" style="width:${Math.max(6,x.score*50)}%"></div></div><b>${x.score}</b></div>`).join("")}</div>
+      <div class="sc"><div class="lab">📊 Your scorecard</div><div class="bars">${(L.stages||[]).map(x=>`<div class="barrow"><span>${esc(x.label)}</span><div class="track"><div class="fill${x.score<1?" low":""}" style="width:${Math.max(6,x.score*50)}%"></div></div><b>${x.score}</b></div>`).join("")}</div>
       ${L.redFlags&&L.redFlags!=="None"?`<div class="flags">🚩 Red flags\n${esc(L.redFlags)}</div>`:""}</div></div>`;
     cc.querySelectorAll(".reply").forEach(btn=>btn.addEventListener("click",async()=>{
       cc.querySelectorAll(".reply").forEach(x=>x.classList.remove("sel"));btn.classList.add("sel");
       if(preview){toast("Sample data: your reply would be saved on the review.");return}
       try{const j=await api("/reply",{method:"POST",body:JSON.stringify({reviewId:L.reviewId,reply:btn.textContent})});toast(j.message)}catch(e){toast(e.message)}
     }));
-    $("fullReview").onclick=()=>$("fullReviewBox").classList.toggle("hidden");
   }
 
 }
@@ -962,7 +974,7 @@ function renderObjections(){}
 /* =========================================================================
    NEXT CUSTOMER: orbit of customers, one in focus
    ========================================================================= */
-const SPOTS=[["core",50,50],["sat",22,11],["sat",78,17],["sat",78,84],["sat",22,90]];
+const SPOTS=[["core",50,50],["sat",21,15],["sat",79,19],["sat",79,82],["sat",21,86]];
 function drawOrbit(){
   const orb=$("orb"),n=QUEUE.length;
   if(orb.querySelectorAll(".node").length!==n){orb.innerHTML="";QUEUE.forEach((c,i)=>{const b=document.createElement("button");b.type="button";b.className="node";b.style.backgroundImage=`url(${photoFor(c)})`;b.innerHTML=`<span class="lab">${esc(c.name)}<small>Enquired about: ${esc(c.product||"not sure yet")}</small></span>`;b.onclick=()=>{if(i!==qi){qi=i;showCustomer()}};orb.appendChild(b)})}
