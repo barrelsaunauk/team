@@ -1,0 +1,1474 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sales Hub v5, phone preview</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#dcdcd8;font-family:Poppins,Arial,sans-serif}
+.phone{width:390px;height:844px;border-radius:54px;background:#111;padding:12px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+.phone iframe{width:100%;height:100%;border:0;border-radius:42px;background:#ECECEA}
+p{text-align:center;color:#555;font-size:13px;margin:14px 0 0}</style></head>
+<body><div><div class="phone"><iframe title="Sales Hub on a phone" srcdoc="&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en-GB&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;robots&quot; content=&quot;noindex&quot;&gt;
+&lt;title&gt;Sales Hub | Barrel Sauna UK&lt;/title&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;family=Caveat:wght@600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;style&gt;
+:root{
+  --ground:#16261C; --deep:#1F3D28; --forest:#2B5336; --mid:#417C51; --sage:#50795F; --pale:#8fae86;
+  --honey:#C08B41; --honeyL:#D6A868; --tint:#dbe7dd; --tint2:#eef4ef; --line:#e3ebe4; --wa:#31D24F;
+  --shadow:0 1px 2px rgba(22,38,28,.06),0 8px 24px rgba(22,38,28,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,Arial,sans-serif;font-weight:400;color:var(--ground);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,textarea{font-family:inherit;font-size:inherit;color:inherit}
+button{cursor:pointer;border:none;background:none}
+h1,h2,h3,h4,b,strong{font-weight:700}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.kicker{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--honey)}
+.hidden{display:none!important}
+.muted{color:var(--sage)}
+.small-text{font-size:13px}
+
+/* top bar */
+.bar{background:var(--ground);color:#fff;position:sticky;top:0;z-index:30}
+.bar .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.brand{font-weight:700;font-size:16px;letter-spacing:.01em}
+.brand span{color:var(--honeyL)}
+.nav{display:flex;gap:4px;margin-left:24px}
+.nav a{color:#cfe0d2;text-decoration:none;font-size:14px;padding:8px 12px;border-radius:999px}
+.nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+.who{margin-left:auto;display:flex;align-items:center;gap:12px;font-size:14px;color:#cfe0d2}
+.who button{color:#cfe0d2;font-size:13px;border:1px solid rgba(255,255,255,.2);padding:6px 12px;border-radius:999px}
+.demo-pill{background:rgba(214,168,104,.16);color:var(--honeyL);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.brand,.who button{white-space:nowrap}
+@media(max-width:760px){.nav{display:none}.who .name{display:none}}
+@media(max-width:480px){.demo-pill,#libTop{display:none}.bar .wrap{gap:10px}}
+
+/* login */
+.login{min-height:100vh;display:grid;place-items:center;background:var(--ground);padding:24px}
+.login-card{background:#fff;border-radius:22px;padding:40px 34px;max-width:420px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.login-card h1{font-size:28px;line-height:1.15;margin:10px 0 8px}
+.login-card h1 span{color:var(--honey)}
+.login-card p{color:var(--sage);font-size:14px;margin-bottom:22px}
+.field{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;font-size:15px;outline:none;transition:border .15s}
+.field:focus{border-color:var(--mid)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:700;font-size:14px;transition:transform .1s,background .15s,box-shadow .15s;white-space:nowrap}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--deep);color:#fff}
+.btn-primary:hover{background:var(--forest)}
+.btn-ghost{background:var(--tint2);color:var(--deep)}
+.btn-ghost:hover{background:var(--tint)}
+.btn-line{border:1.5px solid var(--line);color:var(--deep);background:#fff}
+.btn-line:hover{border-color:var(--pale)}
+.btn-block{width:100%}
+.login-msg{margin-top:14px;font-size:14px;color:var(--deep);background:var(--tint2);border-radius:12px;padding:12px 14px}
+.login-alt{margin-top:18px;text-align:center;font-size:13px}
+.login-alt button{color:var(--mid);text-decoration:underline;text-underline-offset:3px}
+
+/* sections */
+section.band{padding:40px 0}
+section.band.dark{background:var(--ground);color:#fff}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(24px,3vw,32px);line-height:1.15;margin-top:6px}
+.sec-head h2 span{color:var(--honey)}
+.dark .sec-head h2 span{color:var(--honeyL)}
+
+/* configurator placeholder */
+.config{border:1.5px dashed var(--pale);border-radius:22px;background:var(--tint2);padding:36px;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
+.config h2{font-size:clamp(24px,3vw,34px);line-height:1.15;margin:8px 0 10px}
+.config h2 span{color:var(--honey)}
+.config p{color:var(--sage);max-width:460px}
+.config-stage{aspect-ratio:16/10;border-radius:16px;background:#fff;display:grid;place-items:center;position:relative;box-shadow:var(--shadow)}
+.config-stage svg{width:62%;opacity:.9}
+.dot{position:absolute;width:22px;height:22px;border-radius:50%;background:var(--honey);border:3px solid #fff;box-shadow:0 0 0 0 rgba(192,139,65,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(192,139,65,.6)}70%{box-shadow:0 0 0 12px rgba(192,139,65,0)}100%{box-shadow:0 0 0 0 rgba(192,139,65,0)}}
+.soon{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--deep);background:#fff;border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+@media(max-width:820px){.config{grid-template-columns:1fr;padding:24px}}
+
+/* dashboard */
+.greet{font-size:clamp(26px,3.4vw,36px);line-height:1.15;margin-top:6px}
+.greet span{color:var(--honey)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0 18px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 18px 16px;box-shadow:var(--shadow)}
+.stat .n{font-size:30px;font-weight:700;line-height:1.1;color:var(--deep)}
+.stat .n small{font-size:14px;color:var(--sage);font-weight:400}
+.stat .l{font-size:13px;color:var(--sage);margin-top:4px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.grid2{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.card h3{font-size:18px;line-height:1.25;margin:6px 0 12px}
+.stack{display:grid;gap:18px;align-content:start}
+
+/* coaching */
+.coach{background:var(--deep);color:#fff;border:none}
+.coach .kicker{color:var(--honeyL)}
+.coach h3{font-size:22px}
+.coach .from{font-size:13px;color:var(--pale);margin-bottom:16px}
+.coach-block{background:rgba(255,255,255,.06);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.coach-block .lab{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--pale);margin-bottom:4px}
+.coach-block.try{background:#fff;color:var(--ground)}
+.coach-block.try .lab{color:var(--sage)}
+.coach-block.try p{font-weight:600}
+.score{display:inline-flex;align-items:baseline;gap:4px;background:rgba(255,255,255,.1);padding:4px 12px;border-radius:999px;font-size:13px;color:#fff;float:right}
+.score b{font-size:18px}
+.replies{display:grid;gap:8px;margin-top:14px}
+.reply{text-align:left;padding:11px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.18);color:#fff;font-size:14px;transition:background .15s}
+.reply:hover{background:rgba(255,255,255,.08)}
+.reply.sel{background:#fff;color:var(--deep);border-color:#fff;font-weight:600}
+.link-btn{color:var(--pale);font-size:13px;text-decoration:underline;text-underline-offset:3px;margin-top:12px}
+.bars{display:grid;gap:7px;margin-top:12px}
+.barrow{display:grid;grid-template-columns:120px 1fr 22px;align-items:center;gap:10px;font-size:12.5px}
+.track{height:7px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden}
+.fill{height:100%;border-radius:9px;background:var(--pale)}
+.fill.low{background:var(--honeyL)}
+.flags{font-size:13px;color:#f3dcc0;margin-top:10px;white-space:pre-line}
+
+/* lists */
+.list{display:grid;gap:8px}
+.item{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:var(--tint2)}
+.item .tick{flex:none;width:20px;height:20px;border-radius:6px;border:2px solid var(--pale);margin-top:2px;background:#fff}
+.item .t{font-size:14px;font-weight:600;line-height:1.35}
+.item .d{font-size:12.5px;color:var(--sage)}
+.empty{font-size:14px;color:var(--sage);padding:6px 2px}
+.focus-stage{font-size:26px;font-weight:700;color:var(--deep);line-height:1.15}
+.focus-stage span{color:var(--honey)}
+.qa{border-left:3px solid var(--honey);padding:4px 0 4px 12px;margin-bottom:10px}
+.qa .q{font-size:13px;color:var(--sage)}
+.qa .a{font-size:14px;font-weight:600}
+
+/* next customer */
+.cust{background:#fff;color:var(--ground);border-radius:24px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.cust-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.cust-name{font-size:clamp(26px,3.4vw,36px);font-weight:700;line-height:1.1}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--tint2);color:var(--deep)}
+.chip.warm{background:#f7ecdc;color:#7a5320}
+.pager{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--sage)}
+.pager{color:var(--pale)}
+.pager button{width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);display:grid;place-items:center;color:#fff;font-size:17px}
+.pager button:hover{background:rgba(255,255,255,.1)}
+.cust-body{display:grid;grid-template-columns:1.4fr 1fr;gap:22px;margin-top:22px}
+@media(max-width:820px){.cust-body{grid-template-columns:1fr}}
+.told{font-size:16px;line-height:1.6}
+.facts{display:grid;gap:10px}
+.fact{background:var(--tint2);border-radius:14px;padding:12px 14px}
+.fact .lab{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--sage)}
+.fact .v{font-size:15px;font-weight:600;margin-top:2px}
+.notes{margin-top:16px;display:grid;gap:6px}
+.notes div{font-size:13.5px;color:var(--sage);padding-left:12px;border-left:2px solid var(--tint)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.btn-call{background:var(--deep);color:#fff;padding:14px 26px;font-size:15px}
+.btn-call:hover{background:var(--forest)}
+.btn-help{margin-left:auto;background:var(--tint2);color:var(--deep)}
+@media(max-width:600px){.btn-help{margin-left:0}.actions .btn{flex:1 1 45%}}
+
+/* help panel */
+.scrim{position:fixed;inset:0;background:rgba(22,38,28,.38);z-index:40;opacity:0;pointer-events:none;transition:opacity .2s}
+.scrim.on{opacity:1;pointer-events:auto}
+.panel{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:#fff;z-index:41;transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column}
+.panel.on{transform:none;box-shadow:-20px 0 60px rgba(0,0,0,.18)}
+@media(max-width:700px){.panel{top:auto;bottom:0;height:86vh;width:100%;border-radius:22px 22px 0 0;transform:translateY(100%)}}
+.panel-head{padding:20px 20px 14px;border-bottom:1px solid var(--line)}
+.panel-head .row{display:flex;justify-content:space-between;align-items:center}
+.panel-head h3{font-size:19px;margin-top:4px}
+.x{width:36px;height:36px;border-radius:50%;background:var(--tint2);display:grid;place-items:center;font-size:18px;color:var(--deep)}
+.search{position:relative;margin-top:14px}
+.search input{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px 12px 40px;font-size:14.5px;outline:none}
+.search input:focus{border-color:var(--mid)}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:17px;height:17px;color:var(--sage)}
+.panel-body{flex:1;overflow:auto;padding:16px 20px 24px}
+.ctx{font-size:12.5px;color:var(--sage);margin-bottom:12px}
+.lcard{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.lcard .g{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--honey)}
+.lcard h4{font-size:15px;margin:3px 0 6px}
+.lcard .say{font-size:14px;line-height:1.55;margin-bottom:6px}
+.lcard .say::before{content:&quot;Say: &quot;;font-weight:700;color:var(--sage)}
+.lcard .fact-line{font-size:13.5px;color:var(--ground);margin-bottom:4px}
+.lcard .tipline{font-size:12.5px;color:var(--sage);margin-top:6px}
+.copy{margin-top:8px;font-size:12px;font-weight:700;color:var(--deep);background:var(--tint2);padding:6px 12px;border-radius:999px}
+.panel-foot{padding:14px 20px;border-top:1px solid var(--line)}
+.lib-groups{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.lib-groups button{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--tint2);color:var(--deep)}
+.lib-groups button.on{background:var(--deep);color:#fff}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:20px;background:rgba(22,38,28,.45)}
+.modal-card{background:#fff;border-radius:20px;padding:24px;width:min(460px,100%)}
+.modal-card h3{font-size:19px;margin:4px 0 14px}
+.modal-card textarea{width:100%;min-height:130px;border:1.5px solid var(--line);border-radius:12px;padding:12px;font-size:14.5px;outline:none;resize:vertical}
+.modal-card label{display:block;font-size:13px;font-weight:600;margin:12px 0 6px}
+.modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:16px}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:var(--ground);color:#fff;padding:12px 18px;border-radius:14px;font-size:14px;z-index:60;opacity:0;transition:all .25s;max-width:min(520px,92vw);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+footer{padding:28px 0 40px;font-size:12.5px;color:var(--sage);text-align:center}
+
+/* ================= v3: white base, sticky notes, handwriting ================= */
+:root{--char:#2B2B2B;--red:#D64545;--ok:#2FA84F;--y:#FFF1A6;--pink:#FFD9E2;--blue:#D6E9FF;--mint:#D8F3E2;--hand:&quot;Caveat&quot;,cursive}
+body{color:var(--char);background:#fff}
+.kicker{color:var(--deep)}
+.bar{background:var(--char)}
+.brand span{color:#9fd3ad}
+.demo-pill{background:var(--y);color:var(--char)}
+section.band.dark{background:#fff;color:var(--char)}
+.sec-head h2 span,.config h2 span,.dark .sec-head h2 span,.login-card h1 span{color:var(--deep);background:linear-gradient(transparent 62%,var(--mint) 62%);padding:0 2px}
+.login{background:#f6f7f5}
+.login-card{box-shadow:0 20px 60px rgba(0,0,0,.12);border:1px solid #eee}
+.config{background:#fff;border-color:#cfd6d0}
+.config-stage{background:#fafbfa}
+.dot{background:var(--red)}
+.greet span{font-family:var(--hand);font-weight:700;font-size:1.35em;color:var(--deep)}
+.stat{border-color:#ececec}
+.stat .n{color:var(--char)}
+.stat.alert .n{color:var(--red)}
+.hand{font-family:var(--hand);font-weight:700;color:var(--deep);font-size:22px;line-height:1.1;display:inline-flex;align-items:center;gap:6px}
+.hand.red{color:var(--red)}
+.hand svg{flex:none}
+
+/* sticky notes */
+.sticky{position:relative;border:none;border-radius:4px;box-shadow:0 2px 4px rgba(0,0,0,.06),0 12px 28px rgba(0,0,0,.10);padding:26px 22px 22px}
+.sticky::before{content:&quot;📌&quot;;position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(8deg);font-size:24px;filter:drop-shadow(0 2px 2px rgba(0,0,0,.2))}
+.sticky.y{background:var(--y);transform:rotate(-.8deg)}
+.sticky.pink{background:var(--pink);transform:rotate(.9deg)}
+.sticky.blue{background:var(--blue);transform:rotate(-.6deg)}
+.sticky.mint{background:var(--mint);transform:rotate(.6deg)}
+.sticky .kicker{color:var(--char);opacity:.75}
+.sticky h3{color:var(--char)}
+
+/* coach on yellow */
+.coach{background:var(--y);color:var(--char)}
+.coach .kicker{color:var(--char)}
+.coach .from{color:#6b6440}
+.coach-block{background:rgba(255,255,255,.55)}
+.coach-block .lab{color:#6b6440}
+.coach-block.try{background:#fff;border:2px dashed var(--deep)}
+.coach-block.try .lab{color:var(--deep)}
+.score{background:#fff;color:var(--char)}
+.reply{border:1.5px solid rgba(0,0,0,.15);color:var(--char);background:rgba(255,255,255,.4)}
+.reply:hover{background:#fff}
+.reply.sel{background:var(--deep);color:#fff;border-color:var(--deep)}
+.link-btn{color:var(--deep);font-weight:600}
+.track{background:rgba(0,0,0,.08)}
+.fill{background:var(--ok)}
+.fill.low{background:var(--red)}
+.flags{color:var(--red);font-weight:600}
+
+/* checklists */
+.item{background:rgba(255,255,255,.65)}
+.item .tick{border:2px solid var(--ok);border-radius:6px;cursor:pointer;display:grid;place-items:center;font-size:13px;color:#fff}
+.item .tick.done{background:var(--ok)}
+.item.overdue .d{color:var(--red);font-weight:600}
+.focus-stage{color:var(--char)}
+.focus-stage span{color:var(--red);font-family:var(--hand);font-size:1.3em}
+.qa{border-left-color:var(--deep)}
+.qa .q{color:#4d5a52}
+
+/* customer card on white */
+.cust{border:1px solid #e8e8e8;box-shadow:0 18px 50px rgba(0,0,0,.08)}
+.pager{color:#777}
+.pager button{border:1.5px solid #ddd;color:var(--char)}
+.pager button:hover{background:#f4f4f4}
+.chip{background:#f2f4f2;color:var(--char)}
+.chip.warm{background:var(--y);color:var(--char)}
+.chip.hot{background:var(--mint);color:#1d5c32}
+.fact{background:#f7f8f7}
+.fact.red .v{color:var(--red)}
+.actions{position:relative;align-items:center}
+.btn-call{font-size:15.5px;box-shadow:0 6px 16px rgba(31,61,40,.25)}
+.btn-help{background:var(--pink);color:var(--char)}
+.btn-ghost{background:#f2f4f2;color:var(--char)}
+.actions{padding-top:44px}
+.call-hint{position:absolute;left:6px;top:10px;transform:rotate(-3deg)}
+.help-hint{position:absolute;right:8px;top:10px;transform:rotate(3deg)}
+@media(max-width:600px){.help-hint{display:none}}
+
+/* panel */
+.lcard .g{color:var(--deep)}
+.lcard.rule{border-color:#f1c7c7;background:#fff7f7}
+.lcard.rule .g{color:var(--red)}
+.lcard .say{background:var(--y);padding:8px 10px;border-radius:6px}
+.lcard .say::before{content:&quot;🗣️ &quot;;}
+.search-hint{display:block;margin:10px 0 0 4px;transform:rotate(-2deg)}
+.lib-groups button.on{background:var(--char)}
+.copy{background:var(--mint);color:#1d5c32}
+footer{color:#888}
+
+/* ===== Option B: calmer ===== */
+.sticky{transform:none!important;border-radius:16px;background:#fff!important;border:1px solid #ececec;border-left:6px solid var(--stripe,#ddd);box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 20px rgba(0,0,0,.05);padding:22px}
+.sticky::before{display:none}
+.sticky.y{--stripe:#F2D64B}.sticky.pink{--stripe:#F29BB0}.sticky.blue{--stripe:#7FB2EA}.sticky.mint{--stripe:var(--ok)}
+.coach{color:var(--char)}
+.coach-block{background:#fafafa}
+.coach-block.try{border:1.5px solid var(--deep)}
+.reply{background:#fff}
+.item{background:#f7f8f7}
+.greet span{font-family:inherit;font-size:1em}
+.focus-stage span{font-family:inherit;font-size:1em}
+.next-grid{display:grid;grid-template-columns:1fr 290px;gap:18px;align-items:start}
+@media(max-width:960px){.next-grid{grid-template-columns:1fr}}
+.side{background:#fff;border:1px solid #ececec;border-radius:20px;padding:20px}
+.side h3{font-size:16px;margin:4px 0 12px}
+.side .item{padding:9px 10px}
+.side .t{font-size:13px}
+&lt;/style&gt;
+&lt;style&gt;#cfg{--ink:#1B1E1D;--muted:#71767a;--line:rgba(27,30,29,.10);--accent:#1B1E1D;--accent2:#8C7B6B;--soft:#F5F6F8;--soft2:#E6E8EC}#cfg .cfg-wrap{max-width:1240px;margin:0 auto;padding:56px 24px 80px}#cfg .kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2)}#cfg h1{font-size:clamp(28px,3.4vw,42px);font-weight:700;letter-spacing:-.02em;line-height:1.1;margin:10px 0}#cfg h1 em{font-style:normal;color:var(--accent2)}#cfg .lede{color:var(--muted);font-size:15px;max-width:560px;line-height:1.6}#cfg .grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:48px;margin-top:40px;align-items:start}#cfg /* stage and labelled hotspots */
+.stage{position:relative;width:100%;max-width:760px}#cfg .stage img.base{width:100%;display:block;user-select:none}#cfg .hs{position:absolute;z-index:5;display:flex;align-items:center;gap:8px;transform:translate(-11px,-50%)}#cfg .hs .dot{position:relative;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.04);transition:transform .25s}#cfg .hs .dot::before{content:&quot;&quot;;width:8px;height:8px;border-radius:50%;background:var(--accent);transition:.25s}#cfg .hs .dot::after{content:&quot;&quot;;position:absolute;inset:0;border-radius:50%;animation:cfgpulse 2.4s ease-out infinite;border:1.5px solid var(--accent)}#cfg .hs .tag{background:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;padding:6px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.12);white-space:nowrap;transition:.2s}#cfg .hs:hover .dot,#cfg .hs.open .dot{transform:scale(1.15)}#cfg .hs.open .tag{background:var(--accent);color:#fff}#cfg .hs.changed .dot::before{background:var(--accent2)}
+@keyframes cfgpulse{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.3);opacity:0}}#cfg /* pop-up card */
+.pop{position:absolute;z-index:20;width:410px;background:#fff;border-radius:20px;box-shadow:0 30px 70px -24px rgba(16,24,20,.40),0 0 0 1px var(--line);opacity:0;transform:translateY(8px);pointer-events:none;transition:opacity .22s,transform .22s}#cfg .pop.show{opacity:1;transform:none;pointer-events:auto}#cfg .pop-h{display:flex;justify-content:space-between;align-items:flex-start;padding:22px 22px 14px;border-bottom:1px solid var(--line)}#cfg .pop-h h3{font-size:20px;font-weight:700;letter-spacing:-.01em;margin-top:4px}#cfg .x{width:34px;height:34px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-size:18px;line-height:1;flex:none}#cfg .x:hover{background:var(--soft2)}#cfg .pop-b{padding:4px 22px 22px;max-height:min(64vh,580px);overflow:auto}#cfg .glabel{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:18px 0 12px}#cfg /* section photo with caption tab */
+.hero{margin-top:18px;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 0 0 1px var(--line)}#cfg .hero img{width:100%;display:block}#cfg .hero .cap{background:var(--accent);color:#fff;font-size:11.5px;font-weight:500;padding:9px 14px;border-top:3px solid var(--accent2)}#cfg /* photo options */
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:18px 14px}#cfg .opt{text-align:center;padding:4px 2px;position:relative}#cfg .opt .c{position:relative;width:108px;height:108px;margin:0 auto 12px;border-radius:50%;overflow:hidden;background:var(--soft);box-shadow:0 0 0 1px var(--line);transition:box-shadow .25s}#cfg .opt .c img{width:100%;height:100%;object-fit:cover;transition:transform .5s}#cfg .opt.sel .c{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--accent)}#cfg .opt .chk{position:absolute;top:2px;left:calc(50% + 30px);width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:none;place-items:center;font-size:13px;box-shadow:0 0 0 3px #fff;z-index:2}#cfg .opt.sel .chk{display:grid}#cfg .nm{font-size:13px;font-weight:700;line-height:1.3}#cfg .pr{font-size:12.5px;font-weight:500;color:var(--accent2);margin-top:4px}#cfg .pr.inc{color:var(--muted)}#cfg .nt{font-size:11.5px;color:var(--muted);line-height:1.45;margin-top:4px}#cfg .pill{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);background:var(--soft);padding:4px 9px;border-radius:999px;margin-bottom:6px}#cfg .opt.dis,#cfg .li.dis{opacity:.38;pointer-events:none}#cfg /* text options */
+.list{display:flex;flex-direction:column;gap:8px}#cfg .li{display:grid;grid-template-columns:20px 1fr auto;gap:12px;align-items:center;width:100%;padding:13px 14px;border-radius:12px;box-shadow:0 0 0 1px var(--line);transition:.2s}#cfg .li:hover{background:var(--soft)}#cfg .li .rd{width:18px;height:18px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--soft2);transition:.2s}#cfg .li.sel{box-shadow:0 0 0 1.5px var(--accent)}#cfg .li.sel .rd{box-shadow:inset 0 0 0 5px var(--accent)}#cfg .li .nm{font-size:13px}#cfg .li .nt{margin-top:2px}#cfg .li .pr{margin-top:0;white-space:nowrap}#cfg .notice{display:flex;gap:10px;font-size:12.5px;line-height:1.5;background:var(--soft);border-radius:12px;padding:12px 14px;margin-top:16px}#cfg .notice.warn{background:#FBF1EC;color:#7a3e26}#cfg .notice i{font-style:normal;font-weight:700}#cfg /* summary */
+.sum{border:1px solid var(--line);border-radius:22px;overflow:hidden;position:sticky;top:24px}#cfg .sum-h{padding:22px 24px 16px}#cfg .sum-h h2{font-size:22px;font-weight:700;margin-top:6px}#cfg .row{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;width:100%;padding:14px 24px;border-top:1px solid var(--line);transition:background .2s}#cfg .row:hover{background:var(--soft)}#cfg .row .n{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em}#cfg .row .t{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}#cfg .row .v{font-size:13.5px;font-weight:500;margin-top:2px}#cfg .row .p{font-size:13px;font-weight:500;color:var(--accent2);white-space:nowrap}#cfg .row .p.inc{color:var(--muted);font-weight:400}#cfg .tot{background:var(--accent);color:#fff;padding:20px 24px}#cfg .tot .l{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.7}#cfg .tot .a{font-size:28px;font-weight:700;margin-top:4px}#cfg .tot .a small{font-size:13px;font-weight:400;opacity:.75}#cfg .tot .f{font-size:11.5px;opacity:.75;margin-top:6px;line-height:1.5}#cfg .warns{padding:0 24px}#cfg .warns .notice{margin:14px 0 0}#cfg .warns:not(:empty){padding-bottom:16px}#cfg .reset{font-size:12px;color:var(--muted);text-decoration:underline;margin:14px 24px 18px}#cfg .cfg-scrim{display:none}
+@media (max-width:900px){#cfg .grid{grid-template-columns:1fr;gap:28px}#cfg .sum{position:static}#cfg .hs .tag{display:none}#cfg .pop{position:fixed;left:0!important;right:0;top:auto!important;bottom:0;width:100%;border-radius:22px 22px 0 0;transform:translateY(30px)}#cfg .pop.show{transform:none}#cfg .pop-b{max-height:64vh}#cfg .cfg-scrim.show{display:block;position:fixed;inset:0;background:rgba(16,24,20,.35);z-index:15}
+}
+
+#cfg button{font-family:inherit;color:inherit;cursor:pointer;border:none;background:none;text-align:inherit}
+#cfg{color:var(--ink)}
+&lt;/style&gt;
+&lt;style&gt;
+/* ===== Serious v2: depth ===== */
+body{background:#EEF1EC;background-image:radial-gradient(1200px 600px at 10% -10%,#f8faf6 0%,rgba(248,250,246,0) 60%),radial-gradient(900px 500px at 110% 30%,#e6ece4 0%,rgba(230,236,228,0) 60%)}
+.bar{background:rgba(43,43,43,.88);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px)}
+section.band{padding:44px 0}
+#next{background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(31,61,40,.05) 100%)}
+.card,.stat,.side,.cust,.sticky{background:#fff;border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 1px 1px rgba(22,38,28,.04),0 6px 14px -4px rgba(22,38,28,.10),0 24px 48px -16px rgba(22,38,28,.20);
+  transition:transform .2s ease,box-shadow .2s ease}
+.card:hover,.stat:hover,.side:hover,.sticky:hover{transform:translateY(-3px);box-shadow:0 2px 2px rgba(22,38,28,.04),0 12px 24px -6px rgba(22,38,28,.14),0 36px 64px -18px rgba(22,38,28,.26)}
+.sticky{border-left:6px solid var(--stripe,#ddd)}
+/* inset blocks */
+.coach-block,.fact,.item{background:#F4F6F3;box-shadow:inset 0 1px 3px rgba(22,38,28,.08);border:none}
+.coach-block.try{background:#fff;box-shadow:inset 0 0 0 1.5px var(--deep),0 6px 16px -8px rgba(31,61,40,.35)}
+.reply{background:#fff;box-shadow:0 2px 6px -2px rgba(22,38,28,.12)}
+/* stat icons */
+.stat{position:relative;padding-top:22px}
+.stat .ic{position:absolute;top:-14px;right:16px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:19px;background:#fff;box-shadow:0 6px 14px -4px rgba(22,38,28,.25)}
+/* customer card: most lifted, green header strip */
+.cust{padding:0;overflow:hidden;box-shadow:0 2px 2px rgba(22,38,28,.05),0 18px 36px -10px rgba(22,38,28,.22),0 50px 90px -30px rgba(22,38,28,.35)}
+.cust-head{background:var(--deep);color:#fff;padding:22px 28px}
+.cust-head .kicker{color:#9fd3ad}
+.cust-head .cust-name{color:#fff}
+.cust-head .chip{background:rgba(255,255,255,.14);color:#fff}
+.cust-head .chip.warm{background:var(--y);color:var(--char)}
+.cust-head .chip.hot{background:var(--mint);color:#1d5c32}
+.cust-inner{padding:6px 28px 26px}
+/* jump to configurator */
+.jump{display:inline-flex;align-items:center;gap:12px;margin-top:18px;background:var(--deep);color:#fff;border-radius:999px;padding:14px 22px 14px 16px;font-weight:700;font-size:15px;text-decoration:none;box-shadow:0 10px 24px -8px rgba(31,61,40,.55);transition:transform .2s,box-shadow .2s}
+.jump:hover{transform:translateY(-2px);box-shadow:0 16px 32px -10px rgba(31,61,40,.6)}
+.jump .ji{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:17px}
+.jump .arr{font-size:18px;opacity:.85}
+.today-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+/* configurator band */
+.cfg-band{padding-bottom:60px}
+.cfg-shell{background:#fff;border-radius:28px;box-shadow:0 2px 2px rgba(22,38,28,.05),0 18px 36px -10px rgba(22,38,28,.18),0 50px 90px -30px rgba(22,38,28,.30)}
+#cfg .cfg-wrap{padding:44px 36px 48px}
+@media(max-width:700px){#cfg .cfg-wrap{padding:28px 18px 32px}.cust-head,.cust-inner{padding-left:18px;padding-right:18px}}
+
+/* ===== v3: photo-led floating cards ===== */
+body{background:#ECECEA;background-image:none}
+section.band{padding:52px 0}
+#next{background:none}
+.card,.stat,.sticky,.side{border-radius:28px;border:none!important;background:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -18px rgba(0,0,0,.22),0 40px 80px -40px rgba(0,0,0,.25)}
+.card:hover,.stat:hover,.sticky:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(0,0,0,.05),0 26px 50px -18px rgba(0,0,0,.28),0 60px 100px -40px rgba(0,0,0,.3)}
+.sticky{border-left:none!important}
+.stats{gap:18px}
+.stat{padding:22px 22px 18px;display:flex;gap:14px;align-items:center}
+.stat .ic{position:static;flex:none;width:48px;height:48px;font-size:21px;background:#F2F2F0;box-shadow:none}
+.stat .n{font-size:28px}
+.grid2{gap:22px}.stack{gap:22px}
+.pill-btn{display:flex;width:100%;justify-content:center;align-items:center;gap:8px;border-radius:999px;padding:15px 20px;font-weight:600;font-size:14.5px;background:linear-gradient(180deg,#2c2c2c,#111);color:#fff;box-shadow:0 8px 18px -8px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.15);margin-top:18px}
+.pill-btn.green{background:linear-gradient(180deg,#2B5336,#1F3D28)}
+.pill-btn.white{background:#fff;color:#111;box-shadow:0 8px 18px -8px rgba(0,0,0,.4)}
+.frost{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:rgba(255,255,255,.2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.25)}
+.frost.light{background:rgba(255,255,255,.88);color:#111}
+.statrow{display:flex;align-items:stretch;border-top:1px solid #eee;border-bottom:1px solid #eee;margin:16px 0}
+.statrow&gt;div{flex:1;padding:12px;font-size:13px;display:flex;gap:8px;align-items:flex-start}
+.statrow&gt;div+div{border-left:1px solid #eee}
+.statrow .lab{display:block;font-size:11px;color:#888;font-weight:500}
+.statrow b{font-weight:600;font-size:13.5px}
+.statrow .red b{color:var(--red)}
+.coach{position:relative;overflow:hidden;color:#fff;padding:0!important;background:#1c1c1c!important}
+.coach .bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05)}
+.coach .bg::after{content:&quot;&quot;;position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,12,.35) 0%,rgba(10,14,12,.75) 45%,rgba(10,14,12,.94) 100%)}
+.coach .in{position:relative;padding:24px}
+.coach .top{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.coach h3{color:#fff;font-size:26px;margin:90px 0 2px}
+.coach .from{color:rgba(255,255,255,.7);margin-bottom:16px}
+.coach-block{background:rgba(255,255,255,.1)!important;box-shadow:none!important;border:1px solid rgba(255,255,255,.12)!important;backdrop-filter:blur(6px)}
+.coach-block .lab{color:rgba(255,255,255,.65)!important}
+.coach-block p{color:#fff}
+.coach-block.try{background:#fff!important}
+.coach-block.try .lab{color:#666!important}
+.coach-block.try p{color:#111}
+.reply{background:rgba(255,255,255,.1)!important;border:1px solid rgba(255,255,255,.2)!important;color:#fff!important;box-shadow:none!important;border-radius:999px;padding:11px 16px}
+.reply:hover{background:rgba(255,255,255,.18)!important}
+.reply.sel{background:#fff!important;color:#111!important}
+.coach .bars .track{background:rgba(255,255,255,.15)}
+.coach .flags{color:#ffb4b4}
+.photo-strip{margin:0 0 16px;border-radius:20px;height:120px;background-size:cover;background-position:center;position:relative;overflow:hidden;background-color:#cfd5cf}
+.photo-strip .frost{position:absolute;left:12px;top:12px}
+.framed{padding:12px 12px 22px!important}
+.framed .body{padding:0 10px}
+.flow{position:relative;display:grid;grid-template-columns:1fr minmax(0,560px) 1fr;align-items:center;perspective:1600px}
+.flow .cust{grid-column:2;z-index:2;border-radius:32px;padding:12px!important;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.05),0 40px 80px -30px rgba(0,0,0,.4),0 80px 120px -60px rgba(0,0,0,.3)}
+.side-card{height:420px;border-radius:28px;overflow:hidden;position:relative;background:#cfd5cf;box-shadow:0 30px 60px -30px rgba(0,0,0,.35);transition:transform .35s,opacity .35s;opacity:.8;cursor:pointer;padding:0}
+.side-card.l{grid-column:1;transform:translateX(18%) rotateY(28deg) scale(.86);transform-origin:right center}
+.side-card.r{grid-column:3;transform:translateX(-18%) rotateY(-28deg) scale(.86);transform-origin:left center}
+.side-card:hover{opacity:1}
+.side-card .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+.side-card .ph::after{content:&quot;&quot;;position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.75))}
+.side-card .nm{position:absolute;left:20px;right:20px;bottom:20px;color:#fff;font-weight:700;font-size:20px;text-align:left;z-index:2}
+.side-card .nm small{display:block;font-weight:400;font-size:12.5px;opacity:.85}
+@media(max-width:900px){.flow{grid-template-columns:1fr}.side-card{display:none}.flow .cust{grid-column:1}}
+.cphoto{height:300px;border-radius:24px;background-size:cover;background-position:center;position:relative;overflow:hidden;background-color:#7d8a80}
+.cphoto::after{content:&quot;&quot;;position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.8) 100%)}
+.cphoto .tags{position:absolute;left:16px;right:16px;top:16px;display:flex;justify-content:space-between;gap:8px;z-index:2;flex-wrap:wrap}
+.cphoto .cwho{position:absolute;left:22px;right:22px;bottom:18px;z-index:2;color:#fff}
+.cphoto .cwho .cust-name{color:#fff;font-size:30px}
+.cphoto .cwho .prod{font-size:13.5px;opacity:.88;margin-top:2px}
+.cbody{padding:6px 14px 10px}
+.told{font-size:15px}
+.cust-actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.cust-actions .btn{border-radius:999px;padding:11px 8px;font-size:13px;background:#F2F2F0;color:#111;text-decoration:none;border:none}
+.cust-actions .btn:hover{background:#e7e7e4}
+.call-wrap{position:relative}
+.call-wrap .hand{position:absolute;right:6px;top:-6px;transform:rotate(3deg)}
+@media(max-width:600px){.cust-actions{grid-template-columns:1fr 1fr}.cphoto{height:240px}}
+.watch{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:900px){.watch{grid-template-columns:1fr}}
+.vcard{border-radius:28px;overflow:hidden;position:relative;height:300px;box-shadow:0 30px 60px -28px rgba(0,0,0,.4);background:#5f6b62}
+.vcard .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+.vcard .ph::after{content:&quot;&quot;;position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 30%,rgba(0,0,0,.82))}
+.vcard .frost{position:absolute;left:16px;top:16px;z-index:2}
+.vcard .txt{position:absolute;left:22px;right:22px;bottom:20px;color:#fff;z-index:2}
+.vcard .txt b{font-size:19px;display:block}
+.vcard .txt span{font-size:13px;opacity:.85}
+.play{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:64px;height:64px;z-index:2}
+.cfg-shell{border-radius:32px;box-shadow:0 2px 4px rgba(0,0,0,.05),0 40px 80px -36px rgba(0,0,0,.35)}
+
+/* ===== v4: mobile first ===== */
+html,body{overflow-x:hidden}
+.tabbar{display:none}
+@media(max-width:760px){
+  body{padding-bottom:84px}
+  .wrap{padding:0 16px}
+  section.band{padding:28px 0}
+  /* top bar: brand and sign out only */
+  .bar .wrap{height:54px}
+  .who .name,.demo-pill,#libTop{display:none}
+  /* greeting and jump */
+  .today-head{display:block}
+  .greet{font-size:28px}
+  .jump{display:flex;width:100%;justify-content:space-between;font-size:14.5px;padding:12px 18px 12px 12px;margin-top:14px}
+  /* stats: 2 x 2 compact tiles */
+  .stats{grid-template-columns:1fr 1fr;gap:12px;margin:18px 0 16px}
+  .stat{display:block;padding:14px 14px 12px;border-radius:22px;min-width:0}
+  .stat .ic{width:36px;height:36px;font-size:17px;margin-bottom:8px}
+  .stat .n{font-size:24px}
+  .stat .l{font-size:12px;line-height:1.35}
+  /* cards */
+  .card,.sticky{border-radius:24px}
+  .card{padding:18px}
+  .grid2,.stack{gap:16px}
+  .coach .in{padding:18px}
+  .coach h3{font-size:22px;margin-top:60px}
+  .coach-block{padding:12px 14px}
+  .reply{font-size:13.5px}
+  .barrow{grid-template-columns:96px 1fr 18px;font-size:12px}
+  /* next customer: full width, swipeable */
+  .sec-head{margin-bottom:14px}
+  .sec-head h2{font-size:24px}
+  .flow{display:block}
+  .flow .cust{border-radius:26px;padding:10px!important;touch-action:pan-y}
+  .cphoto{height:220px;border-radius:20px}
+  .cphoto .cwho .cust-name{font-size:24px}
+  .cbody{padding:4px 6px 6px}
+  .statrow{flex-direction:column;margin:12px 0}
+  .statrow&gt;div+div{border-left:none;border-top:1px solid #eee}
+  .told{font-size:14.5px}
+  .cust-actions{grid-template-columns:1fr 1fr;gap:8px}
+  .cust-actions .btn{padding:13px 8px;font-size:13.5px}
+  .pill-btn{padding:16px 20px;font-size:15px}
+  .swipe-hint{display:block!important}
+  .dots{display:flex!important}
+  /* watch: swipe sideways */
+  .watch{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px 24px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .watch::-webkit-scrollbar{display:none}
+  .vcard{flex:0 0 78%;height:250px;scroll-snap-align:center;border-radius:24px}
+  /* configurator */
+  .cfg-shell{border-radius:24px}
+  /* help panel sits above the tab bar */
+  .panel{height:82vh}
+  .panel-body{padding-bottom:40px}
+  /* bottom tab bar, thumb reach */
+  .tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:10px;right:10px;bottom:10px;z-index:35;height:64px;border-radius:22px;background:rgba(30,30,30,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 16px 40px -12px rgba(0,0,0,.5);padding:6px}
+  .tabbar a,.tabbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#cfcfcf;text-decoration:none;font-size:10.5px;font-weight:600;border-radius:16px}
+  .tabbar .ti{font-size:19px;line-height:1}
+  .tabbar .on{background:rgba(255,255,255,.12);color:#fff}
+  footer{padding-bottom:20px}
+}
+section.band{scroll-margin-top:60px}
+@media(max-width:760px){.pager button{width:34px;height:34px}}
+.swipe-hint{display:none;text-align:center;font-size:12px;color:#888;margin-top:12px}
+.dots{display:none;justify-content:center;gap:6px;margin-top:10px}
+.dots span{width:7px;height:7px;border-radius:9px;background:#cfcfcb;transition:all .2s}
+.dots span.on{width:20px;background:var(--deep)}
+
+/* ===== v5: lighter type, mixed-size headings, promises first ===== */
+body{font-weight:300}
+p,.told,.say,.fact-line,.lede{font-weight:300}
+b,strong{font-weight:600}
+h1,h2,h3,h4{font-weight:500}
+.card h3,.side h3{font-weight:500}
+.btn,.pill-btn,.cust-actions .btn,.reply,.frost,.chip{font-weight:500}
+.stat .n{font-weight:600}
+.cust-name,.cphoto .cwho .cust-name{font-weight:600}
+.item .t{font-weight:500}
+.qa .a{font-weight:400}
+.coach-block.try p{font-weight:500}
+.statrow b{font-weight:500}
+.sec-head h2 span,.config h2 span{background:none!important;padding:0}
+/* mixed-size headings: one word larger and lighter */
+.mix{font-weight:500;letter-spacing:-.01em;line-height:1.05}
+.mix .big{font-size:1.55em;font-weight:300;letter-spacing:-.03em;color:var(--deep);margin-left:2px}
+.greet{font-weight:500}
+.greet .big{font-size:1.4em;font-weight:300;letter-spacing:-.03em;color:var(--deep)}
+.sec-head h2.mix{font-size:24px}
+.challenge{font-size:20px;margin:4px 0 10px}
+.coach h3{font-weight:500}
+section.band{padding:56px 0}
+.stack,.grid2{gap:26px}
+/* jump button with a hand-drawn curl outside it */
+.jump-wrap{position:relative;padding-top:38px}
+.jump .arr{display:none}
+.curl{position:absolute;right:-6px;top:-6px;width:74px;height:58px;transform:rotate(6deg)}
+.tapme{position:absolute;right:62px;top:-2px;font-family:var(--hand);font-weight:700;font-size:21px;color:var(--deep);transform:rotate(-4deg)}
+/* promises: the most important card on the page */
+.promise-card{position:relative;margin-top:34px;background:#fff;border-radius:28px;padding:26px 26px 22px;border-left:7px solid var(--red);
+  box-shadow:0 1px 2px rgba(0,0,0,.04),0 22px 44px -18px rgba(214,69,69,.28),0 40px 80px -40px rgba(0,0,0,.25)}
+.promise-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.red-k{color:var(--red)!important}
+.promise-card h2{font-size:22px;margin-top:4px}
+.promise-card .big{color:var(--red)}
+.promise-why{font-size:14px;color:#555;margin:10px 0 16px;max-width:620px}
+.badge{flex:none;font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:#F2F2F0;color:#333}
+.badge.late{background:var(--red);color:#fff;animation:throb 1.6s infinite}
+@keyframes throb{50%{transform:scale(1.08)}}
+.nudge{position:absolute;left:-46px;top:30px;font-size:30px;animation:poke 1.1s ease-in-out infinite}
+@keyframes poke{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+@media(max-width:1260px){.nudge{left:auto;right:18px;top:-20px;transform:rotate(90deg);animation:pokedown 1.1s ease-in-out infinite}}
+@keyframes pokedown{0%,100%{transform:rotate(90deg) translateX(0)}50%{transform:rotate(90deg) translateX(8px)}}
+.promise-card .item{background:#FFF6F5;box-shadow:none}
+.promise-card .item .tick{border-color:var(--red)}
+.promise-card .item .tick.done{background:var(--ok);border-color:var(--ok)}
+/* objections row */
+.objrow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.obj{background:#fff;border-radius:24px;padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 18px 40px -18px rgba(0,0,0,.2)}
+.obj .they{font-size:19px;font-weight:300;line-height:1.35;margin:6px 0 16px;color:#222;letter-spacing:-.01em}
+.obj .you{font-size:14.5px;font-weight:400;color:#333;margin-top:6px}
+@media(max-width:960px){.objrow{grid-template-columns:1fr 1fr}}
+/* unlock */
+.qa.locked{border-left-color:#c9c9c4}
+@media(max-width:760px){.jump{justify-content:flex-start;gap:12px}}
+@media(max-width:1260px){.nudge{right:96px!important}}
+@media(max-width:760px){
+  .jump-wrap{padding-top:40px}
+  .curl{right:4px}
+  .promise-card{padding:22px 18px 18px;border-radius:24px;margin-top:30px}
+  .objrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -16px;padding:4px 16px 24px;gap:14px;scrollbar-width:none}
+  .objrow::-webkit-scrollbar{display:none}
+  .obj{flex:0 0 82%;scroll-snap-align:center}
+  .sec-head h2.mix{font-size:21px}
+  section.band{padding:34px 0}
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!-- ============ SIGN IN ============ --&gt;
+&lt;div class=&quot;login&quot; id=&quot;loginView&quot;&gt;
+  &lt;div class=&quot;login-card&quot;&gt;
+    &lt;div class=&quot;kicker&quot;&gt;Barrel Sauna UK&lt;/div&gt;
+    &lt;h1&gt;Sales &lt;span&gt;Hub&lt;/span&gt;&lt;/h1&gt;
+    &lt;p&gt;Type your work email and we&#x27;ll send you a link. One tap and you&#x27;re in for 30 days.&lt;/p&gt;
+    &lt;form id=&quot;loginForm&quot;&gt;
+      &lt;input class=&quot;field&quot; type=&quot;email&quot; id=&quot;loginEmail&quot; placeholder=&quot;you@barrelsaunauk.com&quot; autocomplete=&quot;email&quot; required&gt;
+      &lt;button class=&quot;btn btn-primary btn-block&quot; style=&quot;margin-top:12px&quot; type=&quot;submit&quot; id=&quot;loginBtn&quot;&gt;Send my link&lt;/button&gt;
+    &lt;/form&gt;
+    &lt;div class=&quot;login-msg hidden&quot; id=&quot;loginMsg&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;login-alt&quot;&gt;&lt;button type=&quot;button&quot; id=&quot;previewBtn&quot;&gt;See it with sample data&lt;/button&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- ============ THE HUB ============ --&gt;
+&lt;div id=&quot;hubView&quot; class=&quot;hidden&quot;&gt;
+  &lt;header class=&quot;bar&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;div class=&quot;brand&quot;&gt;BSUK &lt;span&gt;Sales Hub&lt;/span&gt;&lt;/div&gt;
+      &lt;nav class=&quot;nav&quot;&gt;
+        &lt;a href=&quot;#today&quot;&gt;☀️ Today&lt;/a&gt;
+        &lt;a href=&quot;#next&quot;&gt;📞 Next customer&lt;/a&gt;
+        &lt;a href=&quot;#watch&quot;&gt;🎬 Watch&lt;/a&gt;
+        &lt;a href=&quot;#build&quot; style=&quot;background:rgba(255,255,255,.12);color:#fff&quot;&gt;🛠️ Configurator&lt;/a&gt;
+      &lt;/nav&gt;
+      &lt;div class=&quot;who&quot;&gt;
+        &lt;span class=&quot;demo-pill hidden&quot; id=&quot;demoPill&quot;&gt;Sample data&lt;/span&gt;
+        &lt;span class=&quot;name&quot; id=&quot;whoName&quot;&gt;&lt;/span&gt;
+        &lt;button type=&quot;button&quot; id=&quot;libTop&quot;&gt;📚 Library&lt;/button&gt;
+        &lt;button type=&quot;button&quot; id=&quot;signOut&quot;&gt;Sign out&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+
+  &lt;!-- today --&gt;
+  &lt;section class=&quot;band&quot; id=&quot;today&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;div class=&quot;today-head&quot;&gt;
+        &lt;div&gt;
+          &lt;div class=&quot;kicker&quot; id=&quot;todayDate&quot;&gt;&lt;/div&gt;
+          &lt;h1 class=&quot;greet&quot; id=&quot;greet&quot;&gt;&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;jump-wrap&quot;&gt;
+          &lt;span class=&quot;tapme&quot;&gt;tap me&lt;/span&gt;
+          &lt;svg class=&quot;curl&quot; viewBox=&quot;0 0 90 70&quot; fill=&quot;none&quot; stroke=&quot;#1F3D28&quot; stroke-width=&quot;3.2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M80 6c-6 26-28 40-58 44&quot;/&gt;&lt;path d=&quot;M30 38l-10 12 14 6&quot;/&gt;&lt;/svg&gt;
+          &lt;a class=&quot;jump&quot; href=&quot;#build&quot;&gt;&lt;span class=&quot;ji&quot;&gt;🛠️&lt;/span&gt;Build a sauna with your customer&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;promise-card&quot; id=&quot;promiseCard&quot;&gt;
+        &lt;span class=&quot;nudge&quot; aria-hidden=&quot;true&quot;&gt;👉&lt;/span&gt;
+        &lt;div class=&quot;promise-head&quot;&gt;
+          &lt;div&gt;
+            &lt;div class=&quot;kicker red-k&quot;&gt;📌 Keep every one&lt;/div&gt;
+            &lt;h2 class=&quot;mix&quot;&gt;🚨 Promises you &lt;span class=&quot;big&quot;&gt;made&lt;/span&gt;&lt;/h2&gt;
+          &lt;/div&gt;
+          &lt;span class=&quot;badge hidden&quot; id=&quot;promiseBadge&quot;&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;promise-why&quot;&gt;Customers judge the build by the small stuff. If we can&#x27;t send a photo when we said we would, why trust us with their sauna? Keep this list at zero.&lt;/p&gt;
+        &lt;div class=&quot;list&quot; id=&quot;promises&quot;&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- next customer --&gt;
+  &lt;section class=&quot;band dark&quot; id=&quot;next&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;div class=&quot;sec-head&quot;&gt;
+        &lt;div&gt;
+          &lt;div class=&quot;kicker&quot;&gt;One at a time&lt;/div&gt;
+          &lt;h2 class=&quot;mix&quot;&gt;📞 Your next &lt;span class=&quot;big&quot;&gt;customer&lt;/span&gt;&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;pager&quot;&gt;
+          &lt;button type=&quot;button&quot; id=&quot;prevCust&quot; aria-label=&quot;Previous customer&quot;&gt;&amp;#8592;&lt;/button&gt;
+          &lt;span id=&quot;custCount&quot;&gt;&lt;/span&gt;
+          &lt;button type=&quot;button&quot; id=&quot;nextCust&quot; aria-label=&quot;Next customer&quot;&gt;&amp;#8594;&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;custCard&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- objections --&gt;
+  &lt;section class=&quot;band&quot; id=&quot;objections&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;div class=&quot;sec-head&quot;&gt;&lt;div&gt;&lt;div class=&quot;kicker&quot;&gt;A quick reminder, not a lesson&lt;/div&gt;&lt;h2 class=&quot;mix&quot;&gt;🔁 Turn a no into a &lt;span class=&quot;big&quot;&gt;yes&lt;/span&gt;&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;objrow&quot; id=&quot;objRow&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- dashboard --&gt;
+  &lt;section class=&quot;band&quot; id=&quot;dash&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;div class=&quot;sec-head&quot;&gt;&lt;div&gt;&lt;div class=&quot;kicker&quot;&gt;How you&#x27;re doing&lt;/div&gt;&lt;h2 class=&quot;mix&quot;&gt;📈 Your &lt;span class=&quot;big&quot;&gt;week&lt;/span&gt;&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;stats&quot; id=&quot;stats&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;grid2&quot;&gt;
+        &lt;div class=&quot;stack&quot;&gt;
+          &lt;div class=&quot;card coach sticky y&quot; id=&quot;coachCard&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;stack&quot;&gt;
+          &lt;div class=&quot;card sticky pink&quot; id=&quot;focusCard&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;card&quot;&gt;
+            &lt;div class=&quot;kicker&quot;&gt;Follow-ups&lt;/div&gt;
+            &lt;h3&gt;📅 Due from you&lt;/h3&gt;
+            &lt;div class=&quot;list&quot; id=&quot;followups&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;card sticky blue&quot; id=&quot;liamCard&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- watch --&gt;
+  &lt;section class=&quot;band&quot; id=&quot;watch&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;div class=&quot;sec-head&quot;&gt;&lt;div&gt;&lt;div class=&quot;kicker&quot;&gt;Learn it in minutes&lt;/div&gt;&lt;h2 class=&quot;mix&quot;&gt;🎬 Watch and &lt;span class=&quot;big&quot;&gt;learn&lt;/span&gt;&lt;/h2&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;watch&quot;&gt;&lt;div class=&quot;vcard&quot;&gt;&lt;div class=&quot;ph&quot; style=&quot;background-image:url(&#x27;https://files.leadconnectorhq.com/file/6a9f76f7551b2e2c30e89704/subtle-life.jpg&#x27;)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;frost&quot;&gt;⏳ Coming soon&lt;/span&gt;&lt;svg class=&quot;play&quot; viewBox=&quot;0 0 64 64&quot;&gt;&lt;defs&gt;&lt;mask id=&quot;pm&quot;&gt;&lt;rect width=&quot;64&quot; height=&quot;64&quot; fill=&quot;#fff&quot;/&gt;&lt;path d=&quot;M26 21l18 11-18 11z&quot; fill=&quot;#000&quot;/&gt;&lt;/mask&gt;&lt;/defs&gt;&lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;32&quot; fill=&quot;rgba(255,255,255,.55)&quot; mask=&quot;url(#pm)&quot;/&gt;&lt;/svg&gt;&lt;div class=&quot;txt&quot;&gt;&lt;b&gt;Walk round a sauna with James&lt;/b&gt;&lt;span&gt;Every feature, explained as you go&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;vcard&quot;&gt;&lt;div class=&quot;ph&quot; style=&quot;background-image:url(&#x27;https://files.leadconnectorhq.com/file/6ad6615088927761f53d6c8a/workshop-light.jpg&#x27;)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;frost&quot;&gt;⏳ Coming soon&lt;/span&gt;&lt;svg class=&quot;play&quot; viewBox=&quot;0 0 64 64&quot;&gt;&lt;defs&gt;&lt;mask id=&quot;pm&quot;&gt;&lt;rect width=&quot;64&quot; height=&quot;64&quot; fill=&quot;#fff&quot;/&gt;&lt;path d=&quot;M26 21l18 11-18 11z&quot; fill=&quot;#000&quot;/&gt;&lt;/mask&gt;&lt;/defs&gt;&lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;32&quot; fill=&quot;rgba(255,255,255,.55)&quot; mask=&quot;url(#pm)&quot;/&gt;&lt;/svg&gt;&lt;div class=&quot;txt&quot;&gt;&lt;b&gt;Your first day on the Hub&lt;/b&gt;&lt;span&gt;Calls, notes and follow-ups in 2 minutes&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;vcard&quot;&gt;&lt;div class=&quot;ph&quot; style=&quot;background-image:url(&#x27;https://files.leadconnectorhq.com/file/6a774d8f9a9c7792ead970e2/decked-trailer.jpeg&#x27;)&quot;&gt;&lt;/div&gt;&lt;span class=&quot;frost&quot;&gt;⏳ Coming soon&lt;/span&gt;&lt;svg class=&quot;play&quot; viewBox=&quot;0 0 64 64&quot;&gt;&lt;defs&gt;&lt;mask id=&quot;pm&quot;&gt;&lt;rect width=&quot;64&quot; height=&quot;64&quot; fill=&quot;#fff&quot;/&gt;&lt;path d=&quot;M26 21l18 11-18 11z&quot; fill=&quot;#000&quot;/&gt;&lt;/mask&gt;&lt;/defs&gt;&lt;circle cx=&quot;32&quot; cy=&quot;32&quot; r=&quot;32&quot; fill=&quot;rgba(255,255,255,.55)&quot; mask=&quot;url(#pm)&quot;/&gt;&lt;/svg&gt;&lt;div class=&quot;txt&quot;&gt;&lt;b&gt;GHL on your phone&lt;/b&gt;&lt;span&gt;Everything else, step by step&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;!-- configurator --&gt;
+  &lt;section class=&quot;band cfg-band&quot; id=&quot;build&quot;&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;div class=&quot;cfg-shell&quot; id=&quot;cfg&quot;&gt;
+
+
+&lt;div class=&quot;cfg-wrap&quot;&gt;
+ &lt;div class=&quot;kicker&quot;&gt;Use it with the customer&lt;/div&gt;
+ &lt;h1&gt;Build a &lt;em&gt;barrel&lt;/em&gt; sauna&lt;/h1&gt;
+ &lt;p class=&quot;lede&quot;&gt;Tap any point on the sauna to see what can be changed. Every price is plus VAT. Delivery and installation are priced separately.&lt;/p&gt;
+
+ &lt;div class=&quot;grid&quot;&gt;
+  &lt;div class=&quot;stage&quot; id=&quot;cfgStage&quot;&gt;
+   &lt;img class=&quot;base&quot; src=&quot;https://files.leadconnectorhq.com/file/6b077222514e625d6a9914ab/base-image.png&quot; alt=&quot;Exploded barrel sauna&quot;&gt;
+   &lt;div class=&quot;pop&quot; id=&quot;cfgPop&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;aside class=&quot;sum&quot;&gt;
+   &lt;div class=&quot;sum-h&quot;&gt;&lt;div class=&quot;kicker&quot;&gt;Section by section&lt;/div&gt;&lt;h2&gt;This build&lt;/h2&gt;&lt;/div&gt;
+   &lt;div id=&quot;cfgRows&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;warns&quot; id=&quot;cfgWarns&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;tot&quot;&gt;&lt;div class=&quot;l&quot;&gt;Add-ons&lt;/div&gt;&lt;div class=&quot;a&quot; id=&quot;cfgTotal&quot;&gt;£0 &lt;small&gt;+ VAT&lt;/small&gt;&lt;/div&gt;
+    &lt;div class=&quot;f&quot;&gt;On top of the base 2m Thermowood barrel. Delivery and installation priced separately.&lt;/div&gt;&lt;/div&gt;
+   &lt;button class=&quot;reset&quot; id=&quot;cfgReset&quot;&gt;Back to base build&lt;/button&gt;
+  &lt;/aside&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;cfg-scrim&quot; id=&quot;cfgScrim&quot;&gt;&lt;/div&gt;
+
+
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;nav class=&quot;tabbar&quot; aria-label=&quot;Sections&quot;&gt;
+    &lt;a href=&quot;#today&quot; data-s=&quot;today&quot; class=&quot;on&quot;&gt;&lt;span class=&quot;ti&quot;&gt;☀️&lt;/span&gt;Today&lt;/a&gt;
+    &lt;a href=&quot;#next&quot; data-s=&quot;next&quot;&gt;&lt;span class=&quot;ti&quot;&gt;📞&lt;/span&gt;Customer&lt;/a&gt;
+    &lt;button type=&quot;button&quot; id=&quot;tabLib&quot;&gt;&lt;span class=&quot;ti&quot;&gt;📚&lt;/span&gt;Library&lt;/button&gt;
+    &lt;a href=&quot;#build&quot; data-s=&quot;build&quot;&gt;&lt;span class=&quot;ti&quot;&gt;🛠️&lt;/span&gt;Build&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;footer&gt;Barrel Sauna UK Sales Hub ♨️ Everything you do here is saved to GHL for you.&lt;/footer&gt;
+&lt;/div&gt;
+
+&lt;!-- help panel --&gt;
+&lt;div class=&quot;scrim&quot; id=&quot;scrim&quot;&gt;&lt;/div&gt;
+&lt;aside class=&quot;panel&quot; id=&quot;panel&quot; aria-label=&quot;Help&quot;&gt;
+  &lt;div class=&quot;panel-head&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+      &lt;div&gt;
+        &lt;div class=&quot;kicker&quot; id=&quot;panelKicker&quot;&gt;Help&lt;/div&gt;
+        &lt;h3 id=&quot;panelTitle&quot;&gt;What to say&lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;button class=&quot;x&quot; type=&quot;button&quot; id=&quot;panelClose&quot; aria-label=&quot;Close&quot;&gt;&amp;#215;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;search&quot;&gt;
+      &lt;svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot;&gt;&lt;circle cx=&quot;11&quot; cy=&quot;11&quot; r=&quot;7&quot;/&gt;&lt;path d=&quot;M20 20l-3.5-3.5&quot;/&gt;&lt;/svg&gt;
+      &lt;input type=&quot;search&quot; id=&quot;search&quot; placeholder=&#x27;Try &quot;globe price&quot; or &quot;needs to ask partner&quot;&#x27; autocomplete=&quot;off&quot;&gt;
+    &lt;/div&gt;
+    &lt;span class=&quot;hand search-hint&quot;&gt;&amp;#8593; type anything the customer just said&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;panel-body&quot; id=&quot;panelBody&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;panel-foot&quot;&gt;&lt;button class=&quot;btn btn-ghost btn-block&quot; type=&quot;button&quot; id=&quot;openLibrary&quot;&gt;📚 Library: everything else&lt;/button&gt;&lt;/div&gt;
+&lt;/aside&gt;
+
+&lt;div class=&quot;toast&quot; id=&quot;toast&quot;&gt;&lt;/div&gt;
+
+&lt;script&gt;
+(function(){
+const F=&#x27;https://files.leadconnectorhq.com/file/&#x27;;
+const P={
+ door:F+&#x27;6af9a1e9893246071f943c0e/one-rectangle-window.jpg&#x27;,
+ side:F+&#x27;6ae3541a36aa4a07e84e59ab/custom-09-decor.jpg&#x27;,
+ glass:F+&#x27;6ad77b134323313f81acfd44/glass-front.jpg&#x27;,
+ facade:F+&#x27;6adb54e4524edd3e3bfd1b1d/glass-door-open.jpg&#x27;,
+ flush:F+&#x27;6a9b2fe2ac5d03a1095eafc7/clean-hour-1.png&#x27;,
+ porch:F+&#x27;6ad6615088927761f53d6c8a/workshop-light.jpg&#x27;,
+ wood:F+&#x27;6ae3ce5fce53a65ab28c9517/dyb-06.jpg&#x27;,
+ sleek:F+&#x27;6ae3ce5ece53a65ab28c94ef/dyb-05.jpg&#x27;,
+ halfmoon:F+&#x27;6ac8d2bba8f84929234d895e/ground-level.png&#x27;,
+ cover:F+&#x27;6af9b9a47c3b573a62547b33/raw-25fps-00-45-19-22-still040.jpg&#x27;,
+ flat:F+&#x27;6a774d8f9a9c7792ead970e2/decked-trailer.jpeg&#x27;,
+ tint:F+&#x27;6abbaa58735e4fa2a0081563/338859603-1380983262652339-1861041336050567187-n-3.jpg&#x27;,
+ black:F+&#x27;6ac7735c8c077584b4f4db29/black-out-1.jpg&#x27;,
+ twoside:F+&#x27;6aca20fbbd6bb710ca2907ac/photo-09-10-2026-19-19-16-21.jpg&#x27;,
+ ushape:F+&#x27;6a9f76f7551b2e2c30e89704/subtle-life.jpg&#x27;,
+ heaters:F+&#x27;6a55cdb79c9b37b5fd4f6a41/screenshot-2026-07-14-074754.png&#x27;,
+ shingles:F+&#x27;6ae35410736386d0dc4f7cb2/custom-03-roof.jpg&#x27;,
+ slates:F+&#x27;6af9b9b07c3b573a62547c83/dji-20261102095650-0516-d.jpg&#x27;
+};
+const GLOBES=[&#x27;tintglobe&#x27;,&#x27;blackglobe&#x27;,&#x27;flat&#x27;];
+
+/* the config object: every hotspot, option, photo and crop lives here */
+const SECTIONS=[
+ {id:&#x27;entrance&#x27;,n:&#x27;01&#x27;,title:&#x27;Entrance&#x27;,sub:&#x27;Front end windows and door&#x27;,x:21,y:58,groups:[{key:&#x27;entrance&#x27;,options:[
+  {id:&#x27;classic&#x27;,name:&#x27;Classic door&#x27;,price:0,note:&#x27;Solid timber, vertical tinted window, lock and key&#x27;,img:P.door,pos:&#x27;51% 50%&#x27;,s:1},
+  {id:&#x27;side2&#x27;,name:&#x27;2 front side windows&#x27;,price:325,note:&#x27;A window either side of the classic door&#x27;,img:P.side,pos:&#x27;42% 44%&#x27;,s:1.18},
+  {id:&#x27;glassdoor&#x27;,name:&#x27;Glass door with 2 glass windows&#x27;,price:195,note:&#x27;Full glass door between two glass windows&#x27;,img:P.glass,pos:&#x27;58% 66%&#x27;,s:1.65},
+  {id:&#x27;facade&#x27;,name:&#x27;Full glass facade&#x27;,price:1100,from:true,tag:&#x27;Porch only&#x27;,note:&#x27;Glass front and glass door. £1,300 on a 2.3m&#x27;,img:P.facade,pos:&#x27;50% 45%&#x27;,s:1}
+ ]}]},
+ {id:&#x27;porch&#x27;,n:&#x27;02&#x27;,title:&#x27;Porch&#x27;,sub:&#x27;How the front end sits&#x27;,x:33,y:77,
+  hero:{img:P.porch,cap:&#x27;Porch, shown with one arm rest&#x27;},
+  groups:[{key:&#x27;porch&#x27;,options:[
+  {id:&#x27;flush&#x27;,name:&#x27;Flush entrance&#x27;,price:0,note:&#x27;No porch. The door sits flush with the barrel&#x27;,img:P.flush,pos:&#x27;28% 49%&#x27;,s:1.9},
+  {id:&#x27;facadeLink&#x27;,name:&#x27;Full glass facade&#x27;,price:1100,from:true,tag:&#x27;Adds porch&#x27;,note:&#x27;Picks the facade under Entrance and puts a porch on&#x27;,img:P.facade,pos:&#x27;50% 45%&#x27;,s:1,action:&#x27;facade&#x27;},
+  {id:&#x27;p0&#x27;,name:&#x27;Porch, no arm rests&#x27;,price:425,note:&#x27;0.6m covered step in front of the door&#x27;},
+  {id:&#x27;p2&#x27;,name:&#x27;Porch, 2 arm rests&#x27;,price:495,note:&#x27;0.6m porch with an arm rest either side&#x27;}
+ ]}]},
+ {id:&#x27;back&#x27;,n:&#x27;03&#x27;,title:&#x27;Back end&#x27;,sub:&#x27;Rear window&#x27;,x:81,y:40,groups:[{key:&#x27;back&#x27;,options:[
+  {id:&#x27;wood&#x27;,name:&#x27;Full wood back wall&#x27;,price:0,note:&#x27;Solid Thermowood, no glass&#x27;,img:P.wood,pos:&#x27;30% 52%&#x27;,s:1.5},
+  {id:&#x27;sleek2&#x27;,name:&#x27;2 vertical sleek windows&#x27;,price:325,note:&#x27;Two tall narrow windows&#x27;,img:P.sleek,pos:&#x27;53% 42%&#x27;,s:1.7},
+  {id:&#x27;halfmoon&#x27;,name:&#x27;Half moon&#x27;,price:550,from:true,note:&#x27;Glass across the top half of the back&#x27;,img:P.halfmoon,pos:&#x27;39% 37%&#x27;,s:1.5},
+  {id:&#x27;halfcover&#x27;,name:&#x27;Half glass cover&#x27;,price:725,from:true,note:&#x27;Half glass back with a fitted cover&#x27;,img:P.cover,pos:&#x27;52% 50%&#x27;,s:1.05},
+  {id:&#x27;flat&#x27;,name:&#x27;Flat glass&#x27;,price:995,from:true,note:&#x27;Full flat glass back&#x27;,img:P.flat,pos:&#x27;54% 50%&#x27;,s:2.2},
+  {id:&#x27;tintglobe&#x27;,name:&#x27;Panoramic globe, light tint&#x27;,price:2795,note:&#x27;Curved glass dome, lightly tinted&#x27;,img:P.tint,pos:&#x27;62% 41%&#x27;,s:1.3},
+  {id:&#x27;blackglobe&#x27;,name:&#x27;Panoramic globe, blackout&#x27;,price:2995,note:&#x27;Curved glass dome, full blackout&#x27;,img:P.black,pos:&#x27;50% 40%&#x27;,s:1.45}
+ ]}]},
+ {id:&#x27;inside&#x27;,n:&#x27;04&#x27;,title:&#x27;Benches&#x27;,sub:&#x27;Bench layout&#x27;,x:42,y:38,groups:[{key:&#x27;inside&#x27;,options:[
+  {id:&#x27;twoside&#x27;,name:&#x27;2 straight benches, central heater&#x27;,price:0,note:&#x27;Shown with an electric tower heater&#x27;,img:P.twoside,pos:&#x27;47% 55%&#x27;,s:1.15},
+  {id:&#x27;ushape&#x27;,name:&#x27;U-shape with curved globe bench&#x27;,price:0,tag:&#x27;With a globe&#x27;,note:&#x27;Side heater. Shown with a wood burner&#x27;,img:P.ushape,pos:&#x27;58% 55%&#x27;,s:1.2}
+ ]}]},
+ {id:&#x27;heater&#x27;,n:&#x27;05&#x27;,title:&#x27;Heater&#x27;,sub:&#x27;Heater choice&#x27;,x:57,y:49,
+  hero:{img:P.heaters,cap:&#x27;A selection of what we fit. Ask for the full list and prices.&#x27;},
+  groups:[{key:&#x27;heater&#x27;,options:[
+  {id:&#x27;kip&#x27;,name:&#x27;Harvia KIP90 4.5kW&#x27;,price:0,note:&#x27;Electric, stainless steel&#x27;},
+  {id:&#x27;narvi&#x27;,name:&#x27;Narvi external feed&#x27;,price:350,note:&#x27;Wood burning, fed from outside&#x27;},
+  {id:&#x27;wifi&#x27;,name:&#x27;WiFi IPX5&#x27;,price:795,note:&#x27;Electric, integrated control panel&#x27;},
+  {id:&#x27;cilindro&#x27;,name:&#x27;Harvia Cilindro PC90XE&#x27;,price:900,note:&#x27;Electric standing heater, app control&#x27;},
+  {id:&#x27;h20&#x27;,name:&#x27;Harvia 20 Pro SL&#x27;,price:1100,note:&#x27;Wood burning, external feed&#x27;},
+  {id:&#x27;m3a&#x27;,name:&#x27;Harvia M3 16.5kW&#x27;,price:1250,note:&#x27;Wood burning, internal feed&#x27;},
+  {id:&#x27;m3b&#x27;,name:&#x27;Harvia M3 24kW&#x27;,price:1450,note:&#x27;Wood burning, internal feed&#x27;},
+  {id:&#x27;legend&#x27;,name:&#x27;Harvia Legend&#x27;,price:2189,note:&#x27;Wood burning, internal feed&#x27;},
+  {id:&#x27;green&#x27;,name:&#x27;Harvia Green Flame&#x27;,price:3995,note:&#x27;Wood burning, internal feed&#x27;}
+ ]}]},
+ {id:&#x27;roof&#x27;,n:&#x27;06&#x27;,title:&#x27;Roof&#x27;,sub:&#x27;Roof covering&#x27;,x:61,y:25,groups:[{key:&#x27;roof&#x27;,options:[
+  {id:&#x27;shingles&#x27;,name:&#x27;Black hexagon shingles&#x27;,price:0,note:&#x27;Bitumen shingles&#x27;,img:P.shingles,pos:&#x27;50% 65%&#x27;,s:1.2},
+  {id:&#x27;slates&#x27;,name:&#x27;Wooden slates&#x27;,price:375,note:&#x27;Timber roof covering&#x27;,img:P.slates,pos:&#x27;35% 45%&#x27;,s:1.2}
+ ]}]}
+];
+const DEFAULT={entrance:&#x27;classic&#x27;,porch:&#x27;flush&#x27;,back:&#x27;wood&#x27;,inside:&#x27;twoside&#x27;,heater:&#x27;kip&#x27;,roof:&#x27;shingles&#x27;};
+let sel={...DEFAULT},open=null;
+
+const fmt=n=&gt;&#x27;£&#x27;+n.toLocaleString(&#x27;en-GB&#x27;);
+function priceLabel(o){
+ if(o.id===&#x27;ushape&#x27;)return GLOBES.includes(sel.back)?&#x27;Included with globe&#x27;:&#x27;Needs a globe&#x27;;
+ if(o.price===null)return &#x27;Price to confirm&#x27;;
+ if(o.price===0)return &#x27;Included&#x27;;
+ return (o.from?&#x27;From &#x27;:&#x27;&#x27;)+fmt(o.price)+&#x27; + VAT&#x27;;
+}
+const findOpt=(key,id)=&gt;{for(const s of SECTIONS)for(const g of s.groups)if(g.key===key)return g.options.find(o=&gt;o.id===id)};
+
+function choose(key,id){
+ const o=findOpt(key,id);
+ if(o&amp;&amp;o.action===&#x27;facade&#x27;){sel.entrance=&#x27;facade&#x27;;if(sel.porch===&#x27;flush&#x27;||sel.porch===&#x27;facadeLink&#x27;)sel.porch=&#x27;p0&#x27;;}
+ else{sel[key]=id;if(key===&#x27;entrance&#x27;&amp;&amp;id===&#x27;facade&#x27;&amp;&amp;sel.porch===&#x27;flush&#x27;)sel.porch=&#x27;p0&#x27;;}
+ render();
+}
+
+function notices(scope){
+ const out=[],in_=a=&gt;!scope||a.includes(scope);
+ if(sel.entrance===&#x27;facade&#x27;&amp;&amp;in_([&#x27;porch&#x27;,&#x27;entrance&#x27;]))out.push({t:&#x27;The full glass facade only comes with a porch, so the porch is locked on.&#x27;});
+ if(sel.inside===&#x27;ushape&#x27;&amp;&amp;!GLOBES.includes(sel.back)&amp;&amp;in_([&#x27;inside&#x27;,&#x27;back&#x27;]))out.push({w:1,t:&#x27;The U-shape bench goes with a globe or flat glass back. Pick one under Back end.&#x27;});
+ if(sel.back===&#x27;halfmoon&#x27;&amp;&amp;sel.inside!==&#x27;twoside&#x27;&amp;&amp;in_([&#x27;inside&#x27;,&#x27;back&#x27;]))out.push({t:&#x27;Half moon backs are usually set up with 2 straight benches.&#x27;});
+ return out;
+}
+const noteHTML=n=&gt;`&lt;div class=&quot;notice${n.w?&#x27; warn&#x27;:&#x27;&#x27;}&quot;&gt;&lt;i&gt;${n.w?&#x27;!&#x27;:&#x27;i&#x27;}&lt;/i&gt;&lt;span&gt;${n.t}&lt;/span&gt;&lt;/div&gt;`;
+
+function popHTML(s){
+ let h=`&lt;div class=&quot;pop-h&quot;&gt;&lt;div&gt;&lt;div class=&quot;kicker&quot;&gt;${s.n} · ${s.title}&lt;/div&gt;&lt;h3&gt;${s.sub}&lt;/h3&gt;&lt;/div&gt;&lt;button class=&quot;x&quot; aria-label=&quot;Close&quot; onclick=&quot;cfgClosePop()&quot;&gt;×&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;pop-b&quot;&gt;`;
+ if(s.hero)h+=`&lt;div class=&quot;hero&quot;&gt;&lt;img src=&quot;${s.hero.img}&quot; alt=&quot;&quot;&gt;&lt;div class=&quot;cap&quot;&gt;${s.hero.cap}&lt;/div&gt;&lt;/div&gt;`;
+ s.groups.forEach(g=&gt;{
+  const photo=g.options.filter(o=&gt;o.img),text=g.options.filter(o=&gt;!o.img);
+  const isSel=o=&gt;o.action===&#x27;facade&#x27;?sel.entrance===&#x27;facade&#x27;:sel[g.key]===o.id;
+  const dis=o=&gt;g.key===&#x27;porch&#x27;&amp;&amp;o.id===&#x27;flush&#x27;&amp;&amp;sel.entrance===&#x27;facade&#x27;;
+  const pcls=o=&gt;o.price===0||o.price===null||o.id===&#x27;ushape&#x27;?&#x27; inc&#x27;:&#x27;&#x27;;
+  if(photo.length){
+   h+=`&lt;div class=&quot;glabel&quot;&gt;Options&lt;/div&gt;&lt;div class=&quot;opts&quot;&gt;`;
+   photo.forEach(o=&gt;{h+=`&lt;button class=&quot;opt${isSel(o)?&#x27; sel&#x27;:&#x27;&#x27;}${dis(o)?&#x27; dis&#x27;:&#x27;&#x27;}&quot; onclick=&quot;cfgChoose(&#x27;${g.key}&#x27;,&#x27;${o.id}&#x27;)&quot;&gt;&lt;span class=&quot;chk&quot;&gt;✓&lt;/span&gt;&lt;div class=&quot;c&quot;&gt;&lt;img loading=&quot;lazy&quot; src=&quot;${o.img}&quot; alt=&quot;&quot; style=&quot;object-position:${o.pos};transform-origin:${o.pos};transform:scale(${o.s})&quot;&gt;&lt;/div&gt;${o.tag?`&lt;span class=&quot;pill&quot;&gt;${o.tag}&lt;/span&gt;`:&#x27;&#x27;}&lt;div class=&quot;nm&quot;&gt;${o.name}&lt;/div&gt;&lt;div class=&quot;pr${pcls(o)}&quot;&gt;${priceLabel(o)}&lt;/div&gt;&lt;div class=&quot;nt&quot;&gt;${o.note}&lt;/div&gt;&lt;/button&gt;`});
+   h+=&#x27;&lt;/div&gt;&#x27;;
+  }
+  if(text.length){
+   h+=`&lt;div class=&quot;glabel&quot;&gt;${photo.length?&#x27;Or choose&#x27;:&#x27;Options&#x27;}&lt;/div&gt;&lt;div class=&quot;list&quot;&gt;`;
+   text.forEach(o=&gt;{h+=`&lt;button class=&quot;li${isSel(o)?&#x27; sel&#x27;:&#x27;&#x27;}${dis(o)?&#x27; dis&#x27;:&#x27;&#x27;}&quot; onclick=&quot;cfgChoose(&#x27;${g.key}&#x27;,&#x27;${o.id}&#x27;)&quot;&gt;&lt;span class=&quot;rd&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;div class=&quot;nm&quot;&gt;${o.name}&lt;/div&gt;&lt;div class=&quot;nt&quot;&gt;${o.note}&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;pr${pcls(o)}&quot;&gt;${priceLabel(o)}&lt;/span&gt;&lt;/button&gt;`});
+   h+=&#x27;&lt;/div&gt;&#x27;;
+  }
+ });
+ h+=notices(s.id).map(noteHTML).join(&#x27;&#x27;);
+ return h+&#x27;&lt;/div&gt;&#x27;;
+}
+
+function placePop(){
+ const pop=document.getElementById(&#x27;cfgPop&#x27;),s=SECTIONS.find(x=&gt;x.id===open);
+ if(!s||innerWidth&lt;=900){pop.style.left=&#x27;&#x27;;pop.style.top=&#x27;&#x27;;return}
+ const st=document.getElementById(&#x27;cfgStage&#x27;).getBoundingClientRect();
+ const hx=st.width*s.x/100,hy=st.height*s.y/100,w=410;
+ let left=s.x&lt;55?hx+28:hx-28-w;
+ left=Math.max(-20,Math.min(left,st.width-w+180));
+ let top=hy-120;top=Math.max(-10,Math.min(top,st.height-pop.offsetHeight+60));
+ pop.style.left=left+&#x27;px&#x27;;pop.style.top=top+&#x27;px&#x27;;
+}
+
+function render(){
+ const stage=document.getElementById(&#x27;cfgStage&#x27;);
+ stage.querySelectorAll(&#x27;.hs&#x27;).forEach(e=&gt;e.remove());
+ SECTIONS.forEach(s=&gt;{
+  const changed=s.groups.some(g=&gt;sel[g.key]!==DEFAULT[g.key]);
+  const b=document.createElement(&#x27;button&#x27;);
+  b.className=&#x27;hs&#x27;+(open===s.id?&#x27; open&#x27;:&#x27;&#x27;)+(changed?&#x27; changed&#x27;:&#x27;&#x27;);
+  b.style.left=s.x+&#x27;%&#x27;;b.style.top=s.y+&#x27;%&#x27;;
+  b.innerHTML=`&lt;span class=&quot;dot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;${s.title}&lt;/span&gt;`;
+  b.setAttribute(&#x27;aria-label&#x27;,s.title);
+  b.onclick=e=&gt;{e.stopPropagation();openPop(s.id)};
+  if(matchMedia(&#x27;(hover:hover)&#x27;).matches)b.onmouseenter=()=&gt;{if(open!==s.id)openPop(s.id)};
+  stage.appendChild(b);
+ });
+ let total=0,rows=&#x27;&#x27;;
+ SECTIONS.forEach(s=&gt;{
+  const parts=s.groups.map(g=&gt;findOpt(g.key,sel[g.key]));
+  const pr=parts.reduce((a,o)=&gt;a+(o.id===&#x27;ushape&#x27;?0:(o.price||0)),0);
+  total+=pr;
+  rows+=`&lt;button class=&quot;row&quot; onclick=&quot;cfgOpenPop(&#x27;${s.id}&#x27;)&quot;&gt;&lt;span class=&quot;n&quot;&gt;${s.n}&lt;/span&gt;&lt;span&gt;&lt;div class=&quot;t&quot;&gt;${s.title}&lt;/div&gt;&lt;div class=&quot;v&quot;&gt;${parts.map(o=&gt;o.name).join(&#x27;, &#x27;)}&lt;/div&gt;&lt;/span&gt;&lt;span class=&quot;p${pr?&#x27;&#x27;:&#x27; inc&#x27;}&quot;&gt;${pr?fmt(pr):&#x27;Included&#x27;}&lt;/span&gt;&lt;/button&gt;`;
+ });
+ document.getElementById(&#x27;cfgRows&#x27;).innerHTML=rows;
+ document.getElementById(&#x27;cfgTotal&#x27;).innerHTML=fmt(total)+&#x27; &lt;small&gt;+ VAT&lt;/small&gt;&#x27;;
+ document.getElementById(&#x27;cfgWarns&#x27;).innerHTML=notices().map(noteHTML).join(&#x27;&#x27;);
+ const pop=document.getElementById(&#x27;cfgPop&#x27;);
+ if(open){pop.innerHTML=popHTML(SECTIONS.find(x=&gt;x.id===open));pop.classList.add(&#x27;show&#x27;);document.getElementById(&#x27;cfgScrim&#x27;).classList.add(&#x27;show&#x27;);placePop()}
+ else{pop.classList.remove(&#x27;show&#x27;);document.getElementById(&#x27;cfgScrim&#x27;).classList.remove(&#x27;show&#x27;)}
+}
+function openPop(id){open=id;render()}
+function closePop(){open=null;render()}
+
+document.getElementById(&#x27;cfgPop&#x27;).addEventListener(&#x27;click&#x27;,e=&gt;e.stopPropagation());
+document.addEventListener(&#x27;click&#x27;,e=&gt;{if(open&amp;&amp;!e.target.closest(&#x27;.row&#x27;))closePop()});
+document.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Escape&#x27;)closePop()});
+document.getElementById(&#x27;cfgReset&#x27;).onclick=e=&gt;{e.stopPropagation();sel={...DEFAULT};open=null;render()};
+addEventListener(&#x27;resize&#x27;,placePop);
+render();
+
+window.cfgChoose=choose;window.cfgOpenPop=openPop;window.cfgClosePop=closePop;
+})();
+&lt;/script&gt;
+&lt;script&gt;
+/* photos from GHL media, matched to what the customer enquired about */
+const PH=&quot;https://files.leadconnectorhq.com/file/&quot;;
+const PHOTOS={
+ globe:PH+&quot;6abbaa58735e4fa2a0081563/338859603-1380983262652339-1861041336050567187-n-3.jpg&quot;,
+ mobile:PH+&quot;6a774d8f9a9c7792ead970e2/decked-trailer.jpeg&quot;,
+ glass:PH+&quot;6adb54e4524edd3e3bfd1b1d/glass-door-open.jpg&quot;,
+ inside:PH+&quot;6a9f76f7551b2e2c30e89704/subtle-life.jpg&quot;,
+ porch:PH+&quot;6ad6615088927761f53d6c8a/workshop-light.jpg&quot;,
+ water:PH+&quot;6af9b9a47c3b573a62547b33/raw-25fps-00-45-19-22-still040.jpg&quot;,
+ roof:PH+&quot;6af9b9b07c3b573a62547c83/dji-20261102095650-0516-d.jpg&quot;
+};
+function photoFor(c){const s=((c&amp;&amp;c.product)||&quot;&quot;).toLowerCase();
+ if(/globe|dome/.test(s))return PHOTOS.globe;if(/mobile|trailer/.test(s))return PHOTOS.mobile;
+ if(/tub|dipper|ice|plunge|shower/.test(s))return PHOTOS.water;if(/glass|facade/.test(s))return PHOTOS.glass;return PHOTOS.porch}
+/* =========================================================================
+   SETTINGS
+   ========================================================================= */
+const API = &quot;https://ghl-mcp.njfeldmann44.workers.dev/hub&quot;;
+
+/* =========================================================================
+   THE LIBRARY: lifted from the Closer&#x27;s Guide. Prices from the build spec
+   sheet. Every price is plus VAT. Delivery and installation always separate.
+   g = group, t = title, k = search words, say = lines to read out,
+   f = facts, tip = the move. copy = text for the copy button.
+   ========================================================================= */
+const LIB = [
+  // ---------- On the call ----------
+  {g:&quot;On the call&quot;,t:&quot;How to open&quot;,k:&quot;open opening start hello intro rapport first&quot;,
+   say:[&quot;Hi, it&#x27;s [your name] calling back from Barrel Sauna UK. (Pause. Let them start talking.)&quot;,&quot;We&#x27;ve got a call booked in today, still a good time to chat? Ask me anything, and by the end of the call you&#x27;ll have a fully itemised estimate sent through to your email.&quot;],
+   tip:&quot;Get them talking about their land and their plans early. That is the rapport.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Who we are&quot;,k:&quot;who we are welsh family wales handbuilt hand-built made to order bespoke cheap quality&quot;,
+   say:[&quot;We&#x27;re a Welsh family business. Everything&#x27;s hand-built in Wales, made to order. We&#x27;re not the cheapest out there and we&#x27;re not trying to be. We build things you only ever have to buy once.&quot;],
+   tip:&quot;Say the Welsh line before the price, never straight after it.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Come and see us&quot;,k:&quot;visit see in person wales workshop tour show site&quot;,
+   say:[&quot;You can pop down and see us in Wales and feel the quality for yourself. There are a lot of AI pictures out there now. When you actually sit in one of ours, you can tell it&#x27;s built to last.&quot;],
+   tip:&quot;Even if they never come, the invite says everything.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Read the customer&quot;,k:&quot;budget capacity how many people size read&quot;,
+   say:[&quot;Roughly how many people are you thinking, at any one time?&quot;,&quot;Are they bodybuilders or ballerinas? It&#x27;s a hard one.&quot;],
+   tip:&quot;\&quot;Just something for two to four\&quot; means budget: hold steady. \&quot;We&#x27;d love friends over\&quot; means push the size up.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Always mention mobile&quot;,k:&quot;mobile trust business investment&quot;,
+   say:[&quot;We build all over the UK, all the time. We even build mobile saunas on our own trailers for people running a business from them.&quot;],
+   tip:&quot;Mobile builds trust, even on a straight home sauna call.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Ask for photos and videos&quot;,k:&quot;photos videos space access site garden send&quot;,
+   say:[&quot;Could you send me a quick video walking the spot where it&#x27;s going? Then nobody&#x27;s guessing from a description.&quot;],
+   tip:&quot;A customer who sends a video after the call is still engaged.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Explain what happens next&quot;,k:&quot;order process next steps estimate invoice what happens after&quot;,
+   say:[&quot;You&#x27;ll get your fully itemised estimate by email, and with it a link for the 500 pound deposit. That holds your place in the order queue and comes off your total.&quot;,&quot;The estimate is the estimate. Once the details are final, the invoice comes from our invoicing system.&quot;],
+   tip:&quot;Every call, no exceptions. It stops the \&quot;I&#x27;ve paid, when&#x27;s it arriving?\&quot; emails.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Book the next touch&quot;,k:&quot;follow up next step call back when booked date&quot;,
+   say:[&quot;Shall we put Thursday at ten in the diary to go through the estimate together?&quot;],
+   tip:&quot;Never end on \&quot;I&#x27;ll be in touch\&quot;. Book a day and say what they&#x27;ll get.&quot;},
+  {g:&quot;On the call&quot;,t:&quot;Too many tangents&quot;,k:&quot;waffle tangent long call redirect&quot;,
+   say:[&quot;I love that. Let me make sure I get your sauna right too, so tell me where it&#x27;s going.&quot;],
+   tip:&quot;Waffling builds rapport. Keep one hand on the wheel after half an hour.&quot;},
+
+  // ---------- The sauna ----------
+  {g:&quot;The sauna&quot;,t:&quot;2m or 2.3m diameter&quot;,k:&quot;diameter wide 2.3 2m width space tall big&quot;,
+   say:[&quot;Standard diameter&#x27;s 2 metres. Going up to 2.3, it&#x27;s surprising how much more space you get. Wider benches, thicker backrests, room to lie flat.&quot;],
+   f:[&quot;2.3m with wider seats: 725 pounds plus VAT&quot;,&quot;Large 2.3m with wider seats: 995 pounds plus VAT&quot;,&quot;Large 2.3m with wider bench design: 1,100 pounds plus VAT&quot;],
+   tip:&quot;Widening is cheaper than lengthening, so it&#x27;s the better value way to more room.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Length and changing room&quot;,k:&quot;length changing room cooling airlock 1m 1.5m long&quot;,
+   say:[&quot;All you really need is a one metre space, enough for a buffer, and four people could still sit in there.&quot;,&quot;That changing room&#x27;s an airlock. The second door&#x27;s sandglass, so it opens quietly.&quot;],
+   f:[&quot;The changing room comes out of the total length, never on top. A 3m sauna with a 1m changing room is a 2m hot room.&quot;,&quot;1m or 1.5m changing and cooling room with extra sandglass door: 725 pounds plus VAT&quot;],
+   tip:&quot;Play the changing room down. Advice, not a push.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Porch&quot;,k:&quot;porch armrests entrance flush front step&quot;,
+   say:[&quot;If your build&#x27;s 2.5m or bigger you can go porch, and honestly I&#x27;d recommend it. Somewhere to sit out front between rounds.&quot;],
+   f:[&quot;Porch 0.6m: 425 pounds plus VAT&quot;,&quot;Porch with arm rests: 495 pounds plus VAT&quot;,&quot;The porch uses 0.6m of the length, it doesn&#x27;t add to it&quot;,&quot;Not on 1.8m saunas&quot;,&quot;Required with the full glass facade&quot;],
+   tip:&quot;Usually the easiest yes on the whole call.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Bench layouts&quot;,k:&quot;bench benches u-shape u shape straight l-shape layout heater side&quot;,
+   say:[&quot;Personally I much prefer the heater on the side. When you walk in all you see is the view, and you can lie right at the end looking out.&quot;],
+   f:[&quot;2 side benches with central heater: included&quot;,&quot;3-way U-shape with curved globe bench and side heater: included with a globe&quot;,&quot;3-way straight with side heater: 425 pounds plus VAT&quot;],
+   tip:&quot;\&quot;Personally I prefer\&quot; lets them feel advised, not sold.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Windows: diagnose first&quot;,k:&quot;window windows view wall rear back&quot;,
+   say:[&quot;Where&#x27;s the sauna going: flush against a wall, or have you got some nice views looking out?&quot;],
+   tip:&quot;Against a wall? Don&#x27;t pitch a window at all.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Globe window&quot;,k:&quot;globe dome panoramic tint window price&quot;,
+   say:[&quot;Have you seen our panoramic globe windows? We get a timber ring cut just for us, and the benches sit flush into the dome so you&#x27;re basically sat inside it.&quot;],
+   f:[&quot;Tint globe with custom timber ring: 2,795 pounds plus VAT&quot;,&quot;Panoramic globe, blackout finish: 2,995 pounds plus VAT&quot;,&quot;Side heater only. Never an external feed burner.&quot;,&quot;Comes with the U-shape bench&quot;],
+   tip:&quot;If they can afford the globe, they&#x27;ll go for it. No need to push.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Flat glass and half glass&quot;,k:&quot;flat glass half glass half moon window price back&quot;,
+   say:[&quot;If you want to keep costs down, the full flat glass is lovely, we build a floating bench for it. The half glass still gives you your view at a lower price.&quot;],
+   f:[&quot;2 vertical sleek windows: 325 pounds plus VAT&quot;,&quot;Half glass: 550 pounds (2m) or 645 pounds (2.3m) plus VAT&quot;,&quot;Half glass cover with shoe bolts: 725 pounds (2m) or 900 pounds (2.3m) plus VAT&quot;,&quot;Full flat glass: 995 pounds (2m) or 1,200 pounds (2.3m) plus VAT&quot;,&quot;Full wood wall: included&quot;]},
+  {g:&quot;The sauna&quot;,t:&quot;Front windows and doors&quot;,k:&quot;front entrance door glass facade window classic zenview&quot;,
+   say:[&quot;You get a sleek vertical window in the front door as standard. For more light we add one either side, and if you&#x27;ve got a view we can go full glass facade.&quot;],
+   f:[&quot;2 front side windows: 325 pounds plus VAT&quot;,&quot;3 windows, door and both sides: 395 pounds plus VAT&quot;,&quot;Full glass facade and glass door: 1,100 pounds (2m) or 1,300 pounds (2.3m) plus VAT&quot;,&quot;Zenview Spa full sandglass door: 195 pounds plus VAT&quot;,&quot;Zenview Secure, thick frame and lock: 249 pounds plus VAT&quot;],
+   tip:&quot;Glass facade means the porch comes too.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Heaters: wood or electric&quot;,k:&quot;heater wood burner electric wifi harvia stove infrared&quot;,
+   say:[&quot;There&#x27;s pros and cons to each. A wood burner&#x27;s lovely and ambient, you see the fire. The WiFi electric you switch on from your phone.&quot;,&quot;Realistically, what are you more likely to do every day: start a fire or press a button on your phone?&quot;],
+   f:[&quot;Harvia KIP90 4.5kW electric: included&quot;,&quot;Narvi external feed: 350 pounds plus VAT&quot;,&quot;WiFi IPX5: 795 pounds plus VAT&quot;,&quot;Harvia Cilindro: 900 pounds plus VAT&quot;,&quot;Harvia 20 Pro SL external feed: 1,100 pounds plus VAT&quot;,&quot;Harvia M3 16.5kW: 1,250 pounds plus VAT&quot;,&quot;Harvia M3 24kW: 1,450 pounds plus VAT&quot;,&quot;Harvia Legend: 2,189 pounds plus VAT&quot;],
+   tip:&quot;Stay on the fence until they choose. Then back them.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;External feed burner rule&quot;,k:&quot;external feed chute burner rule window compatible&quot;,
+   say:[&quot;With the external feed you load logs from outside, so the chute goes through the solid wooden part of the back.&quot;],
+   f:[&quot;External feed only works with the 2 vertical windows or the half glass, centre placement&quot;,&quot;Never with a globe or full flat glass&quot;,&quot;You can&#x27;t see the flames from inside with an external feed&quot;],
+   tip:&quot;The rule that keeps getting forgotten. Check it before the estimate goes.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Lighting&quot;,k:&quot;lights lighting led under seat wall light glow&quot;,
+   say:[&quot;The warm under-seat LEDs give a really nice glow. Realistically you don&#x27;t need wall lights in the main sauna, they stop you leaning back on that wall.&quot;],
+   f:[&quot;Under-seat warm LED with switch: 295 pounds plus VAT&quot;,&quot;Colour changing under-seat LED: 325 pounds plus VAT&quot;,&quot;Harvia heatproof wall light: 150 pounds plus VAT each&quot;],
+   tip:&quot;Talking them out of wall lights buys trust for everything else.&quot;},
+  {g:&quot;The sauna&quot;,t:&quot;Roof&quot;,k:&quot;roof shingles colour wooden slates edge&quot;,
+   f:[&quot;Black, grey, red or green hexagon shingles: included&quot;,&quot;Wooden roof slates: 375 pounds plus VAT&quot;,&quot;Straight roof edge: 50 pounds plus VAT&quot;]},
+  {g:&quot;The sauna&quot;,t:&quot;Thermowood&quot;,k:&quot;thermowood wood timber pine quality rot&quot;,
+   say:[&quot;We use Thermowood on nearly every build. It&#x27;s heat treated, no chemicals, so it won&#x27;t warp, swell or crack, and the colour gets nicer as it ages.&quot;],
+   f:[&quot;47mm walls, heat treated at 200 degrees, up to 96% moisture removed&quot;]},
+  {g:&quot;The sauna&quot;,t:&quot;What&#x27;s included&quot;,k:&quot;included base standard what comes with&quot;,
+   f:[&quot;Benches with backrests, floor panels, base feet&quot;,&quot;Solid timber door with vertical tinted window, lock and spare keys&quot;,&quot;Heater with surround, fire protection plates and guard rail&quot;,&quot;Volcanic stones, stainless bands, drainage, rodent guards, ventilation&quot;,&quot;Black hexagon shingles&quot;,&quot;Electrics installation is not included: a local electrician connects it&quot;]},
+
+  // ---------- Other products ----------
+  {g:&quot;Other products&quot;,t:&quot;Mobile saunas&quot;,k:&quot;mobile trailer business tow dvsa off grid solar&quot;,
+   say:[&quot;These trailers are built to order in our fabrication workshop in Wales and tested at DVSA. It arrives fully wired and ready to go, it&#x27;s a turnkey solution.&quot;],
+   f:[&quot;Trailers 3m to 6m, galvanised steel, braking system, anti sway&quot;,&quot;Solar system with battery and lighting: 1,995 pounds plus VAT&quot;],
+   tip:&quot;Point them to the vehicle chart on the website. Never advise on licences.&quot;},
+  {g:&quot;Other products&quot;,t:&quot;Hot tubs&quot;,k:&quot;hot tub tub jets thermocover&quot;,
+   say:[&quot;Personally I like a round tub, cladded in the same wood as the sauna so they sit side by side. And you save on delivery, we bring it all at once.&quot;],
+   f:[&quot;Thermowood hot tub with jets, LED, stairs and thermocover: 5,995 pounds plus VAT&quot;,&quot;2 hot tubs: 11,395 pounds plus VAT&quot;]},
+  {g:&quot;Other products&quot;,t:&quot;Ice baths: the dippers&quot;,k:&quot;ice bath dipper cold plunge chiller double single&quot;,
+   say:[&quot;So there&#x27;s the single dipper and the double dipper. Both come with the chiller and filter.&quot;],
+   f:[&quot;Single dipper: 3,995 pounds plus VAT&quot;,&quot;Double dipper: 5,995 pounds plus VAT&quot;],
+   tip:&quot;Mention last that it doubles as a hot tub. It lands as a bonus.&quot;},
+  {g:&quot;Other products&quot;,t:&quot;Barrel shower&quot;,k:&quot;shower barrel shower rinse cold&quot;,
+   say:[&quot;It looks just like the sauna, same wood, same colour. It&#x27;s plumbed in exactly like a normal shower, nothing complicated.&quot;],
+   f:[&quot;Barrel shower: 2,495 pounds plus VAT&quot;],
+   tip:&quot;On commercial jobs, sell it as the rinse before the ice bath.&quot;},
+  {g:&quot;Other products&quot;,t:&quot;Glamping and shepherd&#x27;s huts&quot;,k:&quot;glamping pod shepherd hut&quot;,
+   say:[&quot;We can build pretty much anything in the wellness space. Let me send you a video and get James to call you back for a proper chat.&quot;],
+   tip:&quot;Glamping goes to James. International goes to Marta.&quot;},
+  {g:&quot;Other products&quot;,t:&quot;Buy it all from us&quot;,k:&quot;bundle together everything delivery one trip&quot;,
+   say:[&quot;It&#x27;s all built from the same material, so it all matches. And we bring it in one trip, not three, so you save on delivery.&quot;]},
+
+  // ---------- Delivery and site ----------
+  {g:&quot;Delivery and site&quot;,t:&quot;Delivery and installation prices&quot;,k:&quot;delivery install installation price crane build on site&quot;,
+   f:[&quot;Fully assembled delivery, England and Wales: 495 pounds plus VAT&quot;,&quot;Full on site build by our team: 1,250 pounds plus VAT&quot;,&quot;Large sauna on site build: 1,500 pounds plus VAT&quot;,&quot;Ireland, Scotland or Isle of Wight: add 300 pounds&quot;,&quot;Crane: about 1,200 pounds&quot;,&quot;Always a separate line under the build price&quot;]},
+  {g:&quot;Delivery and site&quot;,t:&quot;Base and ground prep&quot;,k:&quot;base ground level concrete sleepers patio decking foundation&quot;,
+   say:[&quot;Any solid, level surface is fine: patio, concrete pad, gravel. The cheapest way is railway sleepers dug in where the feet sit.&quot;]},
+  {g:&quot;Delivery and site&quot;,t:&quot;Tight access&quot;,k:&quot;access gate narrow garden handball&quot;,
+   say:[&quot;We&#x27;ve seen it all. Send us photos and videos, we can carry everything through and build it on site.&quot;]},
+  {g:&quot;Delivery and site&quot;,t:&quot;Do I need power?&quot;,k:&quot;power electric electrics plug socket mains&quot;,
+   say:[&quot;With a wood burner the electric&#x27;s very low, a standard plug socket, and that just runs the lights. Build it without lights and there&#x27;s no electric needed at all.&quot;]},
+  {g:&quot;Delivery and site&quot;,t:&quot;Planning permission&quot;,k:&quot;planning permission council permitted&quot;,
+   say:[&quot;Saunas and tubs generally sit under permitted development, but it does depend on the site.&quot;],
+   tip:&quot;For mobile, there&#x27;s no planning wait at all.&quot;},
+  {g:&quot;Delivery and site&quot;,t:&quot;Ireland and abroad&quot;,k:&quot;ireland international europe abroad overseas scotland&quot;,
+   say:[&quot;Ireland&#x27;s no problem, Ian&#x27;s our Irish carpenter. For anywhere else, send us your address and we&#x27;ll come back with a price.&quot;],
+   tip:&quot;Take the details and pass international to Marta.&quot;},
+  {g:&quot;Delivery and site&quot;,t:&quot;Can we take it if we move?&quot;,k:&quot;move house take it with us&quot;,
+   say:[&quot;Yes. One of ours went to three expos before landing at a client&#x27;s house. And it adds value when you sell.&quot;]},
+  {g:&quot;Delivery and site&quot;,t:&quot;Lead times&quot;,k:&quot;lead time when how long build date wait stock&quot;,
+   say:[&quot;Everything&#x27;s made to order, so there&#x27;s rarely a finished one sitting ready. The deposit is what gets you next in line.&quot;],
+   tip:&quot;Installation windows only, never an exact date.&quot;},
+
+  // ---------- Objections ----------
+  {g:&quot;Objections&quot;,t:&quot;It&#x27;s more than a flat pack&quot;,k:&quot;price expensive too much cheaper flat pack kit compare objection&quot;,
+   say:[&quot;People are selling saunas for less than ours cost us to make. There&#x27;s no point competing with that, because ours will actually last. You buy it once.&quot;,&quot;We quite often strip out a sauna someone had built less than a year ago and replace it with ours.&quot;],
+   tip:&quot;Never name competitors. Let them talk about the cheap one they saw.&quot;},
+  {g:&quot;Objections&quot;,t:&quot;Needs to ask their partner&quot;,k:&quot;partner wife husband think about it ask talk discuss objection&quot;,
+   say:[&quot;Of course. Would it help if I jumped on a quick call with both of you, so they can ask me anything directly?&quot;],
+   tip:&quot;Book the time for that call before you hang up.&quot;},
+  {g:&quot;Objections&quot;,t:&quot;Wants to think about it&quot;,k:&quot;think about it not sure later wait objection&quot;,
+   say:[&quot;Completely fair. The estimate will be in your inbox, so you&#x27;ve got everything in one place. Shall I give you a ring on Thursday to go through any questions?&quot;]},
+  {g:&quot;Objections&quot;,t:&quot;Not ready yet&quot;,k:&quot;not ready later next year spring timing wait objection&quot;,
+   say:[&quot;You can put the order in now and we&#x27;ll hold it until you&#x27;re ready, no storage charge. Order now and you&#x27;re not at the back of the queue in spring.&quot;]},
+  {g:&quot;Objections&quot;,t:&quot;Wants infrared&quot;,k:&quot;infrared red light tiktok&quot;,
+   say:[&quot;We make everything bespoke, but we&#x27;ve shortlisted the heaters we&#x27;ve never had an issue with. Ours use volcanic stones, so you get real steam, not that zappy feel.&quot;]},
+  {g:&quot;Objections&quot;,t:&quot;Budget is the blocker&quot;,k:&quot;finance budget afford monthly pay&quot;,
+   say:[&quot;We do have a finance option, terms from one to five years, through a company that clears the invoice upfront.&quot;],
+   tip:&quot;Offer finance only when budget really is the blocker.&quot;},
+
+  // ---------- Deposit ----------
+  {g:&quot;Deposit&quot;,t:&quot;The deposit, in one line&quot;,k:&quot;deposit 500 queue hold place next in line&quot;,
+   say:[&quot;The 500 pounds holds your place in the queue. It comes off your total, and it stops big orders jumping in front of you while you sort the details.&quot;],
+   copy:&quot;https://barrelsaunauk.com/secure-your-build&quot;,tip:&quot;There is no build slot before the deposit. The deposit gets them next in line.&quot;},
+  {g:&quot;Deposit&quot;,t:&quot;Why pay to be in a queue?&quot;,k:&quot;why pay queue deposit pushback&quot;,
+   say:[&quot;You don&#x27;t have to. But builds go in deposit order, so the 500 pounds is what stops a big order pushing your date back. And it&#x27;s money off the total, not extra.&quot;]},
+  {g:&quot;Deposit&quot;,t:&quot;Is the deposit refundable?&quot;,k:&quot;refund refundable deposit non-refundable change mind&quot;,
+   say:[&quot;It&#x27;s non-refundable, because it reserves your build and the materials. But it&#x27;s not money gone, it&#x27;s the first 500 pounds of the sauna itself.&quot;]},
+  {g:&quot;Deposit&quot;,t:&quot;Can I pay it all on delivery?&quot;,k:&quot;pay on delivery all at once deposit optional&quot;,
+   say:[&quot;Absolutely. The only thing the deposit changes is your place in the queue. If you want a particular month, it&#x27;s what protects it.&quot;]},
+  {g:&quot;Deposit&quot;,t:&quot;WhatsApp after the call&quot;,k:&quot;whatsapp message after call estimate deposit link text&quot;,
+   say:[&quot;Great chatting today. I&#x27;ve popped your itemised estimate over to your email. The 500 pound deposit link is with it, that holds your place in the build queue and comes off your total. Any questions, fire them over?&quot;],
+   copy:&quot;Great chatting today. I&#x27;ve popped your itemised estimate over to your email, everything we spoke about is in there.\n\nThe 500 pound deposit link is with it. That holds your place in the build queue and comes straight off your total, so it&#x27;s money off, not money on top.\n\nAny questions on the estimate, shall I give you a ring on Thursday?&quot;,
+   tip:&quot;No asterisks, no quotation marks. End on a question.&quot;},
+
+  // ---------- Rules ----------
+  {g:&quot;Rules&quot;,t:&quot;Always plus VAT&quot;,k:&quot;vat price rule plus&quot;,
+   f:[&quot;Every price is said as plus VAT&quot;,&quot;Delivery and installation are always a separate line&quot;,&quot;It&#x27;s an estimate, never anything else&quot;]},
+  {g:&quot;Rules&quot;,t:&quot;Never promise a date&quot;,k:&quot;date install delivery promise window rule&quot;,
+   f:[&quot;Installation windows only, never an exact date. Builds ahead of theirs can overrun.&quot;]},
+  {g:&quot;Rules&quot;,t:&quot;Do&#x27;s and don&#x27;ts&quot;,k:&quot;rules dos donts agreement ghl ai chatgpt&quot;,
+   f:[&quot;Every lead, note and estimate stays in the system&quot;,&quot;Price everything through the estimate builder&quot;,&quot;Don&#x27;t invent discounts, dates or specs&quot;,&quot;Don&#x27;t put customer details or pricing into public AI tools&quot;,&quot;James holds pricing and product. Jarek holds build specs.&quot;]},
+  {g:&quot;Rules&quot;,t:&quot;Who to ask&quot;,k:&quot;who ask james marta jarek nikki help&quot;,
+   f:[&quot;Pricing, product, big decisions: James&quot;,&quot;Build specs and on-site: Jarek&quot;,&quot;International and order timelines: Marta&quot;,&quot;The Hub and GHL: Nikki&quot;]},
+];
+
+/* =========================================================================
+   SAMPLE DATA for preview mode (no sign-in, nothing saved)
+   ========================================================================= */
+// n weekdays from today, so sample tasks never land on a weekend
+function nextWeekday(n){const d=new Date();let k=0;while(k&lt;n){d.setDate(d.getDate()+1);if(d.getDay()!==0&amp;&amp;d.getDay()!==6)k++}return d.toISOString()}
+const SAMPLE = {
+  me:{closer:{name:&quot;Example Closer&quot;,firstName:&quot;Alex&quot;,demo:true},
+    stats:{callsThisWeek:4,averageScore:10.5,openQuestions:1,followUpsDue:2},
+    focus:{stage:&quot;6 Objections&quot;,average:0.5},
+    focusStages:[{stage:&quot;6 Objections&quot;,average:.5},{stage:&quot;8 Next step&quot;,average:1},{stage:&quot;2 Discovery&quot;,average:1.2}],
+    openQuestions:[{call:&quot;Role play, Example Closer&quot;,question:&quot;When a customer says they need to talk to their partner, should we offer a three-way call with James or book a second call?&quot;}],
+    liamsAnswers:[{question:&quot;Can we offer a discount for paying in full?&quot;,answer:&quot;No discounts outside the estimate builder. Offer the low season order-now-deliver-later instead.&quot;}],
+    latest:{reviewId:&quot;sample&quot;,title:&quot;Alex with Sarah Bennett, 25 Nov 2026&quot;,score:9,
+      doneWell:&quot;Clear on the build to order story and confident asking for the deposit.&quot;,
+      changeNext:&quot;Slow the opening down and find out who the sauna is for before talking sizes. Every price goes out as plus VAT.&quot;,
+      tryLine:&quot;Before we get into sizes, who&#x27;s going to be using it most, and what made you start looking at saunas?&quot;,
+      redFlags:&quot;- Price given as 7,995 pounds without saying plus VAT.&quot;,reply:&quot;&quot;,
+      stages:[[&quot;1 Warm opening&quot;,1],[&quot;2 Discovery&quot;,1],[&quot;3 Value&quot;,2],[&quot;4 Configure&quot;,1],[&quot;5 Price&quot;,0],[&quot;6 Objections&quot;,1],[&quot;7 Close&quot;,2],[&quot;8 Next step&quot;,1]].map(([label,score])=&gt;({label,score}))},
+    promises:[{title:&quot;🔥 PROMISE: Send Sarah the globe window video&quot;,due:nextWeekday(1),contactName:&quot;Sarah Bennett&quot;}],
+    followUps:[{title:&quot;Follow up: Gareth, mobile sauna estimate&quot;,due:nextWeekday(1),contactName:&quot;Gareth Price&quot;},{title:&quot;Check Priya got the dipper brochure&quot;,due:nextWeekday(2),contactName:&quot;Priya Shah&quot;}]},
+  customers:[
+    {id:&quot;demo-1&quot;,name:&quot;Sarah Bennett&quot;,phone:&quot;+44 7700 900123&quot;,product:&quot;Barrel sauna, 3.2m with changing room, globe window&quot;,objection:&quot;Needs to talk to her partner&quot;,nextTouch:&quot;Friday morning&quot;,lastOutcome:&quot;Thinking&quot;,stage:&quot;Estimate sent&quot;,
+     summary:&quot;Sarah wants a sauna for her and her partner after his knee surgery, on the patio at the bottom of the garden with a view over fields. Loved the globe. Asked for the estimate by email and said she needs to talk it through with Tom.&quot;,notes:[&quot;Prefers email over WhatsApp.&quot;,&quot;Garden access is through a 1m side gate.&quot;]},
+    {id:&quot;demo-2&quot;,name:&quot;Gareth Price&quot;,phone:&quot;+44 7700 900456&quot;,product:&quot;Mobile sauna on trailer, wood burner&quot;,objection:&quot;Price, compared a flat pack online&quot;,nextTouch:&quot;Not agreed&quot;,lastOutcome:&quot;Unclear&quot;,stage:&quot;Spoken to a human&quot;,
+     summary:&quot;Gareth runs paddleboard sessions on the Gower and wants a mobile sauna for the beach car park. He compared us to a flat pack trailer kit online and went quiet at the price.&quot;,notes:[&quot;Has a 4x4 and a towing licence, he says.&quot;]},
+    {id:&quot;demo-3&quot;,name:&quot;Priya Shah&quot;,phone:&quot;+44 7700 900789&quot;,product:&quot;Double dipper ice bath and hot tub&quot;,objection:&quot;None&quot;,nextTouch:&quot;Monday, 10am&quot;,lastOutcome:&quot;Confirmed&quot;,stage:&quot;Call booked&quot;,
+     summary:&quot;Priya is building a home gym in her garage and wants cold plunge and hot tub in one. Booked a call with James for Monday.&quot;,notes:[]}
+  ]
+};
+
+/* =========================================================================
+   STATE AND HELPERS
+   ========================================================================= */
+let token = &quot;&quot;, preview = false, ME = null, QUEUE = [], qi = 0, CUR = null;
+const $ = (id) =&gt; document.getElementById(id);
+const esc = (t) =&gt; String(t ?? &quot;&quot;).replace(/[&amp;&lt;&gt;&quot;&#x27;]/g, (c) =&gt; ({&quot;&amp;&quot;:&quot;&amp;amp;&quot;,&quot;&lt;&quot;:&quot;&amp;lt;&quot;,&quot;&gt;&quot;:&quot;&amp;gt;&quot;,&#x27;&quot;&#x27;:&quot;&amp;quot;&quot;,&quot;&#x27;&quot;:&quot;&amp;#39;&quot;}[c]));
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+function toast(msg){const t=$(&quot;toast&quot;);t.textContent=msg;t.classList.add(&quot;on&quot;);clearTimeout(t._h);t._h=setTimeout(()=&gt;t.classList.remove(&quot;on&quot;),3600)}
+function fmtDate(iso){if(!iso)return&quot;&quot;;const d=new Date(iso);return d.toLocaleDateString(&quot;en-GB&quot;,{weekday:&quot;short&quot;,day:&quot;numeric&quot;,month:&quot;short&quot;})}
+
+async function api(path, opts={}){
+  const r = await fetch(API+path,{...opts,headers:{&quot;content-type&quot;:&quot;application/json&quot;,authorization:&quot;Bearer &quot;+token,...(opts.headers||{})}});
+  const j = await r.json().catch(()=&gt;({ok:false,error:&quot;No answer from the hub&quot;}));
+  if(r.status===401){signOut();throw new Error(j.error||&quot;Please sign in again&quot;)}
+  if(!j.ok)throw new Error(j.error||&quot;Something went wrong&quot;);
+  return j;
+}
+
+/* =========================================================================
+   SIGN IN
+   ========================================================================= */
+$(&quot;loginForm&quot;).addEventListener(&quot;submit&quot;,async(e)=&gt;{
+  e.preventDefault();
+  const btn=$(&quot;loginBtn&quot;),msg=$(&quot;loginMsg&quot;);btn.disabled=true;btn.textContent=&quot;Sending...&quot;;
+  try{
+    const r=await fetch(API+&quot;/login&quot;,{method:&quot;POST&quot;,headers:{&quot;content-type&quot;:&quot;application/json&quot;},body:JSON.stringify({email:$(&quot;loginEmail&quot;).value})});
+    const j=await r.json();
+    msg.classList.remove(&quot;hidden&quot;);
+    if(j.demo&amp;&amp;j.link){msg.innerHTML=esc(j.message)+&#x27; &lt;a href=&quot;&#x27;+esc(j.link)+&#x27;&quot; style=&quot;color:var(--mid);font-weight:700&quot;&gt;Open the demo&lt;/a&gt;&#x27;;}
+    else msg.textContent=j.message||j.error||&quot;Check your email.&quot;;
+  }catch(err){msg.classList.remove(&quot;hidden&quot;);msg.textContent=&quot;Couldn&#x27;t reach the hub. Try again in a minute.&quot;;}
+  btn.disabled=false;btn.textContent=&quot;Send my link&quot;;
+});
+$(&quot;previewBtn&quot;).addEventListener(&quot;click&quot;,()=&gt;{preview=true;start()});
+$(&quot;signOut&quot;).addEventListener(&quot;click&quot;,signOut);
+function signOut(){store.del(&quot;bsuk_hub_token&quot;);token=&quot;&quot;;preview=false;$(&quot;hubView&quot;).classList.add(&quot;hidden&quot;);$(&quot;loginView&quot;).classList.remove(&quot;hidden&quot;)}
+
+/* =========================================================================
+   START
+   ========================================================================= */
+async function start(){
+  $(&quot;loginView&quot;).classList.add(&quot;hidden&quot;);$(&quot;hubView&quot;).classList.remove(&quot;hidden&quot;);
+  try{
+    if(preview){ME=SAMPLE.me;QUEUE=SAMPLE.customers.slice();}
+    else{ME=await api(&quot;/me&quot;);QUEUE=(await api(&quot;/queue&quot;)).customers||[];}
+  }catch(e){toast(e.message);return}
+  $(&quot;demoPill&quot;).classList.toggle(&quot;hidden&quot;,!(preview||ME.closer.demo));
+  $(&quot;whoName&quot;).textContent=ME.closer.name;
+  renderToday();qi=0;await showCustomer();
+}
+
+/* =========================================================================
+   TODAY
+   ========================================================================= */
+function renderToday(){
+  const h=new Date().getHours(),part=h&lt;12?&quot;Morning&quot;:h&lt;17?&quot;Afternoon&quot;:&quot;Evening&quot;;
+  $(&quot;todayDate&quot;).textContent=new Date().toLocaleDateString(&quot;en-GB&quot;,{weekday:&quot;long&quot;,day:&quot;numeric&quot;,month:&quot;long&quot;});
+  $(&quot;greet&quot;).innerHTML=esc(part)+&#x27;, &lt;span class=&quot;big&quot;&gt;&#x27;+esc(ME.closer.firstName)+&#x27;&lt;/span&gt;&#x27;;
+  const s=ME.stats||{};
+  $(&quot;stats&quot;).innerHTML=[
+    [s.callsThisWeek??0,&quot;&quot;,&quot;calls reviewed this week&quot;,false],
+    [s.averageScore??&quot;-&quot;,&quot;/16&quot;,&quot;average call score&quot;,false],
+    [s.followUpsDue??0,&quot;&quot;,&quot;follow-ups due&quot;,(s.followUpsDue||0)&gt;0],
+    [s.openQuestions??0,&quot;&quot;,&quot;questions waiting for Liam&quot;,false]
+  ].map(([n,sm,l,a],i)=&gt;`&lt;div class=&quot;stat${a?&quot; alert&quot;:&quot;&quot;}&quot;&gt;&lt;span class=&quot;ic&quot;&gt;${[&quot;📞&quot;,&quot;⭐&quot;,&quot;📅&quot;,&quot;💬&quot;][i]}&lt;/span&gt;&lt;div class=&quot;n&quot;&gt;${esc(n)}&lt;small&gt;${sm}&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;l&quot;&gt;${l}&lt;/div&gt;&lt;/div&gt;`).join(&quot;&quot;);
+
+  // coaching card
+  const L=ME.latest;
+  if(!L){$(&quot;coachCard&quot;).innerHTML=&#x27;&lt;div class=&quot;kicker&quot;&gt;Your coach&lt;/div&gt;&lt;h3&gt;🧠 Shoulda, woulda, coulda&lt;/h3&gt;&lt;p class=&quot;from&quot;&gt;Your first call review will land here after your first call.&lt;/p&gt;&#x27;;}
+  else{
+    const opts=[&quot;Fair one, clever clogs. Add that to my follow-up notes.&quot;,&quot;I see your point, but I was reading the room.&quot;,&quot;Not this time, I knew that customer better.&quot;];
+    $(&quot;coachCard&quot;).innerHTML=`&lt;div class=&quot;bg&quot; style=&quot;background-image:url(&#x27;${PHOTOS.inside}&#x27;)&quot;&gt;&lt;/div&gt;&lt;div class=&quot;in&quot;&gt;
+      &lt;div class=&quot;top&quot;&gt;&lt;span class=&quot;frost&quot;&gt;🧠 Your coach&lt;/span&gt;&lt;span class=&quot;frost light&quot;&gt;&lt;b&gt;${esc(L.score)}&lt;/b&gt;&amp;nbsp;/ 16&lt;/span&gt;&lt;/div&gt;
+      &lt;h3&gt;Shoulda, woulda, coulda&lt;/h3&gt;
+      &lt;div class=&quot;from&quot;&gt;${esc(L.title)}&lt;/div&gt;
+      &lt;div class=&quot;coach-block&quot;&gt;&lt;div class=&quot;lab&quot;&gt;Done well&lt;/div&gt;&lt;p&gt;${esc(L.doneWell)}&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;coach-block&quot;&gt;&lt;div class=&quot;lab&quot;&gt;Next call&lt;/div&gt;&lt;p&gt;${esc(L.changeNext)}&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;coach-block try&quot;&gt;&lt;div class=&quot;lab&quot;&gt;Try this line&lt;/div&gt;&lt;p&gt;${esc(L.tryLine)}&lt;/p&gt;&lt;/div&gt;
+      &lt;div class=&quot;replies&quot;&gt;${opts.map(o=&gt;`&lt;button class=&quot;reply${L.reply===o?&quot; sel&quot;:&quot;&quot;}&quot; type=&quot;button&quot;&gt;${esc(o)}&lt;/button&gt;`).join(&quot;&quot;)}&lt;/div&gt;
+      &lt;button class=&quot;pill-btn white&quot; type=&quot;button&quot; id=&quot;fullReview&quot;&gt;See the full scorecard&lt;/button&gt;
+      &lt;div id=&quot;fullReviewBox&quot; class=&quot;hidden&quot;&gt;
+        &lt;div class=&quot;bars&quot;&gt;${(L.stages||[]).map(x=&gt;`&lt;div class=&quot;barrow&quot;&gt;&lt;span&gt;${esc(x.label)}&lt;/span&gt;&lt;div class=&quot;track&quot;&gt;&lt;div class=&quot;fill${x.score&lt;1?&quot; low&quot;:&quot;&quot;}&quot; style=&quot;width:${Math.max(6,x.score*50)}%&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;b&gt;${x.score}&lt;/b&gt;&lt;/div&gt;`).join(&quot;&quot;)}&lt;/div&gt;
+        ${L.redFlags&amp;&amp;L.redFlags!==&quot;None&quot;?`&lt;div class=&quot;flags&quot;&gt;🚩 Red flags\n${esc(L.redFlags)}&lt;/div&gt;`:&quot;&quot;}
+      &lt;/div&gt;&lt;/div&gt;`;
+    $(&quot;coachCard&quot;).querySelectorAll(&quot;.reply&quot;).forEach(b=&gt;b.addEventListener(&quot;click&quot;,async()=&gt;{
+      $(&quot;coachCard&quot;).querySelectorAll(&quot;.reply&quot;).forEach(x=&gt;x.classList.remove(&quot;sel&quot;));b.classList.add(&quot;sel&quot;);
+      if(preview){toast(&quot;Sample data: your reply would be saved on the review.&quot;);return}
+      try{const j=await api(&quot;/reply&quot;,{method:&quot;POST&quot;,body:JSON.stringify({reviewId:L.reviewId,reply:b.textContent})});toast(j.message)}catch(e){toast(e.message)}
+    }));
+    $(&quot;fullReview&quot;).addEventListener(&quot;click&quot;,()=&gt;$(&quot;fullReviewBox&quot;).classList.toggle(&quot;hidden&quot;));
+  }
+
+  // focus: a motivating challenge per stage
+  const F=ME.focus;
+  const CH={&quot;Warm opening&quot;:[&quot;Win the first 30 seconds&quot;,&quot;opening&quot;],&quot;Discovery&quot;:[&quot;Be their sauna detective&quot;,&quot;read customer&quot;],&quot;Value&quot;:[&quot;Tell the Welsh story&quot;,&quot;who we are welsh&quot;],
+    &quot;Configure&quot;:[&quot;Design their dream sauna&quot;,&quot;bench window heater&quot;],&quot;Price&quot;:[&quot;Say it with confidence&quot;,&quot;price vat&quot;],&quot;Objections&quot;:[&quot;Turn a no into a yes, yes, yes&quot;,&quot;#objections&quot;],
+    &quot;Close&quot;:[&quot;Ask for the yes&quot;,&quot;deposit&quot;],&quot;Next step&quot;:[&quot;Never leave them hanging&quot;,&quot;next touch follow up&quot;]};
+  if(F){
+    const stage=F.stage.replace(/^\d+\s*/,&quot;&quot;),ch=CH[stage]||[stage,stage];
+    const words=ch[0].split(&quot; &quot;),last=words.pop();
+    $(&quot;focusCard&quot;).classList.add(&quot;framed&quot;);
+    $(&quot;focusCard&quot;).innerHTML=`&lt;div class=&quot;photo-strip&quot; style=&quot;background-image:url(&#x27;${PHOTOS.roof}&#x27;)&quot;&gt;&lt;span class=&quot;frost&quot;&gt;🎯 This week&#x27;s challenge&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;body&quot;&gt;
+      &lt;h3 class=&quot;mix challenge&quot;&gt;${esc(words.join(&quot; &quot;))} &lt;span class=&quot;big&quot;&gt;${esc(last)}&lt;/span&gt;&lt;/h3&gt;
+      &lt;p class=&quot;muted small-text&quot;&gt;${esc(stage)} is where your calls can grow most right now. Nail this and the rest gets easier.&lt;/p&gt;
+      &lt;button class=&quot;pill-btn&quot; type=&quot;button&quot; id=&quot;focusHelp&quot;&gt;✨ Show me how&lt;/button&gt;&lt;/div&gt;`;
+    $(&quot;focusHelp&quot;).addEventListener(&quot;click&quot;,()=&gt;{if(ch[1].startsWith(&quot;#&quot;))document.querySelector(ch[1]).scrollIntoView({behavior:&quot;smooth&quot;});else openPanel({query:ch[1]})});
+  }else $(&quot;focusCard&quot;).innerHTML=&#x27;&lt;div class=&quot;kicker&quot;&gt;This week\&#x27;s challenge&lt;/div&gt;&lt;h3&gt;Nothing yet&lt;/h3&gt;&lt;p class=&quot;empty&quot;&gt;After a few calls, your challenge shows up here.&lt;/p&gt;&#x27;;
+
+  // promises and follow-ups
+  const li=(t)=&gt;`&lt;div class=&quot;item${t.due&amp;&amp;new Date(t.due)&lt;new Date()?&quot; overdue&quot;:&quot;&quot;}&quot;&gt;&lt;span class=&quot;tick&quot; title=&quot;Tick off&quot;&gt;&amp;#10003;&lt;/span&gt;&lt;div&gt;&lt;div class=&quot;t&quot;&gt;${esc(t.title.replace(/^🔥\s*PROMISE:\s*/,&quot;&quot;))}&lt;/div&gt;&lt;div class=&quot;d&quot;&gt;${esc(t.contactName||&quot;&quot;)}${t.due?&quot; · &quot;+fmtDate(t.due):&quot;&quot;}&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;`;
+  $(&quot;promises&quot;).innerHTML=(ME.promises||[]).length?ME.promises.map(li).join(&quot;&quot;):&#x27;&lt;p class=&quot;empty&quot;&gt;Nothing promised. Anything you promise on a call lands here.&lt;/p&gt;&#x27;;
+  const over=(ME.promises||[]).filter(x=&gt;x.due&amp;&amp;new Date(x.due)&lt;new Date()).length,pb=$(&quot;promiseBadge&quot;);
+  pb.textContent=over?over+&quot; overdue&quot;:(ME.promises||[]).length+&quot; open&quot;;pb.classList.toggle(&quot;hidden&quot;,!(ME.promises||[]).length);pb.classList.toggle(&quot;late&quot;,!!over);
+  $(&quot;followups&quot;).innerHTML=(ME.followUps||[]).length?ME.followUps.map(li).join(&quot;&quot;):&#x27;&lt;p class=&quot;empty&quot;&gt;All clear 🎉&lt;/p&gt;&#x27;;
+  document.querySelectorAll(&quot;.item .tick&quot;).forEach(x=&gt;x.onclick=()=&gt;{x.classList.toggle(&quot;done&quot;);if(x.classList.contains(&quot;done&quot;))toast(&quot;Nice one ✅ (ticking off in GHL is coming next)&quot;)});
+
+  // Liam
+  const Q=ME.openQuestions||[],A=ME.liamsAnswers||[];
+  $(&quot;liamCard&quot;).innerHTML=`&lt;div class=&quot;kicker&quot;&gt;Questions for Liam&lt;/div&gt;&lt;h3 class=&quot;mix&quot;&gt;🔓 Unlock your next &lt;span class=&quot;big&quot;&gt;close&lt;/span&gt;&lt;/h3&gt;
+    &lt;p class=&quot;muted small-text&quot; style=&quot;margin:-4px 0 14px&quot;&gt;Lock these in and you&#x27;ll close more deals.&lt;/p&gt;
+    ${Q.map(x=&gt;`&lt;div class=&quot;qa locked&quot;&gt;&lt;div class=&quot;q&quot;&gt;🔒 Still to unlock&lt;/div&gt;&lt;div class=&quot;a&quot;&gt;${esc(x.question)}&lt;/div&gt;&lt;/div&gt;`).join(&quot;&quot;)}
+    ${A.map(x=&gt;`&lt;div class=&quot;qa&quot;&gt;&lt;div class=&quot;q&quot;&gt;✅ Unlocked · ${esc(x.question)}&lt;/div&gt;&lt;div class=&quot;a&quot;&gt;${esc(x.answer)}&lt;/div&gt;&lt;/div&gt;`).join(&quot;&quot;)}
+    ${!Q.length&amp;&amp;!A.length?&#x27;&lt;p class=&quot;empty&quot;&gt;Questions from your call reviews show up here, with Liam\&#x27;s answers.&lt;/p&gt;&#x27;:&quot;&quot;}`;
+  renderObjections();
+}
+
+/* =========================================================================
+   OBJECTIONS: they say, you say. A reminder, not a lesson.
+   ========================================================================= */
+const OBJ=[
+ [&quot;It&#x27;s more than the flat pack I saw online.&quot;,&quot;People sell saunas for less than ours cost us to make. Ours last. You buy it once.&quot;],
+ [&quot;I need to talk to my partner.&quot;,&quot;Of course. Shall I jump on a quick call with you both, so they can ask me anything?&quot;],
+ [&quot;I want to think about it.&quot;,&quot;Completely fair. The estimate&#x27;s in your inbox. Shall I ring you Thursday to go through it?&quot;],
+ [&quot;We&#x27;re not ready yet.&quot;,&quot;Order now and we&#x27;ll hold it till you are. Then you&#x27;re not at the back of the spring queue.&quot;],
+ [&quot;I&#x27;ve seen infrared on TikTok.&quot;,&quot;Ours use volcanic stones, so you get real steam, not that zappy feel.&quot;],
+ [&quot;It&#x27;s out of our budget.&quot;,&quot;We do finance, one to five years, and the invoice is cleared upfront.&quot;]
+];
+function renderObjections(){
+  $(&quot;objRow&quot;).innerHTML=OBJ.map(([a,b],i)=&gt;`&lt;div class=&quot;obj&quot;&gt;&lt;div class=&quot;kicker&quot;&gt;They say&lt;/div&gt;&lt;p class=&quot;they&quot;&gt;“${esc(a)}”&lt;/p&gt;&lt;div class=&quot;kicker&quot; style=&quot;color:var(--deep)&quot;&gt;You say&lt;/div&gt;&lt;p class=&quot;you&quot;&gt;${esc(b)}&lt;/p&gt;&lt;/div&gt;`).join(&quot;&quot;);
+}
+
+/* =========================================================================
+   NEXT CUSTOMER
+   ========================================================================= */
+async function showCustomer(){
+  const box=$(&quot;custCard&quot;);
+  $(&quot;custCount&quot;).textContent=QUEUE.length?`${qi+1} of ${QUEUE.length}`:&quot;&quot;;
+  if(!QUEUE.length){box.innerHTML=&#x27;&lt;div class=&quot;card&quot; style=&quot;max-width:560px;margin:0 auto;padding:28px&quot;&gt;&lt;span class=&quot;frost light&quot; style=&quot;box-shadow:0 0 0 1px #eee&quot;&gt;🎉 All done&lt;/span&gt;&lt;div class=&quot;cust-name&quot; style=&quot;margin-top:12px&quot;&gt;No customers waiting&lt;/div&gt;&lt;p class=&quot;muted&quot; style=&quot;margin-top:8px&quot;&gt;New leads assigned to you will appear here.&lt;/p&gt;&lt;/div&gt;&#x27;;CUR=null;return}
+  try{CUR=preview?QUEUE[qi]:(await api(&quot;/customer?id=&quot;+encodeURIComponent(QUEUE[qi].id))).customer}catch(e){box.innerHTML=&#x27;&lt;div class=&quot;card&quot; style=&quot;padding:24px&quot;&gt;&#x27;+esc(e.message)+&#x27;&lt;/div&gt;&#x27;;return}
+  const c=CUR,n=QUEUE.length;
+  const side=(i,cls)=&gt;{const s=QUEUE[i];return `&lt;button type=&quot;button&quot; class=&quot;side-card ${cls}&quot; data-i=&quot;${i}&quot;&gt;&lt;div class=&quot;ph&quot; style=&quot;background-image:url(&#x27;${photoFor(s)}&#x27;)&quot;&gt;&lt;/div&gt;&lt;div class=&quot;nm&quot;&gt;${esc(s.name)}&lt;small&gt;${esc(s.product||s.stage||&quot;&quot;)}&lt;/small&gt;&lt;/div&gt;&lt;/button&gt;`};
+  const objection=c.objection&amp;&amp;c.objection!==&quot;None&quot;;
+  box.innerHTML=`&lt;div class=&quot;flow&quot;&gt;
+    ${n&gt;1?side((qi-1+n)%n,&quot;l&quot;):&quot;&lt;div&gt;&lt;/div&gt;&quot;}
+    &lt;div class=&quot;cust&quot;&gt;
+      &lt;div class=&quot;cphoto&quot; style=&quot;background-image:url(&#x27;${photoFor(c)}&#x27;)&quot;&gt;
+        &lt;div class=&quot;tags&quot;&gt;&lt;span class=&quot;frost&quot;&gt;${esc(c.stage||&quot;Customer&quot;)}&lt;/span&gt;${c.lastOutcome?`&lt;span class=&quot;frost light&quot;&gt;Last call: ${esc(c.lastOutcome)}&lt;/span&gt;`:&quot;&quot;}&lt;/div&gt;
+        &lt;div class=&quot;cwho&quot;&gt;&lt;div class=&quot;cust-name&quot;&gt;${esc(c.name)}&lt;/div&gt;&lt;div class=&quot;prod&quot;&gt;${esc(c.product||&quot;No product yet&quot;)}&lt;/div&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;cbody&quot;&gt;
+        &lt;div class=&quot;statrow&quot;&gt;
+          &lt;div class=&quot;${objection?&quot;red&quot;:&quot;&quot;}&quot;&gt;🚧&lt;span&gt;&lt;span class=&quot;lab&quot;&gt;Holding back&lt;/span&gt;&lt;b&gt;${esc(objection?c.objection:&quot;Nothing yet&quot;)}&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+          &lt;div&gt;📅&lt;span&gt;&lt;span class=&quot;lab&quot;&gt;Next touch&lt;/span&gt;&lt;b&gt;${esc(c.nextTouch||&quot;Not agreed&quot;)}&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;told&quot;&gt;${esc(c.summary||&quot;No calls yet. Open with who we are and find out what they&#x27;re after.&quot;)}&lt;/p&gt;
+        ${(c.notes||[]).length?`&lt;div class=&quot;notes&quot;&gt;${c.notes.map(x=&gt;`&lt;div&gt;${esc(x)}&lt;/div&gt;`).join(&quot;&quot;)}&lt;/div&gt;`:&quot;&quot;}
+        &lt;div class=&quot;call-wrap&quot;&gt;&lt;span class=&quot;hand&quot;&gt;tap to call &amp;#8601;&lt;/span&gt;
+          &lt;button class=&quot;pill-btn green&quot; type=&quot;button&quot; id=&quot;aCall&quot; style=&quot;margin-top:30px&quot;&gt;
+          &lt;svg width=&quot;18&quot; height=&quot;18&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;&lt;path d=&quot;M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z&quot;/&gt;&lt;/svg&gt;
+          Call ${esc(c.name.split(&quot; &quot;)[0])}&lt;/button&gt;&lt;/div&gt;
+        &lt;div class=&quot;cust-actions&quot;&gt;
+          &lt;button class=&quot;btn&quot; type=&quot;button&quot; id=&quot;aNote&quot;&gt;📝 Note&lt;/button&gt;
+          &lt;button class=&quot;btn&quot; type=&quot;button&quot; id=&quot;aFollow&quot;&gt;📅 Follow-up&lt;/button&gt;
+          &lt;a class=&quot;btn&quot; href=&quot;#build&quot;&gt;🛠️ Build it&lt;/a&gt;
+          &lt;button class=&quot;btn&quot; type=&quot;button&quot; id=&quot;aHelp&quot;&gt;🆘 Help&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    ${n&gt;1?side((qi+1)%n,&quot;r&quot;):&quot;&lt;div&gt;&lt;/div&gt;&quot;}
+  &lt;/div&gt;
+  ${n&gt;1?`&lt;div class=&quot;dots&quot;&gt;${QUEUE.map((_,i)=&gt;`&lt;span class=&quot;${i===qi?&quot;on&quot;:&quot;&quot;}&quot;&gt;&lt;/span&gt;`).join(&quot;&quot;)}&lt;/div&gt;&lt;div class=&quot;swipe-hint&quot;&gt;Swipe for the next customer&lt;/div&gt;`:&quot;&quot;}`;
+  // swipe left or right on the card to change customer
+  const card=box.querySelector(&quot;.cust&quot;);let x0=null,y0=null;
+  card.addEventListener(&quot;touchstart&quot;,e=&gt;{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  card.addEventListener(&quot;touchend&quot;,e=&gt;{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;
+    if(Math.abs(dx)&gt;60&amp;&amp;Math.abs(dx)&gt;Math.abs(dy)*1.5&amp;&amp;n&gt;1){qi=dx&lt;0?(qi+1)%n:(qi-1+n)%n;showCustomer()}},{passive:true});
+  box.querySelectorAll(&quot;.side-card&quot;).forEach(b=&gt;b.onclick=()=&gt;{qi=+b.dataset.i;showCustomer()});
+  $(&quot;aCall&quot;).addEventListener(&quot;click&quot;,()=&gt;act(&quot;/call&quot;,{contactId:c.id},&quot;Sample data: your phone would ring, then you&#x27;d be put through to &quot;+c.name.split(&quot; &quot;)[0]+&quot;.&quot;));
+  $(&quot;aNote&quot;).addEventListener(&quot;click&quot;,noteModal);
+  $(&quot;aFollow&quot;).addEventListener(&quot;click&quot;,followModal);
+  $(&quot;aHelp&quot;).addEventListener(&quot;click&quot;,()=&gt;openPanel({customer:c}));
+}
+$(&quot;nextCust&quot;).addEventListener(&quot;click&quot;,()=&gt;{if(!QUEUE.length)return;qi=(qi+1)%QUEUE.length;showCustomer()});
+$(&quot;prevCust&quot;).addEventListener(&quot;click&quot;,()=&gt;{if(!QUEUE.length)return;qi=(qi-1+QUEUE.length)%QUEUE.length;showCustomer()});
+
+async function act(path,body,previewMsg){
+  if(preview){toast(previewMsg);return true}
+  try{const j=await api(path,{method:&quot;POST&quot;,body:JSON.stringify(body)});toast(j.message);return true}catch(e){toast(e.message);return false}
+}
+
+function modal(html,onSave){
+  const m=document.createElement(&quot;div&quot;);m.className=&quot;modal&quot;;m.innerHTML=`&lt;div class=&quot;modal-card&quot;&gt;${html}&lt;div class=&quot;modal-actions&quot;&gt;&lt;button class=&quot;btn btn-line&quot; type=&quot;button&quot; data-x&gt;Cancel&lt;/button&gt;&lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot; data-s&gt;Save&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;`;
+  document.body.appendChild(m);
+  const close=()=&gt;m.remove();
+  m.querySelector(&quot;[data-x]&quot;).onclick=close;m.addEventListener(&quot;click&quot;,e=&gt;{if(e.target===m)close()});
+  m.querySelector(&quot;[data-s]&quot;).onclick=async()=&gt;{if(await onSave(m))close()};
+  const f=m.querySelector(&quot;textarea,input&quot;);if(f)f.focus();
+}
+function noteModal(){
+  modal(`&lt;div class=&quot;kicker&quot;&gt;${esc(CUR.name)}&lt;/div&gt;&lt;h3&gt;Add a note&lt;/h3&gt;&lt;textarea placeholder=&quot;What should the team know? e.g. Partner is the one who decides, call after 6pm.&quot;&gt;&lt;/textarea&gt;`,
+    async(m)=&gt;{const t=m.querySelector(&quot;textarea&quot;).value.trim();if(!t){toast(&quot;Write something first&quot;);return false}return act(&quot;/note&quot;,{contactId:CUR.id,text:t},&quot;Sample data: the note would be saved on &quot;+CUR.name+&quot;.&quot;)});
+}
+function followModal(){
+  const d=new Date(Date.now()+864e5);while(d.getDay()===0||d.getDay()===6)d.setDate(d.getDate()+1);
+  modal(`&lt;div class=&quot;kicker&quot;&gt;${esc(CUR.name)}&lt;/div&gt;&lt;h3&gt;Book a follow-up&lt;/h3&gt;
+    &lt;label for=&quot;fuT&quot;&gt;What for&lt;/label&gt;&lt;input class=&quot;field&quot; id=&quot;fuT&quot; value=&quot;Follow up: ${esc(CUR.name.split(&quot; &quot;)[0])}&quot;&gt;
+    &lt;label for=&quot;fuD&quot;&gt;When&lt;/label&gt;&lt;input class=&quot;field&quot; id=&quot;fuD&quot; type=&quot;date&quot; value=&quot;${d.toISOString().slice(0,10)}&quot;&gt;
+    &lt;p class=&quot;muted small-text&quot; style=&quot;margin-top:8px&quot;&gt;Weekends move to Monday.&lt;/p&gt;`,
+    async(m)=&gt;act(&quot;/followup&quot;,{contactId:CUR.id,title:m.querySelector(&quot;#fuT&quot;).value,date:m.querySelector(&quot;#fuD&quot;).value},&quot;Sample data: follow-up would be booked on &quot;+m.querySelector(&quot;#fuD&quot;).value+&quot;.&quot;));
+}
+
+/* =========================================================================
+   HELP PANEL AND LIBRARY
+   ========================================================================= */
+let libGroup=&quot;All&quot;;
+function cardHTML(c){
+  const ico={&quot;On the call&quot;:&quot;📞&quot;,&quot;The sauna&quot;:&quot;🧖&quot;,&quot;Other products&quot;:&quot;🛁&quot;,&quot;Delivery and site&quot;:&quot;🚚&quot;,&quot;Objections&quot;:&quot;🤔&quot;,&quot;Deposit&quot;:&quot;💷&quot;,&quot;Rules&quot;:&quot;🚩&quot;}[c.g]||&quot;📌&quot;;
+  return `&lt;div class=&quot;lcard${c.g===&quot;Rules&quot;?&quot; rule&quot;:&quot;&quot;}&quot;&gt;&lt;div class=&quot;g&quot;&gt;${esc(c.g)}&lt;/div&gt;&lt;h4&gt;${esc(c.t)}&lt;/h4&gt;
+    ${(c.say||[]).map(x=&gt;`&lt;p class=&quot;say&quot;&gt;${esc(x)}&lt;/p&gt;`).join(&quot;&quot;)}
+    ${(c.f||[]).map(x=&gt;`&lt;p class=&quot;fact-line&quot;&gt;&amp;#8226; ${esc(x)}&lt;/p&gt;`).join(&quot;&quot;)}
+    ${c.tip?`&lt;p class=&quot;tipline&quot;&gt;${esc(c.tip)}&lt;/p&gt;`:&quot;&quot;}
+    ${c.copy?`&lt;button class=&quot;copy&quot; type=&quot;button&quot; data-copy=&quot;${esc(c.copy)}&quot;&gt;Copy&lt;/button&gt;`:&quot;&quot;}&lt;/div&gt;`;
+}
+function score(c,words){const hay=(c.t+&quot; &quot;+c.k+&quot; &quot;+(c.say||[]).join(&quot; &quot;)+&quot; &quot;+(c.f||[]).join(&quot; &quot;)).toLowerCase();let n=0;for(const w of words){if(w.length&lt;3)continue;if((c.t+&quot; &quot;+c.k).toLowerCase().includes(w))n+=3;else if(hay.includes(w))n+=1}return n}
+function find(text,limit=8){
+  const words=text.toLowerCase().replace(/[^a-z0-9.\s-]/g,&quot; &quot;).split(/\s+/).filter(Boolean);
+  return LIB.map(c=&gt;({c,n:score(c,words)})).filter(x=&gt;x.n&gt;0).sort((a,b)=&gt;b.n-a.n).slice(0,limit).map(x=&gt;x.c);
+}
+function bindCopy(){$(&quot;panelBody&quot;).querySelectorAll(&quot;[data-copy]&quot;).forEach(b=&gt;b.onclick=async()=&gt;{try{await navigator.clipboard.writeText(b.dataset.copy);toast(&quot;Copied&quot;)}catch(e){toast(&quot;Couldn&#x27;t copy, select it instead&quot;)}})}
+
+function openPanel(o={}){
+  $(&quot;panel&quot;).classList.add(&quot;on&quot;);$(&quot;scrim&quot;).classList.add(&quot;on&quot;);
+  $(&quot;search&quot;).value=o.query||&quot;&quot;;
+  if(o.customer){
+    const c=o.customer;
+    $(&quot;panelKicker&quot;).textContent=&quot;Help for &quot;+c.name.split(&quot; &quot;)[0];$(&quot;panelTitle&quot;).textContent=&quot;What to say&quot;;
+    const ctx=(c.product||&quot;&quot;)+&quot; &quot;+(c.objection&amp;&amp;c.objection!==&quot;None&quot;?c.objection:&quot;&quot;);
+    const hits=find(ctx,6);
+    const always=LIB.filter(x=&gt;x.t===&quot;The deposit, in one line&quot;);
+    const list=[...hits,...always.filter(a=&gt;!hits.includes(a))];
+    $(&quot;panelBody&quot;).innerHTML=`&lt;p class=&quot;ctx&quot;&gt;Picked for ${esc(c.product||&quot;this customer&quot;)}${c.objection&amp;&amp;c.objection!==&quot;None&quot;?&quot; and &quot;+esc(c.objection.toLowerCase()):&quot;&quot;}.&lt;/p&gt;`+list.map(cardHTML).join(&quot;&quot;);
+  }else if(o.query){runSearch()}
+  else showLibrary();
+  bindCopy();
+}
+function closePanel(){$(&quot;panel&quot;).classList.remove(&quot;on&quot;);$(&quot;scrim&quot;).classList.remove(&quot;on&quot;)}
+$(&quot;panelClose&quot;).addEventListener(&quot;click&quot;,closePanel);$(&quot;scrim&quot;).addEventListener(&quot;click&quot;,closePanel);
+document.addEventListener(&quot;keydown&quot;,e=&gt;{if(e.key===&quot;Escape&quot;)closePanel()});
+
+function runSearch(){
+  const q=$(&quot;search&quot;).value.trim();
+  if(!q){if(CUR)openPanel({customer:CUR});else showLibrary();return}
+  const hits=find(q,10);
+  $(&quot;panelKicker&quot;).textContent=&quot;Search&quot;;$(&quot;panelTitle&quot;).textContent=`&quot;${q}&quot;`;
+  $(&quot;panelBody&quot;).innerHTML=hits.length?hits.map(cardHTML).join(&quot;&quot;):&#x27;&lt;p class=&quot;empty&quot;&gt;Nothing for that yet. Try fewer words, like &quot;porch&quot; or &quot;deposit&quot;.&lt;/p&gt;&#x27;;
+  bindCopy();
+}
+$(&quot;search&quot;).addEventListener(&quot;input&quot;,()=&gt;{clearTimeout(window._s);window._s=setTimeout(runSearch,150)});
+
+function showLibrary(){
+  $(&quot;panelKicker&quot;).textContent=&quot;Everything&quot;;$(&quot;panelTitle&quot;).textContent=&quot;📚 Library&quot;;
+  const groups=[&quot;All&quot;,...new Set(LIB.map(c=&gt;c.g))];
+  const list=libGroup===&quot;All&quot;?LIB:LIB.filter(c=&gt;c.g===libGroup);
+  $(&quot;panelBody&quot;).innerHTML=`&lt;div class=&quot;lib-groups&quot;&gt;${groups.map(g=&gt;`&lt;button type=&quot;button&quot; class=&quot;${g===libGroup?&quot;on&quot;:&quot;&quot;}&quot;&gt;${esc(g)}&lt;/button&gt;`).join(&quot;&quot;)}&lt;/div&gt;`+list.map(cardHTML).join(&quot;&quot;);
+  $(&quot;panelBody&quot;).querySelectorAll(&quot;.lib-groups button&quot;).forEach(b=&gt;b.onclick=()=&gt;{libGroup=b.textContent;showLibrary()});
+  bindCopy();
+}
+$(&quot;openLibrary&quot;).addEventListener(&quot;click&quot;,()=&gt;{$(&quot;search&quot;).value=&quot;&quot;;showLibrary()});
+$(&quot;tabLib&quot;).addEventListener(&quot;click&quot;,()=&gt;{openPanel();$(&quot;search&quot;).value=&quot;&quot;;showLibrary()});
+// highlight the tab for the section on screen
+if(&quot;IntersectionObserver&quot; in window){const io=new IntersectionObserver(es=&gt;es.forEach(e=&gt;{if(e.isIntersecting)document.querySelectorAll(&quot;.tabbar a&quot;).forEach(a=&gt;a.classList.toggle(&quot;on&quot;,a.dataset.s===e.target.id))}),{rootMargin:&quot;-45% 0px -50% 0px&quot;});[&quot;today&quot;,&quot;next&quot;,&quot;build&quot;].forEach(id=&gt;{const el=document.getElementById(id);if(el)io.observe(el)})}
+$(&quot;libTop&quot;).addEventListener(&quot;click&quot;,()=&gt;{openPanel();$(&quot;search&quot;).value=&quot;&quot;;showLibrary()});
+
+/* =========================================================================
+   BOOT: token from the magic link (#t=...), or a saved one
+   ========================================================================= */
+(function boot(){
+  const m=location.hash.match(/t=([^&amp;]+)/);
+  if(m){store.set(&quot;bsuk_hub_token&quot;,m[1]);history.replaceState(null,&quot;&quot;,location.pathname)}
+  token=store.get(&quot;bsuk_hub_token&quot;)||&quot;&quot;;
+  preview=true;
+  if(token||preview)start();
+})();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe></div><p>iPhone size, 390 x 844. Scroll inside the phone.</p></div></body></html>
