@@ -406,6 +406,28 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
 .toast{pointer-events:none}
 .node.core .lab{left:30px!important;right:30px!important;text-align:center;font-size:13px!important}.node.core .lab small{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
+/* ===== round 4 ===== */
+#next{margin-left:-18px;margin-right:-18px}
+#next>.k,#next>h2{padding:0 18px}
+#next .orbit{height:600px!important;border-radius:0!important;margin-top:18px}
+#next #custCard{padding:0 18px}
+.node.core{width:270px!important;height:270px!important}
+.node.sat{width:132px!important;height:132px!important}
+.coach .bot{width:64px;height:64px;display:block;margin:18px 0 6px}
+.coach h3{font-size:30px!important;margin:0 0 4px!important;line-height:1.05}
+.coach .chip.w{font-size:13px}
+.cb .lab{display:flex;align-items:center;gap:6px}
+.cb.try{background:#FFF3C4!important;border-color:#FFE48A!important;color:#3d3200}
+.cb.try .lab{color:#8a6d00!important}
+.cb.try p{font-size:16px!important;font-weight:600!important;color:#2b2400!important}
+.fab2{position:fixed;left:14px;top:14px;z-index:30;background:#fff;color:var(--g);border:1px solid var(--hair);border-radius:99px;padding:10px 14px;font:600 13px Poppins,sans-serif;text-decoration:none;box-shadow:0 8px 24px rgba(22,38,28,.18);transition:opacity .3s,transform .3s}
+.fab2.hide{opacity:0;transform:translateY(-20px);pointer-events:none}
+#next .orbit{height:880px!important}
+#next .node.core{width:300px!important;height:300px!important}
+#next .node.sat{width:150px!important;height:150px!important}
+@media(min-width:700px){#next .orbit{height:760px!important}}
+#next .orbit .oh{bottom:26px}
+
 </style>
 </head>
 <body>
@@ -492,6 +514,7 @@ footer{text-align:center;font-size:12px;color:var(--soft);padding:30px 18px 40px
  <a class="go3" href="configurator.html" target="_blank" rel="noopener">Open the configurator <span class="ic">↗</span></a></div></div>
 
 <button class="fab hide" type="button" id="fab">📈 My feedback</button>
+<a class="fab2 hide" id="fab2" href="configurator.html" target="_blank" rel="noopener">🛠️ Configurator ↗</a>
 <footer>Barrel Sauna UK Sales Hub ♨️ Everything you do here is saved to GHL for you.</footer>
 </div></div>
 
@@ -755,7 +778,7 @@ const SAMPLE = {
       tryLine:"Before we get into sizes, who's going to be using it most, and what made you start looking at saunas?",
       redFlags:"- Price given as 7,995 pounds without saying plus VAT.",reply:"",
       stages:[["1 Warm opening",1],["2 Discovery",1],["3 Value",2],["4 Configure",1],["5 Price",0],["6 Objections",1],["7 Close",2],["8 Next step",1]].map(([label,score])=>({label,score}))},
-    promises:[{title:"🔥 PROMISE: Send Sarah the globe window video",due:nextWeekday(1),contactName:"Sarah Bennett"}],
+    promises:[{title:"🔥 PROMISE: Send Sarah the globe window video",due:nextWeekday(1),contactName:"Sarah Bennett"},{title:"🔥 PROMISE: Send Gareth the trailer walk-round video",due:nextWeekday(1),contactName:"Gareth Price"},{title:"🔥 PROMISE: Ask the office for Priya's install window",due:nextWeekday(2),contactName:"Priya Shah"}],
     followUps:[{title:"Follow up: Gareth, mobile sauna estimate",due:nextWeekday(1),contactName:"Gareth Price"},{title:"Check Priya got the dipper brochure",due:nextWeekday(2),contactName:"Priya Shah"}]},
   lastCall:{id:"demo-1",name:"Sarah Bennett",ended:"12 minutes ago",todo:"She asked for the globe window video and a call with Tom on Friday."},
   customers:[
@@ -817,9 +840,9 @@ const showBox=(up)=>{$("signupBox").classList.toggle("hidden",!up);$("signinBox"
 $("toSignin").addEventListener("click",()=>showBox(false));
 $("toSignup").addEventListener("click",()=>showBox(true));
 if(store.get("bsuk_hub_known"))showBox(false);
-$("previewBtn").addEventListener("click",()=>{preview=true;start()});
+$("previewBtn").addEventListener("click",()=>{preview=true;store.set("bsuk_hub_preview","1");start()});
 $("signOut").addEventListener("click",signOut);
-function signOut(){store.del("bsuk_hub_token");token="";preview=false;$("hubView").classList.add("hidden");$("loginView").classList.remove("hidden")}
+function signOut(){store.del("bsuk_hub_token");store.del("bsuk_hub_preview");token="";preview=false;$("hubView").classList.add("hidden");$("loginView").classList.remove("hidden")}
 
 /* =========================================================================
    START
@@ -887,15 +910,16 @@ function renderToday(){
 
   // coach
   const L=ME.latest,cc=$("coachCard");
-  if(!L){cc.innerHTML='<div class="in"><div class="k" style="color:rgba(255,255,255,.7)">🤖 Your AI sales coach</div><h3 style="margin-top:12px">Feedback after every call</h3><p class="lead">Your own AI coach, here after every call. Friendly tips to help you close more, never a test. Your first tips land here after your first call.</p></div>';}
+  if(!L){cc.innerHTML='<div class="in"><div class="k" style="color:rgba(255,255,255,.7)">Your personal AI sales coach</div><img class="bot" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Robot/3D/robot_3d.png" alt=""><h3>Your feedback</h3><p class="lead">Your own AI coach, here after every call. Friendly tips to help you close more, never a test. Your first tips land here after your first call.</p></div>';}
   else{
     const opts=["Fair one, clever clogs. Add that to my follow-up notes.","I see your point, but I was reading the room.","Not this time, I knew that customer better."];
     cc.innerHTML=`<div class="bg" style="background-image:url('${PHOTOS.inside}')"></div><div class="in">
-      <div class="top3"><span class="chip">🤖 Your AI sales coach</span><span class="chip w">Call score ${esc(L.score)}/16</span></div>
-      <h3>Your feedback</h3><p class="lead">Your own AI coach, here after every call. Friendly tips to help you close more, never a test.</p><div class="from">${esc(L.title)}</div>
-      <div class="cb"><div class="lab">Done well</div><p>${esc(L.doneWell)}</p></div>
-      <div class="cb"><div class="lab">Next call</div><p>${esc(L.changeNext)}</p></div>
-      <div class="cb try"><div class="lab">Try this line</div><p>${esc(L.tryLine)}</p></div>
+      <div class="top3"><span class="chip">Your personal AI sales coach</span><span class="chip w">Call score ${esc(L.score)}/16</span></div>
+      <img class="bot" src="https://cdn.jsdelivr.net/gh/microsoft/fluentui-emoji@main/assets/Robot/3D/robot_3d.png" alt="">
+      <h3>Your feedback</h3><p class="lead">Personalised feedback on the call you just had. Friendly tips to help you close more, never a test.</p><div class="from">${esc(L.title)}</div>
+      <div class="cb try"><div class="lab">💬 Try this line next time</div><p>${esc(L.tryLine)}</p></div>
+      <div class="cb"><div class="lab">✅ Done well</div><p>${esc(L.doneWell)}</p></div>
+      <div class="cb"><div class="lab">🎯 Next call</div><p>${esc(L.changeNext)}</p></div>
       <div class="replies">${opts.map(o=>`<button class="reply${L.reply===o?" sel":""}" type="button">${esc(o)}</button>`).join("")}</div>
       <button class="fullbtn" type="button" id="fullReview">See the full scorecard</button>
       <div id="fullReviewBox" class="hidden"><div class="bars">${(L.stages||[]).map(x=>`<div class="barrow"><span>${esc(x.label)}</span><div class="track"><div class="fill${x.score<1?" low":""}" style="width:${Math.max(6,x.score*50)}%"></div></div><b>${x.score}</b></div>`).join("")}</div>
@@ -938,7 +962,7 @@ function renderObjections(){}
 /* =========================================================================
    NEXT CUSTOMER: orbit of customers, one in focus
    ========================================================================= */
-const SPOTS=[["core",50,46],["sat",17,15],["sat",84,17],["sat",84,80],["sat",16,80]];
+const SPOTS=[["core",50,50],["sat",22,11],["sat",78,17],["sat",78,84],["sat",22,90]];
 function drawOrbit(){
   const orb=$("orb"),n=QUEUE.length;
   if(orb.querySelectorAll(".node").length!==n){orb.innerHTML="";QUEUE.forEach((c,i)=>{const b=document.createElement("button");b.type="button";b.className="node";b.style.backgroundImage=`url(${photoFor(c)})`;b.innerHTML=`<span class="lab">${esc(c.name)}<small>Enquired about: ${esc(c.product||"not sure yet")}</small></span>`;b.onclick=()=>{if(i!==qi){qi=i;showCustomer()}};orb.appendChild(b)})}
@@ -946,7 +970,7 @@ function drawOrbit(){
     if(!s){b.style.opacity="0";b.style.pointerEvents="none";return}
     b.style.opacity="";b.style.pointerEvents="";b.className="node "+s[0];b.style.left=s[1]+"%";b.style.top=s[2]+"%"});
   orb.classList.toggle("hidden",!n);
-  if(n>1&&!orb.querySelector(".oa")){orb.insertAdjacentHTML("beforeend",'<button type="button" class="oa l" aria-label="Previous customer">‹</button><button type="button" class="oa r" aria-label="Next customer">›</button><div class="oh">swipe for your next call</div>');
+  if(n>1&&!orb.querySelector(".oa")){orb.insertAdjacentHTML("beforeend",'<button type="button" class="oa l" aria-label="Previous customer">‹</button><button type="button" class="oa r" aria-label="Next customer">›</button><div class="oh">tap the arrows for your next call</div>');
     orb.querySelector(".oa.l").onclick=()=>{qi=(qi-1+QUEUE.length)%QUEUE.length;showCustomer()};orb.querySelector(".oa.r").onclick=()=>{qi=(qi+1)%QUEUE.length;showCustomer()}}
 }
 (function(){const orb=$("orb");let x0=null;
@@ -988,7 +1012,7 @@ $("heroSearch").addEventListener("submit",e=>{e.preventDefault();const q=$("hero
 (function(){const w=$("watchRow"),d=$("wDots");w.addEventListener("scroll",()=>{const i=Math.round(w.scrollLeft/(w.children[0].offsetWidth+12));[...d.children].forEach((x,k)=>x.classList.toggle("on",k===i))},{passive:true})})();
 
 (function(){const f=$("fab"),c=$("coachSec");f.onclick=()=>c.scrollIntoView({behavior:"smooth",block:"start"});
- addEventListener("scroll",()=>{const r=c.getBoundingClientRect();f.classList.toggle("hide",!(scrollY>500&&(r.bottom<0||r.top>innerHeight)))},{passive:true})})();
+ const f2=$("fab2"),bb=$("build");addEventListener("scroll",()=>{const r=c.getBoundingClientRect(),q=bb.getBoundingClientRect();f.classList.toggle("hide",!(scrollY>500&&(r.bottom<0||r.top>innerHeight)));f2.classList.toggle("hide",!(scrollY>500&&(q.bottom<0||q.top>innerHeight)))},{passive:true})})();
 
 async function act(path,body,previewMsg){
   if(preview){toast(previewMsg);return true}
@@ -1091,7 +1115,7 @@ $("libTop").addEventListener("click",()=>{openPanel();$("search").value="";showL
   const m=location.hash.match(/t=([^&]+)/);
   if(m){store.set("bsuk_hub_token",m[1]);store.set("bsuk_hub_known","1");history.replaceState(null,"",location.pathname)}
   token=store.get("bsuk_hub_token")||"";
-  if(new URLSearchParams(location.search).get("preview")==="1")preview=true;
+  if(new URLSearchParams(location.search).get("preview")==="1"||(!token&&store.get("bsuk_hub_preview")))preview=true;
   if(token||preview)start();
 })();
 </script>
